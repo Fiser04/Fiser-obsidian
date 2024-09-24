@@ -8,18 +8,55 @@
         "type": "tabs",
         "children": [
           {
-            "id": "54473b4fd9a9bfd2",
+            "id": "fd8b97f1e99063a8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programovani pro AI/Java/Algoritmy, datove a procesni struktury.md",
+                "file": "Zaklady Matiky/Logicke spojky.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f2ccfc2391bbb3a2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Zaklady Matiky/Formule.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5520744b697a9105",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Zaklady Matiky/Formule.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "33a804f5670290e9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Zaklady Matiky/Vyrokova logika.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -85,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programovani pro AI/Java/Algoritmy, datove a procesni struktury.md",
+                "file": "Zaklady Matiky/Vyrokova logika.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programovani pro AI/Java/Algoritmy, datove a procesni struktury.md",
+                "file": "Zaklady Matiky/Vyrokova logika.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programovani pro AI/Java/Algoritmy, datove a procesni struktury.md"
+                "file": "Zaklady Matiky/Vyrokova logika.md"
               }
             }
           }
@@ -146,10 +183,25 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "54473b4fd9a9bfd2",
+  "active": "33a804f5670290e9",
   "lastOpenFiles": [
+    "Zaklady Matiky/Sematika.md",
+    "Zaklady Matiky/Spojky.md",
+    "Zaklady Matiky/Logicke spojky.md",
+    "Zaklady Matiky/Matematicka logika.md",
+    "Zaklady Matiky/Formule.md",
+    "Zaklady Matiky/Vyrokova logika.md",
     "Programovani pro AI/Java/Java-TUT.md",
+    "Zaklady Matiky/images/Pasted image 20240924154810.png",
+    "Zaklady Matiky/images/Pasted image 20240924154613.png",
+    "Zaklady Matiky/images/Pasted image 20240924152417.png",
+    "Zaklady Matiky/images/Pasted image 20240924152354.png",
+    "Zaklady Matiky/images/Pasted image 20240924152117.png",
+    "Zaklady Matiky/images",
+    "Zaklady Matiky/images/Pasted image 20240924151538.png",
+    "Zaklady Matiky/images/Pasted image 20240924151420.png",
     "Programovani pro AI/Java/Algoritmy, datove a procesni struktury.md",
+    "Zaklady Matiky",
     "Programovani pro AI/Java",
     "Architektura PC/Cisla.md",
     "Programovani pro AI",
