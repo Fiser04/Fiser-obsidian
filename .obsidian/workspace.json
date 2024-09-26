@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "d9c7dbc571e558e9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Zaklady Matiky/Spojky.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algoritmy/Etapy reseni.md",
+                "file": "Zaklady Matiky/Spojky.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algoritmy/Etapy reseni.md",
+                "file": "Zaklady Matiky/Spojky.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algoritmy/Etapy reseni.md"
+                "file": "Zaklady Matiky/Spojky.md"
               }
             }
           }
@@ -159,17 +171,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8988693fe429e0aa",
+  "active": "d9c7dbc571e558e9",
   "lastOpenFiles": [
+    "Zaklady Matiky/Sematika.md",
+    "Zaklady Matiky/Matematicka logika.md",
+    "Zaklady Matiky/Logicke spojky.md",
+    "Zaklady Matiky/Formule.md",
+    "Matematika/co by jsem mel umet.md",
     "Algoritmy/Zakladni vlastnosti algoritmu.md",
+    "Matematika",
     "Algoritmy/Etapy reseni.md",
     "Zaklady Matiky/Vyrokova logika.md",
     "Algoritmy",
-    "Zaklady Matiky/Sematika.md",
     "Zaklady Matiky/Spojky.md",
-    "Zaklady Matiky/Logicke spojky.md",
-    "Zaklady Matiky/Matematicka logika.md",
-    "Zaklady Matiky/Formule.md",
     "Programovani pro AI/Java/Java-TUT.md",
     "Zaklady Matiky/images/Pasted image 20240924154810.png",
     "Zaklady Matiky/images/Pasted image 20240924154613.png",
