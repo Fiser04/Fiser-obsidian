@@ -8,30 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ead5740c96441f45",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Algoritmy/Zakladni vlastnosti algoritmu.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "292433e55b208f7c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Algoritmy/Etapy reseni.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "d9c7dbc571e558e9",
             "type": "leaf",
             "state": {
@@ -42,9 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "3ec59b434f4244df",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Diskretni matemati/Untitled.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Zaklady Matiky/Spojky.md",
+                "file": "Diskretni matemati/Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Zaklady Matiky/Spojky.md",
+                "file": "Diskretni matemati/Untitled.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Zaklady Matiky/Spojky.md"
+                "file": "Diskretni matemati/Untitled.md"
               }
             }
           }
@@ -171,19 +159,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d9c7dbc571e558e9",
+  "active": "3ec59b434f4244df",
   "lastOpenFiles": [
+    "Zaklady Matiky/Vyrokova logika.md",
+    "Zaklady Matiky/Spojky.md",
     "Zaklady Matiky/Sematika.md",
     "Zaklady Matiky/Matematicka logika.md",
     "Zaklady Matiky/Logicke spojky.md",
     "Zaklady Matiky/Formule.md",
-    "Matematika/co by jsem mel umet.md",
-    "Algoritmy/Zakladni vlastnosti algoritmu.md",
-    "Matematika",
+    "Diskretni matemati/Untitled.md",
+    "Diskretni matemati",
     "Algoritmy/Etapy reseni.md",
-    "Zaklady Matiky/Vyrokova logika.md",
+    "Algoritmy/Zakladni vlastnosti algoritmu.md",
+    "Matematika/co by jsem mel umet.md",
+    "Matematika",
     "Algoritmy",
-    "Zaklady Matiky/Spojky.md",
     "Programovani pro AI/Java/Java-TUT.md",
     "Zaklady Matiky/images/Pasted image 20240924154810.png",
     "Zaklady Matiky/images/Pasted image 20240924154613.png",
