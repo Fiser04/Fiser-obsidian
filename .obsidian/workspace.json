@@ -8,31 +8,55 @@
         "type": "tabs",
         "children": [
           {
-            "id": "d9c7dbc571e558e9",
+            "id": "4c31a71ec7a03881",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Zaklady Matiky/Spojky.md",
+                "file": "Architektura PC/Kodovani znaku.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "3ec59b434f4244df",
+            "id": "bcfe7ee19f182b0d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Diskretni matemati/Untitled.md",
+                "file": "Programovani pro AI/Java/Algoritmy, datove a procesni struktury.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1c2379f4831ee4b0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Zaklady Matiky/Logicke spojky.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "952ed4814eae1a88",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Architektura PC/Kodovani znaku.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Diskretni matemati/Untitled.md",
+                "file": "Zaklady Matiky/Logicke spojky.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Diskretni matemati/Untitled.md",
+                "file": "Zaklady Matiky/Logicke spojky.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Diskretni matemati/Untitled.md"
+                "file": "Zaklady Matiky/Logicke spojky.md"
               }
             }
           }
@@ -159,17 +183,25 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3ec59b434f4244df",
+  "active": "1c2379f4831ee4b0",
   "lastOpenFiles": [
+    "Zaklady Matiky/Matematicka logika.md",
+    "Programovani pro AI/Java/Algoritmy, datove a procesni struktury.md",
+    "Architektura PC/Pribuzne soustavy.md",
+    "Algoritmy/Etapy reseni.md",
+    "Programovani pro AI/Algoritmizace.md",
+    "Architektura PC/Zobrazeni kodovani zapornych cisel.md",
+    "Architektura PC/Kodovani znaku.md",
     "Zaklady Matiky/Vyrokova logika.md",
     "Zaklady Matiky/Spojky.md",
     "Zaklady Matiky/Sematika.md",
-    "Zaklady Matiky/Matematicka logika.md",
     "Zaklady Matiky/Logicke spojky.md",
     "Zaklady Matiky/Formule.md",
+    "Architektura PC/images",
+    "Architektura PC/images/Pasted image 20240930082645.png",
+    "Architektura PC/Cisla.md",
     "Diskretni matemati/Untitled.md",
     "Diskretni matemati",
-    "Algoritmy/Etapy reseni.md",
     "Algoritmy/Zakladni vlastnosti algoritmu.md",
     "Matematika/co by jsem mel umet.md",
     "Matematika",
@@ -183,10 +215,8 @@
     "Zaklady Matiky/images",
     "Zaklady Matiky/images/Pasted image 20240924151538.png",
     "Zaklady Matiky/images/Pasted image 20240924151420.png",
-    "Programovani pro AI/Java/Algoritmy, datove a procesni struktury.md",
     "Zaklady Matiky",
     "Programovani pro AI/Java",
-    "Architektura PC/Cisla.md",
     "Programovani pro AI",
     "Architektura PC"
   ]
