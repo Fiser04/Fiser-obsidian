@@ -4,7 +4,7 @@ Negace
 	|0| |1|
 	|1| |0|
 
-Konjukce (AND)
+Konjukce (a)
 ![[Pasted image 20240924152354.png]]
 	|a|b|
 	|0|0| |0|
@@ -12,7 +12,7 @@ Konjukce (AND)
 	|1|0| |0|
 	|1|1| |1|
 
-Disjunkce (OR)
+Disjunkce (nebo)
 ![[Pasted image 20240924152417.png]]
 	|a|b|
 	|0|0| |0|
@@ -20,7 +20,7 @@ Disjunkce (OR)
 	|1|0| |1|
 	|1|1| |1|
 
-Implikace
+Implikace (jestlize, pokud, if)
 	![[Pasted image 20240924151538.png]]
 	|a|b|
 	|0|0| |1|
@@ -28,7 +28,7 @@ Implikace
 	|1|0| |0|
 	|1|1| |1|
 
-Exvivalence
+Exvivalence (prave tehdy kdyz, to stejne)
 	![[Pasted image 20240924154613.png]]
 	|a|b|
 	|0|0| |1|
