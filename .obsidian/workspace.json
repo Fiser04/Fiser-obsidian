@@ -8,85 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "58d24719bc7f4c7e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Zaklady Matiky/Logicke spojky.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c7789ee688ec1b2e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Zaklady Matiky/Priklady/4.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "3fe608d4105c2c8b",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Zaklady Matiky/images/Pasted image 20241001150942.png"
-              }
-            }
-          },
-          {
-            "id": "9cae623b4eb7079a",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Zaklady Matiky/images/Pasted image 20241001150810.png"
-              }
-            }
-          },
-          {
-            "id": "901aa025d141839a",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Zaklady Matiky/images/Pasted image 20241001150709.png"
-              }
-            }
-          },
-          {
-            "id": "b8d3fa6b6cc58aa3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Zaklady Matiky/Spojky.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "8a55472a55df1423",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Zaklady Matiky/Sematika.md",
+                "file": "Algoritmy/Zakladni vlastnosti algoritmu.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 6
+        ]
       }
     ],
     "direction": "vertical"
@@ -152,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Zaklady Matiky/Sematika.md",
+                "file": "Algoritmy/Zakladni vlastnosti algoritmu.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -169,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Zaklady Matiky/Sematika.md",
+                "file": "Algoritmy/Zakladni vlastnosti algoritmu.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -192,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Zaklady Matiky/Sematika.md"
+                "file": "Algoritmy/Zakladni vlastnosti algoritmu.md"
               }
             }
           }
@@ -215,12 +148,13 @@
   },
   "active": "8a55472a55df1423",
   "lastOpenFiles": [
+    "Algoritmy/Etapy reseni.md",
+    "Zaklady Matiky/Sematika.md",
     "Zaklady Matiky/Implikace, obměna, obrácení, inverze.md",
     "Zaklady Matiky/Logicke spojky.md",
     "Zaklady Matiky/Kvantifikátory a negace (symboly).md",
     "Zaklady Matiky/images/Pasted image 20241001155052.png",
     "Zaklady Matiky/Spojky.md",
-    "Zaklady Matiky/Sematika.md",
     "Zaklady Matiky/Vyrokova logika.md",
     "Zaklady Matiky/images/Pasted image 20241001152633.png",
     "Zaklady Matiky/images/Pasted image 20241001151717.png",
@@ -235,7 +169,6 @@
     "Programovani pro AI/Algoritmizace.md",
     "Programovani pro AI/Java/Algoritmy, datove a procesni struktury.md",
     "Architektura PC/Pribuzne soustavy.md",
-    "Algoritmy/Etapy reseni.md",
     "Architektura PC/Zobrazeni kodovani zapornych cisel.md",
     "Architektura PC/Kodovani znaku.md",
     "Architektura PC/images",
