@@ -8,18 +8,55 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8a55472a55df1423",
+            "id": "5a3508740d42a0a8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algoritmy/Zakladni vlastnosti algoritmu.md",
+                "file": "Imperativni.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2862a718d4f83740",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Zaklady Matiky/Logicke ekvivalence.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2b21e26b85848ab5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Zaklady Matiky/Kvantifikátory a negace (symboly).md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "99beaca6f63887cc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Zaklady Matiky/Implikace, obměna, obrácení, inverze.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -69,7 +106,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 394.5
   },
   "right": {
     "id": "c40310a9bb677104",
@@ -85,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algoritmy/Zakladni vlastnosti algoritmu.md",
+                "file": "Zaklady Matiky/Implikace, obměna, obrácení, inverze.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algoritmy/Zakladni vlastnosti algoritmu.md",
+                "file": "Zaklady Matiky/Implikace, obměna, obrácení, inverze.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algoritmy/Zakladni vlastnosti algoritmu.md"
+                "file": "Zaklady Matiky/Implikace, obměna, obrácení, inverze.md"
               }
             }
           }
@@ -146,44 +183,49 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8a55472a55df1423",
+  "active": "99beaca6f63887cc",
   "lastOpenFiles": [
-    "Algoritmy/Etapy reseni.md",
-    "Zaklady Matiky/Sematika.md",
-    "Zaklady Matiky/Implikace, obměna, obrácení, inverze.md",
-    "Zaklady Matiky/Logicke spojky.md",
+    "Zaklady Matiky/images/Pasted image 20241008145810.png",
     "Zaklady Matiky/Kvantifikátory a negace (symboly).md",
-    "Zaklady Matiky/images/Pasted image 20241001155052.png",
-    "Zaklady Matiky/Spojky.md",
-    "Zaklady Matiky/Vyrokova logika.md",
-    "Zaklady Matiky/images/Pasted image 20241001152633.png",
-    "Zaklady Matiky/images/Pasted image 20241001151717.png",
-    "Zaklady Matiky/images/Pasted image 20241001150709.png",
-    "Zaklady Matiky/images/Pasted image 20241001150810.png",
-    "Zaklady Matiky/images/Pasted image 20241001150942.png",
+    "Zaklady Matiky/Logicke ekvivalence.md",
+    "Zaklady Matiky/Logicke spojky.md",
     "Zaklady Matiky/Negace slozenych vyroku.md",
     "Zaklady Matiky/Matematicka logika.md",
-    "Zaklady Matiky/Priklady/4.md",
+    "Zaklady Matiky/Normalni tvar formule.md",
+    "Zaklady Matiky/images/Pasted image 20241015154237.png",
+    "Zaklady Matiky/images/Pasted image 20241015153725.png",
+    "Zaklady Matiky/images/Pasted image 20241015154309.png",
+    "Zaklady Matiky/images/Pasted image 20241015154258.png",
+    "Zaklady Matiky/images/Pasted image 20241015154055.png",
+    "Zaklady Matiky/images/Pasted image 20241015154017.png",
+    "Zaklady Matiky/images/Pasted image 20241015153933.png",
+    "Zaklady Matiky/images/Pasted image 20241015153819.png",
+    "Zaklady Matiky/images/Pasted image 20241015152021.png",
+    "Zaklady Matiky/images/Pasted image 20241015153048.png",
+    "Zaklady Matiky/Implikace, obměna, obrácení, inverze.md",
+    "Imperativni.md",
+    "Programovani pro AI/Java/Prvni seznameni s Java.md",
+    "Programovani pro AI/Java/Programova v JAVA.md",
+    "Programovani pro AI/Java/Java-TUT.md",
+    "Programovani pro AI/Java/Algoritmy, datove a procesni struktury.md",
+    "Zaklady Matiky/Spojky.md",
     "Zaklady Matiky/Formule.md",
+    "Architektura PC/Untitled.md",
+    "Architektura PC/Zobrazeni kodovani zapornych cisel.md",
+    "Architektura PC/Pribuzne soustavy.md",
+    "Architektura PC/Kodovani znaku.md",
+    "Architektura PC/Cisla.md",
+    "Algoritmy/Zakladni vlastnosti algoritmu.md",
+    "Algoritmy/Etapy reseni.md",
+    "Zaklady Matiky/Sematika.md",
+    "Zaklady Matiky/Vyrokova logika.md",
+    "Zaklady Matiky/Priklady/4.md",
     "Zaklady Matiky/Priklady",
     "Programovani pro AI/Algoritmizace.md",
-    "Programovani pro AI/Java/Algoritmy, datove a procesni struktury.md",
-    "Architektura PC/Pribuzne soustavy.md",
-    "Architektura PC/Zobrazeni kodovani zapornych cisel.md",
-    "Architektura PC/Kodovani znaku.md",
     "Architektura PC/images",
-    "Architektura PC/images/Pasted image 20240930082645.png",
-    "Architektura PC/Cisla.md",
-    "Diskretni matemati/Untitled.md",
     "Diskretni matemati",
-    "Algoritmy/Zakladni vlastnosti algoritmu.md",
-    "Matematika/co by jsem mel umet.md",
     "Matematika",
     "Algoritmy",
-    "Programovani pro AI/Java/Java-TUT.md",
-    "Zaklady Matiky/images/Pasted image 20240924154810.png",
-    "Zaklady Matiky/images/Pasted image 20240924154613.png",
-    "Zaklady Matiky/images/Pasted image 20240924152417.png",
     "Zaklady Matiky/images",
     "Zaklady Matiky",
     "Programovani pro AI/Java",
