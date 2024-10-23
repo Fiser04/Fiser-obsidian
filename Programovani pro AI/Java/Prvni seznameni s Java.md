@@ -62,4 +62,20 @@ Logicke operatory
 Matematicke funkce
 	abs, sin, cos, sqrt (druha odmocnina), log (prirozeny logaritmus)
 	je potreba knihovna Math
-	
+Cyklus
+	while
+		podminka na zacatku
+	do while
+		podminka na konci
+	for
+		dany pocet opakovani
+Preruseni cyklu
+	continue
+		preskoci zbytek a jde znovu od cyklu
+	break
+		skonci cely cykus
+Vetveni
+	switch
+		case x: sdada; break;
+		default y: sdfsdf; break;
+
