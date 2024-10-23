@@ -33,4 +33,5 @@ Merge sort
 	nejlepsi je nlog(n), nejhorsi je nlog(n)
 	![[Pasted image 20241023172816.png]]
 Quick sort
+	nejhorsi pripad n^2, jinak nlog(n)
 	https://www.algoritmy.net/article/10/Quicksort
