@@ -11,15 +11,30 @@
             "id": "fa023960861aa797",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Zaklady Matiky/Predikatova logika.pdf"
+                "file": "Zaklady Matiky/Vyrokova logika.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "Predikatova logika"
+              "icon": "lucide-file",
+              "title": "Vyrokova logika"
+            }
+          },
+          {
+            "id": "508dfebe4fa18a5b",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Programovani pro AI/images/Pasted image 20241104102907.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20241104102907"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -160,12 +175,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "fa023960861aa797",
+  "active": "508dfebe4fa18a5b",
   "lastOpenFiles": [
-    "Zaklady Matiky/Formule.md",
+    "Programovani pro AI/Java/Navrhovani trid.md",
+    "Programovani pro AI/images/Pasted image 20241104102907.png",
+    "Programovani pro AI/Java/Objektove programovani.md",
+    "Programovani pro AI/images",
+    "Programovani pro AI/images/Pasted image 20241104102738.png",
+    "Zaklady Matiky/Vyrokova logika.md",
+    "Zaklady Matiky/Spojky.md",
+    "Zaklady Matiky/Sematika.md",
+    "Zaklady Matiky/Normalni tvar formule.md",
     "Zaklady Matiky/Predikatova logika.pdf",
-    "Zaklady Matiky/prubeh_studia.pdf",
+    "Zaklady Matiky/Negace slozenych vyroku.md",
+    "Zaklady Matiky/Matematicka logika.md",
+    "Zaklady Matiky/Logicke spojky.md",
+    "Zaklady Matiky/Logicke ekvivalence.md",
+    "Zaklady Matiky/Kvantifikátory a negace (symboly).md",
+    "Zaklady Matiky/Formule.md",
+    "Zaklady Matiky/Implikace, obměna, obrácení, inverze.md",
     "Algoritmy/Sort.md",
+    "Zaklady Matiky/prubeh_studia.pdf",
     "Algoritmy/images/Pasted image 20241023173813.png",
     "Algoritmy/images",
     "Algoritmy/images/Pasted image 20241023172816.png",
@@ -175,37 +205,22 @@
     "Programovani pro AI/Java/Algoritmy, datove a procesni struktury.md",
     "Programovani pro AI/Java/Programova v JAVA.md",
     "Imperativni.md",
-    "Zaklady Matiky/Logicke ekvivalence.md",
-    "Zaklady Matiky/Kvantifikátory a negace (symboly).md",
     "Diskretni matemati/Untitled.md",
-    "Zaklady Matiky/Implikace, obměna, obrácení, inverze.md",
     "Zaklady Matiky/images/Pasted image 20241008145810.png",
-    "Zaklady Matiky/Logicke spojky.md",
-    "Zaklady Matiky/Negace slozenych vyroku.md",
-    "Zaklady Matiky/Matematicka logika.md",
-    "Zaklady Matiky/Normalni tvar formule.md",
     "Zaklady Matiky/images/Pasted image 20241015154237.png",
     "Zaklady Matiky/images/Pasted image 20241015153725.png",
     "Zaklady Matiky/images/Pasted image 20241015154309.png",
     "Zaklady Matiky/images/Pasted image 20241015154258.png",
     "Zaklady Matiky/images/Pasted image 20241015154055.png",
-    "Zaklady Matiky/images/Pasted image 20241015154017.png",
-    "Zaklady Matiky/images/Pasted image 20241015153933.png",
     "Programovani pro AI/Java/Java-TUT.md",
-    "Zaklady Matiky/Spojky.md",
     "Architektura PC/Untitled.md",
     "Architektura PC/Zobrazeni kodovani zapornych cisel.md",
     "Architektura PC/Pribuzne soustavy.md",
-    "Architektura PC/Kodovani znaku.md",
-    "Architektura PC/Cisla.md",
-    "Zaklady Matiky/Sematika.md",
-    "Zaklady Matiky/Vyrokova logika.md",
     "Zaklady Matiky/Priklady",
     "Architektura PC/images",
     "Diskretni matemati",
     "Matematika",
     "Algoritmy",
-    "Zaklady Matiky/images",
-    "Zaklady Matiky"
+    "Zaklady Matiky/images"
   ]
 }
