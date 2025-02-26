@@ -4,33 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "63116ed2cde9b975",
+        "id": "b375cd2f77756f09",
         "type": "tabs",
         "children": [
           {
-            "id": "fa023960861aa797",
+            "id": "a919779aa2bac6e1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Zaklady Matiky/Vyrokova logika.md",
+                "file": "Fiser/1.2/Databaza/26.2.2025.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Vyrokova logika"
+              "title": "26.2.2025"
             }
           },
           {
-            "id": "508dfebe4fa18a5b",
+            "id": "98e2b2e8165f10ff",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Programovani pro AI/images/Pasted image 20241104102907.png"
+                "file": "Fiser/1.2/Databaza/DU/20.2.2025 - DU-1.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20241104102907"
+              "icon": "lucide-file",
+              "title": "20.2.2025 - DU-1"
             }
           }
         ],
@@ -53,7 +55,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -90,7 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 394.5
+    "width": 323.5
   },
   "right": {
     "id": "c40310a9bb677104",
@@ -175,52 +178,53 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "508dfebe4fa18a5b",
+  "active": "8988693fe429e0aa",
   "lastOpenFiles": [
-    "Programovani pro AI/Java/Navrhovani trid.md",
-    "Programovani pro AI/images/Pasted image 20241104102907.png",
-    "Programovani pro AI/Java/Objektove programovani.md",
-    "Programovani pro AI/images",
-    "Programovani pro AI/images/Pasted image 20241104102738.png",
-    "Zaklady Matiky/Vyrokova logika.md",
-    "Zaklady Matiky/Spojky.md",
-    "Zaklady Matiky/Sematika.md",
-    "Zaklady Matiky/Normalni tvar formule.md",
-    "Zaklady Matiky/Predikatova logika.pdf",
-    "Zaklady Matiky/Negace slozenych vyroku.md",
-    "Zaklady Matiky/Matematicka logika.md",
-    "Zaklady Matiky/Logicke spojky.md",
-    "Zaklady Matiky/Logicke ekvivalence.md",
-    "Zaklady Matiky/Kvantifikátory a negace (symboly).md",
-    "Zaklady Matiky/Formule.md",
-    "Zaklady Matiky/Implikace, obměna, obrácení, inverze.md",
-    "Algoritmy/Sort.md",
-    "Zaklady Matiky/prubeh_studia.pdf",
-    "Algoritmy/images/Pasted image 20241023173813.png",
-    "Algoritmy/images",
-    "Algoritmy/images/Pasted image 20241023172816.png",
-    "Algoritmy/Zakladni vlastnosti algoritmu.md",
-    "Algoritmy/Etapy reseni.md",
-    "Programovani pro AI/Java/Prvni seznameni s Java.md",
-    "Programovani pro AI/Java/Algoritmy, datove a procesni struktury.md",
-    "Programovani pro AI/Java/Programova v JAVA.md",
-    "Imperativni.md",
-    "Diskretni matemati/Untitled.md",
-    "Zaklady Matiky/images/Pasted image 20241008145810.png",
-    "Zaklady Matiky/images/Pasted image 20241015154237.png",
-    "Zaklady Matiky/images/Pasted image 20241015153725.png",
-    "Zaklady Matiky/images/Pasted image 20241015154309.png",
-    "Zaklady Matiky/images/Pasted image 20241015154258.png",
-    "Zaklady Matiky/images/Pasted image 20241015154055.png",
-    "Programovani pro AI/Java/Java-TUT.md",
-    "Architektura PC/Untitled.md",
-    "Architektura PC/Zobrazeni kodovani zapornych cisel.md",
-    "Architektura PC/Pribuzne soustavy.md",
-    "Zaklady Matiky/Priklady",
-    "Architektura PC/images",
-    "Diskretni matemati",
-    "Matematika",
-    "Algoritmy",
-    "Zaklady Matiky/images"
+    "Fiser",
+    "Fiser/1.2/Databaza/obr/Pasted image 20250226191257.png",
+    "Fiser/1.2/Databaza/26.2.2025.md",
+    "Fiser/1.2/Databaza/DU/20.2.2025 - DU-1.md",
+    "Fiser/1.2/Databaza/DU",
+    "Fiser/1.2/Databaza/obr",
+    "Fiser/1.2/Databaza/obr/Pasted image 20250226153653.png",
+    "Fiser/1.2/Databaza/obr/Pasted image 20250226153438.png",
+    "Fiser/1.2/Bezbecnost/24.2.2025 - Analyza ryzik.md",
+    "Fiser/1.2/Bezbecnost/17.2.2025 - Uvod.md",
+    "Fiser/1.2/Bezbecnost/obr",
+    "Fiser/1.2/Bezbecnost/obr/Pasted image 20250224171704.png",
+    "Fiser/1.1/Imperativni.md",
+    "Fiser/1.2/Site",
+    "Fiser/1.2/Databaza",
+    "Fiser/1.2/Bezbecnost",
+    "Fiser/1.2/OS",
+    "Fiser/1.2",
+    "Fiser/1.1/Programovani pro AI/images/Pasted image 20241104102907.png",
+    "Fiser/1.1",
+    "Fiser/1.1/Programovani pro AI/Java/Navrhovani trid.md",
+    "Fiser/1.1/Programovani pro AI/Java/Objektove programovani.md",
+    "Fiser/1.1/Programovani pro AI/images",
+    "Fiser/1.1/Programovani pro AI/images/Pasted image 20241104102738.png",
+    "Fiser/1.1/Zaklady Matiky/Vyrokova logika.md",
+    "Fiser/1.1/Zaklady Matiky/Spojky.md",
+    "Fiser/1.1/Zaklady Matiky/Sematika.md",
+    "Fiser/1.1/Zaklady Matiky/Normalni tvar formule.md",
+    "Fiser/1.1/Zaklady Matiky/Negace slozenych vyroku.md",
+    "Fiser/1.1/Zaklady Matiky/Matematicka logika.md",
+    "Fiser/1.1/Zaklady Matiky/Logicke spojky.md",
+    "Fiser/1.1/Zaklady Matiky/Logicke ekvivalence.md",
+    "Fiser/1.1/Zaklady Matiky/Kvantifikátory a negace (symboly).md",
+    "Fiser/1.1/Zaklady Matiky/Formule.md",
+    "Fiser/1.1/Zaklady Matiky/Implikace, obměna, obrácení, inverze.md",
+    "Fiser/1.1/Algoritmy/Sort.md",
+    "Fiser/1.1/Algoritmy/images/Pasted image 20241023173813.png",
+    "Fiser/1.1/Algoritmy/images/Pasted image 20241023172816.png",
+    "Fiser/1.1/Algoritmy/Zakladni vlastnosti algoritmu.md",
+    "Fiser/1.1/Algoritmy/Etapy reseni.md",
+    "Fiser/1.1/Programovani pro AI/Java/Prvni seznameni s Java.md",
+    "Fiser/1.1/Programovani pro AI/Java/Algoritmy, datove a procesni struktury.md",
+    "Fiser/1.1/Programovani pro AI/Java/Programova v JAVA.md",
+    "Fiser/1.1/Diskretni matemati/Untitled.md",
+    "Fiser/1.1/Zaklady Matiky/images/Pasted image 20241008145810.png",
+    "Fiser/1.1/Zaklady Matiky/images/Pasted image 20241015154237.png"
   ]
 }

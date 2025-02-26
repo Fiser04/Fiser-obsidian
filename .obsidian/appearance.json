@@ -1,5 +1,6 @@
 {
   "theme": "moonstone",
   "accentColor": "",
-  "cssTheme": "Spectrum"
+  "cssTheme": "Spectrum",
+  "baseFontSize": 19
 }
