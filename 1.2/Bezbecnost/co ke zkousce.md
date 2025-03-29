@@ -1,0 +1,1 @@
+vypracovane samostatne prace (v virtualu), bezpecnostni politiku
