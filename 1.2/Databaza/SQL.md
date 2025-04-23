@@ -1,0 +1,27 @@
+- Structured Query Language
+- vznikl pro sekretarky/sefa
+- vznik v 70. letech pro ibm pak pro oracle
+- je svazany s relacnimy databazemi, pak se zacal ohybat pro jine typy databazi (defakto fork sql)
+- je to jazyk 4. generace (popisuju co chci dostat, ne co chci udelat)
+- casto se pridava dalsi jazyk pro algoritmy (u oracle treba plSQL, proste jazyk 3. generace)
+- deli se do nekolika podjazyku
+	- ddl
+		- data definicion language
+		- pro definici dat
+		- *definice tabuky*
+		- CREATE, ALTER, DROP
+	- dml
+		- data manupulation language
+		- INSERT, DELETE, UPDATE
+	- dql
+		- data query language
+		- SELECT
+	- dcl
+		- data control language
+		- rizeni opravneni
+		- GRANT, REVOKE
+	- tcl
+		- pro rizeni transakci
+		- BEGIN, COMMIT, ROLLBACK
+- standarty
+	- ten prvni je SQL-86
