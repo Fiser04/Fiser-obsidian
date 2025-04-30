@@ -6,7 +6,8 @@ Mezi opatření fyzické bezpečnosti patří
 	• vnitřní bezpečnost
 
 Jaké existují metody pro chranu systémů před krádeží, připojením periferií, rozebráním, nebo úpravou?
-	- alarm
+	- alarm (detekce pohybu)
+	- kamerovy system
 	- v biosu zamknout preriferie
 	- nejake sebedestrukcni zarizeni
 	- kontrolovane logy
