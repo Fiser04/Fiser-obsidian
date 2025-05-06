@@ -1,4 +1,4 @@
-castecne pokracovani [[14.4.2025 - Skodlivy kod]]
+castecne pokracovani [[5) Skodlivy kod - 14.4.2025]]
 musi mit mechanismy aby "jsme si nelezli do zeli"
 	- ridit pristup k vlastnim souborum
 		- Access Control List (ACL)

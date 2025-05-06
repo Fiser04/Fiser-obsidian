@@ -1,4 +1,4 @@
-[[14.4.2025 - Logovani a auditing]]
+[[5) Logovani a auditing - 14.4.2025]]
 
 Logování událostí v operačním systému je základním opatřením, které slouží mimo jiné k detekci
 bezpečnostních událostí, nebo k jejich následné analýze.

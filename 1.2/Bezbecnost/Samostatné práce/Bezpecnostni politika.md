@@ -1,5 +1,5 @@
 Uvod
-	Tento dokument popisuje ochranu zarizeni Lenovo Thinkpad T480 s operacnim systemem Debian Trixie jak pred fyzickou hrozbou, tak i hrozbou v virtualnim svete.
+	Cilem tohoto dokumentu je popsat ochranu zarizeni Lenovo Thinkpad T480 s operacnim systemem Debian Trixie jak pred fyzickou hrozbou, tak i hrozbou v virtualnim svete.
 
 Politka hesel
 	Navrh silneho hesla
@@ -16,6 +16,10 @@ Pristupova bezpecnost
 	Uzivatel musi mit silne heslo (viz. Politika hesel).
 	Zarizeni se musi uzamykat automaticky pri uspani.
 	Je povinnost pri kazdem odchodu od zarizeniho jej zamykat.
+	Pokud to služba nebo aplikace umožňuje, musí být zapnuto dvoufázové ověřování. To platí zejména pro:
+		- Přístup ke cloudovým službám (např. GitHub, e-mail, cloud zálohy)
+		- Správce hesel
+		- Důležité webové účty (např. bankovnictví, sociální sítě)
 
 Ochrana pred skodlivym kodem
 	Na zarizeni musi bezet spravne nastaveny antivirus s schopnosti skenovani hrozeb v realnem case.
@@ -38,13 +42,14 @@ Bezpecne chovani uzivatele
 Sitova a bezdratova bezpecnost
 	Automaticke pripojovani povolit jen duveryhodnym WIFI.
 	Zakaz pripojeni na jakoukoliv verejne dostupnou WIFI bez pouziti VPN.
-	Nastaveny firewall, tak ze to co jde do vnitr je zakazano (Incoming reject) a to co je ven povoleno (Outcoming allow).
-	Pouzivat jen duveryhodne poskytovatele VPN.
+	Nastaveny firewall (ufw), tak ze to co jde do vnitr je zakazano (Incoming reject) a to co jde ven povoleno (Outcoming allow).
+	Pouzivat jen duveryhodne poskytovatele VPN (napriklad ProtonVPN).
 	Mit zapnuty bluetooth jen kdyz je potrebny.
 
 Ochrana pred ztratou dat
 	Povinne pravidelne zalohovani dulezitych dat, jak na fyzicky disk (aresar /home), tak i na github (config, poznamky).
 	Povinne pravidelne vytvareni snapshotu systemu.
+	Cely disk musi byt zasifrovan, klic pro odsifrovani musi mit alespon 20 znaku a dale musi splnovat podminky silneho hesla (viz. Politka hesel).
 
 Logovani
 	Na zarizeni musi probihat logovani pristupu (/var/log/auth.log a journalctl).
@@ -52,8 +57,9 @@ Logovani
 Pravidelne kontroly a bezpecnostni kroky
 	Kazdy den
 		Aktualizace databaze antiviru
-		Sken antiviru
+		Automaticky sken domovskeho adresare antivirem
 		Zaloha dulezitych souboru
+		Kontrola logu antiviru
 	Jednou za 2 dny
 		Aktualizace operacniho systemu, aplikaci a dalsich baliku
 	Jednou tydne

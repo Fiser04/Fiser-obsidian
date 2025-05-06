@@ -1,4 +1,4 @@
-[[24.3.2025 - Authentizace]]
+[[4) Authentizace - 24.3.2025]]
 
 Vyjmenujte co nejvíce v současnosti používaných autentizačních mechanizmů (jméno heslo,
 otisk prstu, …).
