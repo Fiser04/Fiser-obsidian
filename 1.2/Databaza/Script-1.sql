@@ -33,12 +33,6 @@ CREATE TABLE Tank_Class(
 	description NVARCHAR(MAX) NOT NULL
 );
 
-CREATE TABLE Tank_Status(
-	id INT PRIMARY KEY IDENTITY(1,1),
-	name NVARCHAR(MAX) NOT NULL,
-	description NVARCHAR(MAX)
-);
-
 CREATE TABLE Player(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	name NVARCHAR(MAX) NOT NULL,
@@ -76,10 +70,8 @@ CREATE TABLE Tank(
 	description NVARCHAR(MAX),
 	tank_type_id INT NOT NULL,
 	tank_class_id INT NOT NULL,
-	tank_status_id INT NOT NULL,
 	FOREIGN KEY (tank_type_id) REFERENCES Tank_Type(id),
 	FOREIGN KEY (tank_class_id) REFERENCES Tank_Class(id),
-	FOREIGN KEY (tank_status_id) REFERENCES Tank_Status(id)
 );
 
 CREATE TABLE Tank_Stat(
@@ -139,28 +131,23 @@ SET IDENTITY_INSERT Tank_Class ON;
 INSERT INTO Tank_Class (id, name, description) VALUES (1, 'Medium', 'Medium tank'), (2, 'Heavy', 'Heavy tank');
 SET IDENTITY_INSERT Tank_Class OFF;
 
--- Insert Tank Statuses
-SET IDENTITY_INSERT Tank_Status ON;
-INSERT INTO Tank_Status (id, name, description) VALUES (1, 'Live', 'Available in game');
-SET IDENTITY_INSERT Tank_Status OFF;
-
 -- Insert Tanks
 SET IDENTITY_INSERT Tank ON;
-INSERT INTO Tank (id, name, nation, tier, description, tank_type_id, tank_class_id, tank_status_id)
+INSERT INTO Tank (id, name, nation, tier, description, tank_type_id, tank_class_id)
 VALUES (1, 'Obj. 430 II', 'RU', 9, 'Auto-generated tank', 
-        1, 1, 1);
-INSERT INTO Tank (id, name, nation, tier, description, tank_type_id, tank_class_id, tank_status_id)
+        1, 1);
+INSERT INTO Tank (id, name, nation, tier, description, tank_type_id, tank_class_id)
 VALUES (2, 'Skoda T 50', 'CZ', 9, 'Auto-generated tank', 
-        1, 1, 1);
-INSERT INTO Tank (id, name, nation, tier, description, tank_type_id, tank_class_id, tank_status_id)
+        1, 1);
+INSERT INTO Tank (id, name, nation, tier, description, tank_type_id, tank_class_id)
 VALUES (3, 'T-44', 'RU', 8, 'Auto-generated tank', 
-        1, 1, 1);
-INSERT INTO Tank (id, name, nation, tier, description, tank_type_id, tank_class_id, tank_status_id)
+        1, 1);
+INSERT INTO Tank (id, name, nation, tier, description, tank_type_id, tank_class_id)
 VALUES (4, 'T-32', 'USA', 8, 'Auto-generated tank', 
-        1, 2, 1);
-INSERT INTO Tank (id, name, nation, tier, description, tank_type_id, tank_class_id, tank_status_id)
+        1, 2);
+INSERT INTO Tank (id, name, nation, tier, description, tank_type_id, tank_class_id)
 VALUES (5, 'Obj. 277', 'RU', 10, 'Auto-generated tank', 
-        1, 2, 1);
+        1, 2);
 SET IDENTITY_INSERT Tank OFF;
 
 
@@ -170,6 +157,46 @@ INSERT INTO Stat_Category (id, name) VALUES (1, 'Firepower');
 INSERT INTO Stat_Category (id, name) VALUES (2, 'Survivability');
 INSERT INTO Stat_Category (id, name) VALUES (3, 'Mobility');
 SET IDENTITY_INSERT Stat_Category OFF;
+
+-- Insert Stat Values
+SET IDENTITY_INSERT Stat_Value ON;
+INSERT INTO Stat_Value (id, value) VALUES (1, '3000');
+INSERT INTO Stat_Value (id, value) VALUES (2, '2900');
+INSERT INTO Stat_Value (id, value) VALUES (3, '2800');
+INSERT INTO Stat_Value (id, value) VALUES (4, '2700');
+INSERT INTO Stat_Value (id, value) VALUES (5, '60');
+INSERT INTO Stat_Value (id, value) VALUES (6, '65');
+INSERT INTO Stat_Value (id, value) VALUES (7, '70');
+INSERT INTO Stat_Value (id, value) VALUES (8, '75');
+INSERT INTO Stat_Value (id, value) VALUES (9, '55 km/h');
+INSERT INTO Stat_Value (id, value) VALUES (10, '60 km/h');
+INSERT INTO Stat_Value (id, value) VALUES (11, '65 km/h');
+INSERT INTO Stat_Value (id, value) VALUES (12, '70 km/h');
+INSERT INTO Stat_Value (id, value) VALUES (13, '3000');
+INSERT INTO Stat_Value (id, value) VALUES (14, '2900');
+INSERT INTO Stat_Value (id, value) VALUES (15, '2800');
+INSERT INTO Stat_Value (id, value) VALUES (16, '2700');
+INSERT INTO Stat_Value (id, value) VALUES (17, '60');
+INSERT INTO Stat_Value (id, value) VALUES (18, '65');
+INSERT INTO Stat_Value (id, value) VALUES (19, '70');
+INSERT INTO Stat_Value (id, value) VALUES (20, '75');
+INSERT INTO Stat_Value (id, value) VALUES (21, '55 km/h');
+INSERT INTO Stat_Value (id, value) VALUES (22, '60 km/h');
+INSERT INTO Stat_Value (id, value) VALUES (23, '65 km/h');
+INSERT INTO Stat_Value (id, value) VALUES (24, '70 km/h');
+INSERT INTO Stat_Value (id, value) VALUES (25, '3000');
+INSERT INTO Stat_Value (id, value) VALUES (26, '2900');
+INSERT INTO Stat_Value (id, value) VALUES (27, '2800');
+INSERT INTO Stat_Value (id, value) VALUES (28, '2700');
+INSERT INTO Stat_Value (id, value) VALUES (29, '60');
+INSERT INTO Stat_Value (id, value) VALUES (30, '65');
+INSERT INTO Stat_Value (id, value) VALUES (31, '70');
+INSERT INTO Stat_Value (id, value) VALUES (32, '75');
+INSERT INTO Stat_Value (id, value) VALUES (33, '55 km/h');
+INSERT INTO Stat_Value (id, value) VALUES (34, '60 km/h');
+INSERT INTO Stat_Value (id, value) VALUES (35, '65 km/h');
+INSERT INTO Stat_Value (id, value) VALUES (36, '70 km/h');
+SET IDENTITY_INSERT Stat_Value OFF;
 
 -- Insert Stat Rows
 SET IDENTITY_INSERT Stat_Row ON;
@@ -212,45 +239,7 @@ INSERT INTO Stat_Row (id, name, stat_category_id, stat_value_id) VALUES (36, 'To
 SET IDENTITY_INSERT Stat_Row OFF;
 
 
--- Insert Stat Values
-SET IDENTITY_INSERT Stat_Value ON;
-INSERT INTO Stat_Value (id, value) VALUES (1, '3000');
-INSERT INTO Stat_Value (id, value) VALUES (2, '2900');
-INSERT INTO Stat_Value (id, value) VALUES (3, '2800');
-INSERT INTO Stat_Value (id, value) VALUES (4, '2700');
-INSERT INTO Stat_Value (id, value) VALUES (5, '60');
-INSERT INTO Stat_Value (id, value) VALUES (6, '65');
-INSERT INTO Stat_Value (id, value) VALUES (7, '70');
-INSERT INTO Stat_Value (id, value) VALUES (8, '75');
-INSERT INTO Stat_Value (id, value) VALUES (9, '55 km/h');
-INSERT INTO Stat_Value (id, value) VALUES (10, '60 km/h');
-INSERT INTO Stat_Value (id, value) VALUES (11, '65 km/h');
-INSERT INTO Stat_Value (id, value) VALUES (12, '70 km/h');
-INSERT INTO Stat_Value (id, value) VALUES (13, '3000');
-INSERT INTO Stat_Value (id, value) VALUES (14, '2900');
-INSERT INTO Stat_Value (id, value) VALUES (15, '2800');
-INSERT INTO Stat_Value (id, value) VALUES (16, '2700');
-INSERT INTO Stat_Value (id, value) VALUES (17, '60');
-INSERT INTO Stat_Value (id, value) VALUES (18, '65');
-INSERT INTO Stat_Value (id, value) VALUES (19, '70');
-INSERT INTO Stat_Value (id, value) VALUES (20, '75');
-INSERT INTO Stat_Value (id, value) VALUES (21, '55 km/h');
-INSERT INTO Stat_Value (id, value) VALUES (22, '60 km/h');
-INSERT INTO Stat_Value (id, value) VALUES (23, '65 km/h');
-INSERT INTO Stat_Value (id, value) VALUES (24, '70 km/h');
-INSERT INTO Stat_Value (id, value) VALUES (25, '3000');
-INSERT INTO Stat_Value (id, value) VALUES (26, '2900');
-INSERT INTO Stat_Value (id, value) VALUES (27, '2800');
-INSERT INTO Stat_Value (id, value) VALUES (28, '2700');
-INSERT INTO Stat_Value (id, value) VALUES (29, '60');
-INSERT INTO Stat_Value (id, value) VALUES (30, '65');
-INSERT INTO Stat_Value (id, value) VALUES (31, '70');
-INSERT INTO Stat_Value (id, value) VALUES (32, '75');
-INSERT INTO Stat_Value (id, value) VALUES (33, '55 km/h');
-INSERT INTO Stat_Value (id, value) VALUES (34, '60 km/h');
-INSERT INTO Stat_Value (id, value) VALUES (35, '65 km/h');
-INSERT INTO Stat_Value (id, value) VALUES (36, '70 km/h');
-SET IDENTITY_INSERT Stat_Value OFF;
+
 
 
 -- Insert Tank_Stat
