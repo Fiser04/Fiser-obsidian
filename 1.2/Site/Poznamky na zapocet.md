@@ -1,25 +1,25 @@
 # 🧭 Síťové protokoly a porty
 
-| Vrstva | Zkratka | Název | Port | Protokol | Popis | Příklad |
-|--------|---------|-------|------|----------|--------|---------|
-| L3 | RADIUS | Remote Authentication Dial-In User Service | 1812, 1813 | UDP | Autentizace a účetnictví | Eduroam |
-| L3 | DNS | Domain Name System | 53 | UDP | Překlad domén na IP | `example.com -> 192.0.2.1` |
-| L3 | DHCP | Dynamic Host Configuration Protocol | 67, 68 | UDP | Automatické přidělení IP adresy | DORA proces |
-| L4 | HTTP | HyperText Transfer Protocol | 80 | TCP | Webový přenos, nešifrovaný | Prohlížeče |
-| L4 | HTTPS | HTTP Secure | 443 | TCP | Šifrovaný webový přenos (TLS) | Online bankovnictví |
-| L4 | FTP | File Transfer Protocol | 20, 21 | TCP | Přenos souborů (nezabezpečený) | Stahování přes `ftp://` |
-| L4 | SSH | Secure Shell | 22 | TCP | Šifrované vzdálené připojení | Správa serveru |
-| L4 | Telnet | --- | 23 | TCP | Vzdálený přístup bez šifrování | Testování portů |
-| L4 | SMTP | Simple Mail Transfer Protocol | 25 | TCP | Odesílání e-mailů | Poštovní server |
-| L4 | POP3 | Post Office Protocol v3 | 110 | TCP | Stahování e-mailů | E-mail klient |
-| L4 | IMAP | Internet Message Access Protocol | 143 | TCP | Přístup k e-mailům na serveru | Mobilní e-mail |
-| L4 | SMTPs | Secure SMTP | 465 | TCP | Šifrované odesílání e-mailů | Gmail |
-| L4 | IMAPs | Secure IMAP | 993 | TCP | Šifrovaný přístup k e-mailům | Outlook |
-| L4 | POP3s | Secure POP3 | 995 | TCP | Šifrované stahování e-mailů | Thunderbird |
-| L4 | NTP | Network Time Protocol | 123 | UDP | Synchronizace času | Servery, IoT |
-| L4 | RDP | Remote Desktop Protocol | 3389 | TCP | Vzdálená plocha (Windows) | RDP klient |
-| L4 | HTTP Alt | Alternativní HTTP porty | 8080, 8008, 8090 | TCP | Alternativní HTTP servery | Vývojové servery |
-| L4 | QUIC | Quick UDP Internet Connections | --- | UDP | Rychlejší alternativa TCP pro HTTP/3 | YouTube, Chrome |
+| Vrstva | Zkratka  | Název                                      | Port             | Protokol | Popis                                | Příklad                    |
+| ------ | -------- | ------------------------------------------ | ---------------- | -------- | ------------------------------------ | -------------------------- |
+| L3     | RADIUS   | Remote Authentication Dial-In User Service | 1812, 1813       | UDP      | Autentizace a účetnictví             | Eduroam                    |
+| L3     | DNS      | Domain Name System                         | 53               | UDP      | Překlad domén na IP                  | `example.com -> 192.0.2.1` |
+| L3     | DHCP     | Dynamic Host Configuration Protocol        | 67, 68           | UDP      | Automatické přidělení IP adresy      | DORA proces                |
+| L4     | HTTP     | HyperText Transfer Protocol                | 80               | TCP      | Webový přenos, nešifrovaný           | Prohlížeče                 |
+| L4     | HTTPS    | HTTP Secure                                | 443              | TCP      | Šifrovaný webový přenos (TLS)        | Online bankovnictví        |
+| L4     | FTP      | File Transfer Protocol                     | 20, 21           | TCP      | Přenos souborů (nezabezpečený)       | Stahování přes `ftp://`    |
+| L4     | SSH      | Secure Shell                               | 22               | TCP      | Šifrované vzdálené připojení         | Správa serveru             |
+| L4     | Telnet   | ---                                        | 23               | TCP      | Vzdálený přístup bez šifrování       | Testování portů            |
+| L4     | SMTP     | Simple Mail Transfer Protocol              | 25               | TCP      | Odesílání e-mailů                    | Poštovní server            |
+| L4     | POP3     | Post Office Protocol v3                    | 110              | TCP      | Stahování e-mailů                    | E-mail klient              |
+| L4     | IMAP     | Internet Message Access Protocol           | 143              | TCP      | Přístup k e-mailům na serveru        | Mobilní e-mail             |
+| L4     | SMTPs    | Secure SMTP                                | 465              | TCP      | Šifrované odesílání e-mailů          | Gmail                      |
+| L4     | IMAPs    | Secure IMAP                                | 993              | TCP      | Šifrovaný přístup k e-mailům         | Outlook                    |
+| L4     | POP3s    | Secure POP3                                | 995              | TCP      | Šifrované stahování e-mailů          | Thunderbird                |
+| L4     | NTP      | Network Time Protocol                      | 123              | UDP      | Synchronizace času                   | Servery, IoT               |
+| L4     | RDP      | Remote Desktop Protocol                    | 3389             | TCP      | Vzdálená plocha (Windows)            | RDP klient                 |
+| L4     | HTTP Alt | Alternativní HTTP porty                    | 8080, 8008, 8090 | TCP      | Alternativní HTTP servery            | Vývojové servery           |
+| L4     | QUIC     | Quick UDP Internet Connections             | ---              | UDP      | Rychlejší alternativa TCP pro HTTP/3 | YouTube, Chrome            |
 
 # 🔌 IP adresy a významy
 
