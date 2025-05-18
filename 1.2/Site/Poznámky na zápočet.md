@@ -25,11 +25,12 @@
 
 | Adresa/Prefix       | Typ  | Význam                       |
 | ------------------- | ---- | ---------------------------- |
-| 10.0.0.0/8          | IPv4 | Privátní síť                 |
-| 172.16.0.0/12       | IPv4 | Privátní síť                 |
-| 192.168.0.0/16      | IPv4 | Privátní síť                 |
+| 10.0.0.0/8          | IPv4 | Privátní síť (A)             |
+| 172.16.0.0/12       | IPv4 | Privátní síť (B)             |
+| 192.168.0.0/16      | IPv4 | Privátní síť (C)             |
 | 127.0.0.1           | IPv4 | Loopback (localhost)         |
 | 0.0.0.0             | IPv4 | Neznámá adresa / výchozí     |
+| 169.254.0.0/16      | IPv4 | Link-local (APIPA)           |
 | ::1                 | IPv6 | Loopback                     |
 | ::/128              | IPv6 | Neznámá adresa               |
 | ::/0                | IPv6 | Default route                |
@@ -38,7 +39,6 @@
 | fe80::/10           | IPv6 | Link-local                   |
 | 2000::/3            | IPv6 | Globálně routovatelné adresy |
 | ::ffff:0:0/96       | IPv6 | Mapování IPv4 adres          |
-| 169.254.0.0/16      | IPv4 | Link-local (APIPA)           |
 
 # 🧾 Síťové pojmy a poznámky
 

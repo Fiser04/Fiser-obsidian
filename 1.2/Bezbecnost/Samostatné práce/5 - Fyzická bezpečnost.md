@@ -9,12 +9,14 @@ Jaké existují metody pro chranu systémů před krádeží, připojením perif
 	- alarm (detekce pohybu)
 	- kamerovy system
 	- v biosu zamknout preriferie
+	- zaslepky
 	- nejake sebedestrukcni zarizeni
 	- kontrolovane logy
 
 
 Jaké mechanizmy se používají ke kontrole fyzického přístupu osob do budovy, nebo na počítačový sál?
 	- pristupova karta
+	- alarm, ktery musi deaktivovat prvni prichodzi a aktivovat posledni
 	- vratny
 
 
