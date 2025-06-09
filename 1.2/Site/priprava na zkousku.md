@@ -437,7 +437,7 @@ IEEE 802
 			- prevod
 				- vemu 160.217.209.12 a roztrham to na samostatna cisla, ty prevedu a pak je zase seradim
 		- IP hlavicka
-		- ![[Pasted image 20250609143229.png]]
+		 ![[Pasted image 20250609143229.png]]
 			- Version
 				- verze IP protokoly
 				- 4 bity
@@ -463,4 +463,42 @@ IEEE 802
 			- Flag
 				- ukazatel zda byl packet fragmentovan
 				- 3 bity
-			- 
+			- Fragment offset
+				- pozice fragmentu v ip diagramu
+				- 13 bitu
+			- TTL
+				- Time to live
+				- ochrana proti loopu
+				- 8 bitu
+			- Protocol
+				- protokol 4. vrstvy
+				- tcp nebo udp
+				- 8 bitu
+			- Header Checksum
+				- Kontrolni soucet hlavicky
+				- 16 bitu
+			- Source IP Address
+				- Zdrojova IP
+				- 32 bitu
+			- Destination IP Adress
+				- Cilova IP adresa
+				- 32 bitu
+			- Options
+				- specialni ucely
+				- promena bit
+			- Padding
+				- doplneni nul aby byl padding + options = 32
+				- 32 - options = padding bitu
+		- Cast
+			- Unicast
+				- primo pro nekoho *zvedne se jen Franta Lala*
+				- peer to peer komunikace
+				- zpracovava to jen ten koho se to tyka, ostatni zahazuji
+			- Multicast
+				- primo pro skupinu *zvednou se jen ti co vcera byli na pivu*
+				- typicky audio/video vysilani
+				- zpracovavaji to jen ti co patri do skupiny, ostatni zahazuji
+			- Broadcast
+				- primo vsem *zvednete se*
+				- typicky treba dhcp
+				- 
