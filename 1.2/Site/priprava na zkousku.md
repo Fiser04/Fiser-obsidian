@@ -1,4 +1,4 @@
-Osi model
+**Osi model**
 	- zjednoduseny
 		- aplikacni (3)
 		- transportni (1)
@@ -283,7 +283,6 @@ IEEE 802
 					- dosah az 50 metru
 					- 1 MB/s
 
-
 **L2 - Linkova vrstva osi modulu**
 	- patri sem
 		- vytvareni ramce
@@ -427,7 +426,6 @@ IEEE 802
 				- kdyz tam zapojim neco co to nechce tak to zhori
 			- aktivni
 				- nejdrive probehne "vyjednavani" o kolik a jestli vubec to bude
-
 
 **L3 - Sitova vrstva osi modulu**
 	- IPv4
@@ -573,4 +571,43 @@ IEEE 802
 			- FE80::/10 (FE80 - FEBF) -> Link-Local
 		- hlavicka
 			 ![[Pasted image 20250609153314.png]]
-			- 
+			- Version
+				- verze IP protokolu
+			- Traffic Class
+			- Flow Lable
+			- Payload Length
+			- Next Header
+				- odkaz na dalsi hlavicku
+			- Hop Limit
+			- Source adress
+				- Zdrojova IP
+			- Destination Adress
+				- Cilova IP
+		- privatni adresy
+			- FC00::/7
+			- vzdy prvnich 48
+		- link local
+			- casto dopocitane EUI-64
+			- zasadni pro
+				- automatickou konfiguraci
+				- objevovani sousedu
+				- objevovani routeru
+		- cast
+			- multicast
+				- zahrnuje i broadcast
+				- FF00::/8
+				- pole scope
+					- dosah v hlavicce
+				- mld
+					- zadost o zarazeni do skupiny
+			- anycast
+				- identifikace stejnoucelovych zarizeni
+				- poslu to anycastem na servery aby se zatez rozlozila
+			- unicast
+				- prvnich 64 bitu
+				- 
+	- IPv6 vs IPv4
+		- IPv6 ma jednodusi halvicku
+			- chybi kontrolni soucet
+			- spravne serazene
+				- na zacatku jsou informace ktere jsou potreba co nejdrive
