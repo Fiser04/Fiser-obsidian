@@ -1,0 +1,466 @@
+Osi model
+	- zjednoduseny
+		- aplikacni (3)
+		- transportni (1)
+		- internetova (1)
+		- pristupova (2)
+	- klasicky
+		- aplikacni
+		- prezentacni
+		- relacni
+		- transportni
+		- sitova
+		- linkova
+		- fyzicka
+
+Encapsulation & Decapsulation
+	- nabalovani dalsich dat na vrstvach
+	- proces opacny na strane prijemce
+	- ja nabaluju, on rozbaluje *jako darek*
+
+Typy siti podle rozlohy
+	- LAN
+		- local area network
+	- WAN
+		- wide are network
+	- MAN
+		- metropolitan area network
+
+IEEE 802
+	- 1 - linkova vrstva
+	- 1Q - VLAN
+	- 2 - LCC
+	- 3 - Ethernet (mac)
+	- 11 - bezdrat (WLAN)
+	- 15 - bluetooth
+	- 1x - authentizace (RADIUS)
+
+**L1 - Fyzicka vrstva osi modulu**
+	- styl komunikace
+		- Simplex
+			- komunikace jen jednim smerem
+		- Half-duplex
+			- komunikace obou smery ale ne najednou
+		- Full duplex
+			- obousmerna komunikace
+	- metalika
+		- barvy (T568B)
+			- bilo oranz
+			- oranz
+			- bilo zel
+			- modra
+			- bilo modra
+			- zel
+			- bilo hned
+			- hned
+		- typy chraneni kabelu
+			- UTP
+				- unshielded twist pair
+				- nema ochranu proti ruseni
+					- *nema alobal*
+			- FTP
+				- foiled twist pair
+				- stineni celku
+					- *alobal jen kolem celku*
+				- znamy jako S/UTP
+			- STP
+				- shielded twist pair
+				- stineni na parech
+					- *alobal kolem zamotanejch dvojic kabilku*
+			- pak je jeste lepsi jedna kde je alobal jak na parech tak i na celku
+		- typy konektoru RJ
+			- RJ-45
+				- 8 vodicu (4 pary)
+				- dnesni standart pro datove site
+				- klasickej ethernet
+			- RJ-11 
+				- 4 vodice (2 pary)
+				- standart pro telefony
+				- driv se pouzivali i pro internet, doba ala vytaceni internetu
+			- RJ-12
+				- 6 vodicu (3 pary)
+		- patch cord
+			- hotovy kabel na propojovani
+			- casto 0,5m, 1m, 2m, 5m, 10m
+		- utlum signalu
+			- db/km
+			- faktory ovlivnujici utlum
+				- impedance
+					- kdyz je vic vodicu u sebe
+				- ruseni/sum
+					- venkovni elektromagneticky hluk
+				- delka kabelu
+				- frekvence
+			- vypocet			
+				- $$A = 10 \log_{10} \left( \frac{P_{in}}{P_{out}} \right)$$
+				- Pin je input power
+				- Pout je output power
+		- standarty kabelu
+			- Cat5e
+				- 1gb/s, 100m, 100-125Mhz
+			- Cat6
+				- 10gb/s, 37m, 200-250Mhz
+			- Cat6A
+				- 10gb/s, 100m, 500Mhz
+		- aktivni prvek
+			- opakovac (repeater)
+				- zesiluje signal
+			- rozbocovac (hub)
+				- veme to a posle na vsechny obsazene porty krome odesilatele
+		- nutne pojmy
+			- Bit-rate
+				- kolik bitu projde za sekundu
+			- Braud-rate
+				- frekvence zmeny signalu
+			- Bit-time
+				- doba potrebna pro prenos jednoho bitu
+			- FEC (Fordward-Error-Correction)
+				- kontrolni bity
+			- modulace
+				- jedna se o zvyseni poctu moznych bitu k prenosu najednou?
+				- transformace z digitalniho na fyzicky signal a naopak
+				- pr. 
+				- | -3V | 00  |
+				- | -1V | 01  |
+				- | +1V | 10  |
+				- | +3V | 11  |
+				- PAM4 A PAM5
+					- 4 dimenze
+					- 0 a 4 hodnoty (2 v plus a 2 v minus)
+		- POE
+			- power over ethernet
+	- optika
+		- fyzika
+			- lambda λ  *fucking half life blyat*
+				- "barva" svela
+				- vlnova delka
+			- index lomu
+				- kolikrat se rychost zpomali oproti referencni hodnote 
+				- vakuum -> n = 1
+				- kremikove vlakno -> n = 1.45
+			- vzorec$$V=\frac{c}{n}$$  - V -> rychlost svetla v materialu
+				- c -> rychlost svetla v vakuu
+					- 299792458 m/s
+				- n -> indx lomu
+		- obecne
+			- vedeme misto eletrickeho signalu svetlo
+				- 1 = svetlo, 0 = zadne svetlo (bez modulace)
+			- je potreba
+				- emitor (*pro predstavu laserove ukazovatko*)
+				- prenosne medium (*treba hot glue stick*)
+				- detektor (fotodioda)
+			- hlavni vyuziti
+				- paterni spoje
+					- dlouha vzdalenost
+			- imuni vuci elektromagnetickemu ruseni
+		- struktura optickeho vlakna
+			- stred je ze kremikoveho skla
+			- okolo nej je vysoce odrazny material
+			- dale uz jsou ochrane prvky jako treba preskyrice, kevlar, gel, nehorlavy plast, atd.
+		- opticky kabel
+			- tvori ji hromada vlaken ktere jsou v mikrotrubickach
+				- existuji i monokabely
+					- nejsou mikrotrubicku, casto 12 vlaken
+		- vice-vidovy
+			- vetsi prumer stredu (50 - 62 mikronu)
+			- vetsi utlum *takze ok na kratsi vzdalenost*
+			- vice zdroju svetla *vyhoda i nevyhoda, posilam vic signalu naraz ale vsechny prijdou v jinou dobu*
+			- vlnova delka
+				- 850 - 1310 nm
+			- typy
+				- OM1 (62 mikronu)
+				- OM5 (50 mikronu) *nejdelsi vzdalenost*
+			- existuji take gradientvni vicevidy
+				- misto toho aby se paprsek odrazel jak zrovna pristal tak to dela z paprsku takovou sinusoidu
+		- jedno-vid
+			- maly prumer stredu (do 10 mikronu)
+			- velmi maly utlum
+			- vetsi vzdalenost
+			- pouze jeden paprsek
+				- 1310 - 1550 nm
+			- C-band
+				- 1530 - 1565 nm
+			- pro full duplex je potreba mit 2
+		- optika bez kabelu (FSO)
+			- Free Space Optics
+			- max na jednotky kilometru
+			- vysoky utlom a ztraty
+			- vhodne do mest
+		- modulace
+			- smeruju paprsky
+		- dark fiber
+			- nepouzivana/vypnuta optika (casto jako zalozni reseni, kdyby se neco posralo)
+	- bezdrat
+		- sireni pomoci radiovymi vlnami
+		- limity odpovidaji fyzikalnim zakonum
+			- prekazky, ruseni, zahlceni pasma
+		- oproti dratu je casty "sum"
+		- kvalita spojeni je umerna s rychlosti
+		- vlastnosti frekvenci
+			- 2,4Ghz
+				- 13 kanalu
+				- sirka 20Mhz
+				- rozdil 5Mhz
+				- sirka pasma je 12,5 cm
+			- 5Ghz
+				- 140 kanalu
+				- sirka 20Mhz
+				- vykon 1W
+				- sirka pasma je 6 cm
+		- IEEE 802.11
+			- origo
+				- 2,4gh
+				- 2 Mbit/s
+			- a
+				- 5gh
+				- 54 Mbit/s
+			- b
+				- 2,4gh
+				- 11 Mbit/s
+			- g
+				- 2,4gh
+				- 54 Mbit/s
+			- n
+				- 2,4 a 5gh
+				- 150 Mbit/s
+			- ac
+				- 5gh
+				- 400 Mbit/s
+		- SSID
+			- nazev site
+		- BSSID
+			- mac adresa ap
+		- Beam forming
+			- smerovani signalu na zarizeni
+			- "you know what, fuck you, cancer beam"
+		- Channel bounding
+			- spojovani kanalu, pro rychlejsi komunikaci
+		- MIMO
+			- vysilani vice uzivatelum na wifi naraz (jinak proste vzdy vybere jednoho, tomu vysila)
+		- Infrastruktura
+			- BSS - Jeden AP
+			- ESS - vice AP (10-15% maximalni prekryti)
+			- multi ssid managment/vice AP roaming
+				- takovyto automaticky prepinani me AP kdyz jdes
+				- WLC
+		- Scanning
+			- Active
+				- vysilam a ptam se jestli tam nejaka wifi je (zere baterku)
+			- Passive
+				- posloucham jestli nekdo zacne vysilat oznameni o tom ze tam je (pomale)
+		- Zabezpeceni
+			- WEP
+				- starej, davno prolomenej
+			- WPA
+				- sifrovane
+			- WPA enterprise
+				- WPA+RADIUS
+		- IEEE 802.15.1 - Bluetooth
+			- WPAN
+			- hlavne mobilni zarizeni
+			- nizsi rychlost ale nizka spotreba
+			- deleni podle vykonu
+				- class 1
+					- 100mW
+					- do 100m
+				- class 2
+					- 2,5mW
+					- do 10m
+				- class 3
+					- 1mW
+					- do 1m
+			- verze
+				- 1.1
+				- 1.2
+					- vyssi prenosova rychlost (721 kbps)
+				- 2.0
+					- 3x rychlejsi nez 1.2
+				- 2.1
+				- 3.0
+					- az 24 Mbit/s
+					- poziva par wifi technologii
+				- 4.0
+					- dosah az 50 metru
+					- 1 MB/s
+
+
+**L2 - Linkova vrstva osi modulu**
+	- patri sem
+		- vytvareni ramce
+		- pristup k mediu
+		- MAC a LLC
+		- prepinani
+	- odlisuje kde zacina a kde konci ramec prenasenych dat
+	- zabezpecuje detekce a opravy chyb ktere mohou nastat na fyzicke vrstve
+	- flow control
+		- aby odesilatel nezahltil prijemce
+	- vytvareni ramce
+		- prevezmu data z vyssi vrstvy a pridam
+			- hlavicka (head, pred data)
+				- start bit
+					- *hej zacinam*
+				- adresy
+					- komu a od koho
+				- typ/delka
+					- co nebo jak dlouhy to je
+			- ocas (tail, za data)
+				- fcs
+					- kontrola jestli se neco neposralo
+				- stop bit
+					- optional
+					- pouziva se pokud neni delka znama
+	- LLC
+		- logical link control
+		- logicke rizeni provozu
+		- zabezpecuje zapouzdreni
+		- rizeni toku a detekce chyb
+	- MAC
+		- media access control
+		- pridava adresy do ramce
+		- oznacuje zacatek a konec
+	- mezera mezi ramci
+		- mezera je nutny cas ke zpracovani ramce a pripraveni na prijeti dalsiho
+	- standardni max velikost dat v ethernet je 1500 bajtu
+		- ale v Gigabit Ethernet zvysuje na 9000 bajtu
+	- standardni ethernetovy ramec
+		- Preambule
+			- 7 bajtu
+			- synchronizace hodin prijemce
+		- SFD
+			- Start of Frame Delimeter
+			- 1 bajt
+		- Cilova MAC adresa
+			- 48 bitu, 6 bajtu
+		- Zdrojova MAC adresa
+			- 48 bitu, 6 bajtu
+		- Typ/Delka
+			- pole urcuji typ vyssiho protokolu udavajici delku dat
+		- Data + vypln
+			- Data
+				- dlouhe pole 46-1500 bajtu
+				- minimum je pro spravnou detekci chyb
+			- Vypln
+				- kdyz je to min jak 46 bajtu, tak to doplni
+		- FCS
+			- Frame Check Sequence
+				- 32 bitovy kontrolni kod
+		- tudiz celek je 6+6+2+1500+4 = **1518**
+	- MAC adresa
+		- jednoznacna identifikace media na lokalni siti
+		- 48 bitu, 6 bajtu
+		- ruzne typy zapisu
+			- FF-FF-FF-FF-FF-FF
+			- FF:FF:FF:FF:FF:FF
+			- FFFFFFFFFFFF
+		- prvni 3 pary (oktety)
+			- identifikace vyrobce
+		- posledni 3 pary
+			- identifikace zarizeni
+	- smycka na l2
+		- vznika kdyz mam z switchu udelanej kruh a poslu broadcast
+		- nejlepsi je to predejit jen jednou aktivni cestou
+	- bezdrat
+		- sondovani
+			- beacon ramec
+			- SSID
+			- Podporovane rychlosti
+			- Zabezpeceni
+		- autentizace
+			- otevreny
+			- WEP
+				- starej, prolomenej
+			- WPA (/2/3)
+				- zasifrovanej
+			- RADIUS (IEEE 802.1x, WPA enterprise)
+		- pridruzeni
+			- navazani spojeni na linkove vrstve
+			- podobny proces jak na switchi
+	- CSMA/CD
+		- colision detection
+		- *oi blyaaa, je tu kolize, kurwa, no co, tak vse pozastavim, najebu random cislo vsem a budu je podle toho cisla poustet*
+		- klasicky ethernet
+	- CSMA/CA
+		- colision avoidance
+		- *sniff, sniff, vysila nekdo? jo, pici, tak cekam, ..., a ted? ne, tak zacnu ja vysilat*
+		- ve wifi a dalsich bezdratech
+	- switch (prepinac)
+		- umoznuje VLAN
+			- rozdeleni do virtualni siti
+			- potreba L3 switch (MLS)
+		- zesiluje signal
+		- misto toho aby vse rozesilal na vsechny porty tak se ridi podle switching table (prepinaci tabulka *ta cestina je vazne prijebla*)
+			- tabulka do ktere si switch zapisuje na jakem portu je jaka MAC adresa
+				- *tpc ramec, tak ukaz, prislo to z 5tky, mac adresa sedi a chce to poslat na 88:88:88:88:88:88, hmmm, kde je ta kurwa, aaaaa ty curaku, na 7ce je svine, yaaaa yeeeet*
+			- jakmile nenalezne mac adresu na kterou to ma poslat v switching table, tak to posle vsude krome odesilatele
+				- *tpc ramec, tak ukaz, prislo to z 8cky, tu neznam, dobre zapisuju si a chces na 11:11:11:11:11:11, pico to neznam, tak si naser, poslu to vsem a nemuzes s tim nic udelat ty mocko*
+	- VLAN
+		- virtualni site
+		- rozsirim hlavicku o 4 bajty
+			- tento sektor bude nest vlan id
+	- overovani IEEE 802.1x
+		- fyzicka authentizace
+		- kdyz neco pripojim tak je port zablokovan do te doby dokud nejsou poskytnuty authentizacni udaje
+		- nastavuje se na switchi
+		- pouziva se take v bezdraty
+		- proces
+			- pripojim
+			- zablokuje se port a veskera komunikace az na EAP protokol
+			- pusti se na zarizeni program ktery zahaji overeni pres EAP
+			- aktivni prvek navaze spojeni na RADIUS
+			- overeni uzivatele
+				- lokalne primo na RADIUS
+				- pokud neni lokalne tak pomoci strukturu RADIUSu
+			- switch je informovan o vysledku a bud pusti provoz nebo zakaze
+		- RADIUS
+			- Remote Athentication Dial In User Service
+			- UDP/1812 - authentizace
+			- UDP/1813 - uctovani
+		- DIAMETER
+			- naslednik RADIUSU
+			- pouziva TCP
+		- PowerLine/Homeplug
+			- ethernet pres eletricke vedeni
+		- POE
+			- power over ethernet
+			- pasivni
+				- proste to posila vzdy stejne
+				- kdyz tam zapojim neco co to nechce tak to zhori
+			- aktivni
+				- nejdrive probehne "vyjednavani" o kolik a jestli vubec to bude
+
+
+**L3 - Sitova vrstva osi modulu**
+	- IPv4
+		- sturktura
+			- 32 bitu
+			- 0-255 -> 2^8 -1
+			- prevod
+				- vemu 160.217.209.12 a roztrham to na samostatna cisla, ty prevedu a pak je zase seradim
+		- IP hlavicka
+		- ![[Pasted image 20250609143229.png]]
+			- Version
+				- verze IP protokoly
+				- 4 bity
+			- IHL
+				- Internet Header Lenght
+				- delka hlavicky (krat 32 bitu)
+				- min hodnota je 5
+				- 4 bity
+			- DSCP
+				- Differentiated Services Code Point
+				- pro real-time streaming
+				- 6 bitu
+			- ECN
+				- Explicit Congestion Notification
+				- informace o zahlceni
+				- 2 bity
+			- Packet Lenght
+				- celkova velikost packetu
+				- 16 bitu
+			- Identification
+				- cislo identifikujici fragment
+				- 16 bitu
+			- Flag
+				- ukazatel zda byl packet fragmentovan
+				- 3 bity
+			- 
