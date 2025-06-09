@@ -501,4 +501,76 @@ IEEE 802
 			- Broadcast
 				- primo vsem *zvednete se*
 				- typicky treba dhcp
-				- 
+				- posle se vsem a musi to zpracovat
+		- Maska
+			- meni velikost rozsahu
+			- 255 -> cislo v adrese se nemeni
+			- 0 -> cokoliv od 0 do 255
+			- cidr zapis
+				- / + pocet jednicek
+				- /24 = 11111111.11111111.11111111.00000000
+		- Verejne IP adresy
+			- A -> 1-127   (255.0.0.0)
+			- B -> 128-191 (255.255.0.0)
+			- C -> 192-223 (255.255.255.0)
+			- D -> 224-239
+			- E -> 240-255
+		- Neverejne IP adresy
+			- A -> 10.0.0.0 (255.0.0.0)
+			- B -> 172.16.0.0 - 172.31.0.0 (255.240.0.0)
+			- C -> 192.168.0.0 (255.255.0.0)
+		- Adresa site
+			- logicky soucin vznikly nasobenim masky a adresou
+			- 160.217.209.12 * 255.255.0.0 = 160.217.0.0
+		- n pravidlo
+			- v siti nemohu pouzivat urcite adresy, protoze jsou automaticky pouzivane
+			- n-2
+				- adresa site (prvni mozne)
+				- adresa broadcastu (posledni mozne)
+			- n-3
+				- adresa site (prvni mozne)
+				- adresa broadcastu (posledni mozne)
+				- adresa brany (komunikace mimo lokalni sit)
+		- NAT
+			- network address translator
+			- preklada adresy vnitrni site na verejne adresy
+			- typy
+				- Staticky
+					- dana vnitrni adresa vzdy dostane danou verejnou
+				- dynamicky
+					- vnitrni adresa vzdy dostane volnou verejnou ip adresu
+				- PAT/NAPT
+					- network adress port translator
+					- narozdil od NAT pridava porty, na zaklade portu komunikuje s vnitrni siti
+					- jak funguje
+						- prekladana adresa je ulozena do tabulky pod dynamicky prirazenym portem, pod timto portem pote probiha komunikace "verejna <-> lokalni IP adresa"
+							- v internetu je videt router jako zdroj
+						- smer VEN (poprve)
+							- uzivatel posle zpravu
+							- router se podiva jestli je to ven nebo do vnitr
+							- kdyz je to ven tak adresu prehodi na adresu vnejsiho portu
+							- zaroven je vytvoren zaznam tabulce
+						- smer DOVNITR
+							- packet prijde na router
+							- ten ho porovna s tabulkou
+							- kdyz najde tak prekope adresu do vnitrni podle tabulky
+							- kdyz nic nenajde tak packet zahazuje
+						- pri prepisu IP je nutne prepocitat kontrolni soucet
+				- NAT Travversal
+					- proste dojdu a narvu do hlavicky dalsi kus, kterej se prelozi misto ty origo
+					- je to kvuli tomu ze ruzne aplikace pracuji s daty jako treba od kud to prislo
+	- IPv6
+		- struktura
+			- 128 bitu
+			- 8 x 16 bitu dlouhe pole
+			- pravidlo pro zkracovani
+				- tam kde je nalevo 0 tak ji psat nemusim a tam kde je blok nul tak muzu proste x::x
+		- caste adresy
+			- ::/128 -> IPv6 neni definovano
+			- ::/0 -> default route
+			- ::1/128 -> Loopback (local host)
+			- FF00::/8 -> multicast
+			- FE80::/10 (FE80 - FEBF) -> Link-Local
+		- hlavicka
+			 ![[Pasted image 20250609153314.png]]
+			- 
