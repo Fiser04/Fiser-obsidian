@@ -1018,9 +1018,10 @@
 | Vrstva | Zkratka  | Název                                      | Port             | Protokol | Popis                                | Příklad                    |
 | ------ | -------- | ------------------------------------------ | ---------------- | -------- | ------------------------------------ | -------------------------- |
 | L4     | QUIC     | Quick UDP Internet Connections             | ---              | UDP      | Rychlejší alternativa TCP pro HTTP/3 | YouTube, Chrome            |
-| L5     | RADIUS   | Remote Authentication Dial-In User Service | 1812, 1813       | UDP      | Autentizace a účetnictví             | Eduroam                    |
+| L5     | NTP      | Network Time Protocol                      | 123              | UDP      | Synchronizace času                   | Servery, IoT               |
 | L5     | DNS      | Domain Name System                         | 53               | UDP      | Překlad domén na IP                  | `example.com -> 192.0.2.1` |
 | L5     | DHCP     | Dynamic Host Configuration Protocol        | 67, 68           | UDP      | Automatické přidělení IP adresy      | DORA proces                |
+| L5     | RADIUS   | Remote Authentication Dial-In User Service | 1812, 1813       | UDP      | Autentizace a účetnictví             | Eduroam                    |
 | L5     | HTTP     | HyperText Transfer Protocol                | 80               | TCP      | Webový přenos, nešifrovaný           | Prohlížeče                 |
 | L5     | HTTPS    | HTTP Secure                                | 443              | TCP      | Šifrovaný webový přenos (TLS)        | Online bankovnictví        |
 | L5     | FTP      | File Transfer Protocol                     | 20, 21           | TCP      | Přenos souborů (nezabezpečený)       | Stahování přes `ftp://`    |
@@ -1032,7 +1033,6 @@
 | L5     | SMTPs    | Secure SMTP                                | 465              | TCP      | Šifrované odesílání e-mailů          | Gmail                      |
 | L5     | IMAPs    | Secure IMAP                                | 993              | TCP      | Šifrovaný přístup k e-mailům         | Outlook                    |
 | L5     | POP3s    | Secure POP3                                | 995              | TCP      | Šifrované stahování e-mailů          | Thunderbird                |
-| L5     | NTP      | Network Time Protocol                      | 123              | UDP      | Synchronizace času                   | Servery, IoT               |
 | L5     | RDP      | Remote Desktop Protocol                    | 3389             | TCP      | Vzdálená plocha (Windows)            | RDP klient                 |
 | L5     | HTTP Alt | Alternativní HTTP porty                    | 8080, 8008, 8090 | TCP      | Alternativní HTTP servery            | Vývojové servery           |
 
