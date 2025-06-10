@@ -605,9 +605,150 @@ IEEE 802
 				- poslu to anycastem na servery aby se zatez rozlozila
 			- unicast
 				- prvnich 64 bitu
-				- 
+				- stavova
+					- s dhcpv6
+				- bezstavova
+					- bez dhcpv6
+					- SLAAC
+		- services
+			- DHCPv6
+				- stavove automaticke nastaveni
+					- stary znamy dhcp
+					- poskytuje vse info krome brany
+			- ICMPv6
+				- ping
+				- ECHO
+			- DNSv6
+				- zaznam AAAA
+				- kdyz to nema AAAA ale jen A tak to veme A zaznam, hodi prefix 64:ff9b, router chape ze to znamena ze to je ipv4 a ne ipv6
 	- IPv6 vs IPv4
 		- IPv6 ma jednodusi halvicku
 			- chybi kontrolni soucet
 			- spravne serazene
 				- na zacatku jsou informace ktere jsou potreba co nejdrive
+	- prechodove mechanizmy
+		- jedno sitove rozhrani ma vice ipv6 adres
+		- dual stack
+			- jak ipv4 tak ipv6 na jednom rozhranim
+		- tunneling
+			- 6in4
+				- spojeni ipv6 skrze ipv4
+				- IPv6 je zapouzdřen protokolem IPv4
+				- V hlavičce IPv4 je v poli protokol uvedeno číslo 41
+				- Velikost IPv4 hlavičky je 20 bajtů (s prázdným polem „options“)
+			- dalsi priklady tunnelingu
+				- 6to4
+				- teredo (microsoft)
+				- 4in6
+		- preklad
+			- NAT64
+		- z ipv4 na ipv6
+			- vemu 160.217.211.10
+			- udelam z toho treba tohle 2001:067c:1220:4::160.217.211.10
+			- a prepisu to na 16tkovou soustavu
+			- -> 2001:067c:1220:4::a0.d9.d3.a
+	- IPSEC
+		- zabezpeceni na L3
+		- pouziva to VPN
+		- vyuziva automatickou vymenu klicu ISAKMP
+
+**L4 - Transportni vrstva osi modulu**
+	- hlavni ucel je priprava z aplikacni vrstvy na sitovou
+	- TCP
+		- pomalej ale spolehlivej
+		- vytvari sessions
+		- roztrhavam data na segmenty (fragmenty), ty ocisluju a kontroluju jestli prisli vsechny a kdyz neprijdou po sobe tak je seradi
+		- hlavicka tedy obsahuje
+			- zdrojovy port
+			- cilovy port
+			- cislo segmentu (fragmentu)
+			- potvrzeni doruceni
+			- kontrola toku + chyb
+		- navazovani spojeni
+			 ![[Pasted image 20250610144851.png]]
+			$$ACK_n=SEQ_n+1$$
+		- ukonceni spojeni
+			 ![[Pasted image 20250610145403.png]]
+		- window size
+			- kolik bajtu je preneseno bez potvrzeni
+			- proste misto abych vsechno postupne potvrzoval ze to prislo muzu poslat vic veci a pak mi prijde potvrzeni ze to vse prislo
+			- nevyhoda je kdyz jen jeden kousek neprijde tak se musi posilat vse od znova
+			- velikost je **DYNAMICKA**
+				- zvetsi se pokud vse prislo v poradku
+				- zmensi se kdyz to neprislo v poradku
+		- priklady portu
+			- 20 -> ftp (data)
+			- 21 -> ftp (prikaz)
+			- 22 -> ssh
+			- 23 -> telnet
+			- 25 -> smtp
+			- 80 -> http
+			- 443 -> https
+			- 110 -> pop3
+			- 143 -> imap
+			- 465 -> smtps
+			- 993 -> imaps
+			- 995 -> pop3s
+			- 6665-6669 -> irc 
+			- 8008, 8080, 8090 -> alternativa http
+	- UDP
+		- rychly ale nespolehlivy
+		- zadne potvrzovani
+		- zadne posilani znovu pri ztrate
+		- zadne poradi
+			- tak jak to prijde tak to bude
+		- nenavazuje spojeni pred posilanim
+		- ALE je mensi hlavicka
+			- -> mensi narok na lince -> je to rychlejsi
+			- o kolik rychlejsi? ano
+		- hlavicka
+			- zdroj port
+			- cil port
+		- priklady portu
+			- 53 -> dns
+			- 67 -> dhcp (odpoved)
+			- 68 -> dhcp (dotaz)
+			- 69 -> tftp
+			- 88 -> xbox game service
+			- 123 -> ntp
+			- 1812 -> radius
+		- pseudo-hlavicka
+			- vypocet kontrolnio souctu
+
+**L5-7 - Aplikacni vrstva osi modulu**
+	- protokoly
+		- Eduroam
+			- system dovolujici studentum se pripojit na net na partnerske skole
+		- SMTP
+			- posilani eletronicke posty
+			- prenost od klienta (mua) a serverem (mta)
+			- tcp/25
+		- POP3
+			- stahuje emaily do kompu
+		- IMAP
+			- ukazuje zpravy ktere jsou ulozene na serveru
+			- tpc/143
+		- Telnet vs SSH
+			- vzdalene ovladani pres radku
+			- Telnet (tcp/23) je nesifrovany
+			- SSH (tcp/22) je sifrovany
+		- FTP
+			- File transport protocol
+			- tpc/21 (prikaz) a tcp/20 (data)
+		- RDP
+			- remote desktop protocol
+			- *ssh s gui*
+			- tcp/3389
+		- NTP
+			- network time protocol
+			- udp/123
+		- DHCP
+			- dynamic host configuration protocol
+			- zakladni sitova konfigurace zarizeni
+			- udp/67 (odpoved) a udp/68 (dotaz)
+			- prikazy v oknech
+				- ipconfig /release
+					- dropne to konfiguraci od dhcp
+				- ipconfig /renew
+					- zazada o novou konfiguraci
+			- proces pri prvnim zapojeni kompu
