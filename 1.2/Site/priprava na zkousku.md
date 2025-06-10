@@ -750,5 +750,266 @@ IEEE 802
 				- ipconfig /release
 					- dropne to konfiguraci od dhcp
 				- ipconfig /renew
-					- zazada o novou konfiguraci
-			- proces pri prvnim zapojeni kompu
+					- zazada o novou konfiguraci (ted uz to resi jen unicastem od toho co dostal posledni nastaveni)
+			- proces pri prvnim zapojeni kompu (v mac adresach)
+				- DHCP-DISCOVER
+					- *hej zmrdi, je tu nejaky dhcp?*
+					- od pc broadcastem (ff:ff:ff:ff:ff:ff)
+				- DHCP-OFFER
+					- *jo vole, chces takovyhle nastaveni?*
+					- unicast od dhcp
+				- DHCP-REQUEST
+					- *jo to by slo*
+					- broadcast
+				- DHCP-ACK
+					- *ok bro, takze summary, takovyhle mas od ted muzes mit nastaveni*
+					- unicast
+			- mam 2 typy zaznamu
+				- dynamicky
+					- dobra vec kdyz se mi furt meni pocet aktivnich zarizeni
+					- treba kompy ve firme nebo wifi
+				- staticky
+					- zada se rucne
+					- hodi se to treba na tiskarnu
+	- DNS
+		- Domain name system
+		- preklad ip adresy na lidsky pochopitelna slova a naopak
+		- klient kontaktuje dns server aby prelozil treba seznam.cz, dns vrati 77.75.77.222
+		- domena
+			- zakladni adresni jednotka internetu
+			- nazev a koncovka (TLD) webu nahrazujici IP adresu
+			- kazda je unikatni
+			- tvori ji
+				- max 63 znaku i s koncovkou a teckou
+				- max 127 urovni s maximalni delkou 255
+				- neresi se velka a mala pismena
+				- pouze zakladni ASCII
+					- anglicka abeceda
+					- cislice
+					- pomlcka a par znaku
+				- zadna diakritika
+		- koncovka
+			- Narodni (ccTLD - country code TLD)
+				- .cz, .sk, .de
+				- vazou se ke statu
+				- spravu resi jednotlive registry
+					- NIC (Network Information Center)
+			- Genericke (gTLD - generic TLD)
+				- nadnarodni a ucelove
+				- .com (comercial), .org, .networks
+				- .edu, .museum
+				- v kombinaci s ccTLD
+					- .co.uk, .com.pl, .org.in
+				- neexistuje jen jedna autorita, akreditace daneho registratora primo od ICANN
+		- IDN
+			- internazionalized domain names
+			- preklad z unicode na ascii
+			- takze müller.de -> mueller.de
+			- pro .cz zatim neni
+		- pracuje na portu 53 a pouziva jak udp tak tcp
+		- ma hierarchicky system (stromovy pro normalni lidi)
+			- *tpc, nemam tucha, ale mam chabra kterej zna odpoved*
+		- zakladni pojmy
+			- CNAME
+				- domenovy alias
+			- MX
+				- mail exchange
+				- proste zaznam o postovnim serveru na domene
+			- SPF
+				- seznam SMTP serveru pro danou domenu
+			- NS
+				- name server
+				- zaznam dns serveru
+			- A
+				- ipv4 adresy
+			- AAAA
+				- ipv6 adresy
+		- DNS servery
+			- Root
+				- spravce urcuje IANA
+				- deli se do 13ti, 12 jich spravuje organizace
+				- v cr 7 ve skupinach D, F, J, K, L (praha)
+			- Top-Level
+				- staraji se o danou domenu (pr .cz)
+				- seznam vsech serveru druhe urovne
+			- Druha uroven
+				- resi domenu druheho radu (pr jcu.cz)
+				- seznam vsech serveru treti urovne
+			- Treti uroven
+				- typicky v organizacnich jednotkach (pr prf.jcu.cz)
+				- TTL
+					- specifikuje jak dlouho zustane zaznam v pameti
+			- Lokalni server
+				- DNS resolver
+		- DNS urovne
+			- Root Domain
+			- TLD
+				- .cz
+			- 2.
+				- jcu.cz
+			- 3. 
+				- prf.jcu.cz
+			- 4. a dalsi
+				- idk.prf.jcu.cz
+		- Autority
+			- IANA
+				- Internet Assigned Numbers Authority
+				- celosvetove zodpovida za root dns a pridejovani ip adres
+				- zastresuje regionalni organizace na kontinentech (RIRs)
+					- u nas ripe.net
+			- ICANN
+				- vymezuje rozhodci pro reseni sporu o domeny
+				- spravuje gTLD
+				- prideluje akreditace spravcum TLD
+					- takze NIC
+		- vznik a zanik TLD
+			- schvalenim ICANN
+		- NIC
+			- narodni organize zodpovedna za TLD
+			- urcuje pravidla pro registraci dane TLD
+			- u nas CZ.NIC, pro .eu je EuRid
+		- WHOIS DataBase
+			- verejna databaze informaci o domene
+			- sluzba je zdarma, za poplatek historie domeny
+		- registrace domeny
+			- vyber domenoveho jmena (kratky, zapamatovatelny)
+			- zjistit registracni odobi, pravidla a cena
+			- zakladni postup
+				- overeni dostupnosti
+				- uvedenei kontaktnich udaju
+				- uvedeni name serveru
+		- sprava domeny
+			- aktualizace kontaktnich udaju
+			- transfer mezi registratory
+			- upozorneni na exspiraci
+			- komplikace pri pozdnim prodlouzeni
+				- poplatek
+				- deaktivace
+				- ztrata
+				- vydirani
+		- zmena vlastnika
+			- provadi se v hlavnim registru registratora
+		- pravni spory
+			- registrace domeny s cizym jmenem
+			- na spatnou osobu
+			- obsah poskozuje nekoho cizyho
+			- atd.
+		- DNS nastaveni (u klienta)
+			- sudo nvim /etc/resolv.conf
+			- ipconfig /all
+			- probiha "cachovani"
+				- ukladaji se zaznamy do lokalni tabulky, aby se nemuselo furt ptat nekoho jineho, kdyz na ten web chodim furt
+				- ipconfig /displaydns
+					- zobrazeni DNS resolver
+				- ipconfig /flushdns
+					- vycisteni tabulek
+		- NSLOOKUP
+			- manualni dotaz
+			- od primarniho a sekundarniho severu je odpoved brana za originalni (jsou autorativni)
+			- furt se pouziva aby byla zjistena spravnost zaznamu
+			- autorativni dns server pro TLD v cr je a.ns.nic.cz, dalsi zname jsou treba 8.8.8.8 a 8.8.4.4 (google dns)
+		- jak dns server postupuje pri ptani
+			- client: *hej resolvere, znas tohle?*
+			- resolver: *nope, zeptam se typka s co resi tuhle TLD*, *hej, znas tuhle adresu?*
+			- TLD dns 1: *nope, tu jsem v zivote nevidel, tady mas kontakt na roota*
+			- resolver: *hej roote, znas toho chuje co resi tuhle TLD?*
+			- root: *ukaz, jop, to je tamhle ten hlavoun*
+			- resolver: *hej, ty prej resis tuhle TLD, hledam server co ma za lubem tuhle domenu druhy urovne*
+			- TLD dns 2: *ukaz, jop, to dela tamhle ten chuj*
+			- resolver: *hej ty prej znas tuhle domenu druhy urovne, potrebuju to prelozit*
+			- DNS s druhou...: *ukaz, jop, je to hale 123.123.123.123*
+			- resolver: *oi, cliente mam pro tebe ten preklad, je to 123.123.123.123 a tuhle sracku si zapisuju*
+		- reverzni dns
+			- preklad IP na DNS zaznam
+			- dns server tuto sluzbu poskytuje
+			- jen musim mirrornout ip adresu (1.2.3.4 na 4.3.2.1)
+		- DNS pro ipv6
+			- resi se AAAA zaznam
+			- jinak je to stejny
+		- DNS64
+			- kdyz neznam AAAA zaznam ale A ano tak pretvorim A na AAAA
+			- vemu 192.0.2.33 a udelam z nej 64.ff9b::192.0.2.33
+		- dynamicka DNS
+			- automaticka aktualizace zaznamu
+			- puziva se na siti s Active Directory a DHCP
+		- DNS utoky
+			- DNS spoofing
+				- podvrzeni spatne dns
+			- prvni vyhrava
+				- spatna aktualizace?
+			- Man In the Middle
+				- podvrzeni proxy serveru a pouziti sveho DNS serveru
+			- DNS poisoning
+				- chyba nahodnosti ID dotazu
+	- HTTP(s)
+		- Http
+			- HyperText transfer procol
+			- TCP/80
+			- puvodne se melo jednat o prenos dokumentu ve formatu html
+			- verze
+				- 1.1
+					- Pipelining
+					- Head of the line blocking
+				- http/2 (tcp)
+				- http/3 (udp)
+			- bezstavovy protokol
+				- http sessions
+					- request na vse
+				- url nebo cookies
+			- chyby
+				- 5 kategorii
+				- 4xx - strana klienta
+				- 5xx - strana serveru
+			- http proxy
+				- navazuje za klienta spojeni
+		- HTTPs
+			- Http secure
+			- tcp/443
+			- tls
+				- nastupce ssl 3.0
+				- dnes verze 1.3
+			- certifikaty
+				- potvrzeni verejneho klice
+				- ruzni poskytovatele
+					- lets encrypt
+		- HTTP/3
+			- vyuziva QUIC
+				- Quic UDP Internet Connections
+				- podminka je tls 1.3
+				- je to snaha o eliminovani pomaleho navazovani spojeni tcp
+
+**Bezpecnost**
+	- Firewall
+		- takovy mezikrok ktery hlida jestli to co se deje na siti a celkove v komunikaci jde podle jeho pravidel
+		- resi sitovou, transportni a aplikacni vrstvu
+			- muzu zablokovat ip, port a nebo aplikaci
+		- typy dle implementace
+			- hardwarove
+			- softwarove
+			- kombinace
+		- typy dle urovne
+			- bezstavovy (packetovy)
+				- resi jen podle tabulky pravidel
+				- white list, black list
+				- smer, ip, port, tcp/udp, atd
+			- stavovy
+				- podle toho co se deje na siti
+			- aplikacni a webove aplikacni
+				- resi nam ruzne kraviny kolem webu a aplikaci
+		- zone based firewall
+			- pohyb packetu mezi zonami
+	- IDS
+		- Intrusion detection system
+		- detekuje anomalie na siti a oznami je
+	- IPS
+		- Intrusion prevension system
+		- detekuje a blokuje anomalie
+	- DPI
+		- Deep packet inspection
+		- kombinace IDS, IPS a stavoveho firewallu
+		- proste podle kontextu
+		- vznikaji false pozitive
+	- Honeypot
+		- mimic ktery se chova jako spatne nastaveny komp
+		- bud ho pouziju jako klec pro utocnika abych z logu vyporozoval co dela a podle toho resil bezpecnost celeho system a nebo je to pro me kontrolka ze je utocnik ve vnitr kdyz se na honeypotu neco deje
+
