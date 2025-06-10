@@ -13,12 +13,12 @@
 		- linkova
 		- fyzicka
 
-Encapsulation & Decapsulation
+**Encapsulation & Decapsulation**
 	- nabalovani dalsich dat na vrstvach
 	- proces opacny na strane prijemce
 	- ja nabaluju, on rozbaluje *jako darek*
 
-Typy siti podle rozlohy
+**Typy siti podle rozlohy**
 	- LAN
 		- local area network
 	- WAN
@@ -26,7 +26,7 @@ Typy siti podle rozlohy
 	- MAN
 		- metropolitan area network
 
-IEEE 802
+**IEEE 802**
 	- 1 - linkova vrstva
 	- 1Q - VLAN
 	- 2 - LCC
@@ -1013,3 +1013,174 @@ IEEE 802
 		- mimic ktery se chova jako spatne nastaveny komp
 		- bud ho pouziju jako klec pro utocnika abych z logu vyporozoval co dela a podle toho resil bezpecnost celeho system a nebo je to pro me kontrolka ze je utocnik ve vnitr kdyz se na honeypotu neco deje
 
+**Porty**
+
+| Vrstva | Zkratka  | Název                                      | Port             | Protokol | Popis                                | Příklad                    |
+| ------ | -------- | ------------------------------------------ | ---------------- | -------- | ------------------------------------ | -------------------------- |
+| L4     | QUIC     | Quick UDP Internet Connections             | ---              | UDP      | Rychlejší alternativa TCP pro HTTP/3 | YouTube, Chrome            |
+| L5     | RADIUS   | Remote Authentication Dial-In User Service | 1812, 1813       | UDP      | Autentizace a účetnictví             | Eduroam                    |
+| L5     | DNS      | Domain Name System                         | 53               | UDP      | Překlad domén na IP                  | `example.com -> 192.0.2.1` |
+| L5     | DHCP     | Dynamic Host Configuration Protocol        | 67, 68           | UDP      | Automatické přidělení IP adresy      | DORA proces                |
+| L5     | HTTP     | HyperText Transfer Protocol                | 80               | TCP      | Webový přenos, nešifrovaný           | Prohlížeče                 |
+| L5     | HTTPS    | HTTP Secure                                | 443              | TCP      | Šifrovaný webový přenos (TLS)        | Online bankovnictví        |
+| L5     | FTP      | File Transfer Protocol                     | 20, 21           | TCP      | Přenos souborů (nezabezpečený)       | Stahování přes `ftp://`    |
+| L5     | SSH      | Secure Shell                               | 22               | TCP      | Šifrované vzdálené připojení         | Správa serveru             |
+| L5     | Telnet   | ---                                        | 23               | TCP      | Vzdálený přístup bez šifrování       | Testování portů            |
+| L5     | SMTP     | Simple Mail Transfer Protocol              | 25               | TCP      | Odesílání e-mailů                    | Poštovní server            |
+| L5     | POP3     | Post Office Protocol v3                    | 110              | TCP      | Stahování e-mailů                    | E-mail klient              |
+| L5     | IMAP     | Internet Message Access Protocol           | 143              | TCP      | Přístup k e-mailům na serveru        | Mobilní e-mail             |
+| L5     | SMTPs    | Secure SMTP                                | 465              | TCP      | Šifrované odesílání e-mailů          | Gmail                      |
+| L5     | IMAPs    | Secure IMAP                                | 993              | TCP      | Šifrovaný přístup k e-mailům         | Outlook                    |
+| L5     | POP3s    | Secure POP3                                | 995              | TCP      | Šifrované stahování e-mailů          | Thunderbird                |
+| L5     | NTP      | Network Time Protocol                      | 123              | UDP      | Synchronizace času                   | Servery, IoT               |
+| L5     | RDP      | Remote Desktop Protocol                    | 3389             | TCP      | Vzdálená plocha (Windows)            | RDP klient                 |
+| L5     | HTTP Alt | Alternativní HTTP porty                    | 8080, 8008, 8090 | TCP      | Alternativní HTTP servery            | Vývojové servery           |
+
+**IP adresy**
+
+| Adresa/Prefix       | Typ  | Význam                       |
+| ------------------- | ---- | ---------------------------- |
+| 10.0.0.0/8          | IPv4 | Privátní síť (A)             |
+| 172.16.0.0/12       | IPv4 | Privátní síť (B)             |
+| 192.168.0.0/16      | IPv4 | Privátní síť (C)             |
+| 127.0.0.1           | IPv4 | Loopback (localhost)         |
+| 0.0.0.0             | IPv4 | Neznámá adresa / výchozí     |
+| 169.254.0.0/16      | IPv4 | Link-local (APIPA)           |
+| ::1                 | IPv6 | Loopback                     |
+| ::/128              | IPv6 | Neznámá adresa               |
+| ::/0                | IPv6 | Default route                |
+| FF00::/8            | IPv6 | Multicast                    |
+| FC00::/7 – FDFF::/7 | IPv6 | Privátní (unikátní lokální)  |
+| fe80::/10           | IPv6 | Link-local                   |
+| 2000::/3            | IPv6 | Globálně routovatelné adresy |
+| ::ffff:0:0/96       | IPv6 | Mapování IPv4 adres          |
+
+**Otazky z moodlu**
+	1.
+		- o MTU plati
+			- je to maximalni velikost dat kterou lze vlozit do jednoho ramce
+			- u ethernetu je to 1500
+			- u wifi 2312
+		- jednim z problemu na L2 je kdyz je ramec "rozmnozen" a dojde k zahlceni site, jaky je nazev
+			- Broadcast storm
+		- protokol ftp je na jakych protokolech
+			- 20 a 21
+		- ktere z informaci o udp jsou pravda
+			- hlavicka obsahuje kontrolni soucet
+			- udp nepotvrzuje dosle diagramy
+		- k vlnove delce v optickych siti se vazi pojmy
+			- lambda
+			- foto
+			- nanometr
+		- o smtp lze napsat
+			- pracuje na portu 25
+			- smtp vyuziva mta
+			- smtp pouziva standartne tcp komunikaci
+		- ktera z informaci jsou pravdive ve vztahu k velikosti okna
+			- velikost okna je dynamicka
+			- velikost okna stanovi kolik bajtu najednou je ocekavano prijemcem nez posle potvrzeni
+			- velikost okna se zvysuje pokud vsechny odeslane segmenty dorazi v poradku
+		- mezi vyhody NAPT patri
+			- snizuje nevyhody nedostatku ipv4
+			- skryti vice PC za jednu IP
+			- zvysuje bezpecnost
+			- potencionalni utocnik z vnejsi site se nemuze spojit s pocitacem pokud jako prvni neinicioval spojeni
+		- pri tcp komunikaci plati
+			- ACK = SEQ+1
+		- velikost hlavicky ethernetoveho ramce muze byt
+			- 14 bajtu
+			- 18 bajtu
+	- 2.
+		- wifi 6 vyuziva jaakou klicovou modulaci
+			- OFDMA
+			- Orthogonal Frequency Division Multiple Access
+		- ktera z nasledujicich je ipv4 c trida?
+			- 192.168.10.2
+		- o korenovych dns serverech plati
+			- jsou nejvyse v hierarchii dns stromu
+			- spravuje root zone database
+			- deli se do 13 skupin
+		- SSH vyuziva
+			- asymetricke sifrovani
+			- par verejneho a privatniho klice
+		- prepinaci tabulka neobsahuje
+			- metriku
+			- IP adresy
+		- vicevidovy opticky kabel je oproti jednovidovemu charakterizovan
+			- nizsi cena
+			- vetsi prumer svetlovodiveho jadra
+		- MAC adresa broadcastu je
+			- FF:FF:FF:FF:FF:FF
+		- WHOIS database poskytuje bezplatne inforamce o
+			- jmeno registratora
+			- nazev domeny
+			- expirace domeny
+			- stav domeny
+			- vlastnik domeny
+			- datum registrace
+		- ktera z nasledujicich je ekvivalent IPv4 adresy 127.0.0.1
+			- ::1/128
+		- link-local adresa
+			- ma rozsah fe80::/7
+			- nesmeruje se mimo segment
+	- 3.
+		- co je bssid
+			- mac adresa access pointu
+		- tld
+			- prvni
+			- nejvyssi
+		- spravce domeny pro eu
+			- eurid
+		- jakej cidr ma 1024 adres
+			- /22
+		- nepouzivana opticka komunikace
+			- dark fiber
+		- jake zaznamy ma dns
+			- mx
+			- a
+			- cname
+			- ns
+			- glue
+		- ftp
+			- pouziva tcp
+			- na prenaseni souboru
+			- aktivni pasivni mod
+		- jak se zapisuje ipv6
+			- 8x16 hexa
+			- 8x16 sestnackove
+		- co znamena cc u DNS
+			- country code
+		- v cem je delka hlavicky
+			- IHL
+		- jake jsou privatni rozsahy
+	- 4.
+		- je adresa 169.253.0.127 verejna?
+			- ano
+		- ktery protokol pouziva port tcp/21
+			- ftp
+		- AAAA zaznam je v teorii DNS
+			- ipv6 adresa
+		- jak dlouha je ipv6
+			- 128 bitu
+		- jaky je frekvencni rozsah IEEE 802.11a
+			- 5ghz
+		- WPA personal pouziva radius server k authentizaci uzivatele
+			- ne
+
+**Otazky na papir**
+	- Ipv6 linklocal stavova nestavova
+	- NAT/PAT
+	- RDP a NTS
+	- TCP
+	- IEEE 802.1x
+	- IEEE 802.11
+	- POE
+	- TTL
+	- Ipv6 privacy extansions
+	- Osi modul
+	- Optika
+	- Dark fiber
+	- HTTPS/3
+	- Switch
+	- DHCP
+	- EUI-64
