@@ -470,7 +470,7 @@
 				- 8 bitu
 			- Protocol
 				- protokol 4. vrstvy
-				- tcp nebo udp
+				- tcp, udp, atd.
 				- 8 bitu
 			- Header Checksum
 				- Kontrolni soucet hlavicky
