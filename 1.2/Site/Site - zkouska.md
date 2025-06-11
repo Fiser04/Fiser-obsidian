@@ -554,7 +554,7 @@
 							- kdyz najde tak prekope adresu do vnitrni podle tabulky
 							- kdyz nic nenajde tak packet zahazuje
 						- pri prepisu IP je nutne prepocitat kontrolni soucet
-				- NAT Travversal
+				- NAT Traversal
 					- proste dojdu a narvu do hlavicky dalsi kus, kterej se prelozi misto ty origo
 					- je to kvuli tomu ze ruzne aplikace pracuji s daty jako treba od kud to prislo
 	- IPv6
@@ -725,6 +725,7 @@
 			- tcp/25
 		- POP3
 			- stahuje emaily do kompu
+			- tcp/110
 		- IMAP
 			- ukazuje zpravy ktere jsou ulozene na serveru
 			- tpc/143
