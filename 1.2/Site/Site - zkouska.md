@@ -828,7 +828,7 @@
 		- DNS servery
 			- Root
 				- spravce urcuje IANA
-				- deli se do 13ti, 12 jich spravuje organizace
+				- deli se do 13ti skupin, 12 jich spravuje organizace
 				- v cr 7 ve skupinach D, F, J, K, L (praha)
 			- Top-Level
 				- staraji se o danou domenu (pr .cz)
@@ -1170,18 +1170,203 @@
 
 **Otazky na papir**
 	- Ipv6 linklocal stavova nestavova
+		- je na L3
+		- linklocal
+			- slouzi k automaticke konfiguraci
+			- hledani sousedu
+			- hledani routeru
+		- stavova
+			- ma dhcpv6
+		- nestavova
+			- nema dhcpv6
 	- NAT/PAT
+		- je na L3
+		- NAT
+			- preklad mistni ip adresy na verejnou
+			- problem je kdyz existuje omezeny pocet adres
+			- staticka
+				- stejna adresa po kazde
+			- dynamicka
+				- volna adresa po kazde
+		- PAT
+			- reseni problemu nizkeho poctu adres
+			- misto toho aby kazda lokalni mela svuj verejny ekvivalent tak na vsechny mistni adresy patri jedna verejna
+			- router ma tabulku mistnich adres a jedne verejne+port
+			- kdyz chci komunikovat ven tak mi router prideli port, zapise to a komunikuju
+			- kdyz chci do vnitr tak router se podiva na port, kdyz tam je tak to posle na ekvivalent v mistni adrese podle tabulky, jinak zahazuje
 	- RDP a NTS
+		- je na L8 (aplikacni)
+		- RDP
+			- remote desktop control
+			- tcp/3389
+			- "ssh s gui"
+			- pro vzdalene ovladani pocitace pomoci grafickeho rozhrani
+		- NTS
+			- network time service
+			- udp/123
+			- synchronizace casu na siti
 	- TCP
+		- pomaly ale bezpecny protokol
+		- nejdrive vytvori spojeni s druhou stranou
+		- po navazani spoje zacina komunikace ktera musi byt potvrzovana
+		- je na L4
+		- rusi se spojeni ve stylu *hale, ja s tebou neka*, *ok, ale ja s tebou taky neka*, *ok*
+		- resi poradi, po tom co vse prijde tak to seradi
+		- halvicka
+			- zdroj port
+			- cil port
+			- cislo fragmentu
+			- potvrzeni
+			- kontrola chyb
+		- zname protokoly
+			- 20,21 ftp
+			- 22 ssh
+			- 23 telnet
+			- 25 smtp
+			- 80 http
+			- 110 pop3
+			- 143 imap
+			- 443 https
+			- 465 smtps
+			- 993 imaps
+			- 995 pop3s
 	- IEEE 802.1x
+		- RADIUS
+		- authentizace
+		- pripojim komp, switch port zablokuje az na EIA (bezpecnostni protokol), na kompu pusti prognam co komunikuje s EIA, pak se overi na RADIUSu ze data ktera uzivatel zadal jsou spravne a oznami to switchi, switch port odblokuje a uzivatel je na siti
+		- funguje take jako dvoufazova authentizace na wifi
 	- IEEE 802.11
+		- bezdrat internet, proste wifi
+		- sirime jej na rozdil od kabelu radiove vlny
+		- 2 hlavni typy frekvenci (asi by se to dalo pojmenovat lepe)
+			- 2,4 GHz
+				- jde po 20 MHz
+				- delka je 12,5cm
+			- 5 GHz
+				- jde po 20 MHz
+				- delka je 6cm
+				- vykon o 1W
+		- verze
+			- 802.11
+				- 2,4ghz a 2Mb/s
+			- a
+				- 5ghz a 54Mb/s
+			- b
+				- 2,4ghz a 11Mb/s
+			- g
+				- 2,4ghz a 54Mb/s
+			- n
+				- 2,4 a 5ghz a 150Mb/s
+			- ac
+				- 5ghz a 400Mb/s
+		- je potreba pro sireni a prijmani antena
+			- jsou ruzne typy podle smeru
+			- nakreslim
+		- rychlost a kvalita spojeni zavisi na fyzice spojena s radiovymi vlnami
+			- ala pruchodnost materialem, odrazeni, vzajemne ruseni, sum v pozadi, atd.
+		- je mnohem vice sumu (anomalii) nez u kabelovych reseni
+		- hledani signalu
+			- aktivni
+				- hlasam *hej je tu nekde nejaka wifina?*
+				- dost to zere baterku
+			- pasivni
+				- cekam az nekdo oznami ze tu je
 	- POE
+		- power over ethernet
+		- napajeni zarizeni pomoci rj-45
+		- casto treba kamery ci dalsi nizkonarokova zarizeni
+		- napaji se pres nepouzivane draty na metalice
+		- FUNKCNI JEN S METALIKOU, ostatni typy spojeni nemaji jak ci by to bylo nebezpecne, optika nevede napeti a u bezdratu by asi jen jako kdyby se podarilo vytvorit mikrovlnku ktera by nebyla nebezpecna a mit nejaky zarizeni ktere by toto vlneni zachytavalo
 	- TTL
+		- time to live
+		- pro sitovou vrstvu
+			- pocet skoku po kterem kdyz dojde na 0 tak zpravu zahazuji
+			- tak trochu ochrana proti broadcast storm, kde packet po uplynuti dosti skoku proste umre
+			- dale aby packet proste necestoval do nekonecna po siti
+			- casto je to 64 nebo 128, zalezi na operaku, cisco ma 255
+		- pro dns
+			- jak dlouho bude mit resolver ulozeny data
 	- Ipv6 privacy extansions
+		- vytvoreni docasne ipv6, z duvodu ze neni zrovna nejlepsi napad sirit svoji ipv6 z mac adresy
 	- Osi modul
+		- aplikacni (uzivatelem pristupna)
+		- prezentacni
+		- relacni
+		- transportni (protokoly)
+		- sitova (ip adresy)
+		- linkova (mac adresy)
+		- fyzicka (samotny prenos)
 	- Optika
+		- svetlem prenasene signaly
+		- fyzika
+			- lambda
+				- barva svetla
+				- vlnova delka
+			- index lomu
+				- jak moc se zpomaly svetlo v materialu
+			- vzorec
+				- rychlost v materialu = rychlost v vakuu/index zlomu
+				- index zlomu ve vakuu = 1
+				- v optice = 1,45
+		- jadro je stvoreno s kremikoveho skla, kolem nej je vysoce odrazivy material
+		- optika prinasi mnohem vetsi vzdalenosti a rychlosti
+		- vicevidove
+			- 50-62,5 mikrometru
+			- posilam vice signalu naraz pod ruznymi uhli a ruznou delkou
+			- 800nm-1310nm
+			- gradiantni
+				- misto paprsku co se odrazi tak dela sinusoidu
+				- vlakno je tvoreno skalou indexu lomu
+		- jednovidove
+			- 9 mikrometru
+			- 1300nm-1550nm
+			- mnohem vetsi zdalenosti nez u vicevidoveho
+			- jen jeden signal najednou
+			- drazsi
+		- optika je mnohem vic krehka nez metalika, nemuzeme ji tak ohybat, natahovat, atd.
+			- proto na vysku pouzivame kevlar ktery zabrani roztahovani materialu a popraskani vlakna
+			- na sirku pouzivame gel, ktery nam vlakno chrani pred pohyby pudy treba
+		- opticky kabel se sklada z vice optickych vlaken ktere jsou ve vlastnich trubickach, maximalni pocet bez trubicek je 12
+		- fyzicka vrstva
 	- Dark fiber
+		- nenasvicene opticke vlakno
+		- casto jako zalozni plan aby se nestal incident "sefe me se asi neco nepovedlo, ja jsem presekl nejaky kabel" a kvuli jednomu kabelu nepujde nic
+		- fyzicka vrstva
 	- HTTPS/3
+		- prvni http protokol vyuzivajici QUIC
+			- predelany udp aby byl vice bezpecny
+			- snaha o odstraneni tcp z duvod, ze je tcp pomaly, hlavne teda o zruseni handshaku
+			- podminkou pro beh je tls 1.3
+		- prosadil ho google v 2022
+		- aplikacni vrstva
+		- http -> port 80
+		- https -> port 443
 	- Switch
+		- takzvany prepinac
+		- linkova vrstva
+		- aktivni prvek na siti, propojujici zarizeni a dalsi aktivni prvky, ale na rozdil od sveho starsiho pribuznyho jmenem hub, ktery vse posilal vsem, takze za A bylo sakra jednoduche poslouchat co se deje na siti a za B vytvareli se hrozne jednoduse kolize, tento prepinac vyuziva prepinaci tabulku do ktere si zapisuje na jakem portu je jaka MAC adresa a podle toho se rozhoduje na jaky port posle ramec, pokud nezna takouvou MAC adresu tak se zachova jako hub, vetsinou prijde i odpoved od toho komu bylo posilano, takze si switch zapise ze na portu x je adresa 22-22-22-22-22-22 a nebude zpravy cilene na 22:22:22:22:22:22 posilat vsem ale jen na ten jeden port
+		- dale umoznuje i VLAN
+			- virtualni lokalni sit
+			- rozdeleni jedne site do vice podsite a odriznout komunikaci mezi nimi, rozdeli je do svych svetu
+			- ale aby misto toho aby se pouzival propojovaci kabel mezi kazdym dalsim switchem pro kazdou jednu vlan (nakres), tak existuje moznost nastavit trunk
+			- do hlavicky se pridaji 4 bajty pro vlan, tudiz hlavicka nema 14 (mac od 6, mac kam 6 a typ/delka 2) bajtu ale 18
+		- dale zesiluje signal (stejne jako repeater - opakovac)
 	- DHCP
+		- automaticka konfigurace sitoveho nastaveni
+		- prvni pripojeni zarizeni na sit
+			- dhcp-discover
+				- *hej, je tu nejaky dhcp?*
+			- dhcp-offer
+				- *jo, chces takovyhle nastaveni?*
+			- dhcp-request
+				- *jo dej mi*
+			- dhcp-ack
+				- *ok, tady mas nastaveni ktery muzes pouzivat*
+		- bezi na upd/67 a upd/68
+		- typy zapisu
+			- staticky
+				- po obnove nastaveni zustava ip adresa stejna
+				- pouziva se treba na tiskarny
+			- dynamicky
+				- 
 	- EUI-64
