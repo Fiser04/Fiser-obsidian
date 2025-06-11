@@ -41,7 +41,7 @@
 			- komunikace jen jednim smerem
 		- Half-duplex
 			- komunikace obou smery ale ne najednou
-		- Full duplex
+		- Full-duplex
 			- obousmerna komunikace
 	- metalika
 		- barvy (T568B)

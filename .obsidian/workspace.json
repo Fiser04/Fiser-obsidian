@@ -1,103 +1,75 @@
 {
   "main": {
-    "id": "14e04feefab7294d",
+    "id": "9c7a1dc04d069565",
     "type": "split",
     "children": [
       {
-        "id": "b375cd2f77756f09",
+        "id": "b988b2bae18d3d31",
         "type": "tabs",
         "children": [
           {
-            "id": "81e45c425ef9224e",
+            "id": "69c138878a44782f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fiser/1.2/Bezbecnost/3.3.2025 - Information security management system.md",
+                "file": "Fiser-obsidian/1.2/Site/Poznámky na zápočet.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3.3.2025 - Information security management system"
+              "title": "Poznámky na zápočet"
             }
           },
           {
-            "id": "792ddddb69bd39b9",
+            "id": "d03bd0d75ea70304",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fiser/1.2/Databaza/5.3.2025.md",
+                "file": "Fiser-obsidian/1.2/Site/random.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "5.3.2025"
+              "title": "random"
             }
           },
           {
-            "id": "992ebdecadcbfee5",
+            "id": "c2b66962353dbb47",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fiser/1.2/Databaza/26.2.2025.md",
+                "file": "Fiser-obsidian/1.2/Site/Site - zkouska.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "26.2.2025"
-            }
-          },
-          {
-            "id": "6907738f875d9b5f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Fiser/1.2/Databaza/DU/5.3.2025 - DU-3.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "5.3.2025 - DU-3"
-            }
-          },
-          {
-            "id": "b6303ef8969e64ab",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1.2/Databaza/DU/12.3.2025 - DU-4.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "12.3.2025 - DU-4"
+              "title": "Site - zkouska"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "d35230525196b27d",
+    "id": "7484f3981d0ee72f",
     "type": "split",
     "children": [
       {
-        "id": "97ea8741264a7c08",
+        "id": "1d330bb742800917",
         "type": "tabs",
         "children": [
           {
-            "id": "8988693fe429e0aa",
+            "id": "c31a67d5713775bd",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byCreatedTimeReverse",
+                "sortOrder": "alphabetical",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -105,7 +77,7 @@
             }
           },
           {
-            "id": "cca2de8d7ce5bd74",
+            "id": "ea34c5c08d77bb2c",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -122,7 +94,7 @@
             }
           },
           {
-            "id": "2fae2be1baca353d",
+            "id": "6ac71c0b2a790294",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -135,23 +107,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 323.5
+    "width": 354.5
   },
   "right": {
-    "id": "c40310a9bb677104",
+    "id": "1189d731d6205739",
     "type": "split",
     "children": [
       {
-        "id": "e13a21cfc943dd78",
+        "id": "bd458ed943bb8030",
         "type": "tabs",
         "children": [
           {
-            "id": "fa58a200d9f7f0a0",
+            "id": "361fb885b300eafa",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programovani pro AI/Java/Prvni seznameni s Java.md",
+                "file": "Fiser-obsidian/1.2/Bezbecnost/Samostatné práce/Bezpecnostni politika.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,46 +133,51 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Prvni seznameni s Java"
+              "title": "Backlinks for Bezpecnostni politika"
             }
           },
           {
-            "id": "10af4b642eaec206",
+            "id": "a4eddaa7a12ef233",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programovani pro AI/Java/Prvni seznameni s Java.md",
+                "file": "Fiser-obsidian/1.2/Bezbecnost/Samostatné práce/Bezpecnostni politika.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Prvni seznameni s Java"
+              "title": "Outgoing links from Bezpecnostni politika"
             }
           },
           {
-            "id": "047a7d1a4a051755",
+            "id": "2b3bb8e73e198a52",
             "type": "leaf",
             "state": {
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "Tags"
             }
           },
           {
-            "id": "cb3f9549df86b8b0",
+            "id": "4c62099fc7667cc6",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programovani pro AI/Java/Prvni seznameni s Java.md"
+                "file": "Fiser-obsidian/1.2/Bezbecnost/Samostatné práce/Bezpecnostni politika.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Prvni seznameni s Java"
+              "title": "Outline of Bezpecnostni politika"
             }
           }
         ]
@@ -220,53 +197,47 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8988693fe429e0aa",
+  "active": "c2b66962353dbb47",
   "lastOpenFiles": [
-    "1.2/Databaza/obr/Pasted image 20250312162756.png",
-    "1.2/Databaza/DU/5.3.2025 - DU-3.md",
-    "1.2/Databaza/DU/12.3.2025 - DU-4.md",
-    "1.2/Databaza/12.3.2025.md",
-    "1.2/Databaza/obr/Pasted image 20250312154557.png",
-    "1.2/Databaza/26.2.2025.md",
-    "1.2/Databaza/5.3.2025.md",
-    "Du3 1.drawio",
-    "1.2/Databaza/obr/Pasted image 20250312143250.png",
-    "Pasted image 20250311204823.png",
-    "du3.drawio",
-    "1.2/Databaza/Styly.md",
-    "1.2/OS/3.3.2025 - planovani.md",
-    "1.2/Site/7.3.2025 - Linkova vrstva.md",
-    "1.2/Bezbecnost/3.3.2025 - ISMS poznamky.md",
-    "1.2/Bezbecnost/3.3.2025 - Information security management system.md",
-    "1.2/Bezbecnost/24.2.2025 - Analyza ryzik.md",
-    "1.2/Bezbecnost/obr/ISMS.pdf",
-    "1.2/Bezbecnost/17.2.2025 - Uvod.md",
-    "1.2/Site/28.2.2025 - kabely.md",
-    "1.2/Site/materialy",
-    "1.2/Site/materialy/PSI-Link.vrstva.pokr.-Vohnout-v2024-Moodle.pdf",
-    "1.2/Site/materialy/PSI-Link.vrstva-Vohnout-v2024-Moodle.pdf",
-    "1.2/Site/obr/Pasted image 20250307122045.png",
-    "1.2/Site/obr/Pasted image 20250307115333.png",
-    "1.2/Site/obr",
-    "1.2/Site/obr/Pasted image 20250307115729.png",
-    "1.2/Site/obr/Pasted image 20250307115352.png",
-    "1.2/Databaza/DU/27.2.2025 - DU-2.md",
-    "1.2/Databaza/obr/Pasted image 20250306130026.png",
-    "1.2/Databaza/obr/Pasted image 20250305153903.png",
-    "1.2/Databaza/obr/Pasted image 20250305153534.png",
-    "Fiser/1.2/OS/planovani synchronizace.md",
-    "1.2/Databaza/DU/20.2.2025 - DU-1.md",
-    "DU1.drawio",
-    "1.2/Databaza/DU/DU1.drawio",
-    "Fiser",
-    "1.1/Imperativni.md",
-    "1.1/Programovani pro AI/Java/Navrhovani trid.md",
-    "1.1/Programovani pro AI/Java/Objektove programovani.md",
-    "1.1/Zaklady Matiky/Vyrokova logika.md",
-    "1.1/Zaklady Matiky/Spojky.md",
-    "1.1/Zaklady Matiky/Sematika.md",
-    "1.1/Zaklady Matiky/Normalni tvar formule.md",
-    "1.1/Zaklady Matiky/Negace slozenych vyroku.md",
-    "1.1/Zaklady Matiky/Matematicka logika.md"
+    "Fiser-obsidian/1.2/Site/Poznámky na zápočet.md",
+    "Fiser-obsidian/1.2/Site/random.md",
+    "Fiser-obsidian/1.2/Site/Site - zkouska.md",
+    "Fiser-obsidian/1.2/Bezbecnost/Samostatné práce/2 - Zabezpečení síťových služeb.md",
+    "Fiser-obsidian/1.2/Bezbecnost/Samostatné práce/3 - Souborový systém.md",
+    "Fiser-obsidian/1.2/Bezbecnost/Poznámky z přednášek/6) Opatreni proti utokum prostrednictvim klientu - 28.4.2025.md",
+    "Fiser-obsidian/1.2/Bezbecnost/Poznámky z přednášek/7) Reakce na incident - 5.5.2025.md",
+    "Fiser-obsidian/1.2/Bezbecnost/Poznámky z přednášek/7) IDS, IPS, Honeypot - 5.5.2025.md",
+    "Fiser-obsidian/1.2/Bezbecnost/Poznámky z přednášek/4) Authentizace - 24.3.2025.md",
+    "Fiser-obsidian/1.2/Bezbecnost/Poznámky z přednášek/5) Logovani a auditing - 14.4.2025.md",
+    "Fiser-obsidian/1.2/Bezbecnost/Poznámky z přednášek/4) Zvyseni bezpecnosti uzivatelskych uctu - 24.3.2025.md",
+    "Fiser-obsidian/1.2/Bezbecnost/Poznámky z přednášek/6) Fyzicka bezpecnost - 28.4.2025.md",
+    "Fiser-obsidian/1.2/Site/obr/Pasted image 20250610144851.png",
+    "Fiser-obsidian/1.2/Site/obr/Pasted image 20250610145403.png",
+    "Fiser-obsidian/To do - java.md",
+    "Fiser-obsidian/1.2/Site/3 - 28.3.2025 - IP.md",
+    "Fiser-obsidian/1.2/Site/obr/Pasted image 20250609153314.png",
+    "Fiser-obsidian/1.2/Site/obr/Pasted image 20250609143229.png",
+    "Fiser-obsidian/1.2/Site/priprava na zkousku.md~",
+    "Fiser-obsidian/1.2/Databaza/otazky ke zkousce.md",
+    "Fiser-obsidian/1.2/Databaza/Prednasky/4 - 26.3.2025.md",
+    "Fiser-obsidian/1.2/Databaza/Prednasky/11 - 7.5.2025.md",
+    "Fiser-obsidian/1.2/Databaza/Prednasky/7 - 10.4.2025.md",
+    "Fiser-obsidian/1.2/Databaza/Prednasky/3 - 12.3.2025.md",
+    "Fiser-obsidian/1.2/Databaza/Prednasky/2 - 5.3.2025.md",
+    "Fiser-obsidian/1.2/Databaza/Prednasky/1 - 26.2.2025.md",
+    "Fiser-obsidian/1.2/Databaza/Prednasky/10 - 30.4.2025.md",
+    "Fiser-obsidian/1.2/Databaza/Prednasky/9 - 23.4.2025.md",
+    "Fiser-obsidian/1.2/Databaza/Prednasky/8 - 16.4.2025.md",
+    "Fiser-obsidian/1.2/Databaza/Prednasky/12 - 14.5.2025.md",
+    "Fiser-obsidian/1.2/Databaza/Prednasky/6 - 9.4.2025.md",
+    "Fiser-obsidian/1.1/Zaklady Matiky/Predikatova logika.pdf",
+    "Fiser-obsidian/1.2/Bezbecnost/obr/Pasted image 20250416182307.png",
+    "Fiser-obsidian/1.2/Bezbecnost/obr/Pasted image 20250416181805.png",
+    "Fiser-obsidian/1.2/Bezbecnost/obr/Pasted image 20250416171507.png",
+    "Fiser-obsidian/1.2/Bezbecnost/obr/Pasted image 20250303175132.png",
+    "Fiser-obsidian/1.2/Bezbecnost/obr/Pasted image 20250303175114.png",
+    "Fiser-obsidian/1.2/Bezbecnost/obr/Pasted image 20250224171704.png",
+    "Fiser-obsidian/1.2/Databaza/databazen.drawio",
+    "Fiser-obsidian/1.2/Databaza/Script-1.sql"
   ]
 }

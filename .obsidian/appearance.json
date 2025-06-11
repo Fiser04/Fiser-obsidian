@@ -1,6 +1,9 @@
 {
-  "theme": "moonstone",
-  "accentColor": "",
-  "cssTheme": "Spectrum",
-  "baseFontSize": 19
+  "theme": "obsidian",
+  "accentColor": "#ffd70f",
+  "interfaceFontFamily": "JetBrains Mono",
+  "textFontFamily": "JetBrains Mono",
+  "monospaceFontFamily": "",
+  "cssTheme": "Obsidian gruvbox",
+  "baseFontSize": 20
 }
