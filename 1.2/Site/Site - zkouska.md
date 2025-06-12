@@ -1368,5 +1368,13 @@
 				- po obnove nastaveni zustava ip adresa stejna
 				- pouziva se treba na tiskarny
 			- dynamicky
-				- 
+				- po ztrate dava volnou adresu
 	- EUI-64
+		- convert mac to ipv6
+		- vznika unikatni ipv6, protoze mac je unikatni
+		- vemu adresu 11:22:33:44:55:66
+		- roztrham to na pul, takze mam 11:22:33 a 44:55:66
+		- a vemu 7 pozici prvniho oktetu a tu invertuju
+		- takze 11 je 0001 0001 takze z toho bude 0001 0011 -> 13
+		- do mezery mezi pulkami vlozim ff:fe
+		- takze to vypada pak ::1322:33ff:fe44:5566
