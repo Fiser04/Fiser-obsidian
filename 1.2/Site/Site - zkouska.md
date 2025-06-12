@@ -141,7 +141,7 @@
 			- vzorec$$V=\frac{c}{n}$$  - V -> rychlost svetla v materialu
 				- c -> rychlost svetla v vakuu
 					- 299792458 m/s
-				- n -> indx lomu
+				- n -> index lomu
 		- obecne
 			- vedeme misto eletrickeho signalu svetlo
 				- 1 = svetlo, 0 = zadne svetlo (bez modulace)
@@ -156,11 +156,11 @@
 		- struktura optickeho vlakna
 			- stred je ze kremikoveho skla
 			- okolo nej je vysoce odrazny material
-			- dale uz jsou ochrane prvky jako treba preskyrice, kevlar, gel, nehorlavy plast, atd.
 		- opticky kabel
 			- tvori ji hromada vlaken ktere jsou v mikrotrubickach
 				- existuji i monokabely
 					- nejsou mikrotrubicku, casto 12 vlaken
+			- dale uz jsou ochrane prvky jako treba preskyrice, kevlar, gel, nehorlavy plast, atd.
 		- vice-vidovy
 			- vetsi prumer stredu (50 - 62 mikronu)
 			- vetsi utlum *takze ok na kratsi vzdalenost*
@@ -417,15 +417,15 @@
 		- DIAMETER
 			- naslednik RADIUSU
 			- pouziva TCP
-		- PowerLine/Homeplug
-			- ethernet pres eletricke vedeni
-		- POE
-			- power over ethernet
-			- pasivni
-				- proste to posila vzdy stejne
-				- kdyz tam zapojim neco co to nechce tak to zhori
-			- aktivni
-				- nejdrive probehne "vyjednavani" o kolik a jestli vubec to bude
+	- PowerLine/Homeplug
+		- ethernet pres eletricke vedeni
+	- POE
+		- power over ethernet
+		- pasivni
+			- proste to posila vzdy stejne
+			- kdyz tam zapojim neco co to nechce tak to zhori
+		- aktivni
+			- nejdrive probehne "vyjednavani" o kolik a jestli vubec to bude
 
 **L3 - Sitova vrstva osi modulu**
 	- IPv4
@@ -1055,6 +1055,7 @@
 | fe80::/10           | IPv6 | Link-local                   |
 | 2000::/3            | IPv6 | Globálně routovatelné adresy |
 | ::ffff:0:0/96       | IPv6 | Mapování IPv4 adres          |
+![[Pasted image 20250612163056.png]]
 
 **Otazky z moodlu**
 	1.
@@ -1170,6 +1171,15 @@
 
 **Otazky na papir**
 	- Ipv6 linklocal stavova nestavova
+		- ipv6
+			- 8x16
+			- bylo moc malo ipv4
+			- 128 bitu
+			- AAAA zaznam
+			- jednodusi hlavicka
+			- nedelaji se podsite
+			- dhcp6
+			- vestaveny system kontroli volne adresy
 		- je na L3
 		- linklocal
 			- slouzi k automaticke konfiguraci
