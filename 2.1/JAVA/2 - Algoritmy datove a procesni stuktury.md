@@ -1,0 +1,57 @@
+- zaklady algoritmu
+	- algoritmus -> presny navod/postup
+	- casteji se setkame s planem (neni na nej kladen takovy pozadavek)
+	- z planu pak prevest na algoritmus (jednoduse receno)
+	- hlavni znaky
+		- rezultativnost - ma cil
+		- konecnost - ma konec
+		- determinismus - je jasne v kazdem okamziku co se deje a co bude (error handaling)
+		- elementarnost - pouziti zakladnich procedur (kroku), aby ten cil to dokazal chapat (1+1 vs udelej mi prumer z ...)
+		- ? efektivnost - minimalni pouziti casu pro vzladnuti ukolu (viz O(n))
+		- ? hromadnost a univerzalita - vyuziti algoritmu na vice veci (neudelam 1+1, ale kalkulacku co umi scitat)
+
+- procesni struktury
+	- to jak data spracovavam
+
+- kroky pri vytvareni algoritmu 
+	- zakladni
+		- vykonny/operacni krok
+			- cinnost ve stylu jako jdi_vpred, c=a+b
+		- prikaz skoku v algoritmu
+			- skok vpred/vzad
+			- v jave implementovano v while a for
+		- vetveni/rozhodovaci
+			- if, switch case
+	- rozsireny
+		- poskladane z jinych
+		- cyklus
+			- opakovani
+		- vstup a vystup
+			- podobaji se vykonnym krokum
+			- System.in, System.out
+
+- datove struktury
+	- resi mi data
+
+- ukladani dat
+	- pametovy prostor pro data
+		- bere v uvahu typ (kvuli efektivite, int vs String)
+	- promena
+		- pametove misto k ukladani dat pri behu
+		- obsah lze zmenit
+	- konstanta
+		- promena s jen READ pravy
+	- oznacovani
+		- x, vek, nasobicHlavniHodnoty
+
+- dostupnost dat
+	- promene
+		- globalni
+			- lze pracovat vsude (this.promena)
+		- lokalni
+			- zustava a zanika po konci algoritmu
+	- podle kdy vznika
+		- staticka (nemysleno static v jave)
+			- defakto na zacatku, u kterych znam
+		- dynamicka
+			- postupne si je vytvarim
