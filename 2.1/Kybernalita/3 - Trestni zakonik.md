@@ -1,0 +1,15 @@
+### Zákony:
+- **Zákon č. 40/2009 Sb. Trestní zákoník**
+  - §230 Neoprávněný přístup k počítačovému systému a nosiči informací
+  - §231 Opatření a přechovávání přístupového zařízení a hesla k počítačovému systému a jiných takových dat
+  - §232 Poškození záznamu v počítačovém systému a na nosiči informací a zásah do vybavení počítače z nedbalosti
+  - §182 Porušení tajemství dopravovaných zpráv
+- **Zákon o ochraně osobních údajů**
+  - „Osobním údajem jakákoliv informace týkající se určeného nebo určitelného subjektu údajů...“
+- **Zákon o kybernetické bezpečnosti (NBÚ)**
+  - Základním cílem zákona je zvýšit bezpečnost kybernetického prostoru...
+- **GDPR - Obecné nařízení o ochraně osobních údajů**
+- **ISO/IEC 2700X (27000, 27001, ... )**
+  - Mezinárodní standard definující požadavky na systém managementu bezpečnosti informací.
+- **U.S. Federální zákon**
+- **SOX (Sarbanes-Oxley Act of 2002)**
