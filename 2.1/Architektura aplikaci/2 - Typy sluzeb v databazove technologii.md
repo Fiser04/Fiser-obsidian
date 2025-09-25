@@ -1,0 +1,18 @@
+- sluzby ovladani souboru
+	- input output
+- datove sluzby
+	- transakce, manipulace
+	- uloz() (formular)
+- logika dat
+	- podpora operaci s daty
+	- if()
+	- integritni omezeni (vek nemuze bej zapor)
+		- integrita podle reality
+	- zkontroluj()
+- logika aplikace
+	- pridej() (formular)
+- prezentacni logika
+	- rizeni interakce 
+	- jak se ma chovat program (skakani mezi okny)
+- prezentacni sluzby
+	- user interface (gui, cli)

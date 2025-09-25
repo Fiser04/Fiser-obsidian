@@ -1,0 +1,40 @@
+![[Pasted image 20250925121023.png]]
+- Popis projektu
+	- cil projektu
+		- zprovozneni carsharingu
+	- ucel projektu
+		- snizeni uhlikove stopy, volnejsi parkoviste
+	- vystupy
+		- mobilni aplikace
+		- IT prostredky pro spravne fungovani aplikace (server, atd.)
+	- cinnosti
+		- sestaveni teamu
+		- analiza navrhu (analitika)
+		- pokud je potreba, tak vyberove rizeni o hardwaru (servery atd.)
+		- hledani nekoho kdo vytvori aplikaci
+		- testovani faze
+		- pilotni faze
+			- "misto abych nakoupil zarizeni a aplikoval reseni, tak proste tam nekoho poslu aby z nej udelal to cidlo (kontroluju zaplnenost popelnic, tak poslu charyho aby mi do excelu zapisoval by ocko jak moc je zaplnena)
+		- produkce faze
+		- dale tam patri
+			- zaskoleni
+			- marketing
+			- prevedeni uz znamych dat do noveho systemu
+- Objektivne overetelne ukazatele
+	- cil projektu
+		- uhlikova stopa se snizila az o x%
+	- vystupy
+		- schvaleni konz
+			- zadavatel a dodavatel
+- Prostredky overeni
+	- cil projektu
+		- porovnam uhlikovou stopu meho auta za x kilometru s nejakou 100 letou ojetinou (a nebo jako apple, moje auto vs tiger 2)
+	- vystupy
+		- podepsana smlouva
+	- dale treba treti osoba
+- Predpoklady
+	- nejake prostredky
+	- milniky za sebou
+	- potvrzeni od vedeni
+
+DU - logickej ramec na car-sharing

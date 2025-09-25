@@ -1,0 +1,18 @@
+- Klient/server se vzdakenymi daty
+	 - ![[Pasted image 20250924085107.png]]
+	- potreba silnejsi klient
+- Klient/server se vzdalenou prezentaci
+	- ![[Pasted image 20250924085134.png]]
+	- potreba silnejsi server
+- Klient/server s rozdelenou logikou
+	- ![[Pasted image 20250924085146.png]]
+	- kdyz server nestiha, tak se zapoji klient do prace
+- Trivrstva architektura
+	- ![[Pasted image 20250924085157.png]]
+	- ve svete javy
+		- oracle - tomcat - jfx/swing
+	- ve svete c#
+		- mssql - iis - win forms
+	- ve svete php
+		- mysql - apache - php
+	- ziskavam rozlozeni zateze

@@ -1,0 +1,25 @@
+ - proc se delaji modeli
+	 - aby bylo "propojeni" mezi zakaznikem a vyvojari
+- co kdyz zadavatel tolik nevi co chce
+	- "chteli kravin maj veprin"
+- druhy zadani
+	- pisemne
+		- neni to jednoznacne
+	- diagram
+		- casto se z toho stavaji takovy omalovanky a moc nejde zachytit myslenku, ALE mnohem jednoznacnejsi nez pisemna forma
+- proces
+	- opakovatelna cinnost
+- projekt
+	- uloha co ma cil (konecny)
+	- je jedinecni
+	- ma nejakou cenu
+	- "soustredeni usili dane skupiny osob, ktere za pouziti danych protredku, se snazi dosahnout daneho cile" 
+		- 3 casti - lidi, zdroje, cil
+- jak s vytvarenim
+	- hruba predstava zadavatele
+	- studie proveditelnosti
+		- zakladni nabidka od firmy
+		- za kolik to cca bude
+		- jake jsou moznosti, atd.
+	- zacina prace
+
