@@ -17,3 +17,10 @@
 	 - seznamit s zakladnimi znalosti
 	 - vysvetlit slozitejsi latku pomoci zakladnich znalosti
 
+- hledani klicu
+	- if(klice.pozice.equals(kapsa))
+		- sout(klice jsou v kapse)
+	- elseif(klice.pozice.equals(stul))
+		- sout(klice na stole)
+	- else
+		- sout(klice jsou v lednici)
