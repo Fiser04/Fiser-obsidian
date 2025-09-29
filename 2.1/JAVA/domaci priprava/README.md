@@ -1,0 +1,145 @@
+# LearningJava
+ - [Java Full Course for free ☕ (2025) by Bro Code](https://www.youtube.com/watch?v=xTtL8E4LzTQ)  
+     - Den 1 -> 00:00:00 - 00:47:24
+         - printing
+         - variables
+         - user inputs (Scanner)  
+     - Den 2 -> 00:47:24 - 01:27:28
+         - ⭐ game mad libs (procviceni scanneru)
+         - aritmeticke operace
+         - ⭐ shopping cart (procviceni scanneru)
+         - if Statments
+         - RNG
+     - Den 3 -> 01:27:28 - 02:10:19
+         - java.math
+         - vyuziti matematiky (c^2 = ...)
+         - printf
+         - ⭐ kalkulacka uroku (procviceni matematiky)
+         - vnoreny if statments
+     - Den 4 -> 02:10:19 - 02:49:05
+         - methody stringu
+         - ⭐ roztrhavac emailu(substring)
+         - ⭐ prevodnik vahy
+         - ternarni operator
+         - ⭐ prevodnik teplot (procviceni ternarni operatoru)
+     - Den 5 -> 02:49:05 - 03:33:46
+         - enchanced switches
+         - ⭐ kalkulacka (procviceni enchanced switches)
+         - logicke operace
+         - ⭐ overeni pouziti uzivatelskeho jmeno (procviceni logickych operaci)
+         - while loop
+     - Den 6 -> 03:33:46 - 04:19:51
+         - ⭐ hadani cisel (procviceni while loop)
+         - for loop
+         - ⭐ odpocet (procviceni for loop)
+         - break, continue
+         - vnoreny loop
+         - ⭐ vyplneni plochy (procviceni vnoreny loop)
+         - methody a argumenty
+     - Den 7 -> 04:19:51 - 05:03:25
+         - overloaded methods
+         - sdilene variables
+         - ⭐ program banky (procviceni method)
+         - ⭐ hazeni kostkou (procviceni method)
+     - Den 8 -> 05:03:25 - 05:44:12
+         - pole
+         - input do pole
+         - hledani v poli
+         - varargs (int... num)
+         - 2d pole
+         - ⭐ telefon (procviceni 2d pole)
+     - Den 9 -> 05:44:12 - 06:15:02
+         - ⭐ kviz (procviceni pole a 2d pole)
+         - ⭐ kamen nuzky papir
+     - Den 10 -> 06:15:02 - 06:41:46
+         - ⭐ hraci automat
+     - Den 11 -> 06:41:46 - 07:14:07 
+         - objekty
+         - konstruktory
+         - overloaded konstruktory
+         - pole objektu
+     - Den 12 -> 07:14:07 - 07:51:58
+         - static
+         - dedicnost
+         - super
+         - prepisovani method (@Override)
+         - toString methoda
+     - Den 13 -> 07:51:58 - 08:19:35
+         - abstract
+         - interface
+         - polymorphism
+         - polymorphism pomoci interface
+         - runtime/dynamic polymorphism
+     - Den 14 -> 08:19:35 - 09:05:28
+         - getter & setter
+         - agregace
+         - kompozice
+         - wrapper classes
+             - autoboxing
+             - unboxing
+             - parsovani
+             - kontrolovani
+         - ArrayList
+         - ⭐ nakupni seznam (ArrayList kombinace s Scanner)
+     - Den 15 -> 09:05:28 - 09:43:10
+         - exception
+         - zapisovani do souboru
+             - FileWriter (pouzito)
+             - BufferedWriter
+             - PrintWriter
+             - FileOutputStream
+         - cteni souboru
+             - BufferedReader + FileReader
+             - FileInputStream
+             - RamdomAccessFile
+         - ⭐ aplikace pro hrani hudby (jednoducha)
+     - Den 16 -> 09:43:10 - 10:11:43
+         - ⭐ obesenec
+     - Den 17 -> 10:11:43 - 11:02:38
+         - time a date
+         - anonymus class
+         - timer (casovac tasku), TimerTask
+         - ⭐ C4 v csgu (procviceni timer)
+         - genericita
+         - hashmap
+     - Den 18 -> 11:02:38 - 12:00:00 
+         - enums
+         - threading
+         - multithreading
+         - ⭐ budik
+ - [Data Structures and Algorithms Full Course 📈](https://www.youtube.com/watch?v=CBYHwZcbD-s)
+     - Den 19 -> 00:00:00 - 00:40:15
+         - stack
+         - fronta (queue)
+         - prioritni fronta (priority queues)
+         - linked list
+     - Den 20 -> 00:40:15 - 01:13:08
+         - dynamic array (ArrayList(Object) po domacku)
+         - linked list vs ArrayList
+     - Den 21 -> 01:13:08 - 01:32:44
+         - BIG O notace
+         - linearni hledani
+         - binary search
+     - Den 22
+         - zadani z emailu
+             - Napište program, který sečte všechna čísla od 1 do N (N je zadáno uživatelem) a vypíše výsledek. Použijte cyklus pro sčítání.
+             - Vytvořte třídu Osoba, která bude mít atributy jméno a věk. Implementujte metodu, která zjistí, zda je osoba plnoletá, a vypíše odpovídající zprávu.
+             - Napište program, který sečte všechny liché čísla od 1 do 100 a výsledky vypíše na konzoli.
+             - Implementujte třídu Automobil, která bude mít atributy značka, rokVýroby, kilometry. Vytvořte metody pro přidání najetých kilometrů a pro výpočet stáří auta.
+             - Napište program, který zadaný řetězec otočí a vypíše jej na obrazovku.
+             - Implementujte metodu, která zjistí, zda zadané číslo je prvočíslem. Použijte algoritmus pro kontrolu prvočíselnosti.
+             - Vytvořte třídu Student, která bude obsahovat atributy jméno, studijníObor a ročník. Vytvořte metody pro zobrazení těchto údajů.
+     - Den 23
+         - zadani z emailu
+             - Napište program, který zjistí, zda je zadaný text palindrom. (Palindrom je slovo, které se čte stejně zleva i zprava.)
+             - Vytvořte třídu Kniha, která bude obsahovat atributy název, autor, rokVydání. Implementujte metodu pro zobrazení těchto informací.
+             - Napište program, který přečte soubor obsahující seznam čísel a vypíše součet všech čísel v souboru.
+             - Vytvořte třídu Zaměstnanec, která bude dědit z třídy Osoba. Třída Zaměstnanec bude mít navíc atribut pozice a plat. Implementujte metody pro výpočet ročního platu.
+             - Napište program, který zjistí, zda zadané pole obsahuje duplicity. Využijte cyklus a podmínky pro kontrolu duplicity.
+             - Vytvořte třídu BankovníÚčet, která bude mít atributy majitel a zůstatek. Implementujte metody pro vklad, výběr peněz a zobrazení zůstatku.
+     - Den 24
+         - kousek King's Quest
+     - Den 25
+         - PS Diagram
+     - Den 26
+         - PS Diagram

@@ -1,0 +1,31 @@
+- zakladni dilci casti
+	- zacatek a konec
+		- ![[Pasted image 20250929102816.png]]
+		- jeden zacatek, vice koncu muze byt, ale je lepsi kdyz je jeden
+	- rozhodovaci (if)
+		- ![[Pasted image 20250929102922.png]]
+	- cyklus s urcitym koncem (for)
+		- ![[Pasted image 20250929102949.png]]
+	- cyklus s podminkou na zacatku (while)
+		- ![[Pasted image 20250929103010.png]]
+	- cyklus s podminkou na konci (do while)
+		- ![[Pasted image 20250929103405.png]]
+	- vstup a vystup (sc.nextLine(), System.out.println(), return)
+		- ![[Pasted image 20250929103146.png]]
+	- rozhodovaci s vice (switch)
+		- ![[Pasted image 20250929103251.png]]
+	- pojmenovana cast algoritmu (nazev funkce)
+		- ![[Pasted image 20250929103715.png]]
+		- samostatna cast algoritmu
+
+- zakladni procedury
+	- vymena dvou promenych
+		- ![[Pasted image 20250929104033.png]]
+	- priklad vetveni
+		- ![[Pasted image 20250929104114.png]]
+		- ![[Pasted image 20250929104125.png]]
+	- cykli
+		- s podminkou na zacatku a take s pevnym poctem opakovani
+			- ![[Pasted image 20250929104223.png]]
+		- podminka na konci
+			- ![[Pasted image 20250929104436.png]]

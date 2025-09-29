@@ -1,0 +1,9 @@
+- **Zadání:** Vytvořte algoritmus pomocí PS-diagramu, který Načte od uživatele velikost pole `n` a poté postupně načte `n` celočíselných hodnot do pole. Ověří, zda je pole seřazeno vzestupně. Výsledek ověření (true/false nebo "seřazeno"/"neseřazeno") vypíše.
+	- ![[Pasted image 20250928184142.png]]
+	- ![[Pasted image 20250928184202.png]]
+- **Zadání:** Vytvořte algoritmus pomocí PS-diagramu, který Načte od uživatele jednu větu (řetězec obsahující slova oddělená mezerami). Spočítá a vypíše celkový počet slov ve větě. Najde a vypíše nejdelší slovo, které se ve větě vyskytuje. Pokud je takových slov více, vypíše první z nich.
+	- ![[Pasted image 20250928191658.png]]
+	- ![[Pasted image 20250928191712.png]]
+	- ![[Pasted image 20250928191738.png]]
+- **Zadání:** Vytvořte PS-diagram pro jednoduchou kalkulačku. Program načte dvě čísla a znak operace (`+`, `-`, `*`, `/`). Na základě zadané operace provede výpočet a vypíše výsledek. Ošetřete možnost dělení nulou.
+	- ![[Pasted image 20250928195212.png]]

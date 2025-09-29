@@ -1,0 +1,16 @@
+ - **Zadání:** Vytvořte algoritmus zapsaný pomocí PS-diagramu, který načte délku strany čtverce `a` od uživatele. Algoritmus následně vypočítá a vypíše obvod a obsah tohoto čtverce. 
+	 - ![[Pasted image 20250927190959.png]]
+- **Zadání:** Vytvořte algoritmus pomocí PS-diagramu, který načte celé číslo. Algoritmus rozhodne, zda je číslo sudé nebo liché, a výsledek (např. "Číslo je sudé") vypíše.
+	- ![[Pasted image 20250927191311.png]]
+- **Zadání:** Vytvořte algoritmus pomocí PS-diagramu, který načte tři různá celá čísla `a`, `b`, `c`. Algoritmus nalezne a vypíše největší z těchto tří čísel.
+	- ![[Pasted image 20250927191927.png]]
+- **Zadání:** Vytvořte algoritmus pomocí PS-diagramu, který načte kladné celé číslo `n`. Algoritmus pomocí cyklu seznámí a vypočítá součet všech celých čísel od 1 do `n` (včetně). Výsledek vypíše.
+	- ![[Pasted image 20250927192252.png]]
+- **Zadání:** Vytvořte algoritmus pomocí PS-diagramu, který bude opakovaně žádat uživatele o zadání kladného čísla. Algoritmus má pokračovat ve čtení vstupu tak dlouho, dokud uživatel nezadá číslo větší než 0. Jakmile je vstup validní, algoritmus jej vypíše.
+	- ![[Pasted image 20250927192746.png]]
+- **Zadání:** Vytvořte algoritmus pomocí PS-diagramu, který načte od uživatele velikost pole `n` a poté postupně načte `n` celočíselných hodnot do pole. Algoritmus nalezne nejmenší hodnotu v tomto poli a vypíše ji.
+	- ![[Pasted image 20250927200454.png]]
+- **Zadání:** Vytvořte algoritmus pomocí PS-diagramu, který načte textový řetězec. Algoritmus spočítá, kolikrát se v řetězci vyskytuje konkrétní znak (taktéž zadaný uživatelem), a vypíše tento počet.
+	- ![[Pasted image 20250927201639.png]]
+- **Zadani:** Vytvořte algoritmus pomocí PS-diagramu pro nalezení největšího společného dělitele (NSD) dvou kladných celých čísel `a` a `b`
+	- ![[Pasted image 20250927204124.png]]

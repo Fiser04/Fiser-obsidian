@@ -1,0 +1,6 @@
+- pocitani na smenu (bankomat)
+	- ok reseni
+		- ![[Pasted image 20250929135944.png]]
+		- problem je ze pak to zbytecne projizdi to pole kdyz uz stejne tam nic nezbylo
+	- ![[Pasted image 20250929135932.png]]
+		- lepsi protoze nemusim zbytecne resit zbytek pole kdyz uz mi nic nezbylo

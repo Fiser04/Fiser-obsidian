@@ -1,0 +1,11 @@
+ - "How code slows as data grows"
+ - ukazuje to na slozitost naseho algoritmu
+ - casova narocnost s pridanim dat
+ - ignorujeme male operace
+	 - n+1 = n
+ - caste ukazky
+	 - O(1)
+	 - O(n)
+	 - O(log n)
+	 - O(n^2)
+**![[Pasted image 20250909080737.png]]**

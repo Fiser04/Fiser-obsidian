@@ -10,3 +10,4 @@ hodnoceni
 
 cviceni
 	- update - nejhorsi hodnoceni skrtne
+	- jinak same shit
