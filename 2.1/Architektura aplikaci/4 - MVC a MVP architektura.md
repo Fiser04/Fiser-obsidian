@@ -1,0 +1,45 @@
+- motivace
+	- hledani chyb v dlouhem kodu
+	- zobrazit stejna data nekolikrat (casto)
+	- nepsat 2x stejnou vec
+	- pokryt aplikaci testy (junit test)
+
+- MVC
+	- ![[Pasted image 20251001083038.png]]
+	- je to stary
+	- dnes stale pouzivane v webovych aplikaci
+	- v praxi
+		- zadam nazev serveru
+		- vytvorim pozadavek (request) na server
+		- server vrati html
+		- uzivatel zmackne na tlacitko ve webu
+		- vytvori dalsi pozadavek (request)
+	- bfu
+		- basic fucking user
+		- basic franta uzivatel
+		- uzivatel
+	- controllel
+		- spracovava prikazy od uzivatele
+		- prezentacni logika
+			- nesmi byt v view, protoze ji potrebujeme testovat
+		- aplikacni logika
+			- to co aplikace realne dela
+	- model = datovy model
+		- resi to databazi, iot, a tak dale
+		- data nejsou objektove ale daji se prevest pomoci ORM (objektove relacni mapovani)
+		- bysnys logika
+			- pravidla pro data
+				- datum narozeni nesmi byt zitra
+	- view
+		- prezentacni sluzby
+		- vykreslovani uzivateli to co chce videt
+	- spoje (sipky)
+		- od uzivatele
+			- komunikace
+		- zbytek
+			- rizeni
+				- controller ridi view a model
+				- view ridi model
+					- toto je nebezpecne
+					- protoze view muze menit data
+	- ![[Pasted image 20251001093719.png]]
