@@ -1,0 +1,72 @@
+- OMG
+	- object managment group
+
+- modelujeme chovani (procesy)
+	- popisu jak se nakupuje na e-shopu
+	- nepopisu databazi e-shopu
+	- tudiz ten model by byt totozny jak digitalne tak papirove
+
+![[BPMN2_0_Poster_EN.pdf]]
+- kulaty obdelnik
+	- hlavni cast
+	- task
+	- ![[Pasted image 20251002121408.png]]
+- sipky
+	- smer procesu
+	- ![[Pasted image 20251002121458.png]]
+- gateway
+	- mista vetveni
+	- ![[Pasted image 20251002123345.png]]
+- udalosti
+	- ![[Pasted image 20251002123424.png]]
+	- nejdulezitejsi
+		- zacatek
+			- ![[Pasted image 20251002121601.png]]	
+		- konec jednoho
+			- ![[Pasted image 20251002123455.png]]
+		- finalni konec
+			- ![[Pasted image 20251002123518.png]]
+
+- ukazka
+	- pizza
+		- ![[Pasted image 20251002121847.png]]
+		- dve hlavni casti (pool)
+			- vendor a customer nejsou spolu, ale customer muze byt kvuli necemu v vendor pool
+		- jak to jde
+			- zakaznik: mam hlad
+			- zakaznik:  vybere si pizzu
+			- zakaznik: zavola do pizzerky
+			- pizzar: prijal zpravu
+			- paralelne se pece pizza a zakaznik ceka
+			- zakaznik po 60 minutach vole, kde je moje pizza, pizzar ho uklidni a zakaznik zase ceka
+			- po upeceni pizzy dava ji dovozu
+			- zakaznik dostane pizzu, zakaznik zaplati za pizzu
+			- zakaznik dostane uctenku
+			- zakaznik uz nema hlad
+			- pizzar dostal zaplaceno a je konec
+		- "tudiz ten model by byt totozny jak digitalne tak papirove"
+			- je jedno jestli objednavka je resena telefonem, emailem, foodorou
+			- zajimaji nas ty kroky procesu, ne realizace procesu
+		- proces udeleni nobelovy ceny
+			- ![[Pasted image 20251002124948.png]]
+			- jak to jde
+				- zacina se rokem pred udelenim nobelovy ceny se zacina
+				- posilam zpravu vsem nominatorum (ti co rozhoduji)
+				- rozhodne koho by slo nominovat
+				- posle jeho rozhodnuti
+				- konec
+				- nasbiraji se rozhodnuti od nominatoru
+				- potrebuji expertni vypomoc?
+				- ano
+					- odeslu zpravu expertovi
+					- ten mi posle report jeho
+					- konec pro experta
+					- vyberu finalni kandinaty
+				- napsat doporuceni
+				- zaslu doporuceni
+				- vybere se koho
+				- vybere se kde
+				- oznamit
+				- konec
+
+za domaci ukol se podivat na poster a examples, projit je, porozumnet kazdemu elementu
