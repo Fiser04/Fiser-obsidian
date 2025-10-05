@@ -1,0 +1,1 @@
+- technik ktery se snazi dostat do site jakozto hacker
