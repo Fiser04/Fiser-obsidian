@@ -1,0 +1,9 @@
+- z dns
+	- zkusim najit adresu domeny
+		- set q=a
+	- zjistim nameservery
+		- set q=ns
+	- prenos zon
+		- ale hodne opatrny
+	- zkouset jednotlivy servery
+		- set q=ptr
