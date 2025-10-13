@@ -1,0 +1,13 @@
+- jazyk srozumitelny pro stroj
+- strojovy kod
+	- velmi rychly ale skoro nesrozumitelne
+- vyssi programovaci jazyky
+	- blize k cloveku, pomalejsi stroji
+
+- strojove orientovane jazyky
+	- pouzivam jazyk procesoru
+	- asembler
+- vyssi jazyky
+	- imperativni (prikazove, procedualni)
+	- neimperativni (funkcionalni - LISP)
+	- virtualni stroj (hypoteticky procesor, ktery provadi tyto prikazy)

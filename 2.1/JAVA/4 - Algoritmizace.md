@@ -1,0 +1,57 @@
+- funkce
+	- ma return
+- procedura
+	- nema return (void)
+
+- kroky algoritmizace
+	- specifikace ukolu
+		- co mam za data (co mam k dispozici)
+		- co ocekavam za vystup
+	- analyza problemamu
+		- nejzakladnejsi algoritmicke struktury
+			- *vypocet prumeru -> cyklus*
+	- vytvoreni algoritmu
+		- formalizace algoritmu
+		- dva zpusoby
+			- forma dekompozice
+				- rozdeleni na podproblemy
+			- forma ze zhora dolu
+				- vytvorim kroky a ted je jen skladam
+		- presne formulovani a rozdeleni
+	- testovani
+		- ruzne chyby
+			- syntaticka (*upsal jsem se*)
+			- chyba analyzy (*nechapu zadani*)
+			- chyba vstupnich dat (*cekam int a napise string*)
+	- implementace
+		- algoritmus neni finalni produkt, transformovana forma pro stroj srozumitelny
+			- *mam krasnej algoritmus, napisu ho, ale na konci dne nemam dost ram*
+	- uziti algoritmu
+		- udrzba algoritmu
+			- vnejsi vlivy
+				- dane (*zmena zbusobu pocitani*)
+
+- rozklady
+	- konjuktivni
+		- problemy se musi vyresit vsechny
+	- disjunktivni
+		- resim jen nejakou vetev abych mel vysledek
+	- iteracni
+		- cyklus
+	- rekurzivni
+		- algoritmus vola sam sebe
+		- musi se uchovavat predchozi stav
+
+- narocnost a efektivita
+	- cas
+		- cas potrebny na vyreseni
+	- energie
+		- souvisi s dobou resenim
+	- lidi
+		- algoritmy nejsou jen pro stroje
+	- finance
+		- energie ale jinak
+	- vstupy
+		- cena informace (*clanek z wikipedie x presne namerena vec drahou technikou*)
+	- pamet
+		- kapacita
