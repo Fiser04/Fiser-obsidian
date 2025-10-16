@@ -47,26 +47,26 @@
 		- "tudiz ten model by byt totozny jak digitalne tak papirove"
 			- je jedno jestli objednavka je resena telefonem, emailem, foodorou
 			- zajimaji nas ty kroky procesu, ne realizace procesu
-		- proces udeleni nobelovy ceny
-			- ![[Pasted image 20251002124948.png]]
-			- jak to jde
-				- zacina se rokem pred udelenim nobelovy ceny se zacina
-				- posilam zpravu vsem nominatorum (ti co rozhoduji)
-				- rozhodne koho by slo nominovat
-				- posle jeho rozhodnuti
-				- konec
-				- nasbiraji se rozhodnuti od nominatoru
-				- potrebuji expertni vypomoc?
-				- ano
-					- odeslu zpravu expertovi
-					- ten mi posle report jeho
-					- konec pro experta
-					- vyberu finalni kandinaty
-				- napsat doporuceni
-				- zaslu doporuceni
-				- vybere se koho
-				- vybere se kde
-				- oznamit
-				- konec
+	- proces udeleni nobelovy ceny
+		- ![[Pasted image 20251002124948.png]]
+		- jak to jde
+			- zacina se rokem pred udelenim nobelovy ceny se zacina
+			- posilam zpravu vsem nominatorum (ti co rozhoduji)
+			- rozhodne koho by slo nominovat
+			- posle jeho rozhodnuti
+			- konec
+			- nasbiraji se rozhodnuti od nominatoru
+			- potrebuji expertni vypomoc?
+			- ano
+				- odeslu zpravu expertovi
+				- ten mi posle report jeho
+				- konec pro experta
+				- vyberu finalni kandinaty
+			- napsat doporuceni
+			- zaslu doporuceni
+			- vybere se koho
+			- vybere se kde
+			- oznamit
+			- konec
 
 za domaci ukol se podivat na poster a examples, projit je, porozumnet kazdemu elementu

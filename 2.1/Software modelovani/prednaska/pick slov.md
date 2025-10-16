@@ -1,0 +1,6 @@
+- modelovani 
+	- snaha o zjednoduseni reality
+- proces
+	- opakujici se posloupnost cinnosti a aktivit
+- ucel procesniho modelovani
+	- formalne a jednoznacne popsat dej procesu
