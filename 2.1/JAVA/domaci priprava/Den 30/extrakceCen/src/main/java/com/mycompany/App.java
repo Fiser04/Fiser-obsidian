@@ -10,6 +10,7 @@ public class App {
             "Ceny jsou: 150 Kc, 300 000 Kc, 2999 Kc, 75,50 Kc a zdarma.";
         Pattern pattern = Pattern.compile(regularniVyraz);
         Matcher matcher = pattern.matcher(retezec);
+
         while (matcher.find()) {
             String potentialPrice = matcher.group();
             System.out.println("- " + potentialPrice);
