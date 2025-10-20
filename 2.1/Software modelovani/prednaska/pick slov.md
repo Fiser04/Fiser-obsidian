@@ -1,4 +1,4 @@
-- modelovani 
+ - modelovani 
 	- snaha o zjednoduseni reality
 - proces
 	- opakujici se posloupnost cinnosti a aktivit

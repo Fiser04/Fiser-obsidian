@@ -1,0 +1,3 @@
+jit na prochazku;STREDNI;true
+jit na nakup;VYSOKA;false
+jit na ryby;NIZKA;false
