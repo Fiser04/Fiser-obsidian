@@ -1,0 +1,7 @@
+- objekt
+	- kus pameti
+	- vznika podle tridy
+	- obsahuje
+		- 
+		- vlastnosti
+		- methody

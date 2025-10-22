@@ -43,3 +43,26 @@
 					- toto je nebezpecne
 					- protoze view muze menit data
 	- ![[Pasted image 20251001093719.png]]
+
+- MVP
+	- ![[Pasted image 20251022095102.png]]
+	- cil je aby neexistoval vykony krok v View
+	- vhodna tam kde je widgetovy system (interaktivni ui)
+		- windows forms
+		- windows presentation system (WPS)
+	- uzivatel interaguje s View
+	- zachyceny vstup se posila na Presenter
+	- Presenter pak ovlada View skrze pokyny
+	- MVVM
+		- model view view model
+		- ![[Pasted image 20251022095420.png]]
+		- windows presentation system (WPS)
+		- View-model
+			- nase logika
+		- binding
+			- provazovani gui a datoveho modelu
+				- neco se zmeni v datech, aktualizace gui
+			- mezi View a View-model
+
+- udalostni system
+	- predavani adres method v pameti
