@@ -4,3 +4,12 @@
 	- opakujici se posloupnost cinnosti a aktivit
 - ucel procesniho modelovani
 	- formalne a jednoznacne popsat dej procesu
+- schematika jazyka
+	- vyznam
+- actor
+	- "uzivatel"
+- usecase
+	- nesmi byt "spravovat " neco
+	- nejlepsi predstava je tlacitko
+		- smazat uzivatele
+		- smazat objednavku
