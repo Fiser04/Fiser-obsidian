@@ -1,3 +1,4 @@
+ - z whois
 - z dns
 	- zkusim najit adresu domeny
 		- set q=a
@@ -7,3 +8,33 @@
 		- ale hodne opatrny
 	- zkouset jednotlivy servery
 		- set q=ptr
+
+ - z soboru
+	 - dokumenty maji metadata
+		 - kdo to vytvoril, kdy, kde, cim apod
+		 - exiftool
+
+- zije IP?
+	- ping (ICMP - echo request/reply)
+		- to jde ignorovat operacnim systemem, nebo zablokovano firewalem
+
+- identifikace sluzeb
+	-  tcp handshake
+		- syn(dport)
+		- ack
+		- pak uz nepokracuju
+	- tools
+		- nmap (scan portu)
+			-  -sn
+			- -sL
+				- list ceho bude skenovat
+			- -nsL
+				- list ceho bude skenovat ale jen ip adresy
+			- -p
+				- scan urcitych portu (klidne i rozsah)
+					- 1-65535
+						- -p-
+			- -sV
+				- zjisti verze sluzby
+			- -A
+				- vypsat uplne vsechno
