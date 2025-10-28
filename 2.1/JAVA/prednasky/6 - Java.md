@@ -68,3 +68,37 @@
 
 - navratovy typ funkce
 	- public *int* max(int a, int b){}
+
+- prikaz vetveni
+	- prikaz if() a switch()
+
+- prikaz cyklu
+	- while(), do ... while(), for()
+
+- prikaz skoku
+	- continue
+		- preskoci pruchod cyklem
+	- break
+		- ukonci cely cyklus
+
+ - procedury a funkce
+	 - volam ten samej kod nekolikrat
+	 - snaha o hromadnost
+	- funkce vraci hodnotu (int, String, ...)
+	- procadura nevraci (void)
+	- obecne jmeno je Methoda
+	- parametr
+		- konkretni hodnota
+		- int n = funkce(*x*);
+	- argument
+		- zastoupeni
+		- int funkce( *int n* ){}
+
+- static
+	- tridni methody a promene
+
+- jednoduche kolekce
+	- pole
+		- nemenitelna velikost
+		- jen jeden datovy typ
+		- 
