@@ -66,3 +66,33 @@
 
 - udalostni system
 	- predavani adres method v pameti
+	- objekt
+		- kus pameti
+		- vznika podle tridy
+		- obsahuje
+			- eventy
+			- methody
+			- instancni promene
+			- vlastnosti
+		- takze methoda je vlastne taky kus pameti
+		- a kdyz vemu adresu ty methody a narvu to do listu tak je to list eventu
+	- Delegate
+		- odkaz na methodu
+	- Handler
+		- zachycuje ten event
+	- Observer
+		- az kdyz to bezi tak vizObjekt cumi na DataObject na zmeny
+		- ![[Pasted image 20251029090759.png]]
+			- prazdna sipka = dedicnost
+			- mam abstraktni tridy Subject a Observer
+			- ![[Pasted image 20251029091319.png]]![[Pasted image 20251029091520.png]]![[Pasted image 20251029091539.png]]
+			- ale chci abych to mohl pouzit pro cokoliv (pro jakykoliv object) tak musim pres interfacy
+			- ![[Pasted image 20251029095109.png]]![[Pasted image 20251029095206.png]]![[Pasted image 20251029095240.png]]
+
+- DTO
+	- data transfer object
+	- defakto podmnozina POCO
+- POCO (POJO)
+	- play all c# object
+	- play all java object
+	- nesmi byt vazany na externi knihovny

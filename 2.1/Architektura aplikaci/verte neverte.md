@@ -1,9 +1,0 @@
-- objekt
-	- kus pameti
-	- vznika podle tridy
-	- obsahuje
-		- vlastnosti
-		- methody
-- takze methoda je vlastne taky kus pameti
-- takze methoda je vlastne objekt
-- a kdyz vemu adresu objektu (ty methody) a narvu to do listu tak je to list eventu
