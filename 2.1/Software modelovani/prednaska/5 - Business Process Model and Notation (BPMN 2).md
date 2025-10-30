@@ -70,3 +70,6 @@
 			- konec
 
 za domaci ukol se podivat na poster a examples, projit je, porozumnet kazdemu elementu
+
+- registrace u carsharing
+	- ![[Pasted image 20251023120139.png]]
