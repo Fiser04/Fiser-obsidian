@@ -1,2 +1,43 @@
 https://dofactory.com/net/design-patterns
+- standartni reseni na standarni problemy
+- KE ZKOUSCE 2 Z KAZDE KATEGORIE
 
+
+- pro vytvareni
+	- singletone
+		- https://dofactory.com/net/singleton-design-pattern
+		- mit jen jednu instanci objektu pro cely kod
+		- klasicke pouzite
+			- conector do databaze
+				- abych nemel milion pripojeni do databaze ale jen prave jedno
+	- factory method
+		- https://dofactory.com/net/factory-method-design-pattern
+		- vytvareni objektu vzoru, ale nechava tridu oddelenou od instaciace
+		- *prijdu do dilny a poskladam si auto vs postavim tovarnu a pak delam auta*
+		- pouziva se kdyz vim ze toho bude hodne
+- struktualni
+	- adapter
+		- https://dofactory.com/net/adapter-design-pattern
+		- *mam uk zasuvku, ale eu zastrcku*
+		- takze proste propojuju dve na sobe nezavisle veci
+		- pr
+			- mam databaze, snazim se je pridat, ale moje databaze jsou ruzneho "typu" (mysql, mssql) takze ja potrebuju neco co je schopny tahat data z obou
+			- bud udelam pro kazdou databazi objekt
+			- NEBO udelam interface na ktery se bude pripojovat
+		- takze chci tu samou vec ale jine rozhrani tak pouziju adapter
+	- facade (fasada)
+		- https://dofactory.com/net/facade-design-pattern
+		- mam proste nejakou sadu trid a ja je zakryvam fasadou do jednoho objektu
+	- proxy
+		- https://dofactory.com/net/proxy-design-pattern
+		- snaha o plne kontrole
+		- treba kdyz mam nejakou tridu z .net a chci si jisty ze funguje tak jak ma
+- chovani
+	- strategy
+		- https://dofactory.com/net/strategy-design-pattern
+		- vytvarim strukturu tak aby byla pak jednoducha vymenit
+		- pres dedicnost si vybiram strategii
+		- *abych nemusel delat v jedne tride vic method vypoctu (prumer, realna cena, ...), tak proste vemu dedicnosti strategii kde budu mit presne napsanou tu methodu*
+		- ![[Pasted image 20251105091251.png]]
+	- Observer
+		- [[4 - MVC a MVP architektura]] - dole
