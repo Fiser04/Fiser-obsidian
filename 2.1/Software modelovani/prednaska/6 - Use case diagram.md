@@ -5,6 +5,9 @@
 		- smazat uzivatele
 		- smazat objednavku
 
+- pisu je bud v infinitivu a nebo v prubehovym
+	- ale vzdy stejne
+
 - dedicnost
 	- pomoci gen/spec principu
 		- smerem dolu dochazi k specializaci

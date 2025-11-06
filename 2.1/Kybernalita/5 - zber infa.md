@@ -8,6 +8,7 @@
 		- ale hodne opatrny
 	- zkouset jednotlivy servery
 		- set q=ptr
+		- ![[Pasted image 20251106151148.png]]
 
  - z soboru
 	 - dokumenty maji metadata
