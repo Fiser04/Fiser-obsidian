@@ -1,0 +1,64 @@
+- soubory
+	- vstup a vystup dat
+	- neco co je ulozene na disku
+	- mnozina udaju na vnejsi pameti
+	- manipulace
+		- open
+			- zeptam se na pristup na soubor
+			- os povoli ci zamitne
+				- muze povolit jen cteni nebo cteni i zapis
+		- read
+		- write
+		- close
+			- uvolnit blokace
+	- pristupy
+		- sekvencni (proudovy)
+			- prochazim soubor od zacatku
+			- ctu vse
+			- vyberu si to co potrebuju
+		- nahodily (primy)
+			- cteni urcite pozice v souboru
+
+- soubor jako posloupnost bytu
+	- FileInputStream
+	- FileOutputStream
+	- FilexxxStream = new FilexxxStream(soubor.txt);
+	- throws IOException
+
+- soubor jako posloupnost primitivnich typu
+	- DataInputStream
+	- DataOutputStream
+	- DataxxxStream dos = new DataxxxStream(new FilexxxStream(soubor.bin));
+	- throws EOFException, IOException
+
+- soubor primitivnich typu a objektu
+	- ObjectInputStream
+	- ObjectOutputStream
+	- ObjectxxxStream oxs = new ObjectxxxStream(new FilexxxStream(soubor.bin));
+	- musim specifikovat typ objektu
+		- String s = (String) in.readObject();
+		- jinak vraci Object
+
+- soubory textove
+	- reseni enteru
+		- unix \n
+		- windows \r\n
+	- vnitrni kodovani vs interpretace
+		- mezi utf-16 a finalnim souborem
+		- windows jede v utf-8 (ale furt existuje Cp1250, stare kodovani, dela to problemy, okna posrany)
+	- FileWriter / FileReader
+		- jedu po znacich
+			- nacte soubor jako pole char
+		- musim manualne prevadet primitivni datove typy na String
+		- String.valueOf(int)
+	- PrintWriter
+		- FileWriter, ale nemusim manualne prevadet primitivni datove typy na String
+	- BufferedReader / BufferedWriter
+		- pracuji s celymi radky jako String
+	- StreamTokenizer
+		- lexikalni element
+			- cislo, slovo, oddelovac radku, konec souboru
+		- jdu po souboru a rozdeluju to na mensi casti
+	- InputStreamReader / OutputStreamWriter
+		- prepis kodovani
+

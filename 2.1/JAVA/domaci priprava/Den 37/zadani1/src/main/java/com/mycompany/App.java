@@ -18,6 +18,8 @@ public class App {
             System.out.println("Jaky je nazev pracovniho souboru?");
             String input = sc.nextLine();
             Knihovna knihovna = new Knihovna(input);
+	    Letadlo letadlo = new Letadlo();
+	    letadlo.getPalivo();
             boolean running = true;
             do {
                 System.out.println(
