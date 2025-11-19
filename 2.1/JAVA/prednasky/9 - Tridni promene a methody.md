@@ -1,0 +1,8 @@
+- hodnota/methoda existuje ale je tridy a ne instanci
+- pracuje nezavisle na instanci
+- urcuji se slovem static
+- casto tridni konstanty
+	- slovem final
+- Math.PI, Math.e
+- ![[Pasted image 20251110105151.png]]
+- tridni methoda/promene nevidi do instance, ale instance vidi do tridnich method/promene

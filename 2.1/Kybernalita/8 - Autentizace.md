@@ -1,0 +1,22 @@
+- pomoci jmena hesla
+	- get a set
+		- sifrovany nebo ne
+	- problemy
+		- nesifrovany
+			- lehce citelne
+		- get
+			- je v url
+
+- IDrelace (Session ID)
+	- *jakmile zadam dobre jmeno a heslo, tak server posle sessionID (dlouhy retezec), pak posilam jen sessionID a server vi kdo s nim komunikuje a zustavas prihlasenym*
+	- ukladaji se do cookies
+	- ale cookies se daji proste ukrast a mam najednou to SessionID
+	- jak branit SessionID
+		- Prenaset sifrovane
+		- unikatni
+		- nahodny
+		- dost dlouhy
+		- musi se rusit na strane serveru pri konci relace
+			- odlhasovat se na webu, ten posle na server aby smazal relaci
+			- timeout
+		- 

@@ -1,0 +1,2 @@
+soustavaA = "0x10"
+soustavaB = "0x16"

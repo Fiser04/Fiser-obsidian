@@ -1,0 +1,33 @@
+![[Pasted image 20251119083558.png]]
+- prezentacni vrstva
+- business logic layer
+	- aplikacni logika
+	- *ty data obarvime nejakou logikou = ty objekty neco umi, typycky servisni vrstvou, nez jdou data dal, tak se zase zmeni, do prezentacni vrstvy uz jde jen to co ona potrebuje*
+- data access layer (DAL)
+	- jedina vrstva, ktera ma pristup k fyzickym datum
+	- dal vrstva se resi pomoci "repositare"
+		- obaluje ty data a dava je vys
+		- obsahuje klasiku create, read, ...
+	- odstinuje databazi, produktem je POCO objekt (jeste lepe DTO), ktery zabaluji do repozitarovy vrstvy
+	- je to pro nas jakoby "translator" abych z databazi tahal objekty
+- data layer (entity layer)
+	- databaze
+
+- klasicky priklad, zmena hesla uzivatele aplikace
+	- v databazi jak to bude vypadat
+		- tabulka, tam bude id (email) a hash hesla
+	- DAL
+		- zepta se na data, udela z toho objekt
+		- user, ktery ma id a heslo
+		- je tam pridej, smaz, getList, getDetails, aktualizuj
+	- business
+		- veme ty data z prezentacni, zkontroluju jestli veci jako existuje uzivatel, je stare spravne, koresponduje nove podle pravidel, kdyz je vse ok, tak jen reknu DALu hale tady mas id, najdi to, zmen v objektu password a uloz
+	- prezentacni
+		- id
+		- old password
+		- new password
+		- repeat new password
+
+- mohu udelat genericky repositar
+	- *at sem prijde cokoliv tak to pridej do databaze*
+	- *konkretizuju tim ze pridam tridu*

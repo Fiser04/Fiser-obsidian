@@ -8,6 +8,7 @@ dict_ip_attempts = {
 
 print(
     dict(sorted(dict_ip_attempts.items(), key=lambda item: item[1]))
+
 )  # serazeni podle druheho prvku v dictionary
 print(
     dict(
