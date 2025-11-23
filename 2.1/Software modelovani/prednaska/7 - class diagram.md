@@ -25,8 +25,15 @@
 	- agregace
 		- B je slozene z E, ale B muze existovat bez nej
 		- napsat jen kdyz je B seznam E
+	- asociacni trida
+		- ![[Pasted image 20251120122731.png]]
+		- master detail
 
 ![[Pasted image 20251113125029.png]]
  - produkt je bud *solitair* (jen jeden salek), a nebo set produktu (sada salku)
 
-DU - 
+DU
+- moje reseni![[Pasted image 20251120114801.png]]
+- spravne![[Pasted image 20251120115316.png]]
+- ![[Pasted image 20251120122138.png]]
+- 

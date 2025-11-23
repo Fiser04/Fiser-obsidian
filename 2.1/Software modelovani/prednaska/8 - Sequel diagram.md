@@ -1,0 +1,17 @@
+- dvoutecka
+	- instance tridy (objekt)
+- sipky jsou zpravy (volani)
+	- asynchroni 
+		- *je mail*
+		- poslu a delam neco jineho
+		- prazdna sipka
+	- synchroni je telefonat
+		- *je telefonat*
+		- puslu a cekam na odpoved, jinak nic nedelam
+		- plna sipka
+	- odpoved
+		- prazdna prohuvana sipka
+- burtik
+	- jako funkce?
+
+- du - nakreslit diagram komunikace "zahajeni vypujceni", pres bluetooth
