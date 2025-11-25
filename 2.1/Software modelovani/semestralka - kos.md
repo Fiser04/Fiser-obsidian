@@ -48,10 +48,154 @@ Z duvodu rozsireni nasi firmy jsme se rozhodli o zavedeni noveho systemu reseni 
 ### Činnosti
 *Hlavní fáze vývoje softwaru.*
 
-| Objektivně ověřitelné ukazatele | Prostředky ověření | Předpoklady |
-|---------------------------------|-------------------|-------------|
-| Analýza a specifikace požadavků - 40 hodin | Výstupní dokumenty z každé fáze (specifikace, diagramy, zdrojové kódy) | Tým má přístup k potřebným nástrojům a systémům |
-| Návrh datového modelu a architektury - 60 hodin | Pravidelné revize a schvalování | Byly uzavřeny potřebné licence pro vývoj |
-| Vývoj konfigurátoru a backendu - 200 hodin | | Klíčoví uživatelé jsou dostupní pro konzultace |
-| Implementace integrací - 120 hodin | | |
-| Testování a nasazení - 80 hodin | | |
+| Objektivně ověřitelné ukazatele                 | Prostředky ověření                                                     | Předpoklady                                     |
+| ----------------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------- |
+| Analýza a specifikace požadavků - 40 hodin      | Výstupní dokumenty z každé fáze (specifikace, diagramy, zdrojové kódy) | Tým má přístup k potřebným nástrojům a systémům |
+| Návrh datového modelu a architektury - 60 hodin | Pravidelné revize a schvalování                                        | Byly uzavřeny potřebné licence pro vývoj        |
+| Vývoj konfigurátoru a backendu - 200 hodin      |                                                                        | Klíčoví uživatelé jsou dostupní pro konzultace  |
+| Implementace integrací - 120 hodin              |                                                                        |                                                 |
+| Testování a nasazení - 80 hodin                 |                                                                        |                                                 |
+```mermaid
+flowchart TD
+
+%% --- HLAVNÍ TOK ---
+
+A([Start]) --> B[Uživatel se přihlásí]
+B --> C{Přihlášení úspěšné?}
+C -->|Ne| D[Zobrazit chybu a konec]
+C -->|Ano| E[Volba režimu konfigurace]
+
+E -->|Rychlá konfigurace| F[Vybrat existující konfiguraci ve výrobě]
+E -->|Pomalá konfigurace| G[Konfigurovat nové vozidlo]
+G --> G1[Zobrazit pouze kompatibilní díly]
+G1 --> G2[Automatický výpočet ceny za kus]
+G2 --> H[Zákazník potvrdí konfiguraci]
+
+F --> F1[Možnost drobných úprav]
+F1 --> H[Zákazník potvrdí konfiguraci]
+
+H --> I[Zadat počet kusů]
+I --> J[Vygenerovat smlouvu]
+J --> K[Potvrzení smlouvy zákazníkem]
+
+K -->|Nepotvrzeno| K1[Objednávka zahozená]
+K -->|Potvrzeno| L[Platba zákazníkem]
+
+L -->|Nezaplaceno| L1[Smlouva zaniká – konec]
+L -->|Zaplaceno| M[Vytvořit objednávku]
+
+M --> N[Získat kusovník ]
+N --> O[Zkontrolovat sklad – neprirazené díly]
+
+O -->|Díly chybí| P[Objednat chybějící díly u dodavatelů]
+O -->|Díly jsou| Q[Předat výrobcům]
+
+P --> Q[Po dodání dílů předat výrobcům]
+
+Q --> R[Vedoucí výroby vytvoří výrobní plán]
+R --> S[System odešle odhad času výroby zákazníkovi]
+S --> T[Probíhá výroba]
+T --> U[Protokol o dokončené výrobě]
+
+U --> V[Testování týmem testerů]
+V -->|Test OK| W[Zákazníkovi je zaslána adresa pro vyzvednutí]
+V -->|Test neprošel| X[Vozidlo zpět na opravu/výměnu dílu]
+X --> T
+
+W --> Z([Konec])
+```
+```mermaid
+flowchart LR
+
+%% ==============================
+%% POOL: ZÁKAZNÍK
+%% ==============================
+subgraph A[Zákazník]
+    A1([Start])
+    A2[Zákazník se přihlásí]
+    A3{Přihlášení OK?}
+    A4[Zvolí režim konfigurace]
+    A5[Konfiguruje vozidlo / upraví existující]
+    A6[Potvrdí konfiguraci]
+    A7[Zadá počet kusů]
+    A8[Schválí smlouvu]
+    A9[Zaplatí]
+    A10([Čeká na výsledek])
+    A11([Konec pro zákazníka])
+end
+
+%% ==============================
+%% POOL: SYSTEM
+%% ==============================
+subgraph B[System]
+    B1[Ověření přihlášení]
+    B2[Zobrazení režimů konfigurace]
+    B3[Zobrazení kompatibilních dílů]
+    B4[Výpočet ceny za kus]
+    B5[Vygenerování smlouvy]
+    B6[Vytvoření objednávky]
+    B7[Vytvoření kusovníku]
+    B8[Kontrola skladu]
+    B9[Objednání chybějících dílů]
+    B10[Předání výroby]
+    B11[Zobrazení odhadu doby výroby]
+    B12[Příjem výrobního protokolu]
+    B13[Příjem výsledků testů]
+    B14[Odeslání adresy pro vyzvednutí]
+end
+
+%% ==============================
+%% POOL: SKLAD
+%% ==============================
+subgraph C[Sklad]
+    C1[Kontrola dostupných dílů]
+    C2[Příjem dodaných dílů]
+end
+
+%% ==============================
+%% POOL: VÝROBA
+%% ==============================
+subgraph D[Výroba]
+    D1[Příjem objednávky k výrobě]
+    D2[Vytvoření výrobního plánu]
+    D3[Samotná výroba]
+    D4[Vytvoření výrobního protokolu]
+end
+
+%% ==============================
+%% POOL: TESTING
+%% ==============================
+subgraph E[Testing]
+    E1[Testování vozidla]
+    E2{Test OK?}
+    E3[Vrácení do výroby k opravě]
+end
+
+%% ==============================
+%% TOKY MEZI POOLY
+%% ==============================
+
+A1 --> A2 --> B1
+B1 --> A3
+
+A3 -->|Ne| A11
+A3 -->|Ano| B2 --> A4
+
+A4 --> A5 --> B3 --> B4 --> A6
+A6 --> A7 --> B5 --> A8
+
+A8 -->|Neschváleno| A11
+A8 -->|Schváleno| A9 --> B6
+
+B6 --> B7 --> B8 --> C1
+
+C1 -->|Díly chybí| B9 --> C2 --> B8
+C1 -->|Díly OK| B10 --> D1
+
+D1 --> D2 --> B11 --> A10
+D2 --> D3 --> D4 --> B12 --> E1
+
+E1 --> E2
+E2 -->|Ne| E3 --> D3
+E2 -->|Ano| B13 --> B14 --> A11
+```

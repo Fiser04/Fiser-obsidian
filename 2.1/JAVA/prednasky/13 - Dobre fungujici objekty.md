@@ -1,0 +1,7 @@
+- chyby
+	- syntakticke
+		- nalezne prekladac
+	- logicke
+		- program se pusti ale dela neco jineho
+	- rika se jim bugs
+	- 

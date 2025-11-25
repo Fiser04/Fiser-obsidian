@@ -1,0 +1,30 @@
+ - pouziti knihovnich trid
+	 - zaklad javy je rozsirovan
+		 - bud postupne v jdk
+		 - vlastni importovani
+	- existuji knihovny ktere jsou casto provazany
+	- prace
+		- vedet o te knihovne ze existuje
+			- podivat se na net
+		- naimportovat
+		- pouzivat
+	- BACHA cizi knihovny mohou byt nezabezpecene
+		- musim prokazat ze ten kus kodu ktery jsem pouzil ze je bezpecna
+			- musim mit od nich zdrojak
+	- pouzivam ten interface
+	- jsou organizovany do balicku
+		- java.lang se nemusi importovat
+		- import java.util.ArrayList, Random, atd.
+
+- HashSet
+	- mnozina
+		- nejsou duplicitni prvky
+		- nezalezi na poradi
+			- neni index
+	- *kdyz ho prochazim for eachem dvakrat tak se muze stat ze ho projde jinak*
+
+- Map
+	- slovnik
+	- k klici je prirazena hodnota nejakejho typu
+	- ![[Pasted image 20251124105335.png]]
+	- ![[Pasted image 20251124105349.png]]

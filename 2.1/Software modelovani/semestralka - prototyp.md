@@ -4,9 +4,10 @@
 Tato semestralni prace se zabyva vytvoreni configuratoru, ktery bude nabizet.
 to-do (myslenka):
 Takze musim vytvorit system, ktery dovoli zakaznikovi "nakonfigurovat" si vlastni bojove vozidlo, ktery si pak bude moci objednat, neboli neznamy uzivatel se prihlasi, system mu nacte po overeni konfigurator kde nejdrive zada pozadovany pocet kusu, ten bude mit 2 mody, rychly (zobrazi konfigurace ktera jsou jiz ve vyrobe s moznosti malych zmen (jiny model visilacky, apod)) a pomaly (vlastni konfigurace), system bude nabizet jen kompatibilni dily podle vyberu (takze nenarvu vez z tigra na pz 1 (jen predstava)), po konfiguraci bude zakaznik preveden na potvrzeni konfigurace a poctu kusu, pak mu bude zobrazena smlouva s predpokladanou (cisty nastrel) dobou dodani (jen typove, treba 8-9 mesicu), pak probehne vyber platby, pak platba, objednavka je vytvorena, system automaticky zkontroluje jestli ma ve sklade dost neprirazenych dilu, pokud ne, zasle objednavku na dily dodavatelum.
+ 0. registrace uzivatelu bude probihat manualne, system bude jen pro overene zakazniky (armady, bezpecnostni slozky)
 1. neznamy uzivatel se bude muset umet prihlasit
 2. prihlaseny uzivatel (dale jen zakaznik) bude moci pouzivat configurator
-3. configurator bude nabizet bud jiz jedouci objednavky a nebo vlastni konfiguraci, ktera bude zobrazovat jen kompatibilni dily
+3. configurator bude nabizet vlastni konfiguraci, ktera bude zobrazovat jen kompatibilni dily
 4. automaticky to bude vytvaret cenu za kus
 5. zakaznik vybere pocet vozidel
 6. system vytvori smlouvu a da ji potvrdit zakaznikovi
@@ -138,3 +139,7 @@ co, jaka je sance, dopad, oprava
 	- 3 (uzivatel nedokonci objednavku)
 	- Poradne testovani
 	- zadany kontakt na podporu
+- zakaznik zapomene prihlasovaci udaje
+	- 3
+	- 3
+	- Mit zakaznickou podporu
