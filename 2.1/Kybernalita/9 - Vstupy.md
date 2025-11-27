@@ -1,0 +1,30 @@
+
+- podle cilu utoku
+	- chci server
+    	- sql injection
+	    	- *select * from userdb where jmeno='$ jmeno' and heslo='$ heslo';
+		    - muzu udelat to ze do promenych neco ve stylu *1' or '1=1*
+		    - ukoncim to jmeno a pouziju svuj prikaz
+		    - *select * from userdb where jmeno='1' or '1'='1' and heslo='1' or '1'='1';
+		    - oboji vyhodi true, takze jsem prihlasenej
+		    - apostrov muze byt zablokovane, muzu pouzit unicode
+		    - dale se muze stat ze neni osetrene chyby
+			    - dam do pole jen apostrov, coz je syntaticka chyba a muze se stat ze mi to zobrazi celou chybovou hlasku, kde je napsany cely ten prikaz
+		    - v kali lze pouzit nastroj sqlmap
+	    - command injection
+		    - zadam do textoveho boxu command
+		    - *mam unixovy system a misto ocekavaneho inputu pouziju svuj command*
+		    - command muze vyuzit
+			    - | - veme output jednoho, da ho jako input druhymu
+			    - && - pokud se ten prvni provede, provede se ten druhy
+			    - ; - klasicky serazeny
+		    - *takze typek ceka cestu a pred to hodi ls, ja muzu udelat proste ls neco; rm -rf / *
+		    - ale mnohem lepsi
+			    - *echo "username:0...:/bin/shel">>/etc/pwd* a mam vytvorenyho uzivatele
+			    - *ping ipadressa sveho serveru* zachytim tem packet a vim ze to bezi
+	    	- moje potrebne znaky muzou byt zablokovane, muzu pouzit unicode
+	- chci uzivatele
+		- stored XSS
+			- muzu proste do inputu narvart <script></script>
+			- takze bych si mohl pomoci javascriptu vytahnout cookies nejakeho uzivatele a dokud je session aktivni
+		- replaced XSS
