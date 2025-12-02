@@ -2,7 +2,6 @@ https://dofactory.com/net/design-patterns
 - standartni reseni na standarni problemy
 - KE ZKOUSCE 2 Z KAZDE KATEGORIE
 
-
 - pro vytvareni
 	- singletone
 		- https://dofactory.com/net/singleton-design-pattern

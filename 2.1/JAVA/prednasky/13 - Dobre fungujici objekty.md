@@ -4,4 +4,28 @@
 	- logicke
 		- program se pusti ale dela neco jineho
 	- rika se jim bugs
-	- 
+
+- Testovani a ladeni
+	- testovani
+		- hledame pritomnost chyby
+	- ladeni
+		- hledame pricinu chyby
+	- techniky
+		- unit test
+			- jednotkovy test
+			- testuju urcitou jednotku (methoda, trida, modul)
+			- provadi se behem vyvoje
+			- vytvari se sada testu
+				- fail/pass
+			- je potreba porozumet funkce jednotky (porozumet kontraktu)
+				- hledame poruseni
+			- testuji take okrajove priklady
+				- prohledani prazdneho pole
+				- testovat okraj, ale i pred i za okraj
+	- automatizace testovani
+		- JUnit knihovna
+			- rozsahla knihovna
+			- 2 verze
+				- JUnit 4
+					- jednodussi instalace
+				- JUnit 5
