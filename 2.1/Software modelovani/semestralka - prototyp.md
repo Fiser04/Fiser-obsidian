@@ -4,23 +4,21 @@
 Tato semestralni prace se zabyva vytvoreni configuratoru, ktery bude nabizet.
 to-do (myslenka):
 Takze musim vytvorit system, ktery dovoli zakaznikovi "nakonfigurovat" si vlastni bojove vozidlo, ktery si pak bude moci objednat, neboli neznamy uzivatel se prihlasi, system mu nacte po overeni konfigurator kde nejdrive zada pozadovany pocet kusu, ten bude mit 2 mody, rychly (zobrazi konfigurace ktera jsou jiz ve vyrobe s moznosti malych zmen (jiny model visilacky, apod)) a pomaly (vlastni konfigurace), system bude nabizet jen kompatibilni dily podle vyberu (takze nenarvu vez z tigra na pz 1 (jen predstava)), po konfiguraci bude zakaznik preveden na potvrzeni konfigurace a poctu kusu, pak mu bude zobrazena smlouva s predpokladanou (cisty nastrel) dobou dodani (jen typove, treba 8-9 mesicu), pak probehne vyber platby, pak platba, objednavka je vytvorena, system automaticky zkontroluje jestli ma ve sklade dost neprirazenych dilu, pokud ne, zasle objednavku na dily dodavatelum.
- 0. registrace uzivatelu bude probihat manualne, system bude jen pro overene zakazniky (armady, bezpecnostni slozky)
-1. neznamy uzivatel se bude muset umet prihlasit
-2. prihlaseny uzivatel (dale jen zakaznik) bude moci pouzivat configurator
-3. configurator bude nabizet vlastni konfiguraci, ktera bude zobrazovat jen kompatibilni dily
-4. automaticky to bude vytvaret cenu za kus
-5. zakaznik vybere pocet vozidel
-6. system vytvori smlouvu a da ji potvrdit zakaznikovi
-7. pak se objednavka bud zahazuje nebo posila dal podle potvrzeni zakaznika a podle platby
-8. system udela kopii objednavky na kusovniku 
-9. system zkontroluje pocet neprirazenych potrebnych dilu na skladu podle kusovniku
-10. doobjedna vsechny potrebne dily
-11. po doruceni vsech dilu zasila objednavku vedoucimu vyroby
-12. vedouci vytvori vyrobni plan a da jej do systemu
-13. system zasle podle planu ocekavanou dobu pro vyrobu
-14. po dokonceni vyroby, vedouci udela protokol o vyrobe objednavky, ktery zada do systemu
-15. prijde team testeru, ktery pomoci systemu zkontroluje produkt (radio - funguje/nefunguje)
-16. po dokonceni uspesnych testu zakaznikovi system posle adresu, kam ma napsat pro domluveni vyzvednuti objednavky
+1. prihlaseny uzivatel (dale jen zakaznik) bude moci pouzivat configurator
+2. configurator bude nabizet vlastni konfiguraci, ktera bude zobrazovat jen kompatibilni dily
+3. automaticky to bude vytvaret cenu za kus
+4. zakaznik vybere pocet vozidel
+5. system vytvori smlouvu a da ji potvrdit zakaznikovi
+6. pak se objednavka bud zahazuje nebo posila dal podle potvrzeni zakaznika a podle platby
+7. system udela kopii objednavky na kusovniku 
+8. system zkontroluje pocet neprirazenych potrebnych dilu na skladu podle kusovniku
+9. doobjedna vsechny potrebne dily
+10. po doruceni vsech dilu zasila objednavku vedoucimu vyroby
+11. vedouci vytvori vyrobni plan a da jej do systemu
+12. system zasle podle planu ocekavanou dobu pro vyrobu
+13. po dokonceni vyroby, vedouci udela protokol o vyrobe objednavky, ktery zada do systemu
+14. prijde team testeru, ktery pomoci systemu zkontroluje produkt (radio - funguje/nefunguje)
+15. po dokonceni uspesnych testu zakaznikovi system posle adresu, kam ma napsat pro domluveni vyzvednuti objednavky
 
 ## Logicky ramec
 

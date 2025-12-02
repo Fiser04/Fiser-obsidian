@@ -28,6 +28,9 @@ public class Main {
         System.out.println("------------------");
         lib.borrowReturn("ibpm", "123421", true, user, "25.1.", TransactionType.Borrow);
         lib.listPrints("is Borrowed", "true", true);
+        
+        
+        lib.listHistory();
     }
     
 }

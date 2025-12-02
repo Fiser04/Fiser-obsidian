@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package knihovna;
 
 import java.util.ArrayList;
@@ -9,7 +5,7 @@ import java.util.List;
 
 public class Library {
 
-    private String name;
+    private final String name;
     private List<Prints> listPrints;
     private List<User> listUsers;
     private List<TransactionOfPrints> historyOfTransactions;
@@ -35,6 +31,12 @@ public class Library {
             }
         }
     }
+    
+    public void listPrints(){
+        for(Prints print : this.listPrints){
+            System.out.println(print);
+        }
+    }
 
     public void removePrint(String whatIsearchWith, String value, boolean removeEverything) {
         ArrayList<Prints> list = searchPrint(whatIsearchWith, value, removeEverything);
@@ -53,30 +55,29 @@ public class Library {
                 boolean matched = false;
 
                 switch (whatIsearchWith) {
-                    case "name":
+                    case "name" -> {
                         if (value.equals(print.getName())) {
                             matched = true;
                         }
-                        break;
-                    case "autor":
+                    }
+                    case "autor" -> {
                         if (value.equals(print.getAutor())) {
                             matched = true;
                         }
-                        break;
-                    case "ibpm":
+                    }
+                    case "ibpm" -> {
                         if (isConvertible(print, "Book") && value.equals(((Book) print).getIbpm())) {
                             matched = true;
                         }
-                        break;
-                    case "is borrowed":
+                    }
+                    case "is borrowed" -> {
                         if (convertStringToBooleanOnlyTrueFalse(value) == print.isIsBorrowed()) {
                             matched = true;
                         }
-                        break;
-                    case "":
+                    }
+                    case "" ->
                         matched = true;
-                        break;
-                    default:
+                    default ->
                         throw new AssertionError();
                 }
 
@@ -89,24 +90,22 @@ public class Library {
             }
         } catch (WrongSearchParametr ex) {
             System.out.println(ex.getMessage());
-        } finally {
-            return resultsOfSearch;
         }
+        return resultsOfSearch;
+
     }
 
     private boolean isConvertible(Prints print, String toWhat) {
         try {
             boolean convered = false;
             switch (toWhat) {
-                case "Book": {
+                case "Book" -> {
                     Book b = (Book) print;
                     convered = true;
                 }
-                break;
-                //dalsi druhy tiskovin
-                default:
-                    throw new AssertionError();
+               
             }
+            //dalsi druhy tiskovin
             return convered;
         } catch (Exception e) {
             return false;
@@ -121,19 +120,24 @@ public class Library {
         this.listUsers.add(user);
     }
 
+    
     public void borrowPrint(Prints print, User user) {
         if (this.listPrints.contains(print) && this.listUsers.contains(user) && !print.isIsBorrowed()) {
-            print.borrow();
+            this.listPrints.get(this.listPrints.indexOf(print)).borrow();
         }
     }
+     
 
     private boolean convertStringToBooleanOnlyTrueFalse(String value) throws WrongSearchParametr {
-        if (value.equals("true") || value.equals("1")) {
-            return true;
-        } else if (value.equals("false") || value.equals("0")) {
-            return false;
-        } else {
-            throw new WrongSearchParametr("Input is not convertable to boolean");
+        switch (value) {
+            case "true", "1" -> {
+                return true;
+            }
+            case "false", "0" -> {
+                return false;
+            }
+            default ->
+                throw new WrongSearchParametr("Input is not convertable to boolean");
         }
     }
 
@@ -155,10 +159,14 @@ public class Library {
                         this.listPrints.get(this.listPrints.indexOf(print)).setIsBorrowed(false);
                     }
                 }
-
                 this.historyOfTransactions.add(new TransactionOfPrints(user, date, print, transactionType));
-
             }
+        }
+    }
+    
+    public void listHistory(){
+        for(TransactionOfPrints t : historyOfTransactions){
+            System.out.println(t);
         }
     }
 }
