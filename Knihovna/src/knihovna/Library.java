@@ -31,9 +31,9 @@ public class Library {
             }
         }
     }
-    
-    public void listPrints(){
-        for(Prints print : this.listPrints){
+
+    public void listPrints() {
+        for (Prints print : this.listPrints) {
             System.out.println(print);
         }
     }
@@ -103,7 +103,7 @@ public class Library {
                     Book b = (Book) print;
                     convered = true;
                 }
-               
+
             }
             //dalsi druhy tiskovin
             return convered;
@@ -120,13 +120,11 @@ public class Library {
         this.listUsers.add(user);
     }
 
-    
     public void borrowPrint(Prints print, User user) {
         if (this.listPrints.contains(print) && this.listUsers.contains(user) && !print.isIsBorrowed()) {
             this.listPrints.get(this.listPrints.indexOf(print)).borrow();
         }
     }
-     
 
     private boolean convertStringToBooleanOnlyTrueFalse(String value) throws WrongSearchParametr {
         switch (value) {
@@ -163,9 +161,9 @@ public class Library {
             }
         }
     }
-    
-    public void listHistory(){
-        for(TransactionOfPrints t : historyOfTransactions){
+
+    public void listHistory() {
+        for (TransactionOfPrints t : historyOfTransactions) {
             System.out.println(t);
         }
     }

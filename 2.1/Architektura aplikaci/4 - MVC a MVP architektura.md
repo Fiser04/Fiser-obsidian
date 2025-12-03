@@ -24,6 +24,7 @@
 			- nesmi byt v view, protoze ji potrebujeme testovat
 		- aplikacni logika
 			- to co aplikace realne dela
+		- 
 	- model = datovy model
 		- resi to databazi, iot, a tak dale
 		- data nejsou objektove ale daji se prevest pomoci ORM (objektove relacni mapovani)
