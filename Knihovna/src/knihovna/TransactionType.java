@@ -8,8 +8,7 @@ public enum TransactionType {
     Borrow("zapujceni"),
     Return("vraceni");
     
-    private String desc;
-    
+    private String desc;    
     private TransactionType(String desc){
         this.desc = desc;
     }

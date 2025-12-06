@@ -123,13 +123,25 @@ public class Library {
             this.listPrints.get(this.listPrints.indexOf(print)).borrow();
         }
     }
+    
+    
+    public User searchUser(String bywhat, String name){
+        for(User user : this.listUsers){
+            if(bywhat.equals("name") && user.getName().equals(name.toLowerCase())){
+                return user;
+            }
+            else if(bywhat.equals("id") && user.getName().equals(name.toLowerCase()))
+                return user;
+        }
+        return null;
+    }
 
     private boolean convertStringToBooleanOnlyTrueFalse(String value) throws WrongSearchParametr {
         switch (value) {
-            case "true", "1" -> {
+            case "true", "1", "yes" -> {
                 return true;
             }
-            case "false", "0" -> {
+            case "false", "0", "no" -> {
                 return false;
             }
             default ->
@@ -137,10 +149,10 @@ public class Library {
         }
     }
 
-    public void borrowReturn(String whatIsearchWith, String value, boolean returnEverything, User user, String date, TransactionType transactionType) {
+    public void borrowReturn(String whatIsearchWith, String value, boolean returnEverything, String userByWhat, String userValue, String date, TransactionType transactionType) {
         ArrayList<Prints> toBorrow = searchPrint(whatIsearchWith, value, returnEverything);
-
-        if (!toBorrow.isEmpty()) {
+        User user = searchUser(userByWhat, userValue);
+        if (!toBorrow.isEmpty() && !(user.equals(null))) {
             for (Prints print : toBorrow) {
                 if (transactionType.equals(TransactionType.Borrow)) {
                     if (print.isBorrowed) {

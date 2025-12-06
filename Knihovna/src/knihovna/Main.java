@@ -23,6 +23,9 @@ public class Main {
         //
         //
         // lib.listHistory();
+        
+        Interactor interactor = new Interactor();
+        interactor.start();
     }
     
 }
