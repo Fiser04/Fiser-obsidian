@@ -64,6 +64,7 @@
 			- provazovani gui a datoveho modelu
 				- neco se zmeni v datech, aktualizace gui
 			- mezi View a View-model
+			- ale HLAVNE treba kdyz budu mit v gui tlacitko "smazat", tak se mi odemkne az po vybrani ceho
 
 - udalostni system
 	- predavani adres method v pameti
@@ -82,6 +83,7 @@
 	- Handler
 		- zachycuje ten event
 	- Observer
+		- *je to defakto link, kdyz se mi neco zmeni tak zmenim to druhe*
 		- az kdyz to bezi tak vizObjekt cumi na DataObject na zmeny
 		- ![[Pasted image 20251029090759.png]]
 			- prazdna sipka = dedicnost

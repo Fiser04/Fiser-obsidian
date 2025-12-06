@@ -5,13 +5,11 @@ import java.util.List;
 
 public class Library {
 
-    private final String name;
     private List<Prints> listPrints;
     private List<User> listUsers;
     private List<TransactionOfPrints> historyOfTransactions;
 
-    public Library(String name) {
-        this.name = name;
+    public Library() {
         this.listPrints = new ArrayList<>();
         this.listUsers = new ArrayList<>();
         this.historyOfTransactions = new ArrayList<>();
@@ -167,4 +165,30 @@ public class Library {
             System.out.println(t);
         }
     }
+
+    public List<Prints> getListPrints() {
+        return listPrints;
+    }
+
+    public void setListPrints(List<Prints> listPrints) {
+        this.listPrints = listPrints;
+    }
+
+    public List<User> getListUsers() {
+        return listUsers;
+    }
+
+    public void setListUsers(List<User> listUsers) {
+        this.listUsers = listUsers;
+    }
+
+    public List<TransactionOfPrints> getHistoryOfTransactions() {
+        return historyOfTransactions;
+    }
+
+    public void setHistoryOfTransactions(List<TransactionOfPrints> historyOfTransactions) {
+        this.historyOfTransactions = historyOfTransactions;
+    }
+    
+    
 }
