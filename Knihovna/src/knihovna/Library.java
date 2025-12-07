@@ -179,7 +179,7 @@ public class Library {
                         System.out.println("Print is allready borrowed");
                     } else {
                         print.setIsBorrowed(true);
-                        this.historyOfTransactions.add(new TransactionOfPrints(user, date, print, TransactionType.Borrow ));
+                        this.historyOfTransactions.add(new TransactionOfPrints(user.getName(), user.getId(), date, print.getName(),print.getAutor(), TransactionType.Borrow ));
                         System.out.println("Print was borrowed");
                     }
                 }
@@ -188,7 +188,7 @@ public class Library {
                         System.out.println("You can't return book that was't borrowed");
                     } else {
                         print.setIsBorrowed(false);
-                        this.historyOfTransactions.add(new TransactionOfPrints(user, date, print, TransactionType.Return ));
+                        this.historyOfTransactions.add(new TransactionOfPrints(user.getName(), user.getId(), date, print.getName(),print.getAutor(), TransactionType.Return ));
                         System.out.println("Print was returned");
                     }
                 }

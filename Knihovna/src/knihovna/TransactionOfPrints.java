@@ -5,24 +5,36 @@ package knihovna;
  * @author fiser
  */
 public class TransactionOfPrints {
-    private User user;
+    private String userName;
+    private int userId;
     private String date;
-    private Prints print;
+    private String printName;
+    private String printAutor;
     private TransactionType type;
 
-    public TransactionOfPrints(User user, String date, Prints print, TransactionType type) {
-        this.user = user;
+    public TransactionOfPrints(String userName, int userId, String date, String printName, String printAutor, TransactionType type) {
+        this.userName = userName;
+        this.userId = userId;
         this.date = date;
-        this.print = print;
+        this.printName = printName;
+        this.printAutor = printAutor;
         this.type = type;
     }
 
-    public User getUser() {
-        return user;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getDate() {
@@ -33,12 +45,20 @@ public class TransactionOfPrints {
         this.date = date;
     }
 
-    public Prints getPrint() {
-        return print;
+    public String getPrintName() {
+        return printName;
     }
 
-    public void setPrint(Prints print) {
-        this.print = print;
+    public void setPrintName(String printName) {
+        this.printName = printName;
+    }
+
+    public String getPrintAutor() {
+        return printAutor;
+    }
+
+    public void setPrintAutor(String printAutor) {
+        this.printAutor = printAutor;
     }
 
     public TransactionType getType() {
@@ -51,7 +71,8 @@ public class TransactionOfPrints {
 
     @Override
     public String toString() {
-        return "Transaction{" + "user=" + user + ", date=" + date + ", print=" + print + ", type=" + type + '}';
+        return "TransactionOfPrints{" + "userName=" + userName + ", userId=" + userId + ", date=" + date + ", printName=" + printName + ", printAutor=" + printAutor + ", type=" + type + '}';
     }
+
     
 }
