@@ -43,7 +43,12 @@ public class Prints {
 
     @Override
     public String toString() {
-        return "Prints{" + "name=" + name + ", autor=" + autor + " is borrowed " + isBorrowed + '}';
+        if (isBorrowed) {
+            return "Print's name is " + this.name + ", it's autor is " + this.autor + " and now it is borrowed.";
+        }
+        else{
+             return "Print's name is " + this.name + ", it's autor is " + this.autor + " and now it is free to choose.";
+        }
     }
      
 }

@@ -22,7 +22,12 @@ public class Book extends Prints{
 
     @Override
     public String toString() {
-        return this.name + " " + this.autor + " " + this.ibpm + " "+this.isBorrowed;
+         if (isBorrowed) {
+            return "Book's name is " + this.name + ", it's autor is " + this.autor + ", it's ibpm is " + this.ibpm + " and now it is borrowed.";
+        }
+        else{
+             return "Book's name is " + this.name + ", it's autor is " + this.autor + ", it's ibpm is " + this.ibpm + " and now it is free to choose.";
+        }
     }
    
 }

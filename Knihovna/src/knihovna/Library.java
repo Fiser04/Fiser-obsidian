@@ -17,9 +17,10 @@ public class Library {
 
     public void addPrint(Prints print) {
         this.listPrints.add(print);
+        System.out.println("Print was added");
     }
 
-    public void listPrints(String whatIsearchWith, String value, boolean returnEverything) {
+    public void listPrints(String whatIsearchWith, String value, String returnEverything) {
         ArrayList<Prints> list = searchPrint(whatIsearchWith, value, returnEverything);
         if (list.isEmpty()) {
             System.out.println("Nothing was found");
@@ -36,19 +37,21 @@ public class Library {
         }
     }
 
-    public void removePrint(String whatIsearchWith, String value, boolean removeEverything) {
+    public void removePrint(String whatIsearchWith, String value, String removeEverything) {
         ArrayList<Prints> list = searchPrint(whatIsearchWith, value, removeEverything);
         if (!list.isEmpty()) {
             this.listPrints.removeAll(list);
         }
     }
 
-    private ArrayList<Prints> searchPrint(String whatIsearchWith, String value, boolean returnEverything) {
+    private ArrayList<Prints> searchPrint(String whatIsearchWith, String value, String re) {
         ArrayList<Prints> resultsOfSearch = new ArrayList<>();
-        whatIsearchWith = whatIsearchWith.toLowerCase();
-        value = value.toLowerCase();
-
         try {
+
+            whatIsearchWith = whatIsearchWith.toLowerCase();
+            value = value.toLowerCase();
+            boolean returnEverything = convertStringToBooleanOnlyTrueFalse(re);
+
             for (Prints print : this.listPrints) {
                 boolean matched = false;
 
@@ -88,9 +91,9 @@ public class Library {
             }
         } catch (WrongSearchParametr ex) {
             System.out.println(ex.getMessage());
+
         }
         return resultsOfSearch;
-
     }
 
     private boolean isConvertible(Prints print, String toWhat) {
@@ -98,6 +101,7 @@ public class Library {
             boolean convered = false;
             switch (toWhat) {
                 case "Book" -> {
+                    
                     Book b = (Book) print;
                     convered = true;
                 }
@@ -112,6 +116,7 @@ public class Library {
 
     public void addUser(String name, int id) {
         this.listUsers.add(new User(name, id));
+        System.out.println("User was added");
     }
 
     public void addUser(User user) {
@@ -123,20 +128,24 @@ public class Library {
             this.listPrints.get(this.listPrints.indexOf(print)).borrow();
         }
     }
-    
-    
-    public User searchUser(String bywhat, String name){
-        for(User user : this.listUsers){
-            if(bywhat.equals("name") && user.getName().equals(name.toLowerCase())){
+
+    public User searchUser(String bywhat, String name) {
+        try{
+        for (User user : this.listUsers) {
+            if (bywhat.equals("name") && user.getName().equals(name.toLowerCase())) {
+                return user;
+            } else if (bywhat.equals("id") && (user.getId() == Integer.parseInt(name))) {
                 return user;
             }
-            else if(bywhat.equals("id") && user.getName().equals(name.toLowerCase()))
-                return user;
+        }
+        }
+        catch(NumberFormatException e){
+            System.out.println("This is not a valid number.");
         }
         return null;
     }
 
-    private boolean convertStringToBooleanOnlyTrueFalse(String value) throws WrongSearchParametr {
+    public boolean convertStringToBooleanOnlyTrueFalse(String value) throws WrongSearchParametr {
         switch (value) {
             case "true", "1", "yes" -> {
                 return true;
@@ -149,31 +158,51 @@ public class Library {
         }
     }
 
-    public void borrowReturn(String whatIsearchWith, String value, boolean returnEverything, String userByWhat, String userValue, String date, TransactionType transactionType) {
+    public void borrowReturn(String whatIsearchWith, String value, String returnEverything, String userByWhat, String userValue, String date, TransactionType transactionType) {
         ArrayList<Prints> toBorrow = searchPrint(whatIsearchWith, value, returnEverything);
         User user = searchUser(userByWhat, userValue);
-        if (!toBorrow.isEmpty() && !(user.equals(null))) {
-            for (Prints print : toBorrow) {
-                if (transactionType.equals(TransactionType.Borrow)) {
+
+        if (toBorrow.isEmpty() || user == null) {
+            System.out.println("Either user wasn't found or the print.");
+            return;
+        }
+
+        for (Prints print : this.listPrints) {
+
+            if (!toBorrow.contains(print)) {
+                continue;
+            }
+
+            switch (transactionType) {
+                case Borrow -> {
                     if (print.isBorrowed) {
                         System.out.println("Print is allready borrowed");
                     } else {
-                        this.listPrints.get(this.listPrints.indexOf(print)).setIsBorrowed(true);
+                        print.setIsBorrowed(true);
+                        this.historyOfTransactions.add(new TransactionOfPrints(user, date, print, TransactionType.Borrow ));
+                        System.out.println("Print was borrowed");
                     }
-                } else if (transactionType.equals(TransactionType.Return)) {
+                }
+                case Return -> {
                     if (!print.isBorrowed) {
                         System.out.println("You can't return book that was't borrowed");
                     } else {
-                        this.listPrints.get(this.listPrints.indexOf(print)).setIsBorrowed(false);
+                        print.setIsBorrowed(false);
+                        this.historyOfTransactions.add(new TransactionOfPrints(user, date, print, TransactionType.Return ));
+                        System.out.println("Print was returned");
                     }
                 }
-                this.historyOfTransactions.add(new TransactionOfPrints(user, date, print, transactionType));
+                default ->
+                    System.out.println("Transaction type does not have defined action");
             }
+
         }
+
     }
 
     public void listHistory() {
-        for (TransactionOfPrints t : historyOfTransactions) {
+        List<TransactionOfPrints> tran = historyOfTransactions.reversed();
+        for (TransactionOfPrints t : tran) {
             System.out.println(t);
         }
     }
@@ -201,6 +230,5 @@ public class Library {
     public void setHistoryOfTransactions(List<TransactionOfPrints> historyOfTransactions) {
         this.historyOfTransactions = historyOfTransactions;
     }
-    
-    
+
 }
