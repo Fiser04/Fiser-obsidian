@@ -101,7 +101,7 @@ public class Library {
             boolean convered = false;
             switch (toWhat) {
                 case "Book" -> {
-                    
+
                     Book b = (Book) print;
                     convered = true;
                 }
@@ -115,7 +115,7 @@ public class Library {
     }
 
     public void addUser(String name, int id) {
-        this.listUsers.add(new User(name, id));
+        this.listUsers.add(new User(name.toLowerCase(), id));
         System.out.println("User was added");
     }
 
@@ -130,16 +130,15 @@ public class Library {
     }
 
     public User searchUser(String bywhat, String name) {
-        try{
-        for (User user : this.listUsers) {
-            if (bywhat.equals("name") && user.getName().equals(name.toLowerCase())) {
-                return user;
-            } else if (bywhat.equals("id") && (user.getId() == Integer.parseInt(name))) {
-                return user;
+        try {
+            for (User user : this.listUsers) {
+                if (bywhat.equals("name") && user.getName().equals(name.toLowerCase())) {
+                    return user;
+                } else if (bywhat.equals("id") && (user.getId() == Integer.parseInt(name))) {
+                    return user;
+                }
             }
-        }
-        }
-        catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.out.println("This is not a valid number.");
         }
         return null;
@@ -161,9 +160,12 @@ public class Library {
     public void borrowReturn(String whatIsearchWith, String value, String returnEverything, String userByWhat, String userValue, String date, TransactionType transactionType) {
         ArrayList<Prints> toBorrow = searchPrint(whatIsearchWith, value, returnEverything);
         User user = searchUser(userByWhat, userValue);
-
-        if (toBorrow.isEmpty() || user == null) {
-            System.out.println("Either user wasn't found or the print.");
+        if(toBorrow.isEmpty()){
+            System.out.println("No print was found");
+            return;
+        }
+        if (user == null) {
+            System.out.println("User was not found");
             return;
         }
 
@@ -179,7 +181,7 @@ public class Library {
                         System.out.println("Print is allready borrowed");
                     } else {
                         print.setIsBorrowed(true);
-                        this.historyOfTransactions.add(new TransactionOfPrints(user.getName(), user.getId(), date, print.getName(),print.getAutor(), TransactionType.Borrow ));
+                        this.historyOfTransactions.add(new TransactionOfPrints(user.getName(), user.getId(), date, print.getName(), print.getAutor(), TransactionType.Borrow));
                         System.out.println("Print was borrowed");
                     }
                 }
@@ -188,7 +190,7 @@ public class Library {
                         System.out.println("You can't return book that was't borrowed");
                     } else {
                         print.setIsBorrowed(false);
-                        this.historyOfTransactions.add(new TransactionOfPrints(user.getName(), user.getId(), date, print.getName(),print.getAutor(), TransactionType.Return ));
+                        this.historyOfTransactions.add(new TransactionOfPrints(user.getName(), user.getId(), date, print.getName(), print.getAutor(), TransactionType.Return));
                         System.out.println("Print was returned");
                     }
                 }
