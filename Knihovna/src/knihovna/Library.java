@@ -246,5 +246,10 @@ public class Library {
         return Objects.equals(this.historyOfTransactions, other.historyOfTransactions);
     }
 
+    @Override
+    public String toString() {
+        return "Library{" + "listPrints=" + listPrints + ", listUsers=" + listUsers + ", historyOfTransactions=" + historyOfTransactions + '}';
+    }
+
     
 }

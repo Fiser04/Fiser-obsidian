@@ -1,0 +1,2 @@
+- simulace dravec - korist
+	- 

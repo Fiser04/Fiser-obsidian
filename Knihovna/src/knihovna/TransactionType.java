@@ -16,5 +16,18 @@ public enum TransactionType {
     public String showDesc(){
         return this.desc;
     }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    @Override
+    public String toString() {
+        return "TransactionType{" + "ordinal=" + ordinal() + ", name=" + name() + ", desc=" + desc + '}';
+    }
     
 }

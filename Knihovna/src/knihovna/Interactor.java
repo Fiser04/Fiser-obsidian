@@ -4,6 +4,7 @@
  */
 package knihovna;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 /**
@@ -236,5 +237,56 @@ public class Interactor {
         shell();
         string[1] = sc.nextLine();
         return string;
+    
+        
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 71 * hash + Objects.hashCode(this.library);
+        hash = 71 * hash + (this.running ? 1 : 0);
+        hash = 71 * hash + Objects.hashCode(this.sc);
+        hash = 71 * hash + Objects.hashCode(this.shell);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Interactor other = (Interactor) obj;
+        if (this.running != other.running) {
+            return false;
+        }
+        if (!Objects.equals(this.shell, other.shell)) {
+            return false;
+        }
+        if (!Objects.equals(this.library, other.library)) {
+            return false;
+        }
+        return Objects.equals(this.sc, other.sc);
+    }
+
+    @Override
+    public String toString() {
+        return "Interactor{" + "library=" + library + ", running=" + running + ", sc=" + sc + ", shell=" + shell + '}';
+    }
+
+    public Scanner getSc() {
+        return sc;
+    }
+
+    public String getShell() {
+        return shell;
+    }
+    
+    
 }
