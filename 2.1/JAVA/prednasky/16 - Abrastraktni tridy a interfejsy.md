@@ -1,2 +1,1 @@
 - simulace dravec - korist
-	- 

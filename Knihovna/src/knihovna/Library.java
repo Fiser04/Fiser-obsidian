@@ -143,11 +143,11 @@ public class Library {
     public void borrowReturn(String whatIsearchWith, String value, String returnEverything, String userByWhat, String userValue, String date, TransactionType transactionType) {
         ArrayList<Prints> toBorrow = searchPrint(whatIsearchWith, value, returnEverything);
         User user = searchUser(userByWhat, userValue);
-        if(toBorrow.isEmpty()){
+        if (toBorrow.isEmpty()) {
             System.out.println("No print was found");
             return;
         }
-        if (user == null ) {
+        if (user == null) {
             System.out.println("User was not found");
             return;
         }
@@ -251,5 +251,4 @@ public class Library {
         return "Library{" + "listPrints=" + listPrints + ", listUsers=" + listUsers + ", historyOfTransactions=" + historyOfTransactions + '}';
     }
 
-    
 }
