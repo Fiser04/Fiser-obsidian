@@ -1,5 +1,7 @@
 package knihovna;
 
+import java.util.Objects;
+
 /**
  *
  * @author fiser
@@ -49,6 +51,38 @@ public class Prints {
         else{
              return "Print's name is " + this.name + ", it's autor is " + this.autor + " and now it is free to choose.";
         }
+        
+        
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 47 * hash + Objects.hashCode(this.name);
+        hash = 47 * hash + Objects.hashCode(this.autor);
+        hash = 47 * hash + (this.isBorrowed ? 1 : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Prints other = (Prints) obj;
+        if (this.isBorrowed != other.isBorrowed) {
+            return false;
+        }
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        return Objects.equals(this.autor, other.autor);
     }
      
 }

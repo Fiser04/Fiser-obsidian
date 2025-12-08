@@ -106,7 +106,7 @@ public class Interactor {
     private String[] questionsStrings() {
         String[] string = new String[3];
         System.out.println("Please enter the required information");
-        System.out.println("Category (name, autor, is borrowed)?");
+        System.out.println("Category (name, autor, is borrowed or ibpm)?");
         shell();
         string[0] = sc.nextLine();
         System.out.println("What is the value for search?");
@@ -139,8 +139,7 @@ public class Interactor {
             System.out.println("""
                                            Please choose what type the print is:
                                            1: general print
-                                           2: book
-                                           """);
+                                           2: book""");
             shell();
             printAddSwitcher(Integer.parseInt(sc.nextLine()));
         } catch (NumberFormatException e) {

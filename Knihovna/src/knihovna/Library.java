@@ -2,6 +2,7 @@ package knihovna;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Library {
 
@@ -67,7 +68,7 @@ public class Library {
                         }
                     }
                     case "ibpm" -> {
-                        if (isConvertible(print, "Book") && value.equals(((Book) print).getIbpm())) {
+                        if ((print instanceof Book) && value.equals(((Book) print).getIbpm())) {
                             matched = true;
                         }
                     }
@@ -94,24 +95,6 @@ public class Library {
 
         }
         return resultsOfSearch;
-    }
-
-    private boolean isConvertible(Prints print, String toWhat) {
-        try {
-            boolean convered = false;
-            switch (toWhat) {
-                case "Book" -> {
-
-                    Book b = (Book) print;
-                    convered = true;
-                }
-
-            }
-            //dalsi druhy tiskovin
-            return convered;
-        } catch (Exception e) {
-            return false;
-        }
     }
 
     public void addUser(String name, int id) {
@@ -164,7 +147,7 @@ public class Library {
             System.out.println("No print was found");
             return;
         }
-        if (user == null) {
+        if (user == null ) {
             System.out.println("User was not found");
             return;
         }
@@ -233,4 +216,35 @@ public class Library {
         this.historyOfTransactions = historyOfTransactions;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 43 * hash + Objects.hashCode(this.listPrints);
+        hash = 43 * hash + Objects.hashCode(this.listUsers);
+        hash = 43 * hash + Objects.hashCode(this.historyOfTransactions);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Library other = (Library) obj;
+        if (!Objects.equals(this.listPrints, other.listPrints)) {
+            return false;
+        }
+        if (!Objects.equals(this.listUsers, other.listUsers)) {
+            return false;
+        }
+        return Objects.equals(this.historyOfTransactions, other.historyOfTransactions);
+    }
+
+    
 }
