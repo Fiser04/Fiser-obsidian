@@ -1,0 +1,11 @@
+- take onion architecture
+- ![[Pasted image 20251210083257.png]]
+	- entities
+		- business entities
+	- use cases
+		- sluzby
+	- controller,atd
+		- jak to bude videt
+	- databaze a zobrazeni
+
+- nejdu pri vyvoji jako u N-vrstvy (kde musim nejdrive delat databazi), ale nejdrive si udelam treba jednu entitu a postupne pridelavam funkcionalitu
