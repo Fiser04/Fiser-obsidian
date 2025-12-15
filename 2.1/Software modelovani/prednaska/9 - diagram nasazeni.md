@@ -1,0 +1,1 @@
+- proste diagram toho jak budou servery

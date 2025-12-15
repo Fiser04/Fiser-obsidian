@@ -1,0 +1,4 @@
+- methoda kokomo
+- kolik mesico cloveku to bude stat
+- je to velice narocne neco nacenit
+	- 50-80% odchylka

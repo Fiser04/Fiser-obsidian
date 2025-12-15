@@ -1,1 +1,5 @@
 - simulace dravec - korist
+- interface
+	- pozadavek na funkcionalitu
+	- co by ta trida mohla umet
+	- trida implementuje neco co by mela umet

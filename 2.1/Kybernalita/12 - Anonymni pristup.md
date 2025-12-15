@@ -1,0 +1,12 @@
+- anonymni pristup
+	- tor
+		- jdu pres 3 ruzne uzly
+			- ted dalsi na rade uz nezna toho neznameho
+	- tails
+- pseudoanonymni
+	- nekdo se o to stara 
+		- kdyz cajti dojdou za poskytovatelem, tak on muze jim dat ty udaje
+	- vpn
+		- mam pc, tunelem se pripojuju do VPN concentratoru a pak se komunikace resi pres tu vpn
+	- anonymacni web proxy
+		- proxyium
