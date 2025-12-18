@@ -1,8 +1,10 @@
 ![[Pasted image 20250925121023.png]]
 - Popis projektu
 	- cil projektu
+		- ten cil
 		- zprovozneni carsharingu
 	- ucel projektu
+		- proc to delame
 		- snizeni uhlikove stopy, volnejsi parkoviste
 	- vystupy
 		- mobilni aplikace
