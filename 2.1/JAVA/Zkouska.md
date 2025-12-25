@@ -1,0 +1,129 @@
+# Prubeh zkousky
+- pisemny zapoctovy test 2
+- prakticka zkouska
+- obhajoba prakticke zkousky
+- ustni teoreticka zkouska
+
+# Algoritmy, datové a procesní struktury
+- ## Algoritmus
+	- ##### popis
+		- je to presny a jednoznacny navod/postup
+			- tim padem to neni vysada IT (*Jak uvarit pernik*)
+			- v IT se jedna o "abstraktně popsaný postup řešení problému"
+	- ##### pozadavky na agloritmus
+		- **Rezultativnost**
+			- vede k domluvenemu cily
+			- *kdyz chci uvarit pernik tak mi z toho musi vyjit pernik a ne ukrajinec*
+		- **Konecnost**
+			- nesmi se stat ze se zaseknu v nekonecnem cyklu
+			- tedy ze algoritmus musi mit urcity a konecny pocet kroku
+			- dobre - *nepovedlo se to po n pokusech, jebu na to*
+			- spatne - *nepovedlo se to, jdu to zkusit znova*
+		- **Determinovanost**
+			- v kazdem okamziku je jasne co se deje a co se bude dit dal
+			- dobre - *ok sel jsem rovne tak ted musim do prava*
+			- spatne - *kurwa kudy mam jit dpc, to neni mapa ale hajzlpapir*
+		- **Elementarnost**
+			- pouzivam zakladni reseni a funkce ktere jsou v pohode s cilovym zarizenim
+			- dobre - *jasne, muzu pouzivat tuhle funkci ale tuhle nesmim, tak ji nepouziju*
+			- spatne - *tf you mean ze vam to nejde, je to napsany aby to bezelo na 5090, jak jako ze to melo bejt napsany pro toastovac*
+		- **Efektivnost**
+			- snaha o vyreseni problemu co nejlevneji, kde cenu bud urcuje cas nebo potrebny vykon
+			- dobre - *jo napsal jsem kod kterej rozjede i toastovac, kdyz to melo byt pro 5090*
+			- spatne - *jak jako ze to nerozjedete, tak jednoduchej kod potrebuje jen jeden jadernej reaktor a 2 tydny pro vypocet, jak jako ze to mela byt jen kalkulacka co umi + a -*
+		- **Hromadnost**
+			- opakovitelne pouziti
+			- dobre - *mam udelat program ktery vypocita 3+9, tak napisu program ktery scita a pak mu dam jen parametr 3 a 9*
+			- spatne - *BUM, a = 3+9, hotovo pico, dej mi prachy*
+	- ##### Prostredky pro vyjadreni algorimu
+		- Prirozeny jazyk
+		- Jazyk matematiky a logiky
+		- Graficke prostredky
+		- Pseudojazyk
+		- Programovaci jazyk
+- ## Datove a procesny struktury
+	- ##### popis
+		- stavebni kameny pro tvorby algoritmu
+		- obecne pouziti
+		- vazane na konkretni system a vyuziti
+	- ##### obecne procesni kroky
+		- **Vykonny krok**
+			- provedeni nejjednodusich kroku, kterym system rozumy
+			- nelze nebo neni nutne je dale delit na mensi kroky
+			- `c = a + b`
+		- **Prikaz skoku v algoritmu**
+			- dva typy skoku
+				- skok vpred - preskoceni kodu
+				- skok vzad - opakovane provedeni kodu
+			- toto nemusi byt primo implementovano v jazyce, ale muze byt neprimo (viz. cyklus)
+		- **Rozhodovaci krok** (*vetveni*)
+			- vyber dalsiho casti algoritmu zda li se pusti podle nejake podminky
+			- musi byt alespon dve logicke cesty
+				- 2 - if, else
+				- 3 a vic - if, else if, else
+				- specialni vyuziti - switch, case, default
+			- `i == 1, 2 == 2, 3 < 4, a > b`
+		- **Cyklus**
+			- kombinace skoku, vetveni a vykonyho kroku
+			- bud znam predem pocet kroku ktery potrebuji provest (for) a nebo neznam (while)
+			- `for(int i = 0; i < 10; i++)
+			- `for(String s : stringList)
+			- `while(a<10)`
+		- **Vstup a vystup**
+			- kroky nutne pro ziskani a vraceni informaci
+	- ##### Ukladani dat
+		- v pameti
+			- bereme v uvahu typ dat ktery se snazime ukladat pro zvyseni efektivity
+				- *neboli ze proste nepotrebuju pro int celou pamet ale jen malej blok*
+		- promenna
+			- "paměťové místo určené k ukládání dat v průběhu vykonávání algoritmu"
+			- proste muj pracovni prostor predurceny jen pro me
+			- jejich hodnota se muze menit
+		- konstanta
+			- specificky typ promene 
+			- nemena hodnota
+			- `final`
+		- oznaceni mista v pameti (*identifikator*)
+			- jen pojmenovani promene
+			- `x, moje_hodnota, y12`
+			- "musí začínat písmenem, ideální bez diakritiky, mezer a speciálních znaků"
+			- ruzne typy identifikatoru
+				- pomoci velkych a malych na rozdeleni
+					- *velblou*
+					- mojePromenaProNeco
+				- pomoci podtrzitek
+					- moje_promena_pro_neco
+				- dale uz jsou to nesmyslne hnusoty ala promena x10, mojepromena apod
+	- ##### Dostupnost dat
+		- "Proměnné a konstanty nemusí být dostupné všude v algoritmu - různý rozsah platnosti"
+		- promene
+			- globalni
+				- jsou dostupne v celem algoritmu
+			- lokalni
+				- jsou dostupne jen v casti algoritmu
+		- podle okamziku vzniku
+			- staticke
+				- (neplest s `static`)
+				- jsou jiz preddefinovane na zacatku kodu
+			- dynamicke
+				- vytvari se v prubehu kodu
+	- ##### Jednoduche datove typy
+		- **Ciselne**
+			- inteager, double, long, real, byte
+		- **Znakove**
+			- kodovani znaku
+			- ASCII, UTF-8
+		- **Textove**
+			- sekvence znaku
+		- **Boolean**
+			- logicke ano/ne
+	- ##### Datove sturktury
+		- **Jednoduche**
+			- nektere ze zkladnich datovych typu
+			- priklad teplota
+		- **Slozene** (strukturovane)
+			- **Klasicke pripady**
+				- s ruznym vyznamem casto slozene z vice ruznych typu ktere modeluji realitu "soubor udaju" (osoba - jmeno, vek, apod.)
+				- se stejnym typem a vyznamem (pole, list, kalendar)
+				- usporadane/neusporadane (seznam, mnozina)
+- ![[Pasted image 20251225154325.png]]
