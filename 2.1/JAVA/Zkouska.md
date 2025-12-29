@@ -568,4 +568,114 @@
 		- odstranit redundanci v kodu
 	- zapisuje se Ucitel extends Osoba (*novy dedi po starem*)
 - ##### Zmeny softwaru
-	- 
+	- software se furt meni
+		- oprava, rozsireni, udrzba, prizpusobeni apod
+	- software byva udrzovani hromadou lidi postupem casu
+		- *takze vole nepsat neco cemu sotva rozumis, protoze ani za tejden nemas tucha co to pak dela*
+	- jen 2 moznosti
+		- udrzovat
+		- nechat chcipnout
+
+# Kolosální dobrodružství v jeskyních
+- ![[Pasted image 20251229171714.png]]
+- ![[Pasted image 20251229171722.png]]
+- ![[Pasted image 20251229171747.png]]
+- ![[Pasted image 20251229171754.png]]
+- ![[Pasted image 20251229171803.png]]
+- ![[Pasted image 20251229171811.png]]
+- ![[Pasted image 20251229171822.png]]
+- ![[Pasted image 20251229171829.png]]
+- ![[Pasted image 20251229171838.png]]
+- ![[Pasted image 20251229171854.png]]
+- ![[Pasted image 20251229171905.png]]
+- ![[Pasted image 20251229171919.png]]
+- ![[Pasted image 20251229171928.png]]
+- ![[Pasted image 20251229171935.png]]
+- ![[Pasted image 20251229171943.png]]
+- ![[Pasted image 20251229171951.png]]
+- ![[Pasted image 20251229171959.png]]
+- ![[Pasted image 20251229172011.png]]
+- ![[Pasted image 20251229172018.png]]
+
+# Soubory a vyjimky
+- ##### Soubory
+	- mnozina udaju na disku
+	- dva mozne zpusoby ulozeni
+		- citelne pro cloveka
+			- vyhoda - mohu pak jednoduse upravovat soubor, kompatibilita
+			- nevyho - "slozita" implementace
+		- necitelne pro cloveka
+			- vyhoda - jednoducha implementace
+			- nevyhoda - kompatibilni jen s mojim resenim v jedne chvili
+	- typicke operace
+		- otevreni
+		- cteni
+		- zapis
+		- zavreni
+	- cteni a zapis muze byt
+		- sekvencni
+			- pouze postupne
+		- nahodny
+			- nahodne cteni nebo zapis
+- ##### Soubor jako posloupnost bytu
+	- `FileInputStream`
+	- `FileOutputStream`
+	- ![[Pasted image 20251229172601.png]]
+- ##### Soubor jako posloupnost primitivních typů
+	- `DataInputStream`
+	- `DataOutputStream`
+	- ![[Pasted image 20251229172725.png]]
+	- ![[Pasted image 20251229172738.png]]
+- ##### Soubor primitivních typů a objektů
+	- `ObjectInputStream`
+	- `ObjectOutputStream`
+	- ![[Pasted image 20251229173025.png]]
+- ##### Textové soubory
+	- zavisle na platforme
+		- unix - `\n`
+		- windows - `\r\n`
+	- zavisle na kodovani znaku
+	- chovani se k souboru z pohledu posloupnosti hodnot typu char
+		- `FileWriter`
+		- `FileReader`
+		- ![[Pasted image 20251229173329.png]]
+		- ![[Pasted image 20251229173340.png]]
+		- ![[Pasted image 20251229173411.png]]
+	- chovani se k souboru jako prevedene primitivni typy pres toString
+		- `PrintWriter`
+		- ![[Pasted image 20251229173603.png]]
+		- ![[Pasted image 20251229173612.png]]
+	- chovani se k souboru jako k hromade radku
+		- `BufferedWriter`
+		- `BufeeredReader`
+		- ![[Pasted image 20251229173750.png]]
+		- ![[Pasted image 20251229173759.png]]
+	- chovani se k souboru jako ruzne mnoziny lexikalnich elementu
+		- *proste to roztrhavam ala, mam za sebou int 1 3 7, tak to asi nebude 1, 3, 7 ale 137*
+		- `StreamTokenizer`
+		- ![[Pasted image 20251229174018.png]]
+		- ![[Pasted image 20251229174028.png]]
+	- zmena kodovani textoveho souboru
+		- ![[Pasted image 20251229174056.png]]
+- ##### Vyjimky
+	- pri operacich muze nastat neocekava vyjimka, kterou musime osetrit, tim z ni je ocekavana vyjimka
+	- pr. nenasel jsem soubor se kterym mam pracovat
+	- Exception
+	- casto pouzivane pomoci try catch bloku a nebo throw new Exception
+
+# Třídní proměnné a metody
+- **tridni promena**
+	- sdilena mezi vsemi instancemi tridy
+	- static int gravitace = 3
+- **tridni metody**
+	- mohou primo pristupovat k tridnim promenam a muze volat tridni metody
+	- "Třídní metody nemohou přímo přistupovat k instančním proměnným ani nemohou volat přímo instanční metody."
+- **konstantni promena**
+	- fixni hodnota
+	- `final`
+	- `final int max = list.size();`
+- **tridni konstantni promena**
+	- *setrim tim pamet*
+	- `private static final int GRAVITY = 3;`
+
+# Vyctove typy
