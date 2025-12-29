@@ -126,4 +126,446 @@
 				- s ruznym vyznamem casto slozene z vice ruznych typu ktere modeluji realitu "soubor udaju" (osoba - jmeno, vek, apod.)
 				- se stejnym typem a vyznamem (pole, list, kalendar)
 				- usporadane/neusporadane (seznam, mnozina)
-- ![[Pasted image 20251225154325.png]]
+	- ![[Pasted image 20251225154325.png]]
+
+# Algoritmizace
+- problem -> algoritmus
+- ##### Tvorba algoritmu
+	- **Specifikace ukolu**
+		- co chci resit a vyresit
+		- jake jsou vstupy a vystupy
+		- pohled zvenci
+	- **Analyza problemu**
+		- jak lze ukol resit
+		- koncepcni nastin cesty jak dosahnout cile
+		- rozdelit na podproblemy
+	- **Vytvareni algoritmu**
+		- navrh shora dolu
+			- "postupná dekompozice od úkolu k řešení jeho částí"
+		- navrh zdola nahoru
+			- "postupné skládání řešení ze základních stavebních prvků"
+	- **Testovani algoritmu**
+		- syntaticke chyby
+		- chyba analyzy
+		- chyba vstupnich dat
+	- **Implementace algoritmu**
+		- "transformace algoritmu do podoby srozumitelné pro cílový systém"
+	- **Uziti algoritmu**
+		- udrzba
+			- zmeni se prostredi
+			- zmena funkci (treba pridani)
+- ##### Algoritmicke postupy
+	- obecne (nezavisle na systemu)
+	- obvykle sekvence kroku
+- ##### Algorimizace problemu
+	- primy postup
+		- jiz znamy problem
+		- *pico snad nebudu vymyslet kolo*
+	- preformulovani problemu
+		- zjednoduseni a nebo zobecneni
+	- rozklad problemu na podproblemy
+		- **konjuktivni**
+			- vyresim problem tim ze vyresim vsechny podproblemy
+		- **disjunktivni**
+			- reseni problemu tim ze vyresim jen jeden podproblem
+		- **repeticni**
+			- opakovane reseni podproblemu
+- ##### Preformulovani problemu
+	- **zjednoduseni**
+		- misto πr^2 pouziju 3.14r^2
+	- **ekvivalentni preformulovani**
+		- "soustavu n lineárních rovnic o n neznámých postupně transformujeme ekvivalentními úpravami (násobení rovnice nenulovým číslem, přičtení rovnice k jiné rovnici) na soustavu s jednotkovou maticí, což je triviální problém"
+	- **zobecnujici preformulovani**
+		- misto 2x+3y-9=0 resim problem ax+by+c=0
+- ##### Rozklad problemu
+	- postupne rozkladam problem na podproblemy a resim ty
+	- **konjunktivni rozklad**
+		- aritmetický průměr n čísel získáme postupným řešením těchto dvou podproblémů
+			- výpočet součtu zadaných čísel
+			- dělení součtu hodnotou n
+	- **disjunktivni rozklad
+		- kořeny kvadratické rovnice získáme v závislosti na hodnotě diskriminantu řešením jednoho z těchto dvou podproblémů
+			- výpočet reálných kořenů
+			- výpočet reálných kořenů
+	- **iteracni rozklad
+		- výpočet součtu čísel x1 , x2 , … , xN
+			- konjunktivní rozklad - vynulování proměnné S (S = 0)
+			- iterační rozklad - pro I = 1, 2, … , N postupně sečítáme hodnoty S a xI a výsledek ukládáme do S (S = S + xI)
+	- **rekurzivni rozklad**
+		- výpočet faktoriálu F přirozeného čísla N (F = N!)
+			- disjunktivní rozklad
+				- je-li N = 0, pak F = 1
+				- je-li N > 0, pak F = N * (N – 1)! … rekurzivní rozklad
+	- **hierarchicky rozklad**
+		- opakované užití v algoritmu
+- ##### Vazba na algoritmicke struktury
+	- operacni krok
+	- sekvence (konjunktivni)
+	- vetveni (disjunktivni)
+	- cyklus (iteracni)
+- ##### Obecne k rekurzi
+	- prepisuji vypocet tim ze ho poustim sam v sobe
+- ##### Problemy algoritmizace
+	- **ramec** (*rozloha*)
+		- co vse do algoritmu zahrnout
+		- *mam tam rvat i neco co se defakto nikdy nestane?*
+	- *narocnost a efektivita*
+		- existuji ruzne zpusoby jak dosahnout cile, proto se snazim najit ty nejlevnejsi
+		- zdroje
+			- čas
+				- drobnou úpravou algoritmu může být řešení výrazně zkráceno
+			- lidé
+				- algoritmy nejsou jen pro stroje
+			- energie
+				- souvisí s dobou řešeni
+			- finance
+				- jiné promítnutí energií
+			- vstupy
+				- různá cena informace
+			- paměť
+				- nutná kapacita
+
+# Slozitost algoritmu
+- ##### Casova slozitost algoritmu
+	- "Časová složitost algoritmu vyjadřuje závislost času potřebného pro provedení výpočtu na rozsahu (velikosti) vstupních dat"
+	- O n anotace
+	- *proste jednoduse receno, chci mit algoritmus kterymu tolik nezalezi na tom kolik dat dostne, cim vic mu na tom zalezi tim je "horsi" (kdyz vim ze to je jen na jednu vec u ktery je uplne jedno jak dlouho to bude trvat, tak je to jedno)*
+	- ![[Pasted image 20251227150842.png]]
+
+# Programovací jazyky a Java
+- ##### Program
+	- algoritmus zapsany v jazyce kteremu cilovy system rozumy
+- ##### Programovaci jazyk
+	- **strojove orientovany (strojovy jazyk)
+		- jazyk fyzickeho procesoru
+		- asembler
+	- **vyssi programovaci jazyky**
+		- imperativní
+			- příkazové, procedurální
+		- neimperativní
+			- funkcionální
+		- virtuální stroj vyššího programovacího jazyka
+			- hypotetický procesor, který provádí příkazy
+- ##### Hlavní rysy imperativních jazyků
+	- C, C#, C++, Java, Pascal, Basic, ...
+	- "Zpracovávané údaje mají formu datových objektů různých typů, které jsou v programu reprezentovány pomocí proměnných resp. konstant"
+	- program obsahuje deklarace a prikazy
+		- deklarace davaji vyznam jmenum
+		- prikazy predepisuji akce s datovymy typy
+- ##### Vlastnosti programovacich jazyku
+	- **syntaxe**
+		- soubor pravidel jak by mel kod vypadat
+		- odradkovani, zavorky, stredniky apod
+	- **semantika**
+		- vyznam jednotlivych konstrukcich
+	- **prostredky pro popis syntaxe**
+		- syntakticka gramatika
+- ##### Výpočetní proces a paměť počítače
+	- "Výpočetní proces je posloupnost akcí nad daty uloženými v paměti počítače (rozlišujeme hw úroveň a různé úrovně virtualizace)"
+- ##### Implementace programovacích jazyků
+	- **interpretační metoda**
+		- ![[Pasted image 20251227162454.png]]
+		- ![[Pasted image 20251227162515.png]]
+	- **kompilacni metoda**
+		- ![[Pasted image 20251227162552.png]]
+		- ![[Pasted image 20251227162649.png]]
+- ##### Vyssi programovaci jazyky
+	- **pristup k navrhu**
+		- proceduralni
+			- ciste sekvencni pristup k kodu
+			- *proste je serie*
+		- objektove
+			- "objektová struktura s vnořenými sekvenčními kroky"
+			- *proste si vytvarim "objekty", abych zmodeloval (zjednodusena verze reality - prok) realitu*
+		- funkcionalni
+			- prenos funkcionality jako argument
+		- programovani rizene udalosti
+	- **zamerezni**
+		- systemove
+			- pouzivaji kompilator
+		- aplikacni
+			- pristupnejsi syntaxe
+			- kompilátory i interprety
+		- webove
+			- do specialniho prostredi
+			- casto interpretove
+		- specialni
+			- umela intelegence apod.
+- ##### IDE
+	- **Integrated Development Enviropment**
+	- textovy editor + nastroje pro development
+	- primo delany na urcity jazyk (IDEAJ - Java, Visual Studio - C#)
+	- volba bud podle programatora nebo zamestnavatele
+		- *bud si muzu psat v cem chci nebo ma zamestnavatel licence, tak musim pouzit tu*
+- ##### Java
+	- moderni vyssi programovaci jazyk
+	- stale pouzivany v firemnim prostoru (hlavne ty starsi)
+		- *jak jako ze pisete v Java 8, uz je 25 dpc*
+	- zakladem jazyku Kotlin
+		- jazyk na ablikace pro Android
+	- **verze distribuce**
+		- JRE
+			- Java Runtime Enviropment
+			- *proste ta virtualka kterou potrebuju kdyz to chci pustit*
+		- JDK
+			- Java Development Kit
+			- *kdyz chci psat kod tak to potrebuju*
+	- **verze jazyka**
+		- rozsah
+			- (ME)
+				- mobile edition
+			- SE
+				- standart edition
+			- EE
+				- enterprise edition
+				- *postupne nahrazeno frameworkem Spring*
+		- podle vyvoje
+			- LTS verze
+				- 8
+					- dnesni zaklad
+				- 11
+					- pridany moduly
+				- 17, 21, 23, 25
+					- nove lts verze
+					- casto vyuzivane s novymi frameworky (*Spring jde od 17*)
+	- **zpracování Java programu**
+		- *vemu .java, prejebu to do .class pomoci javac, .class pak se hazi do virtualky ktera to prehodi do strojaku a jeb, mam program*
+	- **programatorska typografie**
+		- ![[Pasted image 20251227165122.png]]
+		- ![[Pasted image 20251227165134.png]]
+		- komentare
+			- řádkový - //
+			- víceřádkový - /* …. * /
+			- dokumetační - /** ……* / - javadoc
+		- javadoc
+			- ![[Pasted image 20251227165252.png]]
+
+# Zaklady Javy
+- ##### Primitivni datove typy
+	- ![[Pasted image 20251227165726.png]]
+- ##### Promenne a prirazeni
+	- **deklarace**
+		- oznameni prekladaci ze existuje promenna a ze s ni budu chtit pracovat
+		- `int a;`
+		- avsak k teto promenne neni prirazena hodnota, bez ni nemohu s promennou pracovat
+		- `int a;`
+		  `int b = a - 1;`
+			- error
+	- **inicializace**
+		- prvni prirazeni hodnoty promenne
+		- `int a;`
+		  `a = 10;`
+		- lze kombinovat i s deklaraci
+			- `int a = 10;`
+- ##### Literály a pojmenované konstanty
+	- **literal**
+		- povolene hodnoty pro typ promene
+			- int - 10, 30
+			- double - 1.234, 394.23
+			- boolean - true, false
+			- char - 'a', '1', '#'
+			- String - "asdaf"
+	- **pojmenovane konstnaty**
+		- na rozdil od konstanty neni preddefinovana (*delam si ji sam*)
+		- `final`
+		- `final int PI = 3;`
+		- u konstant se pouziva nazev konstanty velkymi pismeny
+		- pri pokusu zmeny konstanty dostanu error
+- ##### Vyrazy
+	- "Výraz předepisuje způsob výpočtu hodnoty určitého typu"
+	- vyraz muze obsahovat
+		- proměnné
+		- konstanty
+		- volání funkci
+		- binární operátory
+		- unární operátory
+		- závorky
+	- "Pořadí operací předepsaných výrazem je dáno prioritou operatoru a asociativitou operatoru"
+- ##### Prirazovaci prikaz
+	- **promena = vyraz**
+		- `a = 1 + 2;`
+	- **promena = promena operator vyraz**
+		- `i = i + 5;`
+	- **promena operator = vyraz**
+		- `i += 5;`
+	- `x = a + b;`
+	  `Kniha k = knihovna.findKniha("babicka");`
+	- lze pouze priradit hodnotu odpovidajici typu
+		- *narozdil od toho zkurvenyho pythonu*
+		- `int a = 10;` - ok
+		- `int b = "jes";` - error
+	- **Přiřazení je možné použít jako výraz !!!**
+		- `y = x = x + 6;`
+		- vyhodnotí se jako y = (x = (x + 6));
+- ##### Typove konverze
+	- pokud je hodnota kompatibilni tak mohu promenou pretypovat
+	- `double a, int i = 1;`
+	  `a = i;`
+	  a je ted 1.0
+	- `int i, double a = 1.2;`
+	  `i = (int) a;`
+	  i je ted 1, protoze se pri konverzi odsekla desetina cast
+- ##### Prevod mezi int a boolean
+	- ruzne moznosti
+	- pouziti if
+		- `if(i == 0) return false;`
+		  `if(i == 1) return true;`
+	- pouziti vyrazu pri prirazeni
+		- `boolean b = (i == 1);`
+		- `boolean b = i?1:0;`
+
+# Operátory a další prvky jazyka
+- ##### Aritmetické operátory
+	- **unarni**
+		- -
+		- zmena znamenka
+	- **binarni**
+		- * , / , %
+		- nasobeni, deleni, zbytek po deleni
+	- **binarni**
+		- +, -
+		- scitani odcitani
+	- jsou-li obe dve hodnoty stejneho typu, tak vysledek je tehoz typu
+		- 7/2 = 3
+	- nejsou-li stejneho typu tak se to bere podle toho ktery chceme dostat, avsak musi byt alespon jeden z typu ten samy jako ten ktery chceme
+		- 7/2.0 = 3.5
+	- **specialni operatory
+		- x++, ++x
+		- x--, --x
+- ##### Relační operátory
+	- vysledek je vzdy true a nebo false
+	- `<, <=, ==, >=, > a !=`
+- ##### Logické operátory
+	- **unarni**
+		- !
+		- negace
+	- **binarni**
+		- &&
+			- soucin
+			- oboje true = true
+		- ||
+			- soucet
+			- alespon jeden true = true
+- ##### Knihovní třída Math
+	- ![[Pasted image 20251229132231.png]]
+
+# Vstup a vystup v Jave
+- ##### Příkazy výstupu
+	- `System.out.print();`
+	  `System.out.println();`
+	  `System.out.printf();`
+	- printuje stringovou hodnotu
+		- **MUSIME MIT toString()
+	- formatovany vystup
+		- `System.out.printf("Cislo Pi = %6.2f %n ", 3.142);`
+	- ![[Pasted image 20251229132752.png]]
+- ##### Vstup dat pomocí objektu Scanner
+	- terminalovy vstup
+	- `package program3;
+	  `import java.util.Scanner;`
+	  `public class Program3 {`
+	  `...public static void main(String[] args) {`
+	  `...Scanner sc = new Scanner(System.in);`
+	  `...int x, y, z;`
+	  `...System.out.println("Zadejte dvě celá čísla");`
+	  `...x = sc.nextInt();`
+	  `...y = sc.nextInt();`
+	  `...z = x + y;`
+	  `...System.out.println("Součet čísel: " +x +" + "+y+" = "+z);`
+	  `...}`
+	  `}`
+
+# Základní příkazy Javy
+- ##### Posloupnost
+	- ![[Pasted image 20251229133255.png]]
+- ##### Vetveni
+	- if
+		- ![[Pasted image 20251229133323.png]]
+	- switch
+		- ![[Pasted image 20251229133426.png]]
+- ##### Cyklus
+	- while
+		- **cyklus s podminkou na zacatku**
+		- ![[Pasted image 20251229133533.png]]
+	- do
+		- **cyklus s podminkou na konci**
+		- ![[Pasted image 20251229133650.png]]
+	- for
+		- **cyklus s danym poctem opakovani**
+			- for(int i = 0; i<10; i++)
+			- for(String string : stringList)
+		- ![[Pasted image 20251229133846.png]]
+		- ![[Pasted image 20251229133900.png]]
+	- continue
+		- preskoci pruchod iterace cyklu
+	- break
+		- ukonci cely cyklus
+
+# Procedury a funkce
+- ##### Funkce
+	- znovu volatena cast kodu
+	- chci neco vratit
+		- `typ nazevFunkce()`
+		- v funkci musi byt return
+	- parametr funkce
+		- importovana hodnota kterou funkce ocekava pro vypocet/funkcnost
+		- `int secti(int a, int b) {return a + b;}`
+	- pretezovani jmen funkce
+		- mohu pouzivat stejne jmeno pro funkci pokud zmenim jeji pozadovane parametry
+		- ![[Pasted image 20251229134700.png]]
+- ##### Procedura
+	- funkce ktera nic nevraci
+	- `void nazevProcedury()`
+- ##### Statické proměnné
+	- "Proměnné definované a společné pro danou třídu (bude vysvětleno později) použitelné ve všech metodách dané třídy jako nelokální proměnné"
+	- *proste a jednoduse, static je ze promena bude mit ve vsech instanci tridy stejnou adresu, pokud zmenim v jedne instanci tuto hodnotu, zmeni se pro vsechny, setri se timto pamet*
+- ##### Přidělování paměti proměnným
+	- ![[Pasted image 20251229135114.png]]
+	- ![[Pasted image 20251229135137.png]]
+
+# Jednoduchá kolekce
+- ##### Pole
+	- omezeny stejnetypovy indexovany list
+	- `T[] p = new T[n];`
+		- T znaci jakykoliv typ, n je pocet prvku
+	- `int p[] = {1,2,3,4,5,6};`
+		- vytvoril jsem pole a rovnou naplnil
+	- p.length vraci delku pole
+
+# Objektové programování a navrhování tříd
+- modelovani realneho sveta
+- "Základem je vytváření struktury navzájem komunikujících objektů"
+- kazdy objekt ma
+	- identifikator
+	- atributy
+	- chovani
+- ##### komunikace objektu
+	- pomoci zprav
+	- event based pristup
+		- "vazba mezi obsahem zprávy a akci příjemce je velmi volná – reakce může být různá"
+	- zpravy
+		- zadost o provedeni urcite akce
+		- objekt reaguje zavolanim vhodne metody
+- ##### Implementace objektu
+	- typ objektu = trida
+	- **trida**
+		- definuje spolecne rysy
+			- kazdy objekt nalezi do nejake tridy
+			- "v jave je trida neplnohodnotny objekt"
+		- *trida auto, tak je jasny ze vsechny auta maj nejakou barvu, znacku, pojedou apod.*
+	- **instance**
+		- konkretni objekt vytvoriny podle tridy
+		- *trida je sablona pro instanci (blueprint)*
+		- vznika konstruktorem
+	- **instancni promene a metody**
+		- promene uchovavaji hodnoty atributu instance
+			- hodnoty jsou ulozeny v objektu instance
+		- methody jsou ulozeny ve tridach
+- ##### Dedicnost
+	- vrchol hierarchie Object
+	- dedi se defakto vse
+	- duvod
+		- odstranit redundanci v kodu
+	- zapisuje se Ucitel extends Osoba (*novy dedi po starem*)
+- ##### Zmeny softwaru
+	- 
