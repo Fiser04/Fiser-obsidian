@@ -679,3 +679,112 @@
 	- `private static final int GRAVITY = 3;`
 
 # Vyctove typy
+- enumy
+- seznamy ktere se pouzivaji k odstraneni napr kouzelnych cisel, nahodnych stringu apod
+- ![[Pasted image 20251229175945.png]]
+- ![[Pasted image 20251229180023.png]]
+- ![[Pasted image 20251229180104.png]]
+
+# Použití knihovních tříd pro implementaci dokonalejší funkcionality
+- "potřebujeme znát pouze interfejs (veřejné rozhraní třídy) a nikoliv implementaci (zdrojový kód třídy)"
+- ![[Pasted image 20251230130050.png]]
+- ##### interface vs implementace
+	- dokumentace obsahuje
+		- jmeno tridy
+		- celkovy popis tridy
+		- seznam verejnych promenych
+		- seznam konstruktoru a metod
+		- navratove hodnoty a parametry pro konstruktor a metody
+		- popis ucelu kazde metody
+	- dokumentace neobsahuje (nezahrnuje)
+		- privatni instancni promene
+		- privatni metody
+		- zdrojovy kod metod
+- knihovni tridy se musi importovat
+	- `import`
+	  `import java.util.Scanner;`
+- ![[Pasted image 20251230130825.png]]
+- ##### Parametrizované (generické) třídy
+	- *jednoduse receno, jsou to tridy kde musis upresnit s jakou tridou maji presne pracovat*
+	- *viz takovej ArrayList, nemuzes udelat ArrayList jen tak, musis k nemu napsat ceho je to ArrayList*
+	- *trida ArrayList se prizpusobi aby treba .get vracel ten typ ktery chces
+	- *takze kdyz udelam ArrayList Stringu, tak v tride ArrayList se misto E pouziva String*
+	- ![[Pasted image 20251230131337.png]]
+	- ![[Pasted image 20251230131345.png]]
+		- ano add je boolean, vraci jestli se to povedlo nebo ne
+- ##### Dokonalejší chováni (Použití knihovních tříd pro implementaci dokonalejší funkcionality)
+	- **HashSet**
+		- mnozina
+			- nejsou duplicitni prvky
+			- nezalezi na poradi
+				- neni index
+		- *kdyz ho prochazim for eachem dvakrat tak se muze stat ze ho projde jinak*
+		- ![[Pasted image 20251230131621.png]]
+	- **HashMap**
+		- slovnik
+		- k klici je prirazena hodnota nejakejho typu
+		- ![[Pasted image 20251124105335.png]]
+		- ![[Pasted image 20251124105349.png]]
+- ##### Psani dokumentace
+	- ![[Pasted image 20251230131830.png]]
+	- ![[Pasted image 20251230131843.png]]
+	- ![[Pasted image 20251230131915.png]]
+
+# Dobre fungujici objekty
+- ##### Chyby
+	- **syntakticka chyba**
+		- Tyto chyby objeví kompilátor
+		- *jedna se o chybu ala chybi zavorka, strednik apod.*
+	- **logicka chyba**
+		- *you dumb fuck*
+		- znamy jako "bugs"
+			- *ale to neni bug, to je schvalne ze na random chcipnes - mojang*
+- ##### Prevence vs detekce
+	- ![[Pasted image 20251230132555.png]]
+- ##### Testovani a ladeni
+	- **testovani**
+		- hledam chybu
+	- **ladeni**
+		- hledam jak chyba vznikla
+- ##### Nastroje pro testovani a ladeni
+	- **testovani jednotek (unit test)**
+		- kazda jednotka aplikace muze byt testovana
+		- provadi se behem vyvoje
+		- je vytvarena sada testu
+		- testujeme
+			- zdali jednotka dela co ma
+			- klasickou situaci
+			- okrajovou situaci
+				- *co kdyz pracuji s celymi kladnymi cisly a najednou dostanu zaporne*
+		- je mozne vytvorit instance jednotlivych trid
+		- jednotlive metody mohou byt zavolany
+		- 
+	- **automatizace testovani**
+	- **rucni prochazeni**
+	- **ladici tisky**
+	- **debugger**
+- ##### Projekt online-shop
+	- ![[Pasted image 20251230133806.png]]
+	- ![[Pasted image 20251230133829.png]]
+	- ![[Pasted image 20251230133906.png]]
+	- ![[Pasted image 20251230133917.png]]
+	- ![[Pasted image 20251230133926.png]]
+	- ![[Pasted image 20251230133957.png]]
+	- ![[Pasted image 20251230134007.png]]
+	- ![[Pasted image 20251230134018.png]]
+	- ![[Pasted image 20251230134040.png]]
+- ##### JUnit
+	- testovaci framework 
+	- testovaci pripad
+		- metoda obsahujici testy
+	- testovaci tridy
+		- obsahuji testovaci metody
+	- assert
+		- formulace ocekavanych vysledku
+- ![[Pasted image 20251230135200.png]]
+
+# Zbytek prezentaci, jsou tam hlavne ukazky dedicnosti, interfacy a dalsi mozne kolekce
+![[09-Pouziti_dedicnosti.pdf]]
+![[10-Vice_o_dedicnosti.pdf]]
+![[11x-Dalsi_techniky_abstrakce.pdf]]
+![[12-Java_Collections_Framework.pdf]]

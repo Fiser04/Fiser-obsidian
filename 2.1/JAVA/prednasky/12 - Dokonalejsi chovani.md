@@ -9,7 +9,7 @@
 		- naimportovat
 		- pouzivat
 	- BACHA cizi knihovny mohou byt nezabezpecene
-		- musim prokazat ze ten kus kodu ktery jsem pouzil ze je bezpecna
+		- musim prokazat ze ten kus kodu ktery jsem pouzil ze je bezpecny
 			- musim mit od nich zdrojak
 	- pouzivam ten interface
 	- jsou organizovany do balicku
@@ -23,7 +23,7 @@
 			- neni index
 	- *kdyz ho prochazim for eachem dvakrat tak se muze stat ze ho projde jinak*
 
-- Map
+- HashMap
 	- slovnik
 	- k klici je prirazena hodnota nejakejho typu
 	- ![[Pasted image 20251124105335.png]]
