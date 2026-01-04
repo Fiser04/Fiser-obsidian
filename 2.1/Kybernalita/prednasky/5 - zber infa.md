@@ -1,4 +1,4 @@
- - z whois
+- z whois
 - z dns
 	- zkusim najit adresu domeny
 		- set q=a
