@@ -141,3 +141,82 @@ co, jaka je sance, dopad, oprava
 	- 3
 	- 3
 	- Mit zakaznickou podporu
+
+
+
+@startuml
+title Sekvencni diagram: Proces objednavky bojoveho vozidla
+
+actor "Zakaznik" as User
+participant "System" as System
+database "Databaze" as DB
+participant "Platebni brana" as Gateway
+participant "Dodavatel" as Supplier
+participant "Vedouci vyroby" as Production
+
+== 1. Faze: Prihlaseni / Registrace ==
+User -> System: Zasila vyplneni formular (prihlaseni / registrace)
+activate System
+System -> System: Kontrola, jestli je ve formulari vse potrebne
+System -> DB: Kontrola existence uzivatele
+activate DB
+DB --> System: Odpoved (True / False)
+deactivate DB
+System --> User: Odpoved (Uspech a sessionID / Chybova hlaska)
+deactivate System
+
+== 2. Faze: Vyber a Konfigurace ==
+User -> System: Klikne na tlacitko Konfigurator
+activate System
+System -> DB: Dotaz na dostupne modely
+activate DB
+DB --> System: Seznam modelu
+deactivate DB
+System --> User: Zobrazeni HTML s modely
+deactivate System
+
+User -> System: Vybere konkretni model
+activate System
+System -> DB: Dotaz na mozne konfigurace modelu
+activate DB
+DB --> System: Seznam konfiguraci
+deactivate DB
+System --> User: Zobrazeni HTML s konfiguraci
+deactivate System
+
+== 3. Faze: Kosik a Platba ==
+User -> System: Pridat konfiguraci do kosiku
+activate System
+System -> DB: Zapis polozky do kosiku
+System --> User: Potvrzeni o pridani
+deactivate System
+
+User -> System: Pozadavek na zaplaceni
+activate System
+System -> Gateway: Iniciace platby
+activate Gateway
+Gateway --> System: Vysledek platby (Uspesna/Neuspesna)
+deactivate Gateway
+
+== 4. Faze: Zpracovani a Vyroba ==
+alt Platba uspesna
+    System -> DB: Zapsat objednavku a vymazat kosik
+    System -> System: Vytvoreni kusovniku a kontrola skladu
+    
+    alt Chybejici dily
+        System -> Supplier: Zaslani objednavky dilu (kusovnik)
+        Supplier --> System: Zprava o dodani dilu
+    end
+    
+    System -> Production: Zaslani objednavky k vyrobe
+    activate Production
+    Production --> System: Zprava o dokonceni vyroby
+    deactivate Production
+    
+    System --> User: Notifikace o dokonceni a vyzvednuti
+    User -> System: Vyzvednuti objednavky
+else Platba neuspesna
+    System --> User: Zobrazeni chybove hlasky brany
+end
+deactivate System
+@enduml
