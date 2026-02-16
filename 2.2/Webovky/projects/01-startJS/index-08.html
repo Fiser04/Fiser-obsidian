@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <ul id="list"></ul>
+        <button id="add-item">Add Item</button>
+        <p id="message"></p>
+        <script>
+            const list = document.getElementById("list");
+            const items = ["Item 1", "Item 2", "Item 3"];
+            items.forEach((item) => {
+                const li = document.createElement("li");
+                li.textContent = item;
+                list.appendChild(li);
+            });
+
+            const addItemButton = document.getElementById("add-item");
+            addItemButton.addEventListener("click", () => {
+                const newItem = prompt("Enter new item:");
+                if (newItem) {
+                    const li = document.createElement("li");
+                    li.textContent = newItem;
+                    list.appendChild(li);
+                }
+            });
+            const message = document.getElementById("message");
+            x = Number.MIN_SAFE_INTEGER;
+            message.textContent = `Maximum safe integer is ${x}`;
+        </script>
+    </body>
+</html>

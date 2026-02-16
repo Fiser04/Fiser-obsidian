@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="clock">00:00:00</p>
+        <script>
+            const clocks = document.getElementById("clock");
+            const now = new Date();
+            let hours = now.getHours();
+            let minut = now.getMinutes();
+            let seconds = now.getSeconds();
+
+            hours = hours.toString().padStart(2, "0");
+            minut = minut.toString().padStart(2, "0");
+            seconds = seconds.toString().padStart(2, "0");
+
+            clocks.textContent = `${hours}:${minut}:${seconds}`;
+        </script>
+    </body>
+</html>

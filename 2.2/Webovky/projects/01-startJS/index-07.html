@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+    <head>
+        <title>My First Web Page</title>
+    </head>
+    <body>
+        <h1>Welcome to My First Web Page!</h1>
+
+        <script>
+            fetch("https://jsonplaceholder.typicode.com/todos/1")
+                .then((response) => response.json())
+                .then((data) => console.log(data))
+                .catch((error) => console.error(error));
+        </script>
+    </body>
+</html>

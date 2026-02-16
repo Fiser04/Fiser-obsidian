@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            button {
+                color: #ffffff;
+                background-color: #000000;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="num"></p>
+        <button id="add-one">Add Item</button>
+        <button id="subtract-one">Subtract Item</button>
+        <button id="reset">Reset Item</button>
+
+        <script>
+            const num = document.getElementById("num");
+            let x = 0;
+            num.textContent = x;
+            const addOne = document.getElementById("add-one");
+            addOne.addEventListener("click", () => {
+                x++;
+                num.textContent = x;
+            });
+
+            const subtractOne = document.getElementById("subtract-one");
+            subtractOne.addEventListener("click", () => {
+                x--;
+                num.textContent = x;
+            });
+
+            const reset = document.getElementById("reset");
+            reset.addEventListener("click", () => {
+                x = 0;
+                num.textContent = x;
+            });
+        </script>
+    </body>
+</html>
