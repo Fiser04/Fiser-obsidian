@@ -1,0 +1,3 @@
+Dalsi hokus pokus od nothingu, fotaky ujdou, neni to nic nejhorsiho. Display je v poradku, ALE hodilo by se vice herzu. Telo je masivni a tezky, pocitove iphone z wishe. Materialem je plast, takze kdyz se omylem proleti tak to prezije a neudela ze sebe sklenicku uprostred letu. Jinak je to proste Android do 10k s funkci o ktere by se dalo rict ze je pro vetsinu lidi zbytecna.
+
+pro mlade (20 let) ktere potrebujou znat strucny info

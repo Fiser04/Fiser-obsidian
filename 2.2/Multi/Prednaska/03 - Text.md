@@ -1,0 +1,42 @@
+- umele vytvorene medium
+	- *mimino cist neumi*
+	- zalozen na konecne abecede
+	- transformace textu na obraz a informaci
+- jednoduchy eletronicky prenos
+	- kodovani
+		- po znacich
+			- jdu po pismenech
+		- cele sdeleni jako celek
+			- kratsi jak po znacich
+			- nelze zakodovat cokoliv
+- rysy
+	- mnohoznacny
+		- ruzne vyjadreni
+		- ruzne pochopeni
+	- slozity
+	- ale zajimavost = snazsi pochopeni
+
+- psychologicke
+	- obsah
+		- stylistika
+		- emocno zabarveni
+		- terminologie
+		- kontrast
+	- forma
+		- velikost
+		- barva
+		- tvar
+		- propojeni
+
+- prace s textem
+	- standartni operace, prevazne formatovani
+	- Word
+		- styly, osnova, konec radku, tvrda mezera, oddily (sloupce), revize, obsah, seznamy, citace, poznamky pod carou
+		- kontrola pravopisu
+		- obrazky, grafy, diagramy
+		- doplnky
+			- copilot
+			- draw.io
+			- mendeley cite (citace)
+			- gpt for word
+	- 

@@ -1,0 +1,93 @@
+- medium
+	- prenos sdeleni (komunikace)
+	- **komunikacni kanal kterym sdeleni predavame**
+
+- multimodalita
+	- moderni oznaceni media
+
+- druhy medii
+	- text
+		- linearni medium
+		- *ctu ctu ctu*
+	- hypertext
+		- texty propojene odkazy
+		- nelinearni
+		- *ctu ctu ctu, kliknu, jsem na jiny strance a repeat*
+	- grafika
+		- fotografie
+	- zvuk
+		- audio
+		- rec
+		- hudba
+	- video
+		- videosekvence
+		- animace
+	- 3D
+		- defakto nelze
+		- *musel bych konvertovat objekt z kompu do reality*
+
+- multimedia
+	- kombinace ruznych druhu medii
+	- obraz + text
+	- video + zvuk
+
+- hypermedia
+	- rozsireni pojmu hypertextu do medialni oblasti
+	- nelinearita
+	- interaktivita
+
+- atributy sdeleni
+	- forma
+		- druhy
+	- prevazujici tok
+		- jednosmerny
+		- obousmerny
+	- kardinalita
+		- 1:1
+		- 1:N
+		- N:M
+	- pritomnost ucastniku
+		- asynchroni
+			- nemusim tam byt
+			- off line
+			- *kniha, clanek*
+		- synchroni
+			- online
+			- *stream, radio*
+
+- vnimani medii
+	- zpusob komunikace s okolim
+	- hodne invidualni
+	- fyziologicka faze
+		- receptory
+		- transformace
+		- *kdyz hluchymu pustim nhh tak nevi*
+	- psychicke zpracovani
+		- uvedomeni
+		- interpretace
+		- *co chtel autor rici*
+
+- psychologie medialni kominkace
+	- clovek vnima to co chce vnimat
+		- historicka zkusenost
+		- podprahove vnimani
+			- *mozek nevedomne neco prijme*
+		- kontext
+		- vyznam zmeny
+		- osobnostni charakteristika
+	- u vsech medii
+		- grafika
+			- barva
+		- text, audio, video
+		- sila vjemu
+	- hrajou take role
+		- vek
+		- kulturni zkusenost
+		- gendrove odlisnosti
+
+- nove vyzvy
+	- duvera
+	- pravda a realita
+	- etika
+	- kreativita
+

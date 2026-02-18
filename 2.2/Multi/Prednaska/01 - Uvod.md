@@ -1,0 +1,5 @@
+- neni zkouska
+- hodnoceni
+	- domaci ukoly
+	- teoreticky test
+	- semestralka
