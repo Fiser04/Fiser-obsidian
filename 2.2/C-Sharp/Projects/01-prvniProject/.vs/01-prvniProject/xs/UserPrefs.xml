@@ -1,0 +1,38 @@
+﻿<Properties StartupConfiguration="{1DBF9D60-2BCF-4343-A2E4-A22237A61D09}|https">
+  <MonoDevelop.Ide.ItemProperties.01-prvniProject PreferredExecutionTarget="/Applications/Zen.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/DepartmentController.cs">
+    <Files>
+      <File FileName="Controllers/DepartmentController.cs" Line="10" Column="17" />
+      <File FileName="Controllers/HokeyController.cs" Line="10" Column="2" />
+      <File FileName="Views/Department/Create.cshtml" Line="1" Column="1" />
+      <File FileName="Data/Department.cs" Line="1" Column="1" />
+      <File FileName="Data/ApplicationDbContext.cs" Line="13" Column="48" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="01-prvniProject" expanded="True">
+            <Node name="01-prvniProject">
+              <Node name="Controllers" expanded="True">
+                <Node name="DepartmentController.cs" selected="True" />
+              </Node>
+              <Node name="Data" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Views">
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
