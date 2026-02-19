@@ -6,12 +6,18 @@
     </head>
     <body>
         <div id="root"></div>
+        <button id="btn">klick</button>
         <h1 id="title">Uvodní text</h1>
 
-        <script src="index.js">
-            document.getElementById('root').addEventListener('click', () => {
-              document.getElementById('title').textContent = 'Nový text';
-            });
+        <script >
+            // document.getElementById('btn').addEventListener('click', () => {
+            //   document.getElementById('title').textContent = 'Nový text';
+            // });
+
+            document.getElementById("btn").addEventListener("click", function(){
+                document.getElementById("title").innerText = "touched";
+            })
+
         </script>
     </body>
 </html>

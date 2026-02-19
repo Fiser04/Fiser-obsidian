@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>JavaScript 01</title>
+
+ </head>
+
+ <body>
+   <div id="root"></div>
+
+   <button id="btn">Klikni</button>
+    <h1 id="title">Text</h1>
+
+
+    <script>
+
+    document.getElementById("btn").addEventListener("click", function() {
+        document.getElementById("title").innerText = "Kliknuto!";
+    });
+
+    </script>
+ </body>
+</html>

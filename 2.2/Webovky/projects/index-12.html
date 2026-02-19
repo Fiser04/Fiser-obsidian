@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON do tabulky</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        td, th {
+            border: 1px solid #444;
+            padding: 6px 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>JSON → tabulka</h1>
+
+<button id="load">Načti data</button>
+<p id="status"></p>
+
+<table id="table">
+    <thead></thead>
+    <tbody></tbody>
+</table>
+
+<script>
+    const button = document.getElementById("load");
+    const status = document.getElementById("status");
+    const tableHead = document.querySelector("#table thead");
+    const tableBody = document.querySelector("#table tbody");
+
+    button.addEventListener("click", async () => {
+        try {
+            status.innerText = "Načítám…";
+
+            const response = await fetch(
+                "https://jsonplaceholder.typicode.com/users"
+            );
+            const data = await response.json();
+
+            status.innerText = "Hotovo";
+
+            renderTable(data);
+
+        } catch (err) {
+            status.innerText = "Chyba při načítání";
+            console.error(err);
+        }
+    });
+
+    function renderTable(data) {
+        // vyčistit tabulku
+        tableHead.innerHTML = "";
+        tableBody.innerHTML = "";
+
+        if (!data.length) return;
+
+        // hlavička podle klíčů
+        const headerRow = document.createElement("tr");
+        Object.keys(data[0]).forEach(key => {
+            const th = document.createElement("th");
+            th.innerText = key;
+            headerRow.appendChild(th);
+        });
+        tableHead.appendChild(headerRow);
+
+        // tělo tabulky
+        data.forEach(item => {
+            const row = document.createElement("tr");
+
+            Object.values(item).forEach(value => {
+                const td = document.createElement("td");
+
+                // objekty zobrazíme jako JSON
+                if (typeof value === "object") {
+                    td.innerText = JSON.stringify(value);
+                } else {
+                    td.innerText = value;
+                }
+
+                row.appendChild(td);
+            });
+
+            tableBody.appendChild(row);
+        });
+    }
+</script>
+
+</body>
+</html>

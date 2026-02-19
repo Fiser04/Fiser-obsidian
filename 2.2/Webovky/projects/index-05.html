@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>JavaScript 01</title>
+
+ </head>
+
+ <body>
+   <div id="root"></div>
+
+    <input id="a" type="number">
+    <input id="b" type="number">
+    <button id="calc">Sečti</button>
+    <p id="result"></p>
+
+
+
+    <script>
+
+        document.getElementById("calc").addEventListener("click", () => {
+            const a = Number(document.getElementById("a").value);
+            const b = Number(document.getElementById("b").value);
+
+            document.getElementById("result").innerText = a + b;
+        });
+
+
+    </script>
+ </body>
+</html>
