@@ -41,7 +41,14 @@
 		- soucet vsech stupnu volnosti kloubu
 	- konfiguracni prostor
 		- C prostor
+		- n rozmerny prostor podle kolik kloubu mame
 	- pracovni prostor
 		- euklidovsky prostor 3 dimenzovy
 		- E3 prostor
 		- tam kde se pracuje
+	- prima uloha
+		- C6 -> E3
+	- zpetna uloha
+		- E3 -> C6
+	- singularni body
+		- zakazany bod
