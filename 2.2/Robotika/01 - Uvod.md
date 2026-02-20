@@ -1,0 +1,47 @@
+- robot
+	- stroj ktery se sam rozhoduje
+- kinematika
+	- prima
+		- na zaklade vstupnich dat
+		- kde skonci - end effector
+		- *mam robota, otocim tenhle kloub, pak tenhle, a pak ..., kde zkoncil konec ruky?*
+		- pocitani matic (nasobeni apod.), derivace, min, max funkce
+	- neprima
+		- jaka zvolit vstupni data, abychom dostali end effector kam chceme
+		- teoreticky neresitelne
+		- *najdu bod ktery je blizko a pohybuju se po primce*
+- dynamika
+	- zpusob pohybu (zrychleni a zpomalovani), ktery je mozny (nezkurvym stul, nezlomim ruku)
+- seriove a paralelni roboty
+	- seriovy
+		- posloupnost kloubu a ramen
+		- *zizala proste*
+		- jednoduse spocitatelny, ale nepresny
+			- *moturek si dela co chce*
+	- paralelni
+		- mam vice rukou
+		- *drzim neco obema rukama*
+		- upocitam se, ale presnej jako prase
+			- *vice moturku on the other hand*
+
+- seriovy robot
+	- kloub (joint)
+		- oznacuje se vzdy od 1
+		- otocny
+		- posuvny
+	- rameno (link)
+		- pokud zacina robot ramenem tak je to 0
+		- pokud kloubem tak 1
+		- *proste po kloubu 1 musi byt rameno 1*
+	- end effector
+		- konec robota
+		- pri kalkulaci je to bod
+		- *nejaky kleste treba*
+	- stupen volnosti
+		- soucet vsech stupnu volnosti kloubu
+	- konfiguracni prostor
+		- C prostor
+	- pracovni prostor
+		- euklidovsky prostor 3 dimenzovy
+		- E3 prostor
+		- tam kde se pracuje
