@@ -41,6 +41,11 @@ def main():
             drawabl.draw(screen)
 
         for aster in asteroids:
+            for shot in shots:
+                if aster.collides_with(shot):
+                    log_event("asteroid_shot")
+                    aster.kill()
+                    shot.kill()
             if aster.collides_with(player1):
                 log_event("player_hit")
                 print("Game Over")
