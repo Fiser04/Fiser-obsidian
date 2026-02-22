@@ -1,7 +1,6 @@
 import sys
 
 import pygame
-from pygame.mixer import SoundType
 
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
