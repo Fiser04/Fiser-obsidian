@@ -44,7 +44,7 @@ def main():
             for shot in shots:
                 if aster.collides_with(shot):
                     log_event("asteroid_shot")
-                    aster.kill()
+                    aster.split()
                     shot.kill()
             if aster.collides_with(player1):
                 log_event("player_hit")
