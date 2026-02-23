@@ -17,5 +17,6 @@
 	- nemoderni
 		- nastahovat si
 
+npx create-react-app react-todo-list
 
 https://babeljs.io/repl
