@@ -15,7 +15,6 @@
 	- back end
 		- controller
 		- model
-
 - dom
 	- document object model
 	- transformace z html plain textu na objekty
