@@ -11,4 +11,7 @@
 
 - 2 hlavni pristupu
 	- nemoderni
-		- nastahovat si / 
+		- nastahovat si
+
+
+https://babeljs.io/repl
