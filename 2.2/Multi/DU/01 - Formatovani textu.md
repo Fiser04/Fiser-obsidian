@@ -1,5 +1,5 @@
 Navrhnete vzhled (typ pisma, barva, velikost na ukazce textu):
- - jedelni listek
+ - jidelni listek
  - stavebni oznameni
  - nabidku sluzeb it firmy
  - nabidku vozidel v autobazaru
