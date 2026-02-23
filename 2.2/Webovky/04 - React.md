@@ -10,6 +10,8 @@
 - je to knihovna, novis tomu rika framework
 
 - vzdy musi existovat root
+- sila reactu
+	- nereloadi se cela stranka, jen se porovna virtualni kopie s novou verzi a upravi se ty urcity elementy
 
 - 2 hlavni pristupu
 	- nemoderni
