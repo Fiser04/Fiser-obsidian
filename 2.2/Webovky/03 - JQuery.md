@@ -1,0 +1,6 @@
+- fousata knihovna
+- jednoducha manipulace document objektu model
+- nekolik verzi
+	- ui
+	- mobile
+	- qunit
