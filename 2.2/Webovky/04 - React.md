@@ -9,6 +9,8 @@
 
 - je to knihovna, novis tomu rika framework
 
+- vzdy musi existovat root
+
 - 2 hlavni pristupu
 	- nemoderni
 		- nastahovat si
