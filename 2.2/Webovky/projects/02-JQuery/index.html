@@ -14,14 +14,19 @@
                 const element = $("<h1>Hello World!</h1>");
                 $("#app").append(element);
 
-                $("#btn").click(function () {
+                $("#toggle").click(function () {
                     $("#app").toggle();
+                });
+
+                $("#hide").click(function () {
+                    $("#app").hide();
                 });
             });
         </script>
     </head>
     <body>
         <div id="app"></div>
-        <button id="btn">Click Me</button>
+        <button id="toggle">Toggle</button>
+        <button type="hide">hide</button>
     </body>
 </html>
