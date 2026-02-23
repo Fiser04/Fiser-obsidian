@@ -21,12 +21,30 @@
                 $("#hide").click(function () {
                     $("#app").hide();
                 });
+
+                $("#changeColor").click(function () {
+                    $("#app").css("color", "red");
+                });
+
+                $("#show").click(function () {
+                    const obsah = $("#link").attr("href");
+                    $("#app").text(obsah);
+                });
             });
         </script>
+
+        <style>
+            #app {
+                color: blueviolet;
+            }
+        </style>
     </head>
     <body>
         <div id="app"></div>
         <button id="toggle">Toggle</button>
         <button type="hide">hide</button>
+        <button type="changeColor">Change Color</button>
+        <button type="show">show</button>
+        <a href="https://www.google.com" id="link">Google</a>
     </body>
 </html>
