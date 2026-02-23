@@ -13,22 +13,18 @@
             $(document).ready(function () {
                 const element = $("<h1>Hello World!</h1>");
                 $("#app").append(element);
-
                 $("#toggle").click(function () {
                     $("#app").toggle();
                 });
-
                 $("#hide").click(function () {
                     $("#app").hide();
                 });
-
                 $("#changeColor").click(function () {
                     $("#app").css("color", "red");
                 });
-
                 $("#show").click(function () {
                     const obsah = $("#link").attr("href");
-                    $("#app").text(obsah);
+                    $("#app").append("<b>" + obsah + "</b>");
                 });
             });
         </script>
