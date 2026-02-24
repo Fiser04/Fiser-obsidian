@@ -41,3 +41,16 @@
 
 - pouziti
 	- ![[Pasted image 20260224101634.png]]
+- omezeni
+	- omezuje se ze shora slovem extends
+	- takze T musi byt podtyp
+	- lze i vicenasobne pomoci &
+		- vznika prunik (*prusecik*)
+
+- zastupne znacky (wildcards)
+	- libovolny ale nam neznamy datovy typ
+	- vs typovy parametr
+		- konkretni je kdyz chci s ni pracovat
+		- otaznik jediny co rika *bude to genericky lol*
+	- ![[Pasted image 20260224103448.png]]
+	- 
