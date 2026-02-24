@@ -1,4 +1,4 @@
-- **vytvarim tridy a metody ktere se snazi chovat obecneji, schopnost pracovat s. vice datovymi typy a nejsou presne vazany na nejaky urcity**
+- **vytvarim tridy a metody ktere se snazi chovat obecneji, schopnost pracovat s vice datovymi typy a nejsou presne vazany na nejaky urcity**
 - negenericke kolekce
 	- kolekce typovany pro objecty typu Object
 	- ![[Pasted image 20260224095344.png]]
@@ -46,11 +46,14 @@
 	- takze T musi byt podtyp
 	- lze i vicenasobne pomoci &
 		- vznika prunik (*prusecik*)
+	- kdyz tam dam Integer tak tam Object nedam
 
 - zastupne znacky (wildcards)
 	- libovolny ale nam neznamy datovy typ
 	- vs typovy parametr
 		- konkretni je kdyz chci s ni pracovat
-		- otaznik jediny co rika *bude to genericky lol*
+		- otaznik jediny co rika *bude to genericky lol* tudiz s nim nemohu nadale pracovat
 	- ![[Pasted image 20260224103448.png]]
-	- 
+	- lze udelat i omezeni z dola
+		- jdu nahoru
+		- kdyz tam dam Integer, tak muzu tam dat Object
