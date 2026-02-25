@@ -1,0 +1,60 @@
+- veda o pismu a textu
+
+- spravny format
+	- uvozovky a palce
+		- levy alt + 0132 pro uvod
+		- levy alt + 0147 pro konec
+	- casy
+		- pcp
+			- 8.30
+			- 10.00 h
+			- hod. hodin
+		- csn
+			- 8:30
+			- 10:00 h
+	- cisla
+		- 123,5
+		- 1 000 000
+		- 30 000 000
+		- 12 345,678 90
+	- penize
+		- 1 599 Kc
+		- 1 599,-
+		- Kc 1599,-
+	- exponenty
+		- 2,1.10^-12
+			- *. je krat, jen to neumim napsat aby to bylo uprostred*
+	- plus, minus, pomlcka, spojovnik
+		- minus na odcitani
+		- pomlcka na oddeleni textu
+		- spojovnik pro -li
+	- predlozky na konci radku nesmi byt (hlavne ty jednopismena)
+	- rozdeleni cisel
+		- cislo musi byt na jedne radce
+	- tvrda mezera
+		- ctrl + shift + mezernik
+	- datum
+		- dd. mm. rrrr
+		- nedelit do dvou radku
+	- sirotky
+		- jediny radek odstavce na jine strance nez zbytek
+	- procenta
+		- 100 %
+			- sto procent
+		- 25%
+			- petadvaceti procentni
+	- zavorky
+		- mezara pred a za blokem
+		- foo (foo (foo) foo) foo
+	- tecky a zavorky
+		- Foo foo foo (foo foo).
+			- zapada to do vety
+		- Foo foo foo. (Foo foo.)
+			- dalsi veta ktera upresnuje
+	- viz
+		- *Podivej se tam*
+		- neni to zkratka, nepise se tecka
+		- Viz str. 19
+	- krat
+		- levy alt + 0215
+		- x ale uprostred
