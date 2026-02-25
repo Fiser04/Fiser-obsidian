@@ -13,4 +13,11 @@
 	- HTML + CSS
 	- https://liveweave.com/
 - XML
+	- extension markup language
+	- tata html
+	- funguje defakto stejne
+- JSON
+	- pro popsani zakladnich datovych struktur
+
+
 
