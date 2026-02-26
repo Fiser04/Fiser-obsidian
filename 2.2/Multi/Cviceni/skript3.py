@@ -1,0 +1,291 @@
+# # !pip install spacy
+# # !python -m spacy download en_core_web_sm  # en_core_web_lg
+# # ceske modely ---  cs_core_news_sm a cs_core_news_lg
+
+
+# import spacy
+
+# nlp = spacy.load('en_core_web_sm')  #'en_core_web_sm',  python -m spacy download en_core_web_lg
+
+# # Analýza věty
+# doc = nlp("Barack Obama was born in Hawaii.")
+# print(doc)
+
+# print("\nTokenizace a lemmatizace")
+# for token in doc:
+#     print(token.text, token.lemma_, token.pos_, token.dep_)
+
+# print("\nSlovni druhy")
+# for ent in doc.ents:
+#     print(ent.text, ent.label_)
+
+# print("\nVazby")
+# for token in doc:
+#     print(f"{token.text} <-- {token.dep_} <-- {token.head.text}")
+
+# print("\nVse")
+# for token in doc:
+#     print(f"{token.text}: POS={token.pos_}, DEP={token.dep_}, HEAD={token.head.text}")
+# ===============================================================
+
+# ### **1. Tokenizace a informace o slovech**
+# Při průchodu přes `doc` můžeš získat tyto atributy:
+
+# | Atribut | Význam | Příklad |
+# |---------|--------|---------|
+# | `token.text` | Původní tvar slova | `"Obama"` |
+# | `token.lemma_` | Lemma (základní tvar) | `"be"` (pro "was") |
+# | `token.pos_` | Slovní druh (Part of Speech, POS) | `"VERB"` (sloveso) |
+# | `token.dep_` | Syntaktická závislost (Dependency) | `"nsubj"` (podmět) |
+
+# ---
+
+# ### **2. Slovní druhy (`pos_`)**
+# Slovní druhy ve spaCy odpovídají standardu **UPOS (Universal POS tags)**:
+
+# | Zkratka | Význam | Příklad |
+# |---------|--------|---------|
+# | `ADJ` | Přídavné jméno | **beautiful** |
+# | `ADP` | Předložka | **in, on, at** |
+# | `ADV` | Příslovce | **quickly, very** |
+# | `AUX` | Pomocné sloveso | **is, was, have** |
+# | `CCONJ` | Souřadicí spojka | **and, or, but** |
+# | `DET` | Člen, determinátor | **the, a, an** |
+# | `INTJ` | Citoslovce | **wow, oh** |
+# | `NOUN` | Podstatné jméno | **dog, car** |
+# | `PROPN` | Vlastní jméno | **Obama, London** |
+# | `PRON` | Zájmeno | **he, she, they** |
+# | `VERB` | Sloveso | **run, write** |
+# | `NUM` | Číslovka | **one, two, 2023** |
+# | `SCONJ` | Podřadicí spojka | **because, if, although** |
+
+# ---
+
+# ### **3. Syntaktické závislosti (`dep_`)**
+# Tento atribut popisuje, jaké vztahy mají slova mezi sebou:
+
+# | Zkratka | Význam | Příklad (věta: "Obama was born in Hawaii.") |
+# |---------|--------|---------------------------------------------|
+# | `nsubj` | Podmět | **Obama** (podmět věty) |
+# | `ROOT` | Hlavní sloveso věty | **born** (kořen věty) |
+# | `prep` | Předložka | **in** (předložka) |
+# | `pobj` | Předmět předložky | **Hawaii** (předmět „in“) |
+# | `auxpass` | Pomocné sloveso v pasivu | **was** |
+
+# ---
+
+# ### **4. Rozpoznávání entit (`ents`)**
+# V `doc.ents` jsou pojmenované entity označeny podle standardu **Named Entity Recognition (NER)**:
+
+# | Zkratka | Význam | Příklad |
+# |---------|--------|---------|
+# | `PERSON` | Osoba | **Barack Obama** |
+# | `GPE` | Geopolitická entita (místo) | **Hawaii, USA** |
+# | `ORG` | Organizace | **Microsoft, UN** |
+# | `DATE` | Datum | **October 28, 2008** |
+# | `NORP` | Národnost, náboženství | **American, Buddhist** |
+
+# ---
+
+# ### **5. Další užitečné atributy**
+# | Atribut | Význam |
+# |---------|--------|
+# | `token.shape_` | Tvar slova (např. velká/malá písmena) |
+# | `token.is_alpha` | Je to pouze písmeno? (`True/False`) |
+# | `token.is_stop` | Je to stop slovo? (`True/False`) |
+
+# ============================================
+
+# import nltk
+# from nltk.corpus import wordnet as wn
+# nltk.download('wordnet')
+
+# from nltk.corpus import wordnet as wn
+
+# # Zvolíme slovo, pro které hledáme vztahy
+# word = "dog"  # Můžeš změnit na jiné slovo
+# synsets = wn.synsets(word)
+
+# triples = []
+
+# for synset in synsets[0:1]:
+#     subject = synset.name()  # Název synsetu (konceptu)
+
+#     # Hyperonyma (nadřazené pojmy)
+#     for hypernym in synset.hypernyms():
+#         triples.append((subject, "is_a", hypernym.name()))
+
+#     # Hyponyma (podřazené pojmy)
+#     for hyponym in synset.hyponyms():
+#         triples.append((subject, "has_subtype", hyponym.name()))
+
+#     # Meronyma (části celku)
+#     for meronym in synset.part_meronyms():
+#         triples.append((subject, "has_part", meronym.name()))
+
+#     # Holonyma (celek, jehož je to část)
+#     for holonym in synset.member_holonyms():
+#         triples.append((subject, "part_of", holonym.name()))
+
+#     # Lemma (základní označení)
+#     for lemma in synset.lemmas():
+#         triples.append((subject, "lemma", lemma.name()))
+
+#     # Antonyma (opačný význam)
+#  #   for lemma in synset.lemmas():
+#  #       triples.append((subject, "antonym ", antonym.name()))
+
+# # Výpis trojic
+# for triple in triples:
+#     print(triple)
+
+
+# 	===============================================
+
+
+# !wget http://nlp.stanford.edu/data/glove.6B.zip
+# !unzip glove.6B.zip
+
+import numpy as np
+
+
+# Načtení GloVe vektorů do slovníku
+def load_glove_vectors(file_path):
+    word_vectors = {}
+    with open(file_path, "r", encoding="utf-8") as f:
+        for line in f:
+            values = line.split()
+            word = values[0]  # První slovo je klíč
+            vector = np.asarray(values[1:], dtype="float32")  # Zbytek jsou vektory
+            word_vectors[word] = vector
+    return word_vectors
+
+
+# Načteme 100D GloVe model
+glove_vectors = load_glove_vectors("glove.6B.100d.txt")
+
+print("GloVe model byl úspěšně načten!")
+
+
+from scipy.spatial.distance import cosine
+
+
+# Funkce pro výpočet podobnosti dvou slov
+def cosine_similarity(word1, word2, word_vectors):
+    if word1 in word_vectors and word2 in word_vectors:
+        vec1 = word_vectors[word1]
+        vec2 = word_vectors[word2]
+        return 1 - cosine(vec1, vec2)  # Kosinová podobnost
+    else:
+        return None
+
+
+# Test: Jak podobná jsou slova
+slovo1 = "king"
+slovo2 = "queen"
+similarity = cosine_similarity(slovo1, slovo2, glove_vectors)
+print(f"Similarity between {slovo1} and {slovo2}: {similarity:.4f}")
+
+
+# import heapq
+
+# # Funkce pro nalezení nejbližších slov
+# def find_closest_words(word, word_vectors, n=5):
+#     if word not in word_vectors:
+#         return None
+
+#     word_vec = word_vectors[word]
+#     similarities = []
+
+#     for other_word, other_vec in word_vectors.items():
+#         if other_word != word:
+#             sim = 1 - cosine(word_vec, other_vec)
+#             similarities.append((sim, other_word))
+
+#     return heapq.nlargest(n, similarities)  # vypis podle prvniho indexu ze sim prvku
+
+# # Test: Nejbližší slova
+# slovo1='university'
+# closest_words = find_closest_words(slovo1, glove_vectors, n=5)
+# print(f"Most similar words to {slovo1}:")
+# for sim, word in closest_words:
+#     print(f"{word}: {sim:.4f}")
+
+# def word_analogy(word1, word2, word3, word_vectors, n=5):
+#     if word1 not in word_vectors or word2 not in word_vectors or word3 not in word_vectors:
+#         return None
+
+#     analogy_vector = word_vectors[word1] - word_vectors[word2] + word_vectors[word3]
+#     similarities = []
+
+#     for other_word, other_vec in word_vectors.items():
+#         if other_word not in {word1, word2, word3}:
+#             sim = 1 - cosine(analogy_vector, other_vec)
+#             similarities.append((sim, other_word))
+
+#     return heapq.nlargest(n, similarities)
+
+# # Test: "king" - "man" + "woman" = ?
+# analogy_words = word_analogy("king", "man", "woman", glove_vectors, n=5)
+# print("\nWord analogy (king - man + woman):")
+# for sim, word in analogy_words:
+#     print(f"{word}: {sim:.4f}")
+
+
+# !pip install gensim
+
+# import gensim
+# from gensim.models import Word2Vec
+# from gensim.utils import simple_preprocess
+
+# # Malý trénovací dataset
+# sentences = [
+#     "The king rules the kingdom",
+#     "The queen is the ruler of the kingdom",
+#     "A dog is a loyal animal",
+#     "A cat is a small and independent pet",
+#     "A doctor helps sick people",
+#     "A woman works in a hospital",
+#     "The sky is blue and the sun is bright",
+#     "The car is driving on the road",
+#     "Birds are flying in the sky",
+#     "Children are playing in the park",
+#     "The president leads the country",
+#     "The man and the sea"
+# ]
+
+# #sentences = text.split(".")
+# #print(sentences)
+
+# # Tokenizace vět (převedeme text na seznam slov)
+# tokenized_sentences = [simple_preprocess(sentence) for sentence in sentences]
+
+# # Výpis tokenizovaných vět
+# print(tokenized_sentences)
+
+# # Trénování Word2Vec modelu
+# w2v_model = Word2Vec(
+#     sentences=tokenized_sentences,  # Tokenizované věty
+#     vector_size=10,  # Počet dimenzí vektoru
+#     window=3,  # Kontextové okno
+#     min_count=1,  # Minimální počet výskytů slova
+#     workers=4  # Počet CPU vláken
+# )
+
+# # Uložení modelu pro budoucí použití
+# w2v_model.save("word2vec.model")
+# print("Model byl úspěšně natrénován!")
+
+
+# # Najdi nejbližší slova ke slovu "king"
+# print("\nMost similar words to 'king':")
+# print(w2v_model.wv.most_similar("king"))
+
+# # Výpočet podobnosti mezi dvěma slovy
+# similarity = w2v_model.wv.similarity("king", "queen")
+# print(f"\nSimilarity between 'king' and 'queen': {similarity:.4f}")
+
+
+# # Analogie (king - man + woman = ?)
+# print("\nWord analogy (king - man + woman):")
+# print(w2v_model.wv.most_similar(positive=["king", "woman"], negative=["man"], topn=5))

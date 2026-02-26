@@ -1,34 +1,37 @@
 ﻿<Properties StartupConfiguration="{1DBF9D60-2BCF-4343-A2E4-A22237A61D09}|https">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.01-prvniProject PreferredExecutionTarget="/Applications/Zen.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/DepartmentController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../../Githubed/MyWebAppMVC/MyWebAppMVC.slnx">
     <Files>
-      <File FileName="Controllers/DepartmentController.cs" Line="10" Column="17" />
-      <File FileName="Controllers/HokeyController.cs" />
+      <File FileName="Controllers/DepartmentController.cs" Line="11" Column="2" />
+      <File FileName="Controllers/HokeyController.cs" Line="6" Column="1" />
       <File FileName="Views/Department/Create.cshtml" />
-      <File FileName="Data/Department.cs" />
+      <File FileName="Data/Department.cs" Line="1" Column="1" />
       <File FileName="Data/ApplicationDbContext.cs" />
+      <File FileName="../../../../../../Githubed/MyWebAppMVC/MyWebAppMVC.slnx" Line="4" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="01-prvniProject">
-            <Node name="01-prvniProject">
-              <Node name="Controllers" expanded="True">
-                <Node name="DepartmentController.cs" selected="True" />
-              </Node>
+            <Node name="01-prvniProject" expanded="True">
+              <Node name="Controllers" expanded="True" />
               <Node name="Data" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Hokey" expanded="True" />
+                <Node name="Home" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.01-prvniProject PreferredExecutionTarget="/Applications/Zen.app" />
 </Properties>
