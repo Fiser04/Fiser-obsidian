@@ -16,13 +16,20 @@ class Car extends React.Component {
       year: 1964,
     };
   }
+  changeColor = () => {
+    this.setState({ color: "blue" });
+  };
   render() {
     return (
       <div>
-        <h2>
+        <h2> I am a {this.state.brand} </h2>
+        <p>
           I am a {this.state.color} {this.state.brand} {this.state.model} from{" "}
           {this.state.year}.
-        </h2>
+        </p>
+        <button type="button" onClick={this.changeColor}>
+          Change color
+        </button>
       </div>
     );
   }
@@ -35,14 +42,14 @@ class Car extends React.Component {
 class Garage extends React.Component {
   render() {
     const carInfo = {
-      name: "Ford",
+      brand: "Ford",
       year: 1964,
     };
     return (
       <div>
         <h1>Who lives in my garage?</h1>
         <Car brand={carInfo} />
-        {/* <Car2 />*/}
+        {/* {<Car />}*/}
       </div>
     );
   }
