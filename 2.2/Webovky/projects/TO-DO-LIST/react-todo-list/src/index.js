@@ -1,6 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+// import React from "react";
+// import ReactDOM from "react-dom/client";
+// import TodoContainer from "./components/TodoContainer";
 
+/*
 class Car extends React.Component {
   constructor() {
     super();
@@ -30,3 +32,11 @@ class Garage extends React.Component {
 // const element = <h1>Hello, world!</h1>;
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Garage />);
+*/
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import TodoContainer from "./components/TodoContainer";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<TodoContainer />);
