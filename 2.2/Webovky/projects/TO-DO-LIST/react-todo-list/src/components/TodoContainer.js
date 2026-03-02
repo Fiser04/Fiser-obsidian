@@ -1,4 +1,5 @@
 import React from "react";
+import TodoList from "./TodoList";
 
 class TodoContainer extends React.Component {
   state = {
@@ -40,13 +41,7 @@ class TodoContainer extends React.Component {
   render() {
     return (
       <div>
-        <ul>
-          {this.state.todos.map((todo) => (
-            <li key={todo.id}>
-              {todo.title} - {todo.completed ? "Completed" : "Not completed"}
-            </li>
-          ))}
-        </ul>
+        <TodoList todos={this.state.todos} />
       </div>
     );
   }
