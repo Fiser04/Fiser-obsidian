@@ -8,7 +8,7 @@ class Car extends React.Component {
   //   this.state = { color: "red" };
   // }
   render() {
-    return <h2>I am a {this.props.brand} Car!</h2>;
+    return <h2>I am a {this.props.brand.name} Car!</h2>;
   }
 }
 
@@ -19,10 +19,14 @@ class Car extends React.Component {
 class Garage extends React.Component {
   render() {
     const carName = "Mustang";
+    const carInfo = {
+      name: "Ford",
+      year: 1964,
+    };
     return (
       <div>
         <h1>Who lives in my garage?</h1>
-        <Car brand={carName} />
+        <Car brand={carInfo} />
         {/* <Car2 />*/}
       </div>
     );
