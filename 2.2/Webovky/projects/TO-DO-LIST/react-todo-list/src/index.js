@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import TodoContainer from "./components/TodoContainer";
+// import TodoContainer from "./components/TodoContainer";
 
 class Car extends React.Component {
   // constructor() {
@@ -9,9 +9,22 @@ class Car extends React.Component {
   // }
   constructor(props) {
     super(props);
+    this.state = {
+      brand: "Ford",
+      model: "Mustang",
+      color: "red",
+      year: 1964,
+    };
   }
   render() {
-    return <h2>I am a {this.props.brand.name} Car!</h2>;
+    return (
+      <div>
+        <h2>
+          I am a {this.state.color} {this.state.brand} {this.state.model} from{" "}
+          {this.state.year}.
+        </h2>
+      </div>
+    );
   }
 }
 
