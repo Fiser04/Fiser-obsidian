@@ -18,10 +18,11 @@ class Car extends React.Component {
 
 class Garage extends React.Component {
   render() {
+    const carName = "Mustang";
     return (
       <div>
         <h1>Who lives in my garage?</h1>
-        <Car brand="ford" />
+        <Car brand={carName} />
         {/* <Car2 />*/}
       </div>
     );
