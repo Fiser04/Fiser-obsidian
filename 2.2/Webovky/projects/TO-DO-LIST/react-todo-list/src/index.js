@@ -1,3 +1,4 @@
+/*
 import React from "react";
 import ReactDOM from "react-dom/client";
 // import TodoContainer from "./components/TodoContainer";
@@ -24,8 +25,7 @@ class Car extends React.Component {
       <div>
         <h2> I am a {this.state.brand} </h2>
         <p>
-          I am a {this.state.color} {this.state.brand} {this.state.model} from{" "}
-          {this.state.year}.
+          I am a {this.state.color} {this.state.model} from {this.state.year}.
         </p>
         <button type="button" onClick={this.changeColor}>
           Change color
@@ -49,7 +49,7 @@ class Garage extends React.Component {
       <div>
         <h1>Who lives in my garage?</h1>
         <Car brand={carInfo} />
-        {/* {<Car />}*/}
+        { {<Car />}}
       </div>
     );
   }
@@ -57,8 +57,7 @@ class Garage extends React.Component {
 // const element = <h1>Hello, world!</h1>;
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Garage />);
-
-/*
+*/
 import React from "react";
 import ReactDOM from "react-dom/client";
 import TodoContainer from "./components/TodoContainer";
@@ -69,4 +68,3 @@ root.render(
     <TodoContainer />
   </React.StrictMode>,
 );
-*/
