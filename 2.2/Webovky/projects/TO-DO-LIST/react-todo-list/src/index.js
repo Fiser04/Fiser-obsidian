@@ -7,6 +7,9 @@ class Car extends React.Component {
   //   super();
   //   this.state = { color: "red" };
   // }
+  constructor(props) {
+    super(props);
+  }
   render() {
     return <h2>I am a {this.props.brand.name} Car!</h2>;
   }
@@ -18,7 +21,6 @@ class Car extends React.Component {
 
 class Garage extends React.Component {
   render() {
-    const carName = "Mustang";
     const carInfo = {
       name: "Ford",
       year: 1964,
