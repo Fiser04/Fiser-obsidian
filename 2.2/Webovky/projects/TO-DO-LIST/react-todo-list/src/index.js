@@ -7,6 +7,10 @@ class Car extends React.Component {
   }
 }
 
+function Car2() {
+  return <h2>I am also a Car!</h2>;
+}
+
 // const element = <h1>Hello, world!</h1>;
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Car />);
+root.render(<Car2 />);
