@@ -57,3 +57,34 @@
 	- lze udelat i omezeni z dola
 		- jdu nahoru
 		- kdyz tam dam Integer, tak muzu tam dat Object
+
+- implementace genericity
+	- vymazani typu
+		- typovy parametr je zmenen na nejvyssi mozny typ (v zakladu object) s extends (ta nejvyssi)
+			- tudiz kdyz mam Node< T > tak kdekoliv kde bude T tak bude Object
+	- premostovani metody
+		- nekdy si musi prekladac zachovat znalost o typu
+		- prekladac si tudiz vytvari premostovaci metodu (bridge)
+		- *defakto metoda ktera jen pretypuje object na to co chci*
+
+- typi vyuziti
+	- pouziti jiz existujicich
+		- ArrayList
+	- navrh a definice generickych typu a metod
+
+- limity
+	- nelze pouzit jako genericky typ primitivni typ
+		- nemuzu mit ArrayList< int >
+		- muzu mit ArrayList< Integer >
+	- nelze vytvaret instance typovych parametru
+		- `E element = new E(); // compile time error`
+			- nelze to udelat na 100%, ale muze byt neco takoveho, ALE, neni to to same
+				- `public static <E> void append(List<E> list, Class<E> cls)throws Exception {E elem = cls.newInstance();list.add(elem);}`
+	- nelze vytvaret pole parametrickych typu
+		- `List<Integer>[] lists = new List<Integer>[2];// compile-time err.`
+	- nelze zachytit instanci parametrickeho typu
+		- `catch(T e)` nelze
+	- nelze mit generickou vyjimku
+		- `class MathException<T> extends Exception { … } // compile-time error`
+	- nelze pretezovat metody
+		- `public class Example { public void print(Set<String> strSet) { } // compile-time err. public void print(Set<Integer> intSet) { } // obojí Set<E> }`

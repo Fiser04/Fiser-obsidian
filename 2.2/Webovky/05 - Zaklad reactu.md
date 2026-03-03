@@ -10,3 +10,8 @@ nepsane pravidlo - co jedna komponenta, tak jeden soubor
 		- < input - element
 		- type = "jes" - atribut
 	- pokud ma komponenta konstruktor tak tam dat super(props)
+
+nahoru jdu pres state
+
+# ukol
+vytvorit aplikaci, v te aplikaci zprovoznit vse co jsme dnes delali, naucit se pouzivat start, stop atd npm

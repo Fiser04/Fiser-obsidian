@@ -1,0 +1,40 @@
+-  zpracovani udalosti
+	- udalost je generovana uzivatelskou interakci
+	- WindowEvent
+		- zmacknu X abych to zavrel
+	- ActionEvent
+		- menu, buttons, apod
+		- 2 varianty
+			- centralizovane
+				- implements ActionListener, ktera implementuje jednu metodu actionPerformed(ActionEvent e)
+				- tento objekt je registrovan jako poslouchac
+				- item.addActionListener(this)
+			- ![[Pasted image 20260303102722.png]]![[Pasted image 20260303102817.png]]
+			- ma to limity
+				- neda se udelat rozsahle skalovani z duvodu ze musim presne vyjmenovavat
+				- pokud najednou budu mit vicejazycnou aplikaci, tak rusky odejit neni to samy jako cesky
+		- vnorene tridy
+		- ![[Pasted image 20260303103754.png]]
+			- ![[Pasted image 20260303103028.png]]
+			- omezeni
+				- staticke vnorene tridy
+					- nema to vztah k vnejsi tride
+						- vnitrni **nevidi** na private vnejsi
+				- nestaticke vnitrni tridy (inner class)
+					- vnitrni **vidi** na private vnejsi
+					- existuji pouze v instanci vnejsi tridy
+						- `OuterClass.InnerClass innerObject = outerObject.new InnerClass();`
+					- anonymni
+						- pouzivaji se pro vytvoreni jedine instance, ktera je pouzivana jako parametr
+						- nemaji hlavicku
+						- *Deklarace anonymní třídy je výraz a musí být součást příkazu*
+						- *Typ instance anonymní třídy je vždy určen prostřednictvím jejího nadtypu (nadtřída, interface)*
+						- ![[Pasted image 20260303104117.png]]
+						- ![[Pasted image 20260303104300.png]]
+						- ![[Pasted image 20260303104454.png]]
+			- proc to pouzivat
+				- kdyz potrebuju tridu kterou budu pouzivat jen na jednom miste
+					- helper classes
+				- podpora zapouzdreni
+				- citelnejsi kod
+					- to co patri k sobe, je u sebe

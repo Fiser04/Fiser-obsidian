@@ -5,7 +5,8 @@ class TodoItem extends React.Component {
     const { todo } = this.props;
     return (
       <li>
-        {todo.title} {todo.completed ? "✅" : "❌"}
+        {todo.title}
+        <input type="checkbox" checked={todo.completed} />
       </li>
     );
   }
