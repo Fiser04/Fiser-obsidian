@@ -31,18 +31,18 @@ void loop()
 {
 
   temp = String(bme.readTemperature() - CORRECT_TEMP);
-  // hum=String(bme.readHumidity());
+  hum = String(bme.readHumidity());
   press = String(bme.readPressure() / 100.0F);
   alt = String(bme.readAltitude(SEALEVELPRESSURE_HPA));
-
-  Serial.print("Temperature: ");
-  Serial.println(temp);
-  // Serial.print("Humidity: ");
-  // Serial.println(hum)d
-  Serial.print("Pressure: ");
-  Serial.println(press);
-  Serial.print("Altitude: ");
-  Serial.println(alt);
-
+  static int count = -5;
+  if (count % 10 == 0)
+  {
+    // Serial.println("Temperature\tHumidity\tPressure\tAltitude");
+    Serial.println("\n| Temperature |  Humidity  |  Pressure  |  Altitude  |");
+  }
+  // Serial.println(temp + '\t' + '\t' + hum + '\t' + '\t' + press + '\t' + '\t' + alt);
+  // Serial.printf("  %6.2f         %6.3f         %7.2f         %7.2f   \n", temp.toFloat(), hum.toFloat(), press.toFloat(), alt.toFloat());
+  Serial.printf("|   %6.2f    |   %6.2f   |  %7.2f   |  %7.2f   |\n", temp.toFloat(), hum.toFloat(), press.toFloat(), alt.toFloat());
+  count++;
   delay(5000);
 }
