@@ -1,0 +1,43 @@
+!pip install ufal.morphodita
+
+
+import zipfile
+
+
+
+# Rozbalení souboru
+with zipfile.ZipFile("czech-morfflex-pdt-161115.zip", 'r') as zip_ref:
+    zip_ref.extractall("czech-morfflex")  # Rozbalíme do složky
+
+print("Soubory po rozbalení:")
+!ls czech-morfflex/czech-morfflex-pdt-161115
+
+
+
+
+
+import os
+from ufal.morphodita import Tagger, Tokenizer, TaggedLemma, Forms, TaggedLemmas
+from pprint import pprint
+
+# Načtení modelu
+tagger = Tagger.load("czech-morfflex/czech-morfflex-pdt-161115/czech-morfflex-pdt-161115.tagger")
+
+# Testovací text
+text = "Prezident republiky se setkal s novináři."
+
+# Tokenization - Manually add words to Forms
+forms = Forms()
+for word in text.split():
+    forms.push_back(word)
+
+# Prepare output structure
+tagged_lemmas = TaggedLemmas()
+
+# Perform tagging
+tagger.tag(forms, tagged_lemmas)
+
+# Print results
+print("\nTokenized & Tagged Output:")
+for i in range(len(forms)):
+    print(f"{forms[i]} -> Lemma: {tagged_lemmas[i].lemma}, POS: {tagged_lemmas[i].tag}")
