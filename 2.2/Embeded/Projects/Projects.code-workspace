@@ -1,8 +1,12 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "path": ".",
+    },
+    {
+      "name": "Board-ESPRESSIF-ESP32-s3",
+      "path": "Board-ESPRESSIF-ESP32-s3",
+    },
+  ],
+  "settings": {},
 }
