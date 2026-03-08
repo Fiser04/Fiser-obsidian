@@ -10,6 +10,7 @@ class MainList extends React.Component {
             key={item.id}
             name={item.name}
             description={item.description}
+            read={item.read}
           />
         ))}
       </div>
