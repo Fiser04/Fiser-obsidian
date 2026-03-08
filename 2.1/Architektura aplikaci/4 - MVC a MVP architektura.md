@@ -96,6 +96,6 @@
 	- data transfer object
 	- defakto podmnozina POCO
 - POCO (POJO)
-	- play all c# object
-	- play all java object
+	- Plain Old C# Object
+	- Plain Old Java Object
 	- nesmi byt vazany na externi knihovny
