@@ -3,7 +3,6 @@
 		- vykonava jednu cinnost dokola
 	- byva jako jen soucast celku
 	- tvoreny mikrocontrolerem
-		- 
 
 - mikrokontroler
 	- *cely pocitac v jednom chipu*
