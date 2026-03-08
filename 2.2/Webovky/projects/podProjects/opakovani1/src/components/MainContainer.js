@@ -1,6 +1,7 @@
 import React from "react";
 import MainList from "./MainList";
 import Header from "./Header";
+import NavBar from "./NavBar";
 
 class MainContainer extends React.Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class MainContainer extends React.Component {
     return (
       <div className="main-container">
         <Header />
+        <NavBar />
         <h1>Main Container</h1>
         <MainList items={this.state.items} />
       </div>
