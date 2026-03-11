@@ -6,8 +6,8 @@ void setup()
 {
 
   Serial.begin(115200);
-  pinMode(47, OUTPUT);    // Set EN pin for second stabilisator as output
-  digitalWrite(47, HIGH); // Turn on the second stabilisator
+  pinMode(47, OUTPUT);    // Set EN pin for second stabilisator as output //poustim napeti
+  digitalWrite(47, HIGH); // Turn on the second stabilisator //poustim napeti
 
   Wire.begin(42, 2); // set dedicated I2C pins 42 - SDA, 2 - SCL for ESP32-S3-DEVKit
 
