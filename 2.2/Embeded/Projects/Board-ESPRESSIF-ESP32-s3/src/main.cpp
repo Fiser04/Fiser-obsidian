@@ -25,24 +25,51 @@ void setup()
   delay(1000);
   Wire.begin(42, 2); // Set dedicated I2C pins 42 - SDA, 2 - SCL for ESP32-S3-DEVKit
   bme.begin(0x77);   // 0x77 OR 0x76 for left pad on board
+  // Serial.println("BME280 sensor initialized successfully!");
 }
 
 void loop()
 {
-
   temp = String(bme.readTemperature() - CORRECT_TEMP);
   hum = String(bme.readHumidity());
   press = String(bme.readPressure() / 100.0F);
   alt = String(bme.readAltitude(SEALEVELPRESSURE_HPA));
   static int count = -5;
-  if (count % 10 == 0)
+  if (count == 9 || count == 0)
   {
-    // Serial.println("Temperature\tHumidity\tPressure\tAltitude");
-    Serial.println("\n| Temperature |  Humidity  |  Pressure  |  Altitude  |");
+    count = 0;
+    for (int i = 0; i < 20; i++)
+    {
+      Serial.println();
+    }
+    Serial.println("\n| Id | Temperature |  Humidity  |  Pressure  |  Altitude  |");
+    Serial.println("|----|-------------|------------|------------|------------|");
   }
-  // Serial.println(temp + '\t' + '\t' + hum + '\t' + '\t' + press + '\t' + '\t' + alt);
-  // Serial.printf("  %6.2f         %6.3f         %7.2f         %7.2f   \n", temp.toFloat(), hum.toFloat(), press.toFloat(), alt.toFloat());
-  Serial.printf("|   %6.2f    |   %6.2f   |  %7.2f   |  %7.2f   |\n", temp.toFloat(), hum.toFloat(), press.toFloat(), alt.toFloat());
+
+  if (count >= 0)
+  {
+    Serial.printf("| %02d |   %6.2f    |   %6.2f   |  %7.2f   |  %7.2f   |\n", count + 1, temp.toFloat(), hum.toFloat(), press.toFloat(), alt.toFloat());
+  }
   count++;
-  delay(5000);
+
+  // V2
+  //  for (int i = 0; i < 20; i++)
+  //    Serial.println();
+
+  // Serial.println(F("╔══════════════════════╦════════════════════╗"));
+
+  // Serial.print(F("║  Temperature         ║   "));
+  // Serial.printf("%6.2f °C", temp.toFloat());
+  // Serial.println(F("        ║"));
+
+  // Serial.print(F("║  Humidity            ║   "));
+  // Serial.printf("%6.2f %% ", hum.toFloat());
+  // Serial.println(F("        ║"));
+
+  // Serial.printf(("║  Pressure            ║  %7.2f hPa       ║\n"), press.toFloat());
+  // Serial.printf(("║  Altitude            ║  %7.2f m         ║\n"), alt.toFloat());
+
+  // Serial.println(F("╚══════════════════════╩════════════════════╝"));
+
+  delay(2000);
 }
