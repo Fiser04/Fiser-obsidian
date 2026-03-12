@@ -2,10 +2,10 @@ namespace WebApplication1.Repository;
 
 public interface IGenericRepository<T> where T : class
 {
-    IEnumerable<T> GetAll();
-    T? GetById(int id);
-    T Add(T entity);
-    void Update(T entity);
-    void Delete(int id);
-    bool Exists(int id); 
+    public IEnumerable<T> GetAll();
+    public T? GetById(int id);
+    public T Add(T entity);
+    public void Update(T entity);
+    public void Delete(int id);
+    public bool Exists(int id); 
 }

@@ -17,7 +17,9 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddControllersWithViews();
-
+// builder.Services.AddScoped<IProductServiceWithDTO, ProductServiceWithDTO>();
+builder.Services.AddScoped<IProductServiceWithDTO, ProductServiceWithDTO>();
+builder.Services.AddAutoMapper(typeof(ProductServiceWithDTO).Assembly);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

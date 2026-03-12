@@ -17,12 +17,6 @@
 
 Adafruit_SSD1306 display(128, 64, &Wire, -1); // Create an instance of the SSD1306 display with width 128, height 64, using I2C (Wire) and no reset pin
 Adafruit_BME280 bme;                          // Create an instance of the BME280 sensor
-
-String temp;
-String hum;
-String press;
-String alt;
-
 void setup()
 {
   Serial.begin(115200);
@@ -62,12 +56,23 @@ void setup()
 void loop()
 {
   // put your main code here, to run repeatedly:
-  display.setCursor(0, 0);
-  display.println("Teplota: " + String(bme.readTemperature() - CORRECT_TEMP) + "C");
-  display.println("Tlak: " + String(bme.readPressure() / 100.0F) + "hPa");
-  display.println("Vlhkost: " + String(bme.readHumidity()) + "%");
-  display.println("Nadmorska vyska: " + String(bme.readAltitude(SEALEVELPRESSURE_HPA)) + "m");
-  display.display();
-  delay(500);
-  display.clearDisplay();
+  // display.setCursor(0, 0);
+  // display.println("Teplota: " + String(bme.readTemperature() - CORRECT_TEMP) + "C");
+  // display.println("Tlak: " + String(bme.readPressure() / 100.0F) + "hPa");
+  // display.println("Vlhkost: " + String(bme.readHumidity()) + "%");
+  // display.println("Nadmorska vyska: " + String(bme.readAltitude(SEALEVELPRESSURE_HPA)) + "m");
+  int position = 0;
+
+  String text = "Ahoj svete! Toto je posouvající se text na OLED displeji. ";
+
+  while (position > -128) // Posuneme text o délku textu v pixelech (6 pixelů na znak)
+  {
+    display.clearDisplay();
+    display.setCursor(0, 0);
+
+    display.print(text.substring(-position, -position + 20)); // Zobrazí pouze prvních 20 znaků textu
+    display.display();
+    position -= 1; // Posun textu o 6 pixelů doleva
+    delay(140);    // Krátká prodleva pro plynulý posun
+  }
 }

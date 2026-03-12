@@ -1,3 +1,4 @@
+using MyWebAppMVC.Contracts.ViewModel;
 using MyWebAppMVC.Repository;
 namespace MyWebAppMVC.Service;
 
