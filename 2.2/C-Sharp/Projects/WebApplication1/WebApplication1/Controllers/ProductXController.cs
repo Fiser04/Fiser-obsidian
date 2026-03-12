@@ -55,13 +55,14 @@ namespace WebApplication1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,CategoryId,SupplierId")] Product product)
         {
-            ModelState.Clear(); // Clear the ModelState to ensure that validation is performed on the updated model
             if (ModelState.IsValid)
             {
                 _context.Add(product);
+                // await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-               
             }
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name");
+            ViewData["SupplierId"] = new SelectList(_context.Suppliers, "Id", "Name"); 
             return View(product);
         }
     }
