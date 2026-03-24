@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vgtrkSTLmpg=",
+  "dgSpecHash": "pQm3orW0Jao=",
   "success": true,
   "projectFilePath": "/Users/fiser/Obsidian/Fiser-obsidian/2.2/C-Sharp/Projects/WebApplication1/WebApplication1/WebApplication1.csproj",
   "expectedPackageFiles": [
@@ -149,6 +149,18 @@
       "code": "NU1608",
       "level": "Warning",
       "message": "Detected package version outside of dependency constraint: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 requires AutoMapper (= 12.0.1) but version AutoMapper 16.1.0 was resolved.",
+      "projectPath": "/Users/fiser/Obsidian/Fiser-obsidian/2.2/C-Sharp/Projects/WebApplication1/WebApplication1/WebApplication1.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/fiser/Obsidian/Fiser-obsidian/2.2/C-Sharp/Projects/WebApplication1/WebApplication1/WebApplication1.csproj",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'AutoMapper' 16.1.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-rvv3-g6hj-g44x",
       "projectPath": "/Users/fiser/Obsidian/Fiser-obsidian/2.2/C-Sharp/Projects/WebApplication1/WebApplication1/WebApplication1.csproj",
       "warningLevel": 1,
       "filePath": "/Users/fiser/Obsidian/Fiser-obsidian/2.2/C-Sharp/Projects/WebApplication1/WebApplication1/WebApplication1.csproj",

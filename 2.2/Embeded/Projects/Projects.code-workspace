@@ -14,6 +14,14 @@
     {
       "name": "Esp32-OLED",
       "path": "Esp32-OLED"
+    },
+    {
+      "name": "esp32-prepinaci-teplomer",
+      "path": "esp32-prepinaci-teplomer"
+    },
+    {
+      "name": "screensaver",
+      "path": "screensaver"
     }
   ],
   "settings": {},

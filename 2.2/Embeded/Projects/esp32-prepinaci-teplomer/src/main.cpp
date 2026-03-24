@@ -1,9 +1,7 @@
-
 #include <Arduino.h>
 #include <SPI.h>
 #include <Wire.h>
-#include <Adafruit_GFX.h> // https://github.com/adafruit/Adafruit-GFX-Library
-// #include <Adafruit_SH110X.h> // https://github.com/adafruit/Adafruit_SH110X
+#include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
@@ -16,7 +14,8 @@
 #define CORRECT_TEMP (0.40)
 
 Adafruit_SSD1306 display(128, 64, &Wire, -1); // Create an instance of the SSD1306 display with width 128, height 64, using I2C (Wire) and no reset pin
-Adafruit_BME280 bme;                          // Create an instance of the BME280 sensor
+Adafruit_BME280 bme;
+
 void setup()
 {
   Serial.begin(115200);
@@ -54,23 +53,31 @@ void setup()
 
 void loop()
 {
-  // put your main code here, to run repeatedly:
-  // display.setCursor(0, 0);
-  // display.println("Teplota: " + String(bme.readTemperature() - CORRECT_TEMP) + "C");
-  // display.println("Tlak: " + String(bme.readPressure() / 100.0F) + "hPa");
-  // display.println("Vlhkost: " + String(bme.readHumidity()) + "%");
-  // display.println("Nadmorska vyska: " + String(bme.readAltitude(SEALEVELPRESSURE_HPA)) + "m");
-  String text = "Ahoj svete! Toto je posouvajici se text na OLED displeji. ";
-  int textWidth = text.length() * 6;
-  for (int pos = 128; pos > -textWidth; pos--)
-  {
-    display.clearDisplay();
+  display.clearDisplay();
+  display.setCursor(0, 0);
+  display.setTextSize(2);
+  display.println("Teplota \n" + String(bme.readTemperature() - CORRECT_TEMP) + "C");
+  display.display();
+  delay(3000);
 
-    display.setTextWrap(false);
-    display.setCursor(pos, 0);
-    display.print(text);
+  display.clearDisplay();
+  display.setCursor(0, 0);
+  display.setTextSize(2);
+  display.println("Tlak \n" + String(bme.readPressure() / 100.0F) + "hPa");
+  display.display();
+  delay(3000);
 
-    display.display();
-    delay(20);
-  }
+  display.clearDisplay();
+  display.setCursor(0, 0);
+  display.setTextSize(2);
+  display.println("Vlhkost \n" + String(bme.readHumidity()) + "%");
+  display.display();
+  delay(3000);
+
+  display.clearDisplay();
+  display.setCursor(0, 0);
+  display.setTextSize(2);
+  display.println("Vyska \n" + String(bme.readAltitude(SEALEVELPRESSURE_HPA)) + "m");
+  display.display();
+  delay(3000);
 }
