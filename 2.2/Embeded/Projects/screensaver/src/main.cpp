@@ -13,8 +13,8 @@ Adafruit_SSD1306 display(128, 64, &Wire, -1);
 
 int positionX = 64;
 int positionY = 32;
-int speedX = 1;
-int speedY = 1;
+int speedX = 2;
+int speedY = 2;
 int circleSize = 4;
 
 void setup()
