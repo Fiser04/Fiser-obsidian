@@ -1,9 +1,8 @@
-#include <Arduino.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
 #include <Arduino.h>
 #include <SPI.h>
 #include <Wire.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
 
 Adafruit_SSD1306 display(128, 64, &Wire, -1);
 
@@ -13,17 +12,11 @@ Adafruit_SSD1306 display(128, 64, &Wire, -1);
 
 int positionX = 64;
 int positionY = 32;
-<<<<<<< HEAD
 int speedX = 2;
 int speedY = 2;
-=======
-int speedX = 1;
-int speedY = 1;
->>>>>>> 36ae88f (a)
 int circleSize = 4;
 
-void setup()
-{
+void setup() {
   Serial.begin(115200);
   pinMode(4, OUTPUT);
   digitalWrite(4, HIGH);
@@ -36,13 +29,13 @@ void setup()
   digitalWrite(USUP_POWER_PIN, HIGH); // Turn on the display
   pinMode(SENSOR_SUPPLY, OUTPUT);
   digitalWrite(SENSOR_SUPPLY, HIGH);
-  Wire.begin(42, 2); // Set dedicated I2C pins 42 - SDA, 2 - SCL for ESP32-S3-DEVKit
+  Wire.begin(42,
+             2); // Set dedicated I2C pins 42 - SDA, 2 - SCL for ESP32-S3-DEVKit
 
   Serial.println(F("SSD1306 initialization ...."));
 
   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
-  if (!display.begin(SSD1306_SWITCHCAPVCC, i2c_Address))
-  {
+  if (!display.begin(SSD1306_SWITCHCAPVCC, i2c_Address)) {
     Serial.println(F("SSD1306 allocation failed"));
     for (;;)
       ; // Don't proceed, loop forever
@@ -55,8 +48,7 @@ void setup()
   display.setTextColor(SSD1306_WHITE);
 }
 
-void loop()
-{
+void loop() {
   display.clearDisplay();
   display.fillCircle(positionX, positionY, circleSize, SSD1306_WHITE);
   display.display();
