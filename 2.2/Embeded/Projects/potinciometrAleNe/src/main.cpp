@@ -188,6 +188,7 @@ void loop()
 }
 */
 
+/*
 // Počítadlo s rotačním enkodérem a zobrazením na OLED displeji
 
 #include <Arduino.h>
@@ -342,6 +343,7 @@ void loop()
 
   delay(1);
 }
+*/
 
 /*
 // Počítadlo s indikátorem a zobrazením na OLED displeji
@@ -483,10 +485,10 @@ void loop()
   }
 }
 */
-/*
- // Hra Pong na OLED displeji s ovládáním pomocí rotačního enkodéru
 
- #include <Arduino.h>
+// Hra Pong na OLED displeji s ovládáním pomocí rotačního enkodéru
+
+#include <Arduino.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
@@ -502,8 +504,8 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 // Rotační enkodér
 #define CLK 8
-#define DT  6
-#define SW  5
+#define DT 7
+#define SW 6
 
 int currentStateCLK;
 int lastStateCLK;
@@ -528,12 +530,13 @@ int score = 0;
 
 // Časování hry
 unsigned long lastFrameTime = 0;
-const int frameDelay = 16;   // ~60 FPS
+const int frameDelay = 16; // ~60 FPS
 
 // ---------------------------
 // Pomocné funkce
 // ---------------------------
-void resetBall() {
+void resetBall()
+{
   ballX = SCREEN_WIDTH / 2;
   ballY = SCREEN_HEIGHT / 2;
 
@@ -542,14 +545,16 @@ void resetBall() {
   ballDY = 0.2;
 }
 
-void resetGame() {
+void resetGame()
+{
   paddleX = (SCREEN_WIDTH - paddleW) / 2;
   score = 0;
   gameOver = false;
   resetBall();
 }
 
-void drawGame() {
+void drawGame()
+{
   display.clearDisplay();
 
   // Míček
@@ -568,7 +573,8 @@ void drawGame() {
   display.display();
 }
 
-void drawGameOver() {
+void drawGameOver()
+{
   display.clearDisplay();
   display.setTextSize(2);
   display.setTextColor(SSD1306_WHITE);
@@ -586,7 +592,8 @@ void drawGameOver() {
   display.display();
 }
 
-void updateEncoder() {
+void updateEncoder()
+{
   static int lastEncoded = 0;
   static bool initialized = false;
 
@@ -594,7 +601,8 @@ void updateEncoder() {
   int lsb = digitalRead(DT);
   int encoded = (msb << 1) | lsb;
 
-  if (!initialized) {
+  if (!initialized)
+  {
     lastEncoded = encoded;
     initialized = true;
     return;
@@ -603,28 +611,35 @@ void updateEncoder() {
   int sum = (lastEncoded << 2) | encoded;
 
   // doprava
-  if (sum == 0b1101 || sum == 0b0100 || sum == 0b0010 || sum == 0b1011) {
+  if (sum == 0b1101 || sum == 0b0100 || sum == 0b0010 || sum == 0b1011)
+  {
     paddleX += 6;
   }
 
   // doleva
-  if (sum == 0b1110 || sum == 0b0111 || sum == 0b0001 || sum == 0b1000) {
+  if (sum == 0b1110 || sum == 0b0111 || sum == 0b0001 || sum == 0b1000)
+  {
     paddleX -= 6;
   }
 
-  if (paddleX < 0) paddleX = 0;
-  if (paddleX > SCREEN_WIDTH - paddleW) paddleX = SCREEN_WIDTH - paddleW;
+  if (paddleX < 0)
+    paddleX = 0;
+  if (paddleX > SCREEN_WIDTH - paddleW)
+    paddleX = SCREEN_WIDTH - paddleW;
 
   lastEncoded = encoded;
 }
 
-
-void updateButton() {
+void updateButton()
+{
   int btnState = digitalRead(SW);
 
-  if (btnState == LOW) {
-    if (millis() - lastButtonPress > 200) {
-      if (gameOver) {
+  if (btnState == LOW)
+  {
+    if (millis() - lastButtonPress > 200)
+    {
+      if (gameOver)
+      {
         resetGame();
       }
     }
@@ -632,32 +647,45 @@ void updateButton() {
   }
 }
 
-void updateBall() {
+void updateBall()
+{
   ballX += ballDX;
   ballY += ballDY;
 
   // Levá / pravá stěna
-  if (ballX <= 0) {
+  if (ballX <= 0)
+  {
     ballX = 0;
     ballDX = -ballDX;
   }
 
-  if (ballX >= SCREEN_WIDTH - ballSize) {
+  if (ballX >= SCREEN_WIDTH - ballSize)
+  {
     ballX = SCREEN_WIDTH - ballSize;
     ballDX = -ballDX;
   }
 
   // Horní stěna - náhodný odraz
-  if (ballY <= 0) {
+  if (ballY <= 0)
+  {
     ballY = 0;
     ballDY = fabs(ballDY); // dolů
 
     int newDir = random(0, 4);
-    switch (newDir) {
-      case 0: ballDX = -2.0; break;
-      case 1: ballDX = -1.0; break;
-      case 2: ballDX =  1.0; break;
-      case 3: ballDX =  2.0; break;
+    switch (newDir)
+    {
+    case 0:
+      ballDX = -2.0;
+      break;
+    case 1:
+      ballDX = -1.0;
+      break;
+    case 2:
+      ballDX = 1.0;
+      break;
+    case 3:
+      ballDX = 2.0;
+      break;
     }
   }
 
@@ -665,31 +693,40 @@ void updateBall() {
   bool hitPaddleY = (ballY + ballSize >= paddleY) && (ballY <= paddleY + paddleH);
   bool hitPaddleX = (ballX + ballSize >= paddleX) && (ballX <= paddleX + paddleW);
 
-  if (ballDY > 0 && hitPaddleY && hitPaddleX) {
+  if (ballDY > 0 && hitPaddleY && hitPaddleX)
+  {
     ballY = paddleY - ballSize;
     ballDY = -fabs(ballDY);
 
     // Odraz podle místa dopadu na pálku
     float hitPos = (ballX + ballSize / 2.0) - (paddleX + paddleW / 2.0);
 
-    if (hitPos < -8)       ballDX = -2.0;
-    else if (hitPos < -3)  ballDX = -1.2;
-    else if (hitPos < 3)   ballDX =  0.0;
-    else if (hitPos < 8)   ballDX =  1.2;
-    else                   ballDX =  2.0;
+    if (hitPos < -8)
+      ballDX = -2.0;
+    else if (hitPos < -3)
+      ballDX = -1.2;
+    else if (hitPos < 3)
+      ballDX = 0.0;
+    else if (hitPos < 8)
+      ballDX = 1.2;
+    else
+      ballDX = 2.0;
 
     score++;
   }
 
   // Spodní hrana = prohra
-  if (ballY > SCREEN_HEIGHT) {
+  if (ballY > SCREEN_HEIGHT)
+  {
     gameOver = true;
   }
 }
 
-void setup() {
+void setup()
+{
   Serial.begin(115200);
-  while (!Serial);
+  while (!Serial)
+    ;
 
   pinMode(USUP_POWER_PIN, OUTPUT);
   digitalWrite(USUP_POWER_PIN, HIGH);
@@ -705,9 +742,11 @@ void setup() {
 
   lastStateCLK = digitalRead(CLK);
 
-  if (!display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR)) {
+  if (!display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR))
+  {
     Serial.println(F("SSD1306 allocation failed"));
-    while (1);
+    while (1)
+      ;
   }
 
   display.clearDisplay();
@@ -718,18 +757,20 @@ void setup() {
   resetGame();
 }
 
-void loop() {
+void loop()
+{
   updateEncoder();
   updateButton();
 
-  if (!gameOver && millis() - lastFrameTime >= frameDelay) {
+  if (!gameOver && millis() - lastFrameTime >= frameDelay)
+  {
     lastFrameTime = millis();
     updateBall();
     drawGame();
   }
 
-  if (gameOver) {
+  if (gameOver)
+  {
     drawGameOver();
   }
 }
-  */
