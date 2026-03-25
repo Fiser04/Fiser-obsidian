@@ -22,6 +22,10 @@
     {
       "name": "screensaver",
       "path": "screensaver"
+    },
+    {
+      "name": "potinciometrAleNe",
+      "path": "potinciometrAleNe"
     }
   ],
   "settings": {},
