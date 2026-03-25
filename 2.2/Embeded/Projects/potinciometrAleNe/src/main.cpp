@@ -67,6 +67,7 @@
 //   delay(1);
 // }
 
+/*
 // Rgulace jasu LED pomocí rotačního enkodéru
 #include <Arduino.h>
 
@@ -185,11 +186,11 @@ void loop()
 
   delay(1);
 }
+*/
 
-/*
 // Počítadlo s rotačním enkodérem a zobrazením na OLED displeji
 
-  #include <Arduino.h>
+#include <Arduino.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
@@ -201,15 +202,24 @@ void loop()
 
 #define SENSOR_SUPPLY 47
 #define i2c_Address 0x3c
-#define USUP_POWER_PIN 2  // uSUP power pin
+#define USUP_POWER_PIN 2 // uSUP power pin
 #define DELAYTIME 1000
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 // Definice pinů pro rotační enkodér
 #define CLK 8
-#define DT 6
-#define SW 5
+#define DT 7
+#define SW 6
+
+// LED pro PWM
+#define LED_PIN 16 // uprav podle zapojení
+#define PWM_CHANNEL 0
+#define PWM_FREQ 5000    // 5 kHz
+#define PWM_RESOLUTION 8 // 8 bit => rozsah 0-255
+
+int brightness = 128; // počáteční jas LED (50 %)
+int stepSize = 5;     // krok změny jasu při otočení enkodéru
 
 int counter = 0;
 int currentStateCLK;
@@ -218,34 +228,56 @@ String currentDir = "";
 unsigned long lastButtonPress = 0;
 bool buttonPressed = false;
 
+void updateLedBrightness()
+{
+  brightness = constrain(brightness, 0, 255);
+  ledcWrite(PWM_CHANNEL, brightness);
+
+  Serial.print("Brightness: ");
+  Serial.print(brightness);
+  Serial.print(" / 255  (");
+  Serial.print((brightness * 100) / 255);
+  Serial.println("%)");
+}
 // Funkce pro aktualizaci zobrazení počítadla
-void updateDisplay() {
+void updateDisplay()
+{
   display.clearDisplay();
   display.setTextSize(4);
   display.setCursor(10, 10);
-  display.println(counter);
+  display.println(brightness);
   display.display();
 }
 
-void setup() {
+void setup()
+{
   Serial.begin(115200);
-  while (!Serial); // time to get serial running
+  while (!Serial)
+    ; // time to get serial running
 
-  pinMode(USUP_POWER_PIN, OUTPUT);     // Set display power pin as output
-  digitalWrite(USUP_POWER_PIN, HIGH);  // Turn on the display
+  pinMode(USUP_POWER_PIN, OUTPUT);    // Set display power pin as output
+  digitalWrite(USUP_POWER_PIN, HIGH); // Turn on the display
   pinMode(SENSOR_SUPPLY, OUTPUT);
   digitalWrite(SENSOR_SUPPLY, HIGH);
-  Wire.begin(42, 2);        // Set dedicated I2C pins 42 - SDA, 2 - SCL for ESP32-S3-DEVKit
+  Wire.begin(42, 2); // Set dedicated I2C pins 42 - SDA, 2 - SCL for ESP32-S3-DEVKit
 
   pinMode(CLK, INPUT);
   pinMode(DT, INPUT);
   pinMode(SW, INPUT_PULLUP);
 
+  // PWM pro LED
+  ledcSetup(PWM_CHANNEL, PWM_FREQ, PWM_RESOLUTION);
+  ledcAttachPin(LED_PIN, PWM_CHANNEL);
+
   lastStateCLK = digitalRead(CLK);
 
-  if (!display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR)) {
+  updateLedBrightness();
+
+  if (!display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR))
+  {
     Serial.println(F("SSD1306 allocation failed"));
-    while (1);
+    while (1)
+      ;
   }
 
   display.clearDisplay();
@@ -256,176 +288,201 @@ void setup() {
   display.display();
 }
 
-void loop() {
+void loop()
+{
   currentStateCLK = digitalRead(CLK);
 
   // Detekce změny enkodéru
-  if (currentStateCLK != lastStateCLK && currentStateCLK == 1) {
-    if (digitalRead(DT) != currentStateCLK) {
-      counter--;
+  if (currentStateCLK != lastStateCLK && currentStateCLK == 1)
+  {
+    if (digitalRead(DT) != currentStateCLK)
+    {
+
+      brightness -= stepSize;
       currentDir = "CCW";
-    } else {
-      counter++;
+    }
+    else
+    {
+
+      brightness += stepSize;
       currentDir = "CW";
     }
 
-    Serial.print("Direction: ");
-    Serial.print(currentDir);
+    if (!buttonPressed)
+    { // Aktualizace displeje jen pokud není zmáčknuto tlačítko
+      updateDisplay();
+    }
+  }
+  brightness = constrain(brightness, 0, 255);
+  ledcWrite(PWM_CHANNEL, brightness);
+  lastStateCLK = currentStateCLK;
+
+  int btnState = digitalRead(SW);
+
+  if (btnState == LOW)
+  { // Tlačítko stisknuto
+    if (millis() - lastButtonPress > 50)
+    { // debounce
+      brightness = 128;
+      display.clearDisplay();
+      display.setTextSize(2);
+      display.setCursor(20, 20);
+      display.println("Click");
+      display.display();
+      // reset na 50 %
+      updateLedBrightness();
+      Serial.println("Button pressed -> Brightness reset to 50 %");
+    }
+    lastButtonPress = millis();
+  }
+  else if (buttonPressed)
+  { // Tlačítko uvolněno
+    updateDisplay();
+  }
+
+  delay(1);
+}
+
+/*
+// Počítadlo s indikátorem a zobrazením na OLED displeji
+#include <Arduino.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+#define SENSOR_SUPPLY 47
+#define i2c_Address 0x3c
+#define USUP_POWER_PIN 2
+
+// OLED
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+#define OLED_ADDR 0x3C
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+
+// Rotační enkodér
+#define CLK 8
+#define DT 7
+#define SW 6
+
+int counter = 0;
+int currentStateCLK;
+int lastStateCLK;
+bool buttonPressed = false;
+unsigned long lastButtonPress = 0;
+
+void updateDisplay()
+{
+  display.clearDisplay();
+
+  // vykresli "LED" sloupec
+  display.fillRect(60, 64 - counter, 8, counter, SSD1306_WHITE);
+
+  // Nastav velikost písma pro číslo
+  display.setTextSize(1);
+  display.setTextColor(SSD1306_WHITE);
+
+  // Připrav text s hodnotou
+  String valueText = String(counter);
+
+  // Vypočítej souřadnice textu (aby byl nad sloupcem)
+  int16_t x1, y1;
+  uint16_t w, h;
+  display.getTextBounds(valueText, 0, 0, &x1, &y1, &w, &h);
+
+  int textX = 64 - w / 2;             // zarovnání na střed sloupce
+  int textY = (64 - counter) - h - 2; // umístění nad sloupec
+
+  // Pokud je text příliš vysoko, nastav minimální pozici
+  if (textY < 0)
+    textY = 0;
+
+  display.setCursor(textX, textY);
+  display.println(valueText);
+
+  display.display();
+}
+
+void setup()
+{
+  Serial.begin(115200);
+  while (!Serial)
+    ; // čas pro spuštění Serial
+
+  pinMode(USUP_POWER_PIN, OUTPUT);
+  digitalWrite(USUP_POWER_PIN, HIGH);
+  pinMode(SENSOR_SUPPLY, OUTPUT);
+  digitalWrite(SENSOR_SUPPLY, HIGH);
+  Wire.begin(42, 2); // I2C piny ESP32-S3
+
+  pinMode(CLK, INPUT);
+  pinMode(DT, INPUT);
+  pinMode(SW, INPUT_PULLUP);
+
+  lastStateCLK = digitalRead(CLK);
+
+  if (!display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR))
+  {
+    Serial.println(F("SSD1306 allocation failed"));
+    while (1)
+      ;
+  }
+
+  display.clearDisplay();
+  display.setTextColor(SSD1306_WHITE);
+  display.display();
+}
+
+void loop()
+{
+  currentStateCLK = digitalRead(CLK);
+
+  // Detekce otočení
+  if (currentStateCLK != lastStateCLK && currentStateCLK == 1)
+  {
+    if (digitalRead(DT) != currentStateCLK)
+    {
+      counter--;
+    }
+    else
+    {
+      counter++;
+    }
+
     Serial.print(" | Counter: ");
     Serial.println(counter);
 
-    if (!buttonPressed) { // Aktualizace displeje jen pokud není zmáčknuto tlačítko
+    // Omezení hodnoty counteru
+    if (counter < 0)
+      counter = 0;
+    if (counter > 64)
+      counter = 64;
+
+    if (!buttonPressed)
+    {
       updateDisplay();
     }
   }
 
   lastStateCLK = currentStateCLK;
 
+  // Detekce stisku tlačítka
   int btnState = digitalRead(SW);
 
-  if (btnState == LOW) { // Tlačítko stisknuto
-    if (millis() - lastButtonPress > 50) { // debounce
-      buttonPressed = true;
-      display.clearDisplay();
-      display.setTextSize(2);
-      display.setCursor(20, 20);
-      display.println("Click");
-      display.display();
-    }
-    lastButtonPress = millis();
-  } else if (buttonPressed) { // Tlačítko uvolněno
-    buttonPressed = false;
-    updateDisplay();
-  }
-
-  delay(1);
-}
-*/
-
-/*
-// Počítadlo s indikátorem a zobrazením na OLED displeji
-  #include <Arduino.h>
-  #include <Wire.h>
-  #include <Adafruit_GFX.h>
-  #include <Adafruit_SSD1306.h>
-
-  #define SENSOR_SUPPLY 47
-  #define i2c_Address 0x3c
-  #define USUP_POWER_PIN 2
-
-  // OLED
-  #define SCREEN_WIDTH 128
-  #define SCREEN_HEIGHT 64
-  #define OLED_ADDR 0x3C
-  Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
-
-  // Rotační enkodér
-  #define CLK 8
-  #define DT 6
-  #define SW 5
-
-  int counter = 0;
-  int currentStateCLK;
-  int lastStateCLK;
-  bool buttonPressed = false;
-  unsigned long lastButtonPress = 0;
-
-  void updateDisplay() {
-    display.clearDisplay();
-
-    // vykresli "LED" sloupec
-    display.fillRect(60, 64 - counter, 8, counter, SSD1306_WHITE);
-
-    // Nastav velikost písma pro číslo
-    display.setTextSize(1);
-    display.setTextColor(SSD1306_WHITE);
-
-    // Připrav text s hodnotou
-    String valueText = String(counter);
-
-    // Vypočítej souřadnice textu (aby byl nad sloupcem)
-    int16_t x1, y1;
-    uint16_t w, h;
-    display.getTextBounds(valueText, 0, 0, &x1, &y1, &w, &h);
-
-    int textX = 64 - w / 2;               // zarovnání na střed sloupce
-    int textY = (64 - counter) - h - 2;    // umístění nad sloupec
-
-    // Pokud je text příliš vysoko, nastav minimální pozici
-    if (textY < 0) textY = 0;
-
-    display.setCursor(textX, textY);
-    display.println(valueText);
-
-    display.display();
-  }
-
-  void setup() {
-    Serial.begin(115200);
-    while (!Serial); // čas pro spuštění Serial
-
-    pinMode(USUP_POWER_PIN, OUTPUT);
-    digitalWrite(USUP_POWER_PIN, HIGH);
-    pinMode(SENSOR_SUPPLY, OUTPUT);
-    digitalWrite(SENSOR_SUPPLY, HIGH);
-    Wire.begin(42, 2); // I2C piny ESP32-S3
-
-    pinMode(CLK, INPUT);
-    pinMode(DT, INPUT);
-    pinMode(SW, INPUT_PULLUP);
-
-    lastStateCLK = digitalRead(CLK);
-
-    if (!display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR)) {
-      Serial.println(F("SSD1306 allocation failed"));
-      while (1);
-    }
-
-    display.clearDisplay();
-    display.setTextColor(SSD1306_WHITE);
-    display.display();
-  }
-
-  void loop() {
-    currentStateCLK = digitalRead(CLK);
-
-    // Detekce otočení
-    if (currentStateCLK != lastStateCLK && currentStateCLK == 1) {
-      if (digitalRead(DT) != currentStateCLK) {
-        counter--;
-      } else {
-        counter++;
-      }
-
-      Serial.print(" | Counter: ");
-      Serial.println(counter);
-
-      // Omezení hodnoty counteru
-      if (counter < 0) counter = 0;
-      if (counter > 64) counter = 64;
-
-      if (!buttonPressed) {
+  if (btnState == LOW)
+  {
+    if (millis() - lastButtonPress > 50)
+    {                                 // debounce
+      buttonPressed = !buttonPressed; // toggle
+      if (!buttonPressed)
+      {
         updateDisplay();
       }
     }
-
-    lastStateCLK = currentStateCLK;
-
-    // Detekce stisku tlačítka
-    int btnState = digitalRead(SW);
-
-    if (btnState == LOW) {
-      if (millis() - lastButtonPress > 50) { // debounce
-        buttonPressed = !buttonPressed; // toggle
-        if (!buttonPressed) {
-          updateDisplay();
-        }
-      }
-      lastButtonPress = millis();
-    }
+    lastButtonPress = millis();
   }
+}
 */
-
 /*
  // Hra Pong na OLED displeji s ovládáním pomocí rotačního enkodéru
 
