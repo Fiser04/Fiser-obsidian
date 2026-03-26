@@ -188,7 +188,7 @@ void loop()
 }
 */
 
-/*
+
 // Počítadlo s rotačním enkodérem a zobrazením na OLED displeji
 
 #include <Arduino.h>
@@ -343,7 +343,6 @@ void loop()
 
   delay(1);
 }
-*/
 
 /*
 // Počítadlo s indikátorem a zobrazením na OLED displeji
@@ -487,7 +486,7 @@ void loop()
 */
 
 // Hra Pong na OLED displeji s ovládáním pomocí rotačního enkodéru
-
+/*
 #include <Arduino.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
@@ -774,3 +773,4 @@ void loop()
     drawGameOver();
   }
 }
+*/
