@@ -39,14 +39,14 @@
             "id": "c2b66962353dbb47",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "2.2/JAVA 2/Prednasky/02 - Vyjimky a chyby.md",
-                "mode": "source",
-                "source": false
+                "aFile": ".obsidian/app.json",
+                "bFile": ".obsidian/app.json",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "02 - Vyjimky a chyby"
+              "icon": "diff",
+              "title": "Diff: app.json  (Working Tree)"
             }
           }
         ],
@@ -179,13 +179,23 @@
               "icon": "lucide-list",
               "title": "Outline of Bezpecnostni politika"
             }
+          },
+          {
+            "id": "a78f7a2cacadba53",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -201,8 +211,10 @@
   },
   "active": "c2b66962353dbb47",
   "lastOpenFiles": [
-    "2.2/JAVA 2/Prednasky/04 - Vytvareni gui.md",
     "2.2/JAVA 2/Prednasky/05 - Listener(Observer).md",
+    "2.2/JAVA 2/Prednasky/03 - Genericita.md",
+    "2.2/JAVA 2/Prednasky/02 - Vyjimky a chyby.md",
+    "2.2/JAVA 2/Prednasky/04 - Vytvareni gui.md",
     "Fiser-obsidian/1.2/Site/Poznámky na zápočet.md",
     "Fiser-obsidian/1.2/Site/random.md",
     "Fiser-obsidian/1.2/Site/Site - zkouska.md",
@@ -230,8 +242,6 @@
     "Fiser-obsidian/1.2/Databaza/Prednasky/2 - 5.3.2025.md",
     "Fiser-obsidian/1.2/Databaza/Prednasky/1 - 26.2.2025.md",
     "Fiser-obsidian/1.2/Databaza/Prednasky/10 - 30.4.2025.md",
-    "Fiser-obsidian/1.2/Databaza/Prednasky/9 - 23.4.2025.md",
-    "Fiser-obsidian/1.2/Databaza/Prednasky/8 - 16.4.2025.md",
     "Fiser-obsidian/1.1/Zaklady Matiky/Predikatova logika.pdf",
     "Fiser-obsidian/1.2/Bezbecnost/obr/Pasted image 20250416182307.png",
     "Fiser-obsidian/1.2/Bezbecnost/obr/Pasted image 20250416181805.png",
