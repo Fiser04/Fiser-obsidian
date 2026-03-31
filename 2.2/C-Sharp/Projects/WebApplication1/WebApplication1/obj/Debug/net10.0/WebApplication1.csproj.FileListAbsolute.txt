@@ -434,3 +434,5 @@
 /Users/fiser/Obsidian/Fiser-obsidian/2.2/C-Sharp/Projects/WebApplication1/WebApplication1/obj/Debug/net10.0/WebApplication1.pdb
 /Users/fiser/Obsidian/Fiser-obsidian/2.2/C-Sharp/Projects/WebApplication1/WebApplication1/obj/Debug/net10.0/WebApplication1.genruntimeconfig.cache
 /Users/fiser/Obsidian/Fiser-obsidian/2.2/C-Sharp/Projects/WebApplication1/WebApplication1/obj/Debug/net10.0/ref/WebApplication1.dll
+/Users/fiser/Obsidian/Fiser-obsidian/2.2/C-Sharp/Projects/WebApplication1/WebApplication1/bin/Debug/net10.0/AutoMapper.dll
+/Users/fiser/Obsidian/Fiser-obsidian/2.2/C-Sharp/Projects/WebApplication1/WebApplication1/bin/Debug/net10.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

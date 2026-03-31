@@ -1,9 +1,9 @@
 {
   "theme": "obsidian",
-  "accentColor": "#ffd70f",
+  "accentColor": "#005f8f",
   "interfaceFontFamily": "JetBrains Mono",
   "textFontFamily": "JetBrains Mono",
   "monospaceFontFamily": "",
-  "cssTheme": "Obsidian gruvbox",
+  "cssTheme": "Material Gruvbox",
   "baseFontSize": 20
 }
