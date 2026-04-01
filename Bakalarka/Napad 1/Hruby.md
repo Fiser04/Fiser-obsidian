@@ -1,0 +1,3 @@
+- musi tam byt nejake overeni ze se to povedlo
+	- dat distribuci 10 lidem a at vyplni formular
+- jinak je to akorat dlouha prace

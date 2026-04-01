@@ -1,0 +1,2 @@
+- musi to dodrzet zadani
+- ocekava nejake vyzkouseni (dat to x studentum a at vyplni formular)

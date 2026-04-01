@@ -1,0 +1,1 @@
+- hlavne se resi udrzitelnost, aby to proste nechciplo po tom co odejdu
