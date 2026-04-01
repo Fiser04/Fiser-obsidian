@@ -43,7 +43,7 @@
 			- pr. zmackne dve sipky do kruhu, napise "repository update" do cli, apod
 		- ucitel bude tyto jsony zasilat studentum, student ho jej pak vlozi do urciteho adresare
 3) vytvorit a otestovat sadu JSONu
-	- zeptat se vsech ucitelu (podle , ktery software potrebuji pro vyuku
+	- zeptat se vsech ucitelu (ktery software potrebuji pro vyuku)
 	- vytvorit tyto JSONy podle pozadavku
 4) urcit minimalni pozadavky na system
 	- urcit nejtezsi program potrebny pro rozbehani
