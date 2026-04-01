@@ -16,7 +16,7 @@
 	- kompatibilni jak s Linux tak i s macOS
 	- program ktery z adresare plne JSONu (ci jineho souboru) vytvori prostor pro one click instalaci, po instalaci se pusti definovany konfiguracni skript
 		- JSON -> Parser -> List instalovatelnych aplikaci -> Tlacitko install
-	- hlavni cizy dily
+	- hlavni cizi dily
 		- nix
 			- hlavni package manager
 			- Duvod: nejvetsi repository s plnou funkcnosti jak na linuxovych systemech tak i na macOS
