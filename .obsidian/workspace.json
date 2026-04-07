@@ -25,14 +25,14 @@
             "id": "cca253b999e6b1af",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "2.2/JAVA 2/Prednasky/0x - Sitove programovani.md",
-                "mode": "source",
-                "source": false
+                "aFile": "2.2/Embeded/Projects/du-prepinaciLED/src/main.cpp",
+                "bFile": "2.2/Embeded/Projects/du-prepinaciLED/src/main.cpp",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "0x - Sitove programovani"
+              "icon": "diff",
+              "title": "Diff: main.cpp  (Working Tree)"
             }
           }
         ],
@@ -195,12 +195,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c31a67d5713775bd",
+  "active": "cca253b999e6b1af",
   "lastOpenFiles": [
+    "2.2/JAVA 2/Prednasky/0x - Sitove programovani.md",
     "2.2/JAVA 2/obr/Pasted image 20260407104932.png",
     "2.2/JAVA 2/Prednasky/05 - Listener(Observer).md",
     "2.2/JAVA 2/obr/Pasted image 20260407104207.png",
-    "2.2/JAVA 2/Prednasky/0x - Sitove programovani.md",
     "2.2/JAVA 2/obr/Pasted image 20260407104105.png",
     "2.2/JAVA 2/obr/Pasted image 20260407103702.png",
     "2.2/JAVA 2/obr/Pasted image 20260407103516.png",
@@ -214,7 +214,6 @@
     "Bakalarka/Napad 1/Hruby.md",
     "Bakalarka/Napad 1/obr",
     "Bakalarka/Napad 1/obr/gui-vzor.png",
-    "Bakalarka/Napad 1/obr/JSON-vzor.png",
     "naMulti.md",
     "2.2/Multi/Prednaska/01 - Uvod.md",
     "Bakalarka/Napad 1",
