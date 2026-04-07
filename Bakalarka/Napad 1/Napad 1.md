@@ -1,5 +1,5 @@
 - distribuce = debian (stable release)
-- main package manager = nix
+- main package manager = nix, nebo apt+brew
 - hlavni jazyky = python a bash (mozna c++, ale to by me python musel hodne stvat)
 
 - Hlavni cil
