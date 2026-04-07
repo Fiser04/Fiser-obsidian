@@ -120,9 +120,23 @@ void loop()
     if (digitalRead(DT) != currentStateCLK)
     {
       if (adjustingBlue && brightnessBlue > 0)
-        brightnessBlue -= stepSize;
+      {
+        if (brightnessBlue <= stepSize)
+          brightnessBlue = 0;
+        else
+        {
+          brightnessBlue -= stepSize;
+        }
+      }
       else if (!adjustingBlue && brightnessRed > 0)
-        brightnessRed -= stepSize;
+      {
+        if (brightnessRed <= stepSize)
+          brightnessRed = 0;
+        else
+        {
+          brightnessRed -= stepSize;
+        }
+      }
     }
     else
     {
