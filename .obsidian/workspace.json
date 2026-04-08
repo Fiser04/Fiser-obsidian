@@ -20,23 +20,8 @@
               "icon": "lucide-file",
               "title": "Napad 1"
             }
-          },
-          {
-            "id": "cca253b999e6b1af",
-            "type": "leaf",
-            "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": "2.2/Embeded/Projects/du-prepinaciLED/src/main.cpp",
-                "bFile": "2.2/Embeded/Projects/du-prepinaciLED/src/main.cpp",
-                "aRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: main.cpp  (Working Tree)"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -195,7 +180,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "cca253b999e6b1af",
+  "active": "1220a1bdefb544e8",
   "lastOpenFiles": [
     "2.2/JAVA 2/Prednasky/0x - Sitove programovani.md",
     "2.2/JAVA 2/obr/Pasted image 20260407104932.png",
