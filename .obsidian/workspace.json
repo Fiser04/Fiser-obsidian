@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "Napad 1"
             }
+          },
+          {
+            "id": "acb9013ac3fd2de5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Untitled.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Untitled"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -180,29 +195,39 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1220a1bdefb544e8",
+  "active": "acb9013ac3fd2de5",
   "lastOpenFiles": [
+    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/ss_spi.cpp",
+    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/CurieIMU.cpp",
+    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/files/wiring3.png",
+    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/files/wiring2.png",
+    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/files/circuit.pptx",
+    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/files/circuit.png",
+    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/files",
+    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/examples/Interrupt/Interrupt.ino",
+    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/examples/Gyro/Gyro.ino",
+    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/examples/Interrupt",
+    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/examples/Gyro",
+    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/examples",
+    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/BMI160Gen.cpp",
+    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/CurieIMU.h",
+    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/README.md",
+    "Bakalarka/Napad 1/Napad 1.md",
+    "Untitled.md",
+    "2.2/Multi/Cviceni/document-page_1.png",
+    "2.2/Multi/Cviceni/document-page_2.png",
+    "2.2/Multi/Cviceni/document-page_3.png",
+    "2.2/Multi/Cviceni/document-page_4.png",
+    "2.2/Multi/DU/Vizitka-B.png",
     "2.2/JAVA 2/Prednasky/0x - Sitove programovani.md",
     "2.2/JAVA 2/obr/Pasted image 20260407104932.png",
     "2.2/JAVA 2/Prednasky/05 - Listener(Observer).md",
     "2.2/JAVA 2/obr/Pasted image 20260407104207.png",
-    "2.2/JAVA 2/obr/Pasted image 20260407104105.png",
-    "2.2/JAVA 2/obr/Pasted image 20260407103702.png",
-    "2.2/JAVA 2/obr/Pasted image 20260407103516.png",
-    "2.2/JAVA 2/obr/Pasted image 20260407103356.png",
-    "2.2/JAVA 2/obr/Pasted image 20260407103334.png",
-    "2.2/JAVA 2/obr/Pasted image 20260407103222.png",
-    "2.2/JAVA 2/obr/Pasted image 20260407100832.png",
-    "Bakalarka/Napad 1/Napad 1.md",
     "Bakalarka/Napad 1/Jelinek.md",
     "Bakalarka/Napad 1/Danca.md",
     "Bakalarka/Napad 1/Hruby.md",
-    "Bakalarka/Napad 1/obr",
-    "Bakalarka/Napad 1/obr/gui-vzor.png",
     "naMulti.md",
     "2.2/Multi/Prednaska/01 - Uvod.md",
-    "Bakalarka/Napad 1",
-    "Bakalarka",
     "2.2/JAVA 2/Prednasky/03 - Genericita.md",
     "2.2/JAVA 2/Prednasky/02 - Vyjimky a chyby.md",
     "2.2/JAVA 2/Prednasky/04 - Vytvareni gui.md",
@@ -217,12 +242,6 @@
     "Fiser-obsidian/1.2/Bezbecnost/Poznámky z přednášek/4) Authentizace - 24.3.2025.md",
     "Fiser-obsidian/1.2/Bezbecnost/Poznámky z přednášek/5) Logovani a auditing - 14.4.2025.md",
     "Fiser-obsidian/1.2/Bezbecnost/Poznámky z přednášek/4) Zvyseni bezpecnosti uzivatelskych uctu - 24.3.2025.md",
-    "Fiser-obsidian/1.2/Bezbecnost/Poznámky z přednášek/6) Fyzicka bezpecnost - 28.4.2025.md",
-    "Fiser-obsidian/To do - java.md",
-    "Fiser-obsidian/1.2/Site/3 - 28.3.2025 - IP.md",
-    "Fiser-obsidian/1.2/Site/priprava na zkousku.md~",
-    "Fiser-obsidian/1.1/Zaklady Matiky/Predikatova logika.pdf",
-    "Fiser-obsidian/1.2/Databaza/databazen.drawio",
-    "Fiser-obsidian/1.2/Databaza/Script-1.sql"
+    "Fiser-obsidian/1.2/Bezbecnost/Poznámky z přednášek/6) Fyzicka bezpecnost - 28.4.2025.md"
   ]
 }

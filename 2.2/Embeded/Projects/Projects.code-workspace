@@ -30,6 +30,10 @@
     {
       "name": "du-prepinaciLED",
       "path": "du-prepinaciLED"
+    },
+    {
+      "name": "bmi160-poprve",
+      "path": "bmi160-poprve"
     }
   ],
   "settings": {},

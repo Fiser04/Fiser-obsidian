@@ -114,7 +114,6 @@ void loop()
 {
   currentStateCLK = digitalRead(CLK);
 
-  // Detekce otočení
   if (currentStateCLK != lastStateCLK && currentStateCLK == 1)
   {
     if (digitalRead(DT) != currentStateCLK)
@@ -154,12 +153,11 @@ void loop()
   ledcWrite(PWM_CHANNEL, brightnessBlue);
   ledcWrite(PWM_CHANNEL + 1, brightnessRed);
   lastStateCLK = currentStateCLK;
-  // Detekce stisku tlačítka
   if (digitalRead(SW) == LOW && !buttonPressed && millis() - lastButtonPress > 50)
   {
     buttonPressed = true;
     lastButtonPress = millis();
-    adjustingBlue = !adjustingBlue; // Přepni mezi modrou a červenou
+    adjustingBlue = !adjustingBlue;
   }
   if (digitalRead(SW) == HIGH)
   {
