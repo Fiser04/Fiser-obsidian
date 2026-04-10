@@ -1,6 +1,6 @@
 - distribuce = debian (stable release)
-- main package manager = nix, nebo apt+brew
-- hlavni jazyky = python a bash (mozna c++, ale to by me python musel hodne stvat)
+- main package manager = nix, apt, brew
+- hlavni jazyky = python a bash nebo c++ a bash
 
 - Hlavni cil
 	- vytvorit distribuci s nastrojem rychleho set-upu pro jakykoliv predmet, tento nastroj umoznit pouzivat i dalsi cleny unixove komunity bez potreby vyuzivani me distribuce
@@ -24,7 +24,7 @@
 		- docker
 			- kontejnarizace
 			- *databaze, jiz predpripraveny backend, apod*
-		- git, wget, apod
+		- .deb, git, wget, apod
 			- pro vse ostatni
 	- bude existovat nastroj pro vytvareni techto JSONu
 	- JSON bude vypadat neco jako:

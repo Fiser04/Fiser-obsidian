@@ -27,16 +27,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2.2/Embeded/mes.md",
+                "file": "Bakalarka/Napad 1/Napad 1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "mes"
+              "title": "Napad 1"
+            }
+          },
+          {
+            "id": "ec36bfbea4ff9b3e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2.2/Robotika/04 - inverzni kinematika.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "04 - inverzni kinematika"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -195,8 +209,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a78f7a2cacadba53",
+  "active": "c31a67d5713775bd",
   "lastOpenFiles": [
+    "Bakalarka/Napad 1/Napad 1.md",
+    "2.2/Robotika/04 - inverzni kinematika.md",
+    "2.2/Embeded/mes.md",
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/ss_spi.cpp",
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/CurieIMU.cpp",
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/files/wiring3.png",
@@ -210,10 +227,7 @@
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/examples/Gyro",
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/examples",
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/BMI160Gen.cpp",
-    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/CurieIMU.h",
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/README.md",
-    "Bakalarka/Napad 1/Napad 1.md",
-    "2.2/Embeded/mes.md",
     "2.2/Multi/Cviceni/document-page_1.png",
     "2.2/Multi/Cviceni/document-page_2.png",
     "2.2/Multi/Cviceni/document-page_3.png",
