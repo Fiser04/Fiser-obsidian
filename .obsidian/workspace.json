@@ -209,10 +209,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c31a67d5713775bd",
+  "active": "a78f7a2cacadba53",
   "lastOpenFiles": [
-    "Bakalarka/Napad 1/Napad 1.md",
+    "conflict-files-obsidian-git.md",
     "2.2/Robotika/04 - inverzni kinematika.md",
+    "2.2/Cisco/Untitled.md",
+    "2.2/Cisco",
+    "Bakalarka/Napad 1/Napad 1.md",
     "2.2/Embeded/mes.md",
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/ss_spi.cpp",
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/CurieIMU.cpp",
@@ -226,7 +229,6 @@
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/examples/Interrupt",
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/examples/Gyro",
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/examples",
-    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/BMI160Gen.cpp",
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/README.md",
     "2.2/Multi/Cviceni/document-page_1.png",
     "2.2/Multi/Cviceni/document-page_2.png",
@@ -254,8 +256,6 @@
     "Fiser-obsidian/1.2/Bezbecnost/Poznámky z přednášek/7) Reakce na incident - 5.5.2025.md",
     "Fiser-obsidian/1.2/Bezbecnost/Poznámky z přednášek/7) IDS, IPS, Honeypot - 5.5.2025.md",
     "Fiser-obsidian/1.2/Bezbecnost/Poznámky z přednášek/4) Authentizace - 24.3.2025.md",
-    "Fiser-obsidian/1.2/Bezbecnost/Poznámky z přednášek/5) Logovani a auditing - 14.4.2025.md",
-    "Fiser-obsidian/1.2/Bezbecnost/Poznámky z přednášek/4) Zvyseni bezpecnosti uzivatelskych uctu - 24.3.2025.md",
-    "Fiser-obsidian/1.2/Bezbecnost/Poznámky z přednášek/6) Fyzicka bezpecnost - 28.4.2025.md"
+    "Fiser-obsidian/1.2/Bezbecnost/Poznámky z přednášek/5) Logovani a auditing - 14.4.2025.md"
   ]
 }
