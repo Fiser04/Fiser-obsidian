@@ -73,7 +73,7 @@ void loop()
 }
 */
 
-/*
+
 // 2. Oled visualization Gyro
 
 #include <Wire.h>
@@ -216,7 +216,7 @@ void loop()
 
   delay(20); // Plynulé vykreslování
 }
-*/
+
 
 /*
 // 3. Hra
@@ -334,6 +334,7 @@ void loop()
 }
 */
 
+/*
 // 4. Send data to Python by serial
 
 #include <Wire.h>
@@ -385,3 +386,4 @@ void loop()
 
   delay(50); // Krátká prodleva pro plynulý přenos
 }
+*/
