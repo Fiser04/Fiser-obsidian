@@ -49,3 +49,8 @@
 		- server posloucha na portu
 		- vytvori se spojeni
 		- pro jednoho clienta jeden socket spojeni
+
+
+- UDP datagramy
+	- ![[Pasted image 20260414100005.png]]
+	- 
