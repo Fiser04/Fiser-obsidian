@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "1aba698493abdf40",
+        "id": "7d55c3cbe1cc66b9",
         "type": "tabs",
         "children": [
           {
-            "id": "dee88c99e629c547",
+            "id": "8fb31b110c90cdcf",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": ".gitignore",
-                "bFile": ".gitignore",
-                "aRef": ""
+                "file": "Meine things/eduroam.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: .gitignore  (Working Tree)"
+              "icon": "lucide-file",
+              "title": "eduroam"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 354.5
+    "width": 268.5
   },
   "right": {
     "id": "1189d731d6205739",
@@ -180,8 +180,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "dee88c99e629c547",
+  "active": "a78f7a2cacadba53",
   "lastOpenFiles": [
+    "2.2/Multi/Prednaska/07 - Grafika.md",
+    "Meine things/eduroam.md",
+    "2.2/Robotika/02 - Kinematika v 2d.md",
     "2.2/JAVA 2/Prednasky/04 - Vytvareni gui.md",
     "2.2/JAVA 2/obr/Pasted image 20260414100005.png",
     "1.2/OS/os_teorie_prehled.md",
@@ -224,8 +227,6 @@
     "2.2/Multi/Prednaska/01 - Uvod.md",
     "2.2/JAVA 2/Prednasky/03 - Genericita.md",
     "2.2/JAVA 2/Prednasky/02 - Vyjimky a chyby.md",
-    "Fiser-obsidian/1.2/Site/Poznámky na zápočet.md",
-    "Fiser-obsidian/1.2/Site/random.md",
-    "Fiser-obsidian/1.2/Site/Site - zkouska.md"
+    "Fiser-obsidian/1.2/Site/Poznámky na zápočet.md"
   ]
 }
