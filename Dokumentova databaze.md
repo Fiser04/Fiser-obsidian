@@ -1,4 +1,0 @@
-- uklada se v kolekcich a dokumentech
-- ravenDB
-- ukladame bud v JSON a v BSON (binary json)
-	- BSON neni tak velkej

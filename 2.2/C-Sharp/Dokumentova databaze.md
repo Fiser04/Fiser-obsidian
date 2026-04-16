@@ -1,0 +1,16 @@
+- uklada se v kolekcich a dokumentech
+- ravenDB
+- ukladame bud v JSON a v BSON (binary json)
+	- BSON neni tak velkej
+- vyuziva se redundance
+	- pomoci vnoreni
+- neexistuje cizy klic
+- misto ACID je BaSE
+	- basically available, soft state, and eventually consistent
+	- hlavni vlastnost je dostupnost
+	- basically available
+	- soft state
+		- nejsou cizy klice
+		- proste misto FK napisu nazev
+	- eventually consistent
+		- po nejake dobe mergnou a doptavaj se mezi sebou
