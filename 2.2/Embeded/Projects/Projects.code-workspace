@@ -42,6 +42,10 @@
     {
       "name": "sdCardProjectShowDiskInfoOnOLED",
       "path": "sdCardProjectShowDiskInfoOnOLED"
+    },
+    {
+      "name": "menuSDcard",
+      "path": "menuSDcard"
     }
   ],
   "settings": {},
