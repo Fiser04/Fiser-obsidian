@@ -46,6 +46,14 @@
     {
       "name": "menuSDcard",
       "path": "menuSDcard"
+    },
+    {
+      "name": "senzorVzdalenosti",
+      "path": "senzorVzdalenosti"
+    },
+    {
+      "name": "senzorVzdalenostiDruhe",
+      "path": "senzorVzdalenostiDruhe"
     }
   ],
   "settings": {},

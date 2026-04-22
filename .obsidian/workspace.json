@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "05 - Listener(Observer)"
             }
+          },
+          {
+            "id": "ca81789a2f425cd6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2.2/Embeded/rtos.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "rtos"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -180,8 +195,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c7fc0b55325e5109",
+  "active": "ca81789a2f425cd6",
   "lastOpenFiles": [
+    "2.2/Embeded/Projects/senzorVzdalenostiDruhe/test/README",
+    "2.2/Embeded/Projects/senzorVzdalenostiDruhe/test",
+    "2.2/Embeded/Projects/senzorVzdalenostiDruhe/lib/README",
+    "2.2/Embeded/Projects/senzorVzdalenostiDruhe/lib",
+    "2.2/Embeded/Projects/senzorVzdalenostiDruhe/include/README",
+    "2.2/Embeded/Projects/senzorVzdalenostiDruhe/include",
+    "2.2/Embeded/Projects/senzorVzdalenostiDruhe/src/main.cpp",
+    "2.2/Embeded/Projects/senzorVzdalenostiDruhe/src",
+    "2.2/Embeded/Projects/senzorVzdalenostiDruhe/platformio.ini",
+    "2.2/Embeded/Projects/senzorVzdalenostiDruhe",
+    "2.2/Embeded/Projects/senzorVzdalenosti/test/README",
+    "2.2/JAVA 2/Prednasky/05 - Listener(Observer).md",
+    "2.2/Embeded/rtos.md",
     "2.1/Linux kurz/1 - Uvod.md",
     "2.2/Diplomen/Teze.md",
     "2.1/Architektura aplikaci/10 - clean architecture.md",
@@ -198,35 +226,22 @@
     "Bakalarka/Napad 2/Pasted image 20260413131348.png",
     "Bakalarka/Napad 2/Pasted image 20260413125054.png",
     "2.2/Webovky/obr/Pasted image 20260413094741.png",
-    "Bakalarka/Napad 2",
-    "2.2/Webovky/obr",
     "2.2/Webovky/07 - metoda zivotniho cyklu.md",
     "Bakalarka/Napad 1/Napad 1.md",
     "2.2/Robotika/03 - priklad v 2d.md",
     "2.2/Robotika/04 - inverzni kinematika.md",
     "conflict-files-obsidian-git.md",
     "2.2/Cisco/Untitled.md",
-    "2.2/Cisco",
     "2.2/Embeded/mes.md",
-    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/ss_spi.cpp",
-    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/CurieIMU.cpp",
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/files/wiring3.png",
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/files/wiring2.png",
-    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/files/circuit.pptx",
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/files/circuit.png",
-    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/files",
-    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/examples/Interrupt/Interrupt.ino",
-    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/examples/Gyro/Gyro.ino",
-    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/examples/Interrupt",
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/README.md",
     "2.2/Multi/Cviceni/document-page_1.png",
     "2.2/Multi/Cviceni/document-page_2.png",
     "2.2/Multi/Cviceni/document-page_3.png",
-    "2.2/JAVA 2/Prednasky/05 - Listener(Observer).md",
     "Bakalarka/Napad 1/Jelinek.md",
     "Bakalarka/Napad 1/Danca.md",
-    "Bakalarka/Napad 1/Hruby.md",
-    "naMulti.md",
-    "2.2/Multi/Prednaska/01 - Uvod.md"
+    "Bakalarka/Napad 1/Hruby.md"
   ]
 }
