@@ -1,0 +1,153 @@
+\relax 
+\providecommand\zref@newlabel[2]{}
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction: Why Document Databases?}{4}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}The Relational Foundation}{4}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}The Rise of NoSQL}{4}{subsection.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}The Document Inversion}{4}{subsection.1.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Mental model comparison: Relational (left) vs Document (right). Notice how the document model allows arbitrary nesting, while the relational model enforces flat rows.}}{5}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:mental-model}{{1}{5}{Mental model comparison: Relational (left) vs Document (right). Notice how the document model allows arbitrary nesting, while the relational model enforces flat rows}{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}The CAP Theorem Context}{5}{subsection.1.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The CAP Theorem triangle. MongoDB defaults to AP but can be tuned to CP with majority read/write concerns.}}{6}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:cap}{{2}{6}{The CAP Theorem triangle. MongoDB defaults to AP but can be tuned to CP with majority read/write concerns}{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}The Document Data Model in Depth}{6}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}What Is a Document?}{6}{subsection.2.1}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}{\ignorespaces A MongoDB-style Document Representing a Book}}{6}{lstlisting.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Visual breakdown of a document's structure. The \texttt  {address} sub-document is analogous to an embedded foreign table.}}{8}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:document-example}{{3}{8}{Visual breakdown of a document's structure. The \texttt {address} sub-document is analogous to an embedded foreign table}{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Collections: Schema-Flexible, Not Schema-Free}{8}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}The Object-Document Impedance Mismatch (or Lack Thereof)}{8}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}JSON and BSON: The Serialization Formats}{9}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}JSON (JavaScript Object Notation)}{9}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}Formal Grammar}{9}{subsubsection.3.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}Type System Limitations}{9}{subsubsection.3.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}BSON (Binary JSON)}{10}{subsection.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces JSON (text-based, limited types) vs BSON (binary, rich types, fast traversal).}}{10}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:json-bson}{{4}{10}{JSON (text-based, limited types) vs BSON (binary, rich types, fast traversal)}{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Key Extensions Over JSON}{10}{subsubsection.3.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces BSON adds 8+ types that JSON cannot natively express.}}{11}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:bson-types}{{5}{11}{BSON adds 8+ types that JSON cannot natively express}{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Structure and Traversability}{11}{subsubsection.3.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Space Efficiency Trade-offs}{11}{subsubsection.3.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.4}ObjectId Deep Dive}{12}{subsubsection.3.2.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces The 12-byte ObjectId structure. The first 4 bytes encode a timestamp, making ObjectIds roughly sortable by creation time.}}{12}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:objectid}{{6}{12}{The 12-byte ObjectId structure. The first 4 bytes encode a timestamp, making ObjectIds roughly sortable by creation time}{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Other Formats}{12}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Data Modeling: Rethinking Normalization}{12}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}The Normalization Orthodoxy}{12}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}The Document Denormalization Strategy}{13}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Embedding vs. Referencing}{13}{subsubsection.4.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Embedding (left) stores related data in one document. Referencing (right) stores it separately and links via foreign key-like references.}}{13}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:embed-ref}{{7}{13}{Embedding (left) stores related data in one document. Referencing (right) stores it separately and links via foreign key-like references}{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}The ``Building Together'' Rule}{14}{subsubsection.4.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Modeling Patterns}{14}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}The Subset Pattern}{14}{subsubsection.4.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}The Extended Reference Pattern}{15}{subsubsection.4.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Extended Reference Pattern: Duplicate a small, stable subset of frequently-joined data to avoid \$lookup operations.}}{15}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:extended-ref}{{8}{15}{Extended Reference Pattern: Duplicate a small, stable subset of frequently-joined data to avoid \$lookup operations}{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}The Schema Versioning Pattern}{15}{subsubsection.4.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Schema Versioning Pattern: Documents with different schema versions coexist in the same collection.}}{15}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:schema-versioning}{{9}{15}{Schema Versioning Pattern: Documents with different schema versions coexist in the same collection}{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.4}The Bucket Pattern}{16}{subsubsection.4.3.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Bucket Pattern: Group time-series measurements into buckets (e.g., one document per hour) rather than one document per measurement.}}{16}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:bucket}{{10}{16}{Bucket Pattern: Group time-series measurements into buckets (e.g., one document per hour) rather than one document per measurement}{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.5}The Polymorphic Pattern}{16}{subsubsection.4.3.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Polymorphic Pattern: Different entity types stored in the same collection, distinguished by a type discriminator.}}{16}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:polymorphic}{{11}{16}{Polymorphic Pattern: Different entity types stored in the same collection, distinguished by a type discriminator}{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.6}The Outlier Pattern}{17}{subsubsection.4.3.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Query Languages and Operators}{17}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}From SQL to Document Query Languages}{17}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}MongoDB Query API}{17}{subsubsection.5.1.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Side-by-side SQL vs MongoDB query comparison for all CRUD operations.}}{17}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:sql-mongo}{{12}{17}{Side-by-side SQL vs MongoDB query comparison for all CRUD operations}{figure.caption.12}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}{\ignorespaces SQL vs MongoDB Query Comparison}}{17}{lstlisting.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}Query Operators Taxonomy}{18}{subsubsection.5.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.3}Array Query Operators}{18}{subsubsection.5.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}The Aggregation Pipeline}{18}{subsection.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces The aggregation pipeline: documents flow through stages like Unix pipes. Each stage transforms the stream.}}{19}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:pipeline}{{13}{19}{The aggregation pipeline: documents flow through stages like Unix pipes. Each stage transforms the stream}{figure.caption.13}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3}{\ignorespaces Aggregation Pipeline Example}}{19}{lstlisting.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}Pipeline Optimization Rules}{20}{subsubsection.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Map-Reduce and Alternatives}{20}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Indexing Strategies}{20}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}The B-Tree Foundation}{20}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Index Types}{21}{subsection.6.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces MongoDB index types with creation syntax and use cases.}}{21}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:index-types}{{14}{21}{MongoDB index types with creation syntax and use cases}{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}The ESR Rule}{22}{subsection.6.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces The ESR rule: Equality fields first, Sort fields second, Range fields last.}}{22}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:esr}{{15}{22}{The ESR rule: Equality fields first, Sort fields second, Range fields last}{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Index Intersection}{22}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Covered Queries}{23}{subsection.6.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces A covered query: all fields are satisfied from the index alone. No document fetch is needed.}}{23}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:covered}{{16}{23}{A covered query: all fields are satisfied from the index alone. No document fetch is needed}{figure.caption.16}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6}Index Build Strategies}{23}{subsection.6.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Consistency, Transactions, and ACID}{24}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}The BASE Paradigm}{24}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}MongoDB's Multi-Document ACID Transactions}{24}{subsection.7.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Multi-document transaction flow: all operations succeed (commit) or all fail (abort).}}{24}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:transaction}{{17}{24}{Multi-document transaction flow: all operations succeed (commit) or all fail (abort)}{figure.caption.17}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4}{\ignorespaces Multi-Document Transaction}}{25}{lstlisting.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Read Concerns and Write Concerns}{25}{subsection.7.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Write concern levels control how many nodes must acknowledge a write before returning to the client.}}{26}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:write-concern}{{18}{26}{Write concern levels control how many nodes must acknowledge a write before returning to the client}{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Read concern levels control the consistency guarantee for read operations.}}{26}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:read-concern}{{19}{26}{Read concern levels control the consistency guarantee for read operations}{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Distributed Architecture}{27}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Replication: Replica Sets}{27}{subsection.8.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces MongoDB replica set architecture. The primary accepts writes; secondaries replicate via the oplog.}}{27}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:replica-set}{{20}{27}{MongoDB replica set architecture. The primary accepts writes; secondaries replicate via the oplog}{figure.caption.20}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Sharding: Horizontal Scaling}{28}{subsection.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.2.1}Sharding Components}{28}{subsubsection.8.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Sharded cluster architecture: mongos routers, config servers, and shard replica sets.}}{28}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:sharding}{{21}{28}{Sharded cluster architecture: mongos routers, config servers, and shard replica sets}{figure.caption.21}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.2.2}Shard Keys}{29}{subsubsection.8.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.2.3}Chunk Splitting and Balancing}{29}{subsubsection.8.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}The CAP Theorem Revisited}{29}{subsection.8.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9}Major Document Database Implementations}{29}{section.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}MongoDB}{29}{subsection.9.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Amazon DocumentDB}{30}{subsection.9.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Azure Cosmos DB (MongoDB API)}{30}{subsection.9.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}Couchbase}{30}{subsection.9.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.5}Apache CouchDB}{30}{subsection.9.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.6}Google Firestore}{30}{subsection.9.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.7}Amazon DynamoDB (with Document Model)}{30}{subsection.9.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.8}PostgreSQL JSONB}{30}{subsection.9.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}Advanced Topics}{31}{section.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}Change Streams and Event Sourcing}{31}{subsection.10.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Change streams provide a pub/sub interface to the oplog, enabling reactive architectures.}}{31}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:change-streams}{{22}{31}{Change streams provide a pub/sub interface to the oplog, enabling reactive architectures}{figure.caption.22}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}Schema Validation}{32}{subsection.10.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.3}Full-Text Search}{32}{subsection.10.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.4}Time-Series Collections}{33}{subsection.10.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.5}Security Best Practices}{33}{subsection.10.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.6}Backup and Recovery Strategies}{33}{subsection.10.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {11}Use Cases and Anti-Patterns}{33}{section.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.1}Ideal Use Cases}{33}{subsection.11.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.2}Anti-Patterns}{34}{subsection.11.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {12}Migration Strategies from RDBMS}{34}{section.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.1}Schema Discovery and Analysis}{34}{subsection.12.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.2}Migration Approaches}{35}{subsection.12.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces The Strangler Fig Pattern: gradually replace RDBMS functionality rather than big-bang migration.}}{35}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:strangler}{{23}{35}{The Strangler Fig Pattern: gradually replace RDBMS functionality rather than big-bang migration}{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Polyglot Persistence: using the best database for each workload type.}}{36}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:polyglot}{{24}{36}{Polyglot Persistence: using the best database for each workload type}{figure.caption.24}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.3}ETL Considerations}{36}{subsection.12.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {13}Performance Tuning and Operations}{36}{section.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.1}The Explain Plan}{36}{subsection.13.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.2}Working Set and Memory}{36}{subsection.13.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.3}Connection Pooling}{37}{subsection.13.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.4}Monitoring and Alerting}{37}{subsection.13.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {14}Decision Framework}{38}{section.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Decision tree for choosing a document database vs. RDBMS.}}{38}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:decision}{{25}{38}{Decision tree for choosing a document database vs. RDBMS}{figure.caption.25}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {14.1}When to Choose Document}{38}{subsection.14.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {14.2}When to Stick with RDBMS}{38}{subsection.14.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {15}Summary and Mental Model}{39}{section.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Complete concept map of document database topics covered in this guide.}}{39}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:concept-map}{{26}{39}{Complete concept map of document database topics covered in this guide}{figure.caption.26}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {16}Exercises}{40}{section.16}\protected@file@percent }
+\gdef \@abspage@last{41}

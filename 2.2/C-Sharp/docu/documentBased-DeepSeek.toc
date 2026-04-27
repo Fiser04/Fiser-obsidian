@@ -1,0 +1,38 @@
+\contentsline {section}{\numberline {1}Introduction: Why Look Beyond Tables?}{3}{section.1}%
+\contentsline {section}{\numberline {2}The Core Philosophy: Document Model}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}What Exactly Is a Document?}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Collections: The Loose Equivalent of Tables}{3}{subsection.2.2}%
+\contentsline {section}{\numberline {3}JSON vs BSON: Under the Hood}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}JSON (JavaScript Object Notation)}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}BSON (Binary JSON)}{4}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Document Database Features Compared to Relational}{4}{section.4}%
+\contentsline {section}{\numberline {5}Why Use a Document Database?}{4}{section.5}%
+\contentsline {subsection}{\numberline {5.1}1. Flexible Schema / Polymorphism}{5}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}2. Aggregate-Oriented Data Modeling}{5}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}3. Horizontal Scalability (Sharding)}{6}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}4. Developer Productivity}{6}{subsection.5.4}%
+\contentsline {section}{\numberline {6}CRUD Operations and Query Language}{6}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Insert}{6}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Query (Find)}{6}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Update}{7}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Delete}{7}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Dealing with Relationships: Embedding vs Referencing}{7}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Embedding (Denormalization)}{7}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Referencing (Normalization)}{8}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}When to Use Which?}{8}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Indexing}{8}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Default Index}{8}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Single Field Index}{8}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Compound Index}{9}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Multikey Index (Array Fields)}{9}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Text Index and Geospatial Index}{9}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Wildcard Index}{9}{subsection.8.6}%
+\contentsline {section}{\numberline {9}Aggregation Framework}{9}{section.9}%
+\contentsline {section}{\numberline {10}Transactions and Consistency}{10}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Single-Document Atomicity}{10}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Multi-Document ACID Transactions}{10}{subsection.10.2}%
+\contentsline {section}{\numberline {11}Schema Design Patterns}{10}{section.11}%
+\contentsline {section}{\numberline {12}When NOT to Use a Document Database}{11}{section.12}%
+\contentsline {section}{\numberline {13}Popular Document Databases}{11}{section.13}%
+\contentsline {section}{\numberline {14}Hands-on Experiment: Transitioning from SQL}{12}{section.14}%
+\contentsline {section}{\numberline {15}Conclusion}{12}{section.15}%

@@ -1,0 +1,1559 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=0.85in}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{fontawesome5}
+\usepackage{mdframed}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc, fit, backgrounds, decorations.pathreplacing}
+
+\tcbuselibrary{skins,breakable}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={Document Databases: A Deep Dive for Relational Minds},
+    pdfauthor={CS Study Guide},
+}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{jsonblue}{RGB}{42,92,130}
+\definecolor{mongo_green}{RGB}{71,162,72}
+\definecolor{rdbms_blue}{RGB}{31,78,121}
+\definecolor{doc_green}{RGB}{30,132,73}
+\definecolor{warn_red}{RGB}{192,57,43}
+\definecolor{tip_gold}{RGB}{183,121,14}
+
+\lstdefinelanguage{json}{
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\tiny\color{codegray},
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    backgroundcolor=\color{backcolour},
+    string=[s]{"}{"},
+    stringstyle=\color{red},
+    comment=[l]{:},
+    commentstyle=\color{codepurple},
+    keywordstyle=\color{blue},
+    keywords={true,false,null},
+    literate=
+     *{0}{{{\color{codepurple}0}}}1
+      {1}{{{\color{codepurple}1}}}1
+      {2}{{{\color{codepurple}2}}}1
+      {3}{{{\color{codepurple}3}}}1
+      {4}{{{\color{codepurple}4}}}1
+      {5}{{{\color{codepurple}5}}}1
+      {6}{{{\color{codepurple}6}}}1
+      {7}{{{\color{codepurple}7}}}1
+      {8}{{{\color{codepurple}8}}}1
+      {9}{{{\color{codepurple}9}}}1
+}
+
+\lstdefinelanguage{MongoDB}{
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\tiny\color{codegray},
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    backgroundcolor=\color{backcolour},
+    keywordstyle=\color{mongo_green}\bfseries,
+    keywords={db,find,insertOne,insertMany,updateOne,updateMany,deleteOne,deleteMany,aggregate,match,group,sort,project,lookup,limit,skip,unwind,createIndex,dropIndex,explain,count,watch},
+    stringstyle=\color{red},
+    commentstyle=\color{codegray},
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+    morestring=[b]",
+    literate={$}{{\$}}1
+}
+
+\lstset{
+    language=SQL,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{red},
+    commentstyle=\color{codegreen},
+    numbers=left,
+    numberstyle=\tiny\color{codegray},
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    backgroundcolor=\color{backcolour},
+}
+
+\newtcolorbox{keyinsight}[1][]{
+    colback=blue!5!white,
+    colframe=blue!75!black,
+    fonttitle=\bfseries,
+    title={\faLightbulb\ Key Insight},
+    breakable,
+    #1
+}
+
+\newtcolorbox{rdbmsnote}[1][]{
+    colback=red!5!white,
+    colframe=red!75!black,
+    fonttitle=\bfseries,
+    title={\faDatabase\ From RDBMS Perspective},
+    breakable,
+    #1
+}
+
+\newtcolorbox{definition}[1][]{
+    colback=green!5!white,
+    colframe=green!50!black,
+    fonttitle=\bfseries,
+    title={\faBook\ Formal Definition},
+    breakable,
+    #1
+}
+
+\newtcolorbox{warning}[1][]{
+    colback=orange!5!white,
+    colframe=orange!75!black,
+    fonttitle=\bfseries,
+    title={\faExclamationTriangle\ Warning},
+    breakable,
+    #1
+}
+
+\newtcolorbox{tip}[1][]{
+    colback=yellow!5!white,
+    colframe=yellow!75!black,
+    fonttitle=\bfseries,
+    title={\faStar\ Pro Tip},
+    breakable,
+    #1
+}
+
+\newtcolorbox{exercise}[1][]{
+    colback=purple!5!white,
+    colframe=purple!75!black,
+    fonttitle=\bfseries,
+    title={\faPencil\ Exercise},
+    breakable,
+    #1
+}
+
+\newtcolorbox{antipattern}[1][]{
+    colback=red!8!white,
+    colframe=red!90!black,
+    fonttitle=\bfseries,
+    title={\faBan\ Anti-Pattern},
+    breakable,
+    #1
+}
+
+\title{\textbf{Document Databases: The Complete Deep Dive}\\\vspace{0.3cm}\large A Comprehensive Study Guide for Computer Science Students\\Transitioning from MSSQL/PostgreSQL to the Document Paradigm}
+\author{CS Advanced Database Systems Study Guide}
+\date{\today}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent
+This document provides a rigorous, bottom-up exploration of document-oriented database management systems (DoDBMS) for computer science students with a strong foundation in relational databases (Microsoft SQL Server, PostgreSQL). We examine the theoretical foundations, data models, storage formats (JSON/BSON), query languages, consistency models, distributed architectures, data modeling patterns, migration strategies, and production operational concerns that define the document paradigm. Rather than treating document databases as ``JSON stores,'' we analyze them as first-class database systems with distinct theoretical underpinnings, trade-offs, and optimization strategies. The document includes 25+ visual diagrams, extensive code comparisons, formal definitions, and practical exercises.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%============================================================================
+\section{Introduction: Why Document Databases?}
+%============================================================================
+
+\subsection{The Relational Foundation}
+
+In relational database management systems (RDBMS), data integrity is enforced through a strict set of principles that you, as a CS student, have likely internalized:
+
+\begin{itemize}[noitemsep]
+    \item \textbf{Schema rigidity}: Tables must be defined before data insertion (\texttt{CREATE TABLE}). Altering schemas requires \texttt{ALTER TABLE} operations that can lock tables and require downtime.
+    \item \textbf{Normalization}: Data is decomposed to eliminate redundancy (1NF, 2NF, 3NF, BCNF, 4NF, 5NF). This is the mathematical bedrock of relational design.
+    \item \textbf{Referential integrity}: Foreign keys enforce relationships at the storage engine level via constraint checking.
+    \item \textbf{Set-theoretic algebra}: SQL is grounded in relational algebra ($\sigma$ selection, $\pi$ projection, $\bowtie$ join, $\cup$ union, $-$ difference, $\rho$ rename).
+    \item \textbf{ACID transactions}: Atomicity, Consistency, Isolation, Durability guaranteed at the statement or transaction level.
+\end{itemize}
+
+Your mental model is likely:
+\begin{equation}
+\text{Database} \supset \text{Schema} \supset \text{Table} \supset \text{Row} \supset \text{Column}
+\end{equation}
+
+\subsection{The Rise of NoSQL}
+
+The term ``NoSQL'' originated as a Twitter hashtag in 2009 and has since evolved to mean ``Not Only SQL.'' The NoSQL movement was driven by several forces:
+
+\begin{enumerate}[noitemsep]
+    \item \textbf{Scale}: Internet-scale applications (Google, Amazon, Facebook) needed to handle petabytes of data across thousands of servers.
+    \item \textbf{Schema flexibility}: Agile development practices demanded the ability to evolve data models without costly schema migrations.
+    \item \textbf{Developer productivity}: Object-relational impedance mismatch caused friction between OOP code and flat relational tables.
+    \item \textbf{Specialized access patterns}: Different workloads (graphs, time-series, key-value, documents) needed specialized storage engines.
+\end{enumerate}
+
+\subsection{The Document Inversion}
+
+Document databases invert several relational assumptions:
+
+\begin{definition}
+A \textbf{document database} is a type of NoSQL database designed to store, retrieve, and manage \textbf{semi-structured data} in the form of documents. Documents are self-describing, hierarchical data structures that do not require a predefined global schema. Each document is an atomic unit of consistency.
+\end{definition}
+
+The mental model becomes:
+\begin{equation}
+\text{Database} \supset \text{Collection} \supset \text{Document} \supset \text{Field} \supset \text{Value (possibly nested)}
+\end{equation}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{01_mental_model.png}
+\caption{Mental model comparison: Relational (left) vs Document (right). Notice how the document model allows arbitrary nesting, while the relational model enforces flat rows.}
+\label{fig:mental-model}
+\end{figure}
+
+\begin{rdbmsnote}
+Think of a \textbf{collection} as a table, but one where every row can have different columns. Think of a \textbf{document} as a row, but that row can contain entire sub-tables (arrays of sub-documents) within it. The foreign key relationship becomes either an embedded sub-document or a reference (\texttt{\$lookup}).
+\end{rdbmsnote}
+
+\subsection{The CAP Theorem Context}
+
+Document databases typically emerge in the context of distributed systems where the CAP theorem applies:
+
+\begin{definition}[title=CAP Theorem]
+In a distributed data store, it is \textbf{impossible} to simultaneously guarantee all three of:
+\begin{itemize}[noitemsep]
+    \item \textbf{Consistency} ($C$): Every read receives the most recent write or an error.
+    \item \textbf{Availability} ($A$): Every request receives a non-error response (without guarantee it contains the most recent write).
+    \item \textbf{Partition Tolerance} ($P$): The system continues to operate despite arbitrary message loss or network partitions.
+\end{itemize}
+A distributed system can satisfy at most two of these three guarantees.
+\end{definition}
+
+Traditional single-node RDBMS choose CP (Consistency + Partition tolerance, since partitions are handled by failing). Distributed document databases often choose \textbf{AP} (Availability + Partition tolerance) with \textbf{eventual consistency}, though modern systems offer tunable consistency per operation.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{07_cap_theorem.png}
+\caption{The CAP Theorem triangle. MongoDB defaults to AP but can be tuned to CP with majority read/write concerns.}
+\label{fig:cap}
+\end{figure}
+
+%============================================================================
+\section{The Document Data Model in Depth}
+%============================================================================
+
+\subsection{What Is a Document?}
+
+A document is a self-contained record that encapsulates both data \textit{and} schema. Unlike a relational row, which derives meaning from its table definition, a document carries its own structure.
+
+\begin{lstlisting}[language=json, caption={A MongoDB-style Document Representing a Book}]
+{
+    "_id": ObjectId("507f1f77bcf86cd799439011"),
+    "title": "Deep Learning for Computer Vision",
+    "authors": [
+        { "name": "Ian Goodfellow", "affiliation": "Google" },
+        { "name": "Yoshua Bengio", "affiliation": "U. Montreal" }
+    ],
+    "metadata": {
+        "pages": 775,
+        "publisher": "MIT Press",
+        "isbn": "978-0262035613"
+    },
+    "tags": ["AI", "deep learning", "CNN"],
+    "published": ISODate("2016-11-18T00:00:00Z"),
+    "available": true,
+    "borrow_count": 142,
+    "reviews": [
+        { "user": "alice", "rating": 5, "text": "Excellent!" },
+        { "user": "bob", "rating": 4, "text": "Very thorough" }
+    ]
+}
+\end{lstlisting}
+
+\begin{keyinsight}
+The document above contains:
+\begin{itemize}[noitemsep]
+    \item Scalar values: \texttt{title} (String), \texttt{available} (Boolean), \texttt{borrow\_count} (Int)
+    \item Arrays: \texttt{tags} (Array of Strings)
+    \item Arrays of sub-documents: \texttt{authors}, \texttt{reviews}
+    \item Nested documents: \texttt{metadata}
+    \item Special types: \texttt{ObjectId}, \texttt{ISODate}
+\end{itemize}
+In RDBMS, representing this requires at least four tables (books, authors, metadata, reviews) with foreign keys and JOIN operations. In a document database, it is \textbf{atomic} at the document level.
+\end{keyinsight}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{11_document_example.png}
+\caption{Visual breakdown of a document's structure. The \texttt{address} sub-document is analogous to an embedded foreign table.}
+\label{fig:document-example}
+\end{figure}
+
+\subsection{Collections: Schema-Flexible, Not Schema-Free}
+
+A \textbf{collection} is a grouping of documents. Unlike tables:
+
+\begin{enumerate}[noitemsep]
+    \item Documents in a collection need not share the same fields.
+    \item Field types can vary across documents.
+    \item There is no enforced schema at the storage level (though application-level validation is common and recommended).
+\end{enumerate}
+
+However, collections are \textbf{schema-flexible}, not schema-free. Applications impose implicit schemas through their query patterns. If your application queries \texttt{db.users.find(\{email: ...\})}, then every document that represents a user \textit{should} have an \texttt{email} field, or the query will silently miss it.
+
+\begin{warning}
+Schema flexibility is a \textbf{feature}, not an excuse for chaos. Production applications should use JSON Schema validation (MongoDB 3.6+) or application-level schema enforcement to prevent data corruption.
+\end{warning}
+
+\subsection{The Object-Document Impedance Mismatch (or Lack Thereof)}
+
+Relational databases suffer from the ``impedance mismatch'':
+\begin{itemize}[noitemsep]
+    \item Object-oriented code uses inheritance, composition, and nested objects.
+    \item RDBMS uses flat tables, requiring ORMs (Hibernate, SQLAlchemy, Entity Framework) to map between paradigms.
+    \item This mapping is lossy and performance-expensive (N+1 query problem).
+\end{itemize}
+
+Document databases align naturally with object-oriented and functional programming models because:
+\begin{itemize}[noitemsep]
+    \item JSON maps directly to dictionaries/maps (\texttt{dict} in Python, \texttt{Map} in Java, \texttt{object} in JavaScript).
+    \item Arrays map to lists/arrays.
+    \item Sub-documents map to nested objects.
+    \item No ORM is needed---the driver returns native data structures.
+\end{itemize}
+
+\begin{tip}
+In Node.js with MongoDB, \texttt{db.users.findOne()} returns a plain JavaScript object. In Python with PyMongo, it returns a \texttt{dict}. In Java with the MongoDB driver, it returns a \texttt{Document} (which implements \texttt{Map<String, Object>}). The mapping is trivial and lossless.
+\end{tip}
+
+%============================================================================
+\section{JSON and BSON: The Serialization Formats}
+%============================================================================
+
+\subsection{JSON (JavaScript Object Notation)}
+
+JSON is the \textit{lingua franca} of document databases. It is a text-based, human-readable format specified in RFC 8259.
+
+\subsubsection{Formal Grammar}
+
+JSON consists of:
+\begin{itemize}[noitemsep]
+    \item \textbf{Objects}: Unordered sets of key-value pairs $\{k_1: v_1, \dots, k_n: v_n\}$
+    \item \textbf{Arrays}: Ordered sequences of values $[v_1, \dots, v_n]$
+    \item \textbf{Values}: Strings, numbers, booleans (\texttt{true}/\texttt{false}), \texttt{null}, objects, or arrays
+\end{itemize}
+
+\subsubsection{Type System Limitations}
+
+JSON's type system is impoverished compared to PostgreSQL:
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{JSON Type} & \textbf{PostgreSQL Equivalent} & \textbf{Limitation} \\
+\midrule
+Number & \texttt{INTEGER}, \texttt{REAL}, \texttt{NUMERIC} & No distinction between int/float \\
+String & \texttt{VARCHAR}, \texttt{TEXT} & No length constraints \\
+Boolean & \texttt{BOOLEAN} & --- \\
+Null & \texttt{NULL} & Semantically ambiguous (missing vs. explicitly null) \\
+Array & Arrays (since 9.x) & Homogeneous vs heterogeneous \\
+Object & \texttt{JSONB}, \texttt{HSTORE} & --- \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{rdbmsnote}
+JSON has no native \textbf{date} type. Dates are serialized as ISO 8601 strings (e.g., \texttt{"2024-01-15T10:30:00Z"}), requiring application-level parsing. There is no \textbf{binary} data type---Base64 encoding is required, inflating size by $\sim$33\%. There is no \texttt{undefined} distinct from \texttt{null}.
+\end{rdbmsnote}
+
+\subsection{BSON (Binary JSON)}
+
+BSON is the binary serialization format used by MongoDB and others. It extends JSON with additional types and efficiency optimizations.
+
+\begin{definition}
+BSON is a \textbf{binary-encoded serialization} of JSON-like documents. It is designed to be \textbf{traversable} (fast in-place scanning) and \textbf{efficient} (compact encoding of common types). The specification is available at \url{bsonspec.org}.
+\end{definition}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{02_json_vs_bson.png}
+\caption{JSON (text-based, limited types) vs BSON (binary, rich types, fast traversal).}
+\label{fig:json-bson}
+\end{figure}
+
+\subsubsection{Key Extensions Over JSON}
+
+\begin{enumerate}[noitemsep]
+    \item \textbf{ObjectId}: A 12-byte identifier (4-byte timestamp + 3-byte machine ID + 2-byte process ID + 3-byte counter) serving as the default primary key.
+    \item \textbf{Date}: 64-bit signed integer representing milliseconds since Unix epoch.
+    \item \textbf{Binary}: Raw binary data with a subtype annotation (e.g., generic binary, UUID, MD5).
+    \item \textbf{Regex}: Regular expression patterns with options (e.g., \texttt{/pattern/i}).
+    \item \textbf{Decimal128}: IEEE 754-2008 128-bit decimal floating point for financial precision.
+    \item \textbf{Int32 / Int64}: Explicit integer types (\texttt{NumberInt}, \texttt{NumberLong}).
+    \item \textbf{Timestamp}: Internal MongoDB use (operation timestamps, not wall-clock time).
+    \item \textbf{MinKey / MaxKey}: Special comparison values.
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{24_bson_types.png}
+\caption{BSON adds 8+ types that JSON cannot natively express.}
+\label{fig:bson-types}
+\end{figure}
+
+\subsubsection{Structure and Traversability}
+
+BSON documents begin with a 32-bit integer indicating total document size. Each element is encoded as:
+\begin{equation}
+\text{[1-byte type code]} \quad \text{[C-string field name]} \quad \text{[value]}
+\end{equation}
+
+This allows the database engine to \textbf{skip} fields without parsing them---critical for fast projection operations (\texttt{SELECT col1, col2} equivalents). The type code acts as a discriminator, telling the parser exactly how many bytes the value occupies.
+
+\subsubsection{Space Efficiency Trade-offs}
+
+BSON is often \textit{larger} than JSON for text data due to:
+\begin{itemize}[noitemsep]
+    \item Field names stored in every document (no schema to factor them out).
+    \item Length prefixes on every element and document.
+    \item Padding for alignment.
+\end{itemize}
+
+However, for numeric arrays and binary data, BSON is significantly more compact. The 16MB document size limit in MongoDB exists partly because BSON documents must be contiguous in memory.
+
+\begin{keyinsight}
+BSON's design prioritizes \textbf{read performance} and \textbf{type richness} over minimal storage footprint. This is a fundamental trade-off: RDBMS row formats (e.g., PostgreSQL's heap tuples) factor out metadata via the system catalog; BSON inlines metadata for schema flexibility.
+\end{keyinsight}
+
+\subsubsection{ObjectId Deep Dive}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{08_objectid_structure.png}
+\caption{The 12-byte ObjectId structure. The first 4 bytes encode a timestamp, making ObjectIds roughly sortable by creation time.}
+\label{fig:objectid}
+\end{figure}
+
+\begin{tip}
+Because ObjectIds embed a timestamp, sorting by \texttt{\_id} is approximately equivalent to sorting by insertion time. This is useful for time-based queries without a separate timestamp index. However, \textbf{never use ObjectId as a shard key}---the monotonically increasing nature causes write hotspots on the last chunk.
+\end{tip}
+
+\subsection{Other Formats}
+
+\begin{itemize}[noitemsep]
+    \item \textbf{MessagePack}: Compact binary format, used by Redis and others. More compact than BSON but fewer types.
+    \item \textbf{CBOR} (Concise Binary Object Representation, RFC 7049): Designed for IoT/constrained devices. Self-describing and extensible.
+    \item \textbf{UBJSON}: Universal Binary JSON, simpler than BSON but less type-rich.
+    \item \textbf{ION}: Amazon's richly-typed, self-describing format used by QLDB.
+\end{itemize}
+
+%============================================================================
+\section{Data Modeling: Rethinking Normalization}
+%============================================================================
+
+\subsection{The Normalization Orthodoxy}
+
+In RDBMS, you normalize to:
+\begin{enumerate}[noitemsep]
+    \item Eliminate insertion, update, and deletion anomalies.
+    \item Minimize storage redundancy.
+    \item Enforce referential integrity declaratively.
+    \item Ensure logical data independence from physical storage.
+\end{enumerate}
+
+The normal forms build on each other:
+\begin{itemize}[noitemsep]
+    \item \textbf{1NF}: Atomic values, no repeating groups.
+    \item \textbf{2NF}: 1NF + no partial dependencies.
+    \item \textbf{3NF}: 2NF + no transitive dependencies.
+    \item \textbf{BCNF}: 3NF + every determinant is a candidate key.
+\end{itemize}
+
+\subsection{The Document Denormalization Strategy}
+
+Document databases \textbf{embrace controlled redundancy} to optimize read performance and data locality. This is not abandonment of normalization principles---it is a \textbf{deliberate trade-off} based on access patterns.
+
+\subsubsection{Embedding vs. Referencing}
+
+The fundamental modeling decision in document databases is whether to embed related data or reference it:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{03_embedding_vs_referencing.png}
+\caption{Embedding (left) stores related data in one document. Referencing (right) stores it separately and links via foreign key-like references.}
+\label{fig:embed-ref}
+\end{figure}
+
+\begin{center}
+\begin{tabular}{@{}p{0.45\textwidth}p{0.45\textwidth}@{}}
+\toprule
+\textbf{Embedding (Denormalization)} & \textbf{Referencing (Normalization)} \\
+\midrule
+Store related data in a single document & Store related data in separate documents \\
+Single read retrieves all data & Requires application-level joins or \texttt{\$lookup} \\
+Atomic updates within document & Multi-document transactions needed for consistency \\
+Risk of data duplication & Risk of query-time overhead \\
+Bounded by 16MB document limit & No document size limit on relationship \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsubsection{The ``Building Together'' Rule}
+
+\begin{keyinsight}
+\textbf{Embed} when:
+\begin{itemize}[noitemsep]
+    \item The embedded data is read \textbf{together} with the parent (data locality principle).
+    \item The embedded data does not grow unbounded (16MB document limit in MongoDB).
+    \item The embedded data is not updated independently across many parents.
+    \item The relationship is one-to-few (e.g., a user has 2-3 addresses).
+\end{itemize}
+
+\textbf{Reference} when:
+\begin{itemize}[noitemsep]
+    \item The data is updated frequently and shared across many documents.
+    \item The relationship is many-to-many.
+    \item The embedded array would grow beyond practical limits (e.g., a product with millions of reviews).
+    \item The embedded data is large and rarely accessed with the parent.
+\end{itemize}
+\end{keyinsight}
+
+\subsection{Modeling Patterns}
+
+Document database practitioners have cataloged several reusable patterns:
+
+\subsubsection{The Subset Pattern}
+
+Store the most frequently accessed subset of a large document inline, with a reference to the full document. This is analogous to a covering index but at the document level.
+
+\subsubsection{The Extended Reference Pattern}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{21_extended_reference.png}
+\caption{Extended Reference Pattern: Duplicate a small, stable subset of frequently-joined data to avoid \$lookup operations.}
+\label{fig:extended-ref}
+\end{figure}
+
+Duplicate a small, stable subset of frequently-joined data (e.g., user name and avatar URL) into documents that reference that user, avoiding joins for read-heavy operations. The trade-off is that updates to the referenced data must propagate to all duplicates.
+
+\subsubsection{The Schema Versioning Pattern}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{13_schema_versioning.png}
+\caption{Schema Versioning Pattern: Documents with different schema versions coexist in the same collection.}
+\label{fig:schema-versioning}
+\end{figure}
+
+Add a \texttt{schema\_version} field to documents to allow application-level handling of schema evolution without migration downtime. This is particularly valuable in zero-downtime deployments.
+
+\subsubsection{The Bucket Pattern}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.95\textwidth]{12_bucket_pattern.png}
+\caption{Bucket Pattern: Group time-series measurements into buckets (e.g., one document per hour) rather than one document per measurement.}
+\label{fig:bucket}
+\end{figure}
+
+For time-series data, group measurements into ``buckets'' (e.g., one document per hour) rather than one document per measurement. This:
+\begin{itemize}[noitemsep]
+    \item Reduces index size (fewer index entries).
+    \item Improves write throughput (fewer index updates).
+    \item Improves data locality for range queries.
+\end{itemize}
+
+MongoDB 5.0+ formalized this with native \textbf{time-series collections} that automatically apply bucketing.
+
+\subsubsection{The Polymorphic Pattern}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{20_polymorphic_pattern.png}
+\caption{Polymorphic Pattern: Different entity types stored in the same collection, distinguished by a type discriminator.}
+\label{fig:polymorphic}
+\end{figure}
+
+Store different entity types in the same collection, distinguished by a type discriminator field (e.g., \texttt{type: "book"} vs \texttt{type: "electronics"}). This mirrors object-oriented inheritance and avoids sparse tables (where many columns are NULL for most rows).
+
+\begin{tip}
+In PostgreSQL, sparse tables waste storage because NULL values still consume a bitmap. In MongoDB, documents simply don't store missing fields---there is no storage penalty for absent fields.
+\end{tip}
+
+\subsubsection{The Outlier Pattern}
+
+For data with a long-tail distribution (e.g., most users have 10 followers, but celebrities have millions), store the common case inline and move outliers to a separate collection. This prevents the 16MB document limit from being breached by edge cases.
+
+%============================================================================
+\section{Query Languages and Operators}
+%============================================================================
+
+\subsection{From SQL to Document Query Languages}
+
+Document databases do not use SQL (though some offer SQL-like interfaces). Instead, they use structured query documents. The query itself is a document that specifies the selection criteria.
+
+\subsubsection{MongoDB Query API}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.95\textwidth]{12_sql_vs_mongodb.png}
+\caption{Side-by-side SQL vs MongoDB query comparison for all CRUD operations.}
+\label{fig:sql-mongo}
+\end{figure}
+
+\begin{lstlisting}[language=MongoDB, caption={SQL vs MongoDB Query Comparison}]
+// SQL: SELECT * FROM users WHERE age > 21 AND city = 'NYC'
+db.users.find({
+    age: { $gt: 21 },
+    city: "NYC"
+})
+
+// SQL: SELECT name, email FROM users WHERE age > 21
+//      ORDER BY age DESC LIMIT 10 OFFSET 20
+db.users.find(
+    { age: { $gt: 21 } },
+    { name: 1, email: 1, _id: 0 }
+).sort({ age: -1 }).skip(20).limit(10)
+
+// SQL: SELECT city, COUNT(*) FROM users GROUP BY city
+//      HAVING COUNT(*) > 5
+// MongoDB Aggregation:
+db.users.aggregate([
+    { $group: { _id: "$city", count: { $sum: 1 } } },
+    { $match: { count: { $gt: 5 } } }
+])
+\end{lstlisting}
+
+\subsubsection{Query Operators Taxonomy}
+
+MongoDB operators follow a consistent naming convention:
+
+\begin{center}
+\begin{tabular}{@{}llp{7cm}@{}}
+\toprule
+\textbf{Category} & \textbf{Operators} & \textbf{Description} \\
+\midrule
+Comparison & \texttt{\$eq}, \texttt{\$ne}, \texttt{\$gt}, \texttt{\$gte}, \texttt{\$lt}, \texttt{\$lte}, \texttt{\$in}, \texttt{\$nin} & Scalar comparisons \\
+Logical & \texttt{\$and}, \texttt{\$or}, \texttt{\$not}, \texttt{\$nor} & Boolean composition \\
+Element & \texttt{\$exists}, \texttt{\$type} & Field metadata queries \\
+Evaluation & \texttt{\$regex}, \texttt{\$text}, \texttt{\$where} & Pattern matching and expression evaluation \\
+Array & \texttt{\$all}, \texttt{\$elemMatch}, \texttt{\$size} & Array-specific queries \\
+Geospatial & \texttt{\$near}, \texttt{\$geoWithin}, \texttt{\$geoIntersects} & Location-based queries \\
+Bitwise & \texttt{\$bitsAllSet}, \texttt{\$bitsAnySet} & Low-level bit operations \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsubsection{Array Query Operators}
+
+Arrays are first-class citizens in document databases:
+
+\begin{lstlisting}[language=MongoDB]
+// Find users with ALL specified tags
+db.users.find({ tags: { $all: ["premium", "beta"] } })
+
+// Find users where at least one array element matches
+db.users.find({ scores: { $elemMatch: { $gt: 80, $lt: 90 } } })
+
+// Find users with exactly 3 tags
+db.users.find({ tags: { $size: 3 } })
+
+// Find users with tags array containing "AI"
+db.users.find({ tags: "AI" })  // shorthand for $elemMatch
+\end{lstlisting}
+
+\begin{rdbmsnote}
+In PostgreSQL, array queries require the \texttt{ANY} or \texttt{ALL} operators: \texttt{WHERE 'AI' = ANY(tags)}. MongoDB's array query syntax is more concise because arrays are native to the document model, not an extension type.
+\end{rdbmsnote}
+
+\subsection{The Aggregation Pipeline}
+
+MongoDB's aggregation framework is a \textbf{data processing pipeline} modeled after Unix pipes. Each stage transforms the document stream.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{04_aggregation_pipeline.png}
+\caption{The aggregation pipeline: documents flow through stages like Unix pipes. Each stage transforms the stream.}
+\label{fig:pipeline}
+\end{figure}
+
+\begin{lstlisting}[language=MongoDB, caption={Aggregation Pipeline Example}]
+db.orders.aggregate([
+    // Stage 1: Match (filter) - like WHERE
+    { $match: { status: "shipped", year: 2024 } },
+
+    // Stage 2: Lookup (left outer join)
+    { $lookup: {
+        from: "customers",
+        localField: "customerId",
+        foreignField: "_id",
+        as: "customer"
+    }},
+
+    // Stage 3: Unwind (flatten array)
+    { $unwind: "$customer" },
+
+    // Stage 4: Group (aggregation)
+    { $group: {
+        _id: "$customer.region",
+        totalRevenue: { $sum: "$amount" },
+        avgOrder: { $avg: "$amount" },
+        orderCount: { $sum: 1 }
+    }},
+
+    // Stage 5: Sort
+    { $sort: { totalRevenue: -1 } },
+
+    // Stage 6: Project (reshape output)
+    { $project: {
+        region: "$_id",
+        totalRevenue: 1,
+        avgOrder: { $round: ["$avgOrder", 2] },
+        orderCount: 1,
+        _id: 0
+    }}
+])
+\end{lstlisting}
+
+\begin{rdbmsnote}
+The aggregation pipeline is MongoDB's answer to SQL's \texttt{SELECT ... FROM ... JOIN ... WHERE ... GROUP BY ... HAVING ... ORDER BY}. However, because stages are ordered and stateful, you must consider \textbf{pipeline optimization}: placing \texttt{\$match} early reduces document flow to subsequent stages, just as predicate pushdown works in query planners.
+\end{rdbmsnote}
+
+\subsubsection{Pipeline Optimization Rules}
+
+MongoDB's query optimizer automatically applies these transformations:
+\begin{enumerate}[noitemsep]
+    \item \textbf{Projection pushdown}: \texttt{\$project} early reduces field extraction.
+    \item \textbf{Predicate pushdown}: \texttt{\$match} moves as early as possible.
+    \item \textbf{Sort elimination}: If data is already sorted by index, skip \texttt{\$sort}.
+    \item \textbf{Sequence merging}: Adjacent compatible stages may be merged.
+\end{enumerate}
+
+Use \texttt{db.collection.explain("executionStats")} to analyze pipeline performance.
+
+\subsection{Map-Reduce and Alternatives}
+
+MongoDB historically supported Map-Reduce, but it is deprecated in favor of the aggregation pipeline. CouchDB still uses Map-Reduce (JavaScript views) as its primary query mechanism. The Map-Reduce paradigm:
+
+\begin{enumerate}[noitemsep]
+    \item \textbf{Map}: Emit key-value pairs from each document.
+    \item \textbf{Reduce}: Aggregate values for each key.
+    \item \textbf{Finalize}: Post-process reduced results.
+\end{enumerate}
+
+While powerful, Map-Reduce is harder to optimize and debug than declarative pipelines.
+
+%============================================================================
+\section{Indexing Strategies}
+%============================================================================
+
+\subsection{The B-Tree Foundation}
+
+Like PostgreSQL and MSSQL, MongoDB uses \textbf{B-Trees} (specifically B+ Trees) for standard indexes. The principles of index selectivity, cardinality, and covering indexes apply identically.
+
+\begin{definition}[title=B-Tree Index]
+A B-Tree (Balanced Tree) index is a self-balancing tree data structure that maintains sorted data and allows searches, sequential access, insertions, and deletions in logarithmic time $O(\log n)$.
+\end{definition}
+
+\subsection{Index Types}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{16_index_types.png}
+\caption{MongoDB index types with creation syntax and use cases.}
+\label{fig:index-types}
+\end{figure}
+
+\begin{center}
+\begin{tabular}{@{}p{2.5cm}p{9.5cm}@{}}
+\toprule
+\textbf{Index Type} & \textbf{Description} \\
+\midrule
+Single Field & Index on one field. Supports equality and range queries. Can be ascending (1) or descending (-1). \\
+Compound & Index on multiple fields. Order matters (left-prefix rule applies). Most important index type. \\
+Multikey & Index on array fields. Creates separate index entries for each array element. \\
+Text & Inverted index for full-text search across string content. Supports stemming, stop words, relevance scoring. \\
+Geospatial & \texttt{2dsphere} (GeoJSON) and \texttt{2d} (legacy coordinate pairs) indexes for location queries. \\
+Hashed & Hash of field value. Used for hashed sharding, cannot support range queries. \\
+Wildcard & Indexes all fields/subfields matching a pattern (MongoDB 4.2+). Useful for highly dynamic schemas. \\
+Clustered & Stores documents directly in index order (MongoDB 5.0+). Eliminates separate collection scan. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{The ESR Rule}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{09_esr_rule.png}
+\caption{The ESR rule: Equality fields first, Sort fields second, Range fields last.}
+\label{fig:esr}
+\end{figure}
+
+For compound indexes in MongoDB, the \textbf{Equality, Sort, Range} rule optimizes performance:
+
+\begin{enumerate}[noitemsep]
+    \item \textbf{Equality} fields first (exact matches, \texttt{\$eq}, \texttt{\$in} with few values).
+    \item \textbf{Sort} fields second (ordering, \texttt{sort()}).
+    \item \textbf{Range} fields last (inequalities, \texttt{\$gt}, \texttt{\$lt}, \texttt{\$in} with many values).
+\end{enumerate}
+
+\begin{keyinsight}
+Consider the query: \texttt{db.users.find(\{city: "NYC", age: \{\$gt: 21\}\}).sort(\{name: 1\})}
+
+The optimal index is: \texttt{\{city: 1, name: 1, age: 1\}}
+
+\textbf{Why?} \texttt{city} is equality, \texttt{name} is sort, \texttt{age} is range. If we put \texttt{age} before \texttt{name}, MongoDB cannot use the index for sorting---it must perform an in-memory sort or a collection scan.
+\end{keyinsight}
+
+\subsection{Index Intersection}
+
+MongoDB can use multiple indexes to fulfill a query (index intersection), but it is generally less efficient than a single compound index---similar to RDBMS behavior. Index intersection is a fallback, not a strategy.
+
+\subsection{Covered Queries}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{19_covered_query.png}
+\caption{A covered query: all fields are satisfied from the index alone. No document fetch is needed.}
+\label{fig:covered}
+\end{figure}
+
+A query is \textbf{covered} when all fields in the query predicate and projection are contained in the index. MongoDB can then satisfy the query entirely from the index without fetching documents (an ``index-only scan''), analogous to PostgreSQL's \texttt{Index Only Scan}.
+
+\begin{lstlisting}[language=MongoDB]
+// Index: { city: 1, name: 1 }
+// Covered query - only city and name are accessed
+db.users.find({ city: "NYC" }, { name: 1, _id: 0 })
+
+// NOT covered - email is not in the index
+db.users.find({ city: "NYC" }, { email: 1, _id: 0 })
+\end{lstlisting}
+
+\subsection{Index Build Strategies}
+
+\begin{itemize}[noitemsep]
+    \item \textbf{Foreground}: Blocks all operations on the collection. Fastest but disruptive.
+    \item \textbf{Background}: Allows reads/writes during build. Slower, may produce suboptimal index.
+    \item \textbf{Hybrid} (MongoDB 4.2+): Combines foreground speed with background availability. Default behavior.
+\end{itemize}
+
+\begin{warning}
+Building an index on a large collection in production without \texttt{background: true} (on older MongoDB versions) can cause hours of downtime. Always test index builds in staging.
+\end{warning}
+
+%============================================================================
+\section{Consistency, Transactions, and ACID}
+%============================================================================
+
+\subsection{The BASE Paradigm}
+
+Document databases historically prioritized availability over consistency:
+
+\begin{definition}
+\textbf{BASE} stands for:
+\begin{itemize}[noitemsep]
+    \item \textbf{Basically Available}: The system guarantees availability.
+    \item \textbf{Soft state}: State may change over time without input (eventual consistency).
+    \item \textbf{Eventually consistent}: If no new updates are made, reads will eventually reflect the latest write.
+\end{itemize}
+BASE is the conceptual opposite of ACID, accepting temporary inconsistency for higher availability.
+\end{definition}
+
+\subsection{MongoDB's Multi-Document ACID Transactions}
+
+Since MongoDB 4.0 (replica sets) and 4.2 (sharded clusters), multi-document ACID transactions are supported:
+
+\begin{itemize}[noitemsep]
+    \item \textbf{Atomicity}: All operations in a transaction commit or abort together.
+    \item \textbf{Consistency}: Constraints and rules are maintained (though document DBs have fewer declarative constraints than RDBMS).
+    \item \textbf{Isolation}: Snapshot isolation (reads see a consistent snapshot from transaction start, not from the beginning of each statement).
+    \item \textbf{Durability}: Journaled writes ensure persistence.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{18_transaction_flow.png}
+\caption{Multi-document transaction flow: all operations succeed (commit) or all fail (abort).}
+\label{fig:transaction}
+\end{figure}
+
+\begin{lstlisting}[language=MongoDB, caption={Multi-Document Transaction}]
+const session = db.getMongo().startSession();
+session.startTransaction();
+try {
+    const accounts = session.getDatabase("bank").accounts;
+    accounts.updateOne(
+        { _id: "alice" },
+        { $inc: { balance: -100 } }
+    );
+    accounts.updateOne(
+        { _id: "bob" },
+        { $inc: { balance: 100 } }
+    );
+    session.commitTransaction();
+} catch (error) {
+    session.abortTransaction();
+    throw error;
+} finally {
+    session.endSession();
+}
+\end{lstlisting}
+
+\begin{rdbmsnote}
+While transactions exist, they carry performance overhead in distributed document databases. The design philosophy remains: \textbf{model your data so that related data lives in a single document}, making atomic single-document updates sufficient for most operations. Transactions are a safety net, not the primary design pattern.
+\end{rdbmsnote}
+
+\subsection{Read Concerns and Write Concerns}
+
+MongoDB allows tuning consistency per operation:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{10_write_concern.png}
+\caption{Write concern levels control how many nodes must acknowledge a write before returning to the client.}
+\label{fig:write-concern}
+\end{figure}
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Write Concern} & \textbf{Behavior} & \textbf{Latency/Durability} \\
+\midrule
+\texttt{\{w: 0\}} & Fire-and-forget (unacknowledged) & Fastest, no durability guarantee \\
+\texttt{\{w: 1\}} & Acknowledged by primary & Default, safe on single node \\
+\texttt{\{w: "majority"\}} & Committed to majority of nodes & Strong durability, higher latency \\
+\texttt{\{j: true\}} & Journaled to disk & fsync equivalent, highest durability \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{15_read_concern.png}
+\caption{Read concern levels control the consistency guarantee for read operations.}
+\label{fig:read-concern}
+\end{figure}
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Read Concern} & \textbf{Behavior} & \textbf{Consistency} \\
+\midrule
+\texttt{"local"} & Read from local node (may rollback) & Fastest, weakest consistency \\
+\texttt{"available"} & Similar to local for sharded clusters & Fast \\
+\texttt{"majority"} & Only committed data & Strong consistency \\
+\texttt{"snapshot"} & For transactions, consistent snapshot & Serializable view within tx \\
+\texttt{"linearizable"} & Linearizable reads (slowest) & Strict consistency \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{keyinsight}
+The combination of \texttt{writeConcern: "majority"} and \texttt{readConcern: "majority"} provides \textbf{read-your-own-writes consistency} and \textbf{causal consistency} in MongoDB. This is the sweet spot for most applications that need strong consistency without the latency of linearizable reads.
+\end{keyinsight}
+
+%============================================================================
+\section{Distributed Architecture}
+%============================================================================
+
+\subsection{Replication: Replica Sets}
+
+MongoDB uses \textbf{replica sets} for high availability:
+
+\begin{itemize}[noitemsep]
+    \item \textbf{Primary}: Accepts all write operations. There is exactly one primary at any time.
+    \item \textbf{Secondaries}: Replicate the primary's oplog (operation log) asynchronously.
+    \item \textbf{Arbiter}: Participates in elections without storing data. Used to break ties in odd-member sets.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{05_replica_set.png}
+\caption{MongoDB replica set architecture. The primary accepts writes; secondaries replicate via the oplog.}
+\label{fig:replica-set}
+\end{figure}
+
+If the primary fails, secondaries hold an election (Raft-like consensus algorithm) to promote a new primary. The election timeout is configurable (default 10 seconds).
+
+\begin{keyinsight}
+The \textbf{oplog} (operations log) is a capped collection that records all write operations as idempotent operations. Secondaries tail the oplog to apply changes. This is conceptually similar to PostgreSQL's WAL (Write-Ahead Log) streaming replication, but the oplog is at the \textbf{logical} operation level rather than the physical page level. This means:
+\begin{itemize}[noitemsep]
+    \item Oplog entries are human-readable (mostly).
+    \item Cross-version replication is possible (within limits).
+    \item The oplog can be used for change streams and point-in-time recovery.
+\end{itemize}
+\end{keyinsight}
+
+\subsection{Sharding: Horizontal Scaling}
+
+When data exceeds the capacity of a single node, \textbf{sharding} distributes data across multiple servers.
+
+\subsubsection{Sharding Components}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{06_sharding.png}
+\caption{Sharded cluster architecture: mongos routers, config servers, and shard replica sets.}
+\label{fig:sharding}
+\end{figure}
+
+\begin{itemize}[noitemsep]
+    \item \textbf{Shard}: A replica set holding a subset of data.
+    \item \textbf{Config Servers}: Store metadata about which chunks live on which shards (the ``catalog'').
+    \item \textbf{Mongos Router}: Query router that directs operations to the correct shard(s). Can be horizontally scaled.
+\end{itemize}
+
+\subsubsection{Shard Keys}
+
+Choosing a \textbf{shard key} is the most critical design decision in a sharded cluster:
+
+\begin{itemize}[noitemsep]
+    \item \textbf{Cardinality}: High cardinality prevents chunk imbalance. A shard key with low cardinality (e.g., \texttt{country} with 5 values) creates at most 5 chunks.
+    \item \textbf{Frequency}: Low-frequency values prevent ``hot shards.'' If 80\% of writes are for \texttt{country: "US"}, the US shard becomes a bottleneck.
+    \item \textbf{Monotonicity}: Monotonically increasing keys (e.g., timestamps, ObjectIds, auto-incrementing integers) cause write hotspots on the last chunk.
+\end{itemize}
+
+\begin{antipattern}
+Using \texttt{\_id} (ObjectId) as a shard key is a common anti-pattern. ObjectIds are monotonically increasing, so all inserts go to the last chunk, creating a write hotspot. Use a hashed shard key on \texttt{\_id} instead: \texttt{sh.shardCollection("db.coll", \{\_id: "hashed"\})}.
+\end{antipattern}
+
+\subsubsection{Chunk Splitting and Balancing}
+
+Data is divided into \textbf{chunks} (default max 64MB). The balancer migrates chunks between shards to maintain even distribution. This is analogous to range partitioning in PostgreSQL, but automated and distributed.
+
+\begin{tip}
+Pre-split chunks before a bulk load to avoid the balancer fighting with your ingestion. Use \texttt{sh.splitAt()} to define chunk boundaries in advance.
+\end{tip}
+
+\subsection{The CAP Theorem Revisited}
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{System Configuration} & \textbf{CAP Choice} & \textbf{Notes} \\
+\midrule
+MongoDB (single node) & CP & Like any single-server RDBMS \\
+MongoDB (replica set, default) & AP & Reads from secondaries may be stale \\
+MongoDB (majority reads/writes) & CP & Strong consistency, lower availability \\
+CouchDB & AP & Multi-version concurrency, conflict resolution \\
+DynamoDB & AP (tunable) & Per-operation consistency settings \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+%============================================================================
+\section{Major Document Database Implementations}
+%============================================================================
+
+\subsection{MongoDB}
+
+The dominant document database. Key features:
+\begin{itemize}[noitemsep]
+    \item BSON storage, rich query language, aggregation pipeline.
+    \item Multi-document ACID transactions (4.0+).
+    \item Change streams (reactive programming, event sourcing).
+    \item Time-series collections, clustered indexes, columnar compression (5.0+).
+    \item Atlas: Managed cloud service with global clusters, auto-scaling, serverless instances.
+    \item Realm: Mobile database with sync to MongoDB Atlas.
+\end{itemize}
+
+\subsection{Amazon DocumentDB}
+
+AWS-managed service with MongoDB compatibility (3.6/4.0/5.0 API). Uses Aurora's distributed storage subsystem rather than MongoDB's storage engine. Good for AWS-native shops that want MongoDB API without operational overhead.
+
+\subsection{Azure Cosmos DB (MongoDB API)}
+
+Microsoft's globally distributed database with multiple API choices (SQL, MongoDB, Cassandra, Gremlin, Table). Offers tunable consistency levels and multi-region writes. The MongoDB API is wire-protocol compatible but has some feature gaps.
+
+\subsection{Couchbase}
+
+Combines document storage with memcached caching. Uses N1QL (SQL-like query language for JSON, pronounced ``nickel''). Strong focus on mobile/edge synchronization (Couchbase Lite) and full-text search.
+
+\subsection{Apache CouchDB}
+
+Apache project emphasizing REST API, eventual consistency, and multi-master replication. Uses Map-Reduce views and Mango queries. Excellent for offline-first applications where devices sync when connectivity returns.
+
+\subsection{Google Firestore}
+
+Google's serverless document database. Real-time synchronization, offline persistence, and hierarchical collections. Optimized for mobile and web applications. Charges per read/write/delete operation.
+
+\subsection{Amazon DynamoDB (with Document Model)}
+
+While primarily a key-value store, DynamoDB supports document-like items (nested maps/lists). Single-table design patterns enable complex access patterns. Extremely low latency at scale.
+
+\subsection{PostgreSQL JSONB}
+
+Not a document database per se, but PostgreSQL's \texttt{JSONB} type allows hybrid relational/document workloads:
+\begin{itemize}[noitemsep]
+    \item Supports JSON indexing (GIN indexes on JSONB).
+    \item JSON aggregation functions (\texttt{jsonb\_agg}, \texttt{jsonb\_build\_object}).
+    \item SQL/JSON path queries (SQL:2016 standard).
+    \item Full ACID transactions across relational and JSONB columns.
+\end{itemize}
+
+\begin{rdbmsnote}
+If you love PostgreSQL but need document flexibility, \texttt{JSONB} is a powerful middle ground. You get ACID transactions, joins, and relational constraints alongside schema-flexible JSON columns. However, you lose horizontal sharding, flexible replication topologies, and some document-native query features.
+\end{rdbmsnote}
+
+%============================================================================
+\section{Advanced Topics}
+%============================================================================
+
+\subsection{Change Streams and Event Sourcing}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{14_change_streams.png}
+\caption{Change streams provide a pub/sub interface to the oplog, enabling reactive architectures.}
+\label{fig:change-streams}
+\end{figure}
+
+MongoDB change streams provide a pub/sub interface to the oplog:
+
+\begin{lstlisting}[language=MongoDB]
+const changeStream = db.users.watch();
+changeStream.on("change", next => {
+    printjson(next);
+    // next.operationType: "insert", "update", "delete", "replace"
+    // next.fullDocument: the post-change document
+    // next.documentKey: the _id of the changed document
+    // next.updateDescription: fields changed (for updates)
+});
+\end{lstlisting}
+
+This enables:
+\begin{itemize}[noitemsep]
+    \item \textbf{Event-driven architectures}: Trigger downstream services on data changes.
+    \item \textbf{Materialized view updates}: Maintain denormalized views in real-time.
+    \item \textbf{Cache invalidation}: Invalidate cache entries when source data changes.
+    \item \textbf{Audit logging}: Stream all changes to an audit collection or external system.
+\end{itemize}
+
+\subsection{Schema Validation}
+
+MongoDB supports JSON Schema validation at the collection level:
+
+\begin{lstlisting}[language=MongoDB]
+db.createCollection("students", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["name", "gpa", "email"],
+            properties: {
+                name: {
+                    bsonType: "string",
+                    description: "must be a string and is required"
+                },
+                gpa: {
+                    bsonType: "double",
+                    minimum: 0,
+                    maximum: 4.0,
+                    description: "must be between 0 and 4.0"
+                },
+                email: {
+                    bsonType: "string",
+                    pattern: "^.+@.+$",
+                    description: "must be a valid email"
+                }
+            }
+        }
+    },
+    validationLevel: "strict",
+    validationAction: "error"
+})
+\end{lstlisting}
+
+This provides a middle ground between schema-less flexibility and RDBMS rigor. Validation levels:
+\begin{itemize}[noitemsep]
+    \item \texttt{strict}: All inserts and updates must pass validation.
+    \item \texttt{moderate}: Existing invalid documents are allowed, but new ones must pass.
+\end{itemize}
+
+\subsection{Full-Text Search}
+
+MongoDB Atlas offers Atlas Search (based on Apache Lucene). Self-managed MongoDB supports text indexes with basic stemming and relevance scoring:
+
+\begin{lstlisting}[language=MongoDB]
+// Create text index
+db.articles.createIndex({ title: "text", content: "text" })
+
+// Search with relevance scoring
+db.articles.find(
+    { $text: { $search: "machine learning" } },
+    { score: { $meta: "textScore" } }
+).sort({ score: { $meta: "textScore" } })
+\end{lstlisting}
+
+For production full-text search, consider Elasticsearch, OpenSearch, or Atlas Search.
+
+\subsection{Time-Series Collections}
+
+MongoDB 5.0+ optimizes storage for time-series data:
+\begin{itemize}[noitemsep]
+    \item Automatic bucketing of measurements.
+    \item Columnar compression for numeric arrays (delta-of-delta encoding).
+    \item Reduced index overhead (one index per bucket, not per measurement).
+    \item Optimized query performance for time-range scans.
+\end{itemize}
+
+\begin{lstlisting}[language=MongoDB]
+db.createCollection("sensor_data", {
+    timeseries: {
+        timeField: "timestamp",
+        metaField: "sensor_metadata",
+        granularity: "minutes"
+    }
+})
+\end{lstlisting}
+
+\subsection{Security Best Practices}
+
+\begin{enumerate}[noitemsep]
+    \item \textbf{Authentication}: Enable SCRAM-SHA-256 or x.509 certificate authentication. Never run without auth in production.
+    \item \textbf{Authorization}: Use Role-Based Access Control (RBAC). Principle of least privilege.
+    \item \textbf{Encryption at Rest}: Use WiredTiger's encryption at rest (enterprise) or OS-level encryption (LUKS, EBS encryption).
+    \item \textbf{Encryption in Transit}: Require TLS 1.2+ for all connections.
+    \item \textbf{Network Security}: Bind to localhost or private IPs. Use VPC peering for Atlas.
+    \item \textbf{Auditing}: Enable audit logs for compliance (enterprise feature).
+    \item \textbf{Field-Level Encryption}: Client-side field-level encryption (CSFLE) encrypts sensitive fields before they leave the client.
+\end{enumerate}
+
+\subsection{Backup and Recovery Strategies}
+
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Method} & \textbf{Consistency} & \textbf{Impact} & \textbf{Use Case} \\
+\midrule
+\texttt{mongodump} & Point-in-time & High (reads oplog) & Small datasets, logical backup \\
+Filesystem Snapshot & Crash-consistent & Low (if LVM/EBS) & Large datasets, physical backup \\
+Atlas Backups & Continuous & None & Managed service \\
+Oplog Replay & Exact & Low & Point-in-time recovery \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For point-in-time recovery (PITR), combine a base snapshot with oplog replay:
+\begin{enumerate}[noitemsep]
+    \item Take a filesystem snapshot.
+    \item Continuously archive the oplog.
+    \item To recover to time $T$, restore snapshot + replay oplog up to $T$.
+\end{enumerate}
+
+%============================================================================
+\section{Use Cases and Anti-Patterns}
+%============================================================================
+
+\subsection{Ideal Use Cases}
+
+\begin{enumerate}[noitemsep]
+    \item \textbf{Content Management}: Articles, blogs, product catalogs with varying attributes. Schema flexibility handles diverse content types.
+    \item \textbf{User Profiles}: Heterogeneous user data, preferences, activity logs. Embedding handles the one-to-few relationship.
+    \item \textbf{IoT and Time-Series}: Sensor data with the bucket pattern. High write throughput, time-range queries.
+    \item \textbf{Mobile Applications}: Offline-first sync (Couchbase, Firestore). Documents map naturally to mobile app state.
+    \item \textbf{Real-Time Analytics}: Aggregation pipelines on event streams. Change streams feed real-time dashboards.
+    \item \textbf{E-Commerce}: Product catalogs with dynamic attributes (size, color, specs vary by category). Polymorphic pattern handles product types.
+    \item \textbf{Catalogs and Directories}: Hierarchical data (categories, org charts) maps naturally to nested documents.
+\end{enumerate}
+
+\subsection{Anti-Patterns}
+
+\begin{antipattern}
+\begin{enumerate}[noitemsep]
+    \item \textbf{Massive Arrays}: Unbounded arrays cause document bloat and performance degradation. Use the outlier pattern or bucket pattern.
+    \item \textbf{Deep Nesting}: Excessively nested documents (>$\sim$5 levels) complicate querying and indexing. Flatten where possible.
+    \item \textbf{Data Duplication Without Bound}: Updating duplicated data across many documents becomes expensive. Use change streams to propagate updates.
+    \item \textbf{Missing Indexes}: Collection scans on large datasets are catastrophic. Always analyze query patterns before going to production.
+    \item \textbf{Monotonic Shard Keys}: Causes write hotspots. Use hashed shard keys or compound shard keys with high-cardinality prefix.
+    \item \textbf{Treating it like a Relational Database}: Excessive normalization and application-level joins defeat the purpose. Embrace embedding.
+    \item \textbf{Storing Large Binary Data in Documents}: BSON's 16MB limit makes documents unsuitable for images/videos. Use GridFS or object storage (S3).
+\end{enumerate}
+\end{antipattern}
+
+%============================================================================
+\section{Migration Strategies from RDBMS}
+%============================================================================
+
+\subsection{Schema Discovery and Analysis}
+
+Before migrating, analyze existing tables, relationships, and query patterns:
+\begin{itemize}[noitemsep]
+    \item Identify \textbf{master-detail relationships} suitable for embedding (one-to-few, read together).
+    \item Identify \textbf{many-to-many relationships} requiring referencing.
+    \item Map \textbf{read-heavy vs. write-heavy} access patterns.
+    \item Identify \textbf{hot tables} that would benefit from sharding.
+    \item Document \textbf{transaction boundaries}---which operations must be atomic?
+\end{itemize}
+
+\subsection{Migration Approaches}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{17_strangler_fig.png}
+\caption{The Strangler Fig Pattern: gradually replace RDBMS functionality rather than big-bang migration.}
+\label{fig:strangler}
+\end{figure}
+
+\begin{enumerate}[noitemsep]
+    \item \textbf{Big Bang}: Migrate all at once. High risk, requires downtime. Suitable only for small datasets.
+    \item \textbf{Incremental}: Migrate entity types one at a time. Dual-write period ensures consistency.
+    \item \textbf{Strangler Fig Pattern}: Gradually replace RDBMS functionality. New features use document DB; old features migrate over time. Lowest risk.
+    \item \textbf{Polyglot Persistence}: Keep RDBMS for transactional data; use document DB for content/search data. Both systems coexist permanently.
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{22_polyglot_persistence.png}
+\caption{Polyglot Persistence: using the best database for each workload type.}
+\label{fig:polyglot}
+\end{figure}
+
+\subsection{ETL Considerations}
+
+\begin{itemize}[noitemsep]
+    \item Handle type mismatches (dates, decimals, binary). Map SQL \texttt{DATE} to BSON \texttt{Date}, \texttt{NUMERIC} to \texttt{Decimal128}.
+    \item Flatten or nest based on access patterns, not source schema.
+    \item Rebuild indexes after bulk load for efficiency.
+    \item Validate data integrity post-migration (counts, checksums, spot checks).
+    \item Plan for oplog size during migration---large bulk inserts can overflow the oplog if secondaries can't keep up.
+\end{itemize}
+
+%============================================================================
+\section{Performance Tuning and Operations}
+%============================================================================
+
+\subsection{The Explain Plan}
+
+Just as you use \texttt{EXPLAIN ANALYZE} in PostgreSQL, MongoDB provides \texttt{explain()}:
+
+\begin{lstlisting}[language=MongoDB]
+// Get execution stats for a query
+db.users.find({ age: { $gt: 21 } }).explain("executionStats")
+
+// Key fields to examine:
+// - executionStats.totalDocsExamined (should be close to totalDocsReturned)
+// - executionStats.executionStages.stage (COLLSCAN vs IXSCAN vs FETCH)
+// - executionStats.executionTimeMillis
+\end{lstlisting}
+
+\subsection{Working Set and Memory}
+
+MongoDB uses the OS filesystem cache (unlike PostgreSQL's shared buffers). The \textbf{working set} is the subset of data and indexes that fit in RAM:
+\begin{itemize}[noitemsep]
+    \item If working set $<$ RAM: queries are fast (in-memory).
+    \item If working set $>$ RAM: page faults occur, performance degrades.
+\end{itemize}
+
+Monitor page fault rates via \texttt{db.serverStatus().extra\_info.page\_faults}.
+
+\subsection{Connection Pooling}
+
+MongoDB drivers maintain connection pools. Key settings:
+\begin{itemize}[noitemsep]
+    \item \texttt{maxPoolSize}: Maximum connections per application instance (default 100).
+    \item \texttt{minPoolSize}: Minimum connections to maintain.
+    \item \texttt{maxIdleTimeMS}: Close idle connections after this time.
+\end{itemize}
+
+\begin{warning}
+Creating a new connection per request is catastrophic for performance. Always reuse connections via the driver's connection pool. In serverless environments (AWS Lambda), use connection caching or MongoDB's serverless instances.
+\end{warning}
+
+\subsection{Monitoring and Alerting}
+
+Key metrics to monitor:
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Metric} & \textbf{Tool} & \textbf{Threshold} \\
+\midrule
+Replication lag & \texttt{rs.printSecondaryReplicationInfo()} & $<$ 10 seconds \\
+Opcounters & \texttt{db.serverStatus().opcounters} & Baseline + 20\% \\
+Memory usage & \texttt{db.serverStatus().mem} & $<$ 80\% RAM \\
+Connections & \texttt{db.serverStatus().connections} & $<$ 80\% max \\
+Slow queries & Profiler / Atlas & $>$ 100ms \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+%============================================================================
+\section{Decision Framework}
+%============================================================================
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{23_decision_tree.png}
+\caption{Decision tree for choosing a document database vs. RDBMS.}
+\label{fig:decision}
+\end{figure}
+
+\subsection{When to Choose Document}
+
+\begin{itemize}[noitemsep]
+    \item Schema flexibility is a core requirement.
+    \item Data is hierarchical and read together.
+    \item Horizontal scaling is anticipated.
+    \item Developer productivity (no ORM) is prioritized.
+    \item Rapid iteration and agile development.
+\end{itemize}
+
+\subsection{When to Stick with RDBMS}
+
+\begin{itemize}[noitemsep]
+    \item Complex multi-table transactions are the norm.
+    \item Strict referential integrity is required.
+    \item Complex reporting with many JOINs.
+    \item Team expertise is deeply relational.
+    \item Existing ecosystem (triggers, stored procedures, views) is extensive.
+\end{itemize}
+
+%============================================================================
+\section{Summary and Mental Model}
+%============================================================================
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{25_concept_map.png}
+\caption{Complete concept map of document database topics covered in this guide.}
+\label{fig:concept-map}
+\end{figure}
+
+\begin{keyinsight}
+\textbf{Your new mental model:}
+\begin{enumerate}[noitemsep]
+    \item \textbf{Documents are atomic units of consistency}. Design around them.
+    \item \textbf{Embedding is the default}; referencing is the exception.
+    \item \textbf{Query patterns drive data model}, not the other way around.
+    \item \textbf{Indexes are not automatic}; you must design them like in RDBMS.
+    \item \textbf{Distributed by design}; think about replication and sharding early.
+    \item \textbf{Schema flexibility is a feature, not an excuse for chaos}. Use validation.
+    \item \textbf{Consistency is tunable}; understand readConcern and writeConcern.
+    \item \textbf{BSON is not JSON}; it adds types and performance optimizations.
+\end{enumerate}
+\end{keyinsight}
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+\begin{center}
+\textit{``The question is not whether document databases are better than relational databases.\\The question is which data model best fits your access patterns, consistency requirements,\\and operational constraints.''}
+\end{center}
+
+%============================================================================
+\section{Exercises}
+%============================================================================
+
+\begin{exercise}
+\textbf{Exercise 1: Data Modeling}
+
+You are designing a database for a university course registration system. Each course has:
+\begin{itemize}[noitemsep]
+    \item Basic info: title, code, credits, description
+    \item One instructor (name, email, department)
+    \item Many students (name, email, major, enrollment date)
+    \item Many sessions (date, time, room, topic)
+    \item Prerequisites (list of course codes)
+\end{itemize}
+
+Model this in MongoDB. Decide which data to embed and which to reference. Justify your decisions using the embedding vs. referencing criteria.
+\end{exercise}
+
+\begin{exercise}
+\textbf{Exercise 2: Aggregation Pipeline}
+
+Given an \texttt{orders} collection with fields \texttt{\_id}, \texttt{customerId}, \texttt{items} (array of \texttt{\{productId, quantity, price\}}), \texttt{orderDate}, and \texttt{status}, write an aggregation pipeline that:
+\begin{enumerate}[noitemsep]
+    \item Filters for completed orders in 2024.
+    \item Calculates total revenue per customer.
+    \item Joins with a \texttt{customers} collection to get customer names.
+    \item Returns top 10 customers by revenue.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+\textbf{Exercise 3: Index Design}
+
+For the query:
+\begin{verbatim}
+db.products.find({ category: "electronics", price: { $lt: 500 } })
+      .sort({ rating: -1 })
+\end{verbatim}
+
+Design the optimal compound index using the ESR rule. Explain why your index is optimal and what would happen with a suboptimal index.
+\end{exercise}
+
+\begin{exercise}
+\textbf{Exercise 4: Consistency Analysis}
+
+A financial application requires that when Alice transfers money to Bob:
+\begin{enumerate}[noitemsep]
+    \item The transfer is recorded atomically.
+    \item Both account balances are updated together.
+    \item No other transaction sees intermediate states.
+\end{enumerate}
+
+What readConcern and writeConcern settings would you use? Would you use a multi-document transaction? What are the performance implications?
+\end{exercise}
+
+\begin{exercise}
+\textbf{Exercise 5: Sharding Design}
+
+A social media application has a \texttt{posts} collection with 10 billion documents. The access pattern is:
+\begin{itemize}[noitemsep]
+    \item 90\% of reads are for posts from the last 24 hours.
+    \item 70\% of writes are new posts.
+    \item Users frequently query posts by \texttt{userId} and \texttt{createdAt}.
+\end{itemize}
+
+Design a shard key. Explain your choice and discuss potential pitfalls.
+\end{exercise}
+
+\end{document}

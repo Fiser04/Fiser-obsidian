@@ -1,0 +1,407 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+\title{\textbf{Understanding Document Databases:\\ A Comprehensive Guide for the Relational Mind}}
+\author{Your CS Study Guide}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduction: Why Look Beyond Tables?}
+As a computer science student comfortable with relational databases like Microsoft SQL Server or PostgreSQL, you already understand the power of structured data, normalized schemas, and ACID transactions. You think in terms of tables, rows, and joins. Document databases challenge this paradigm by asking: \textit{What if we stored data the way our application uses it?}
+
+This guide will take you from foundational concepts to advanced features, explaining every detail about document databases, from the basic JSON/BSON building blocks to complex aggregation pipelines. By the end, you will not only know \textit{how} they work but also \textit{when} to choose one over a relational system.
+
+\section{The Core Philosophy: Document Model}
+A document database is a non-relational (NoSQL) database designed to store, retrieve, and manage \textbf{semi-structured} data as self-contained units called \textbf{documents}. Unlike relational tables, documents do not enforce a fixed schema across all entries; each document can have its own structure, yet they usually belong to a logical grouping called a \textbf{collection}.
+
+\subsection{What Exactly Is a Document?}
+A document is a set of key-value pairs, where keys are strings and values can be:
+\begin{itemize}[noitemsep]
+    \item Primitive types: string, number, boolean, null, date, binary data.
+    \item Complex types: embedded sub-documents (objects) or arrays.
+\end{itemize}
+This format naturally maps to the data structures used in object-oriented programming (dictionaries, maps, objects). The two most common serialization formats are \textbf{JSON} (JavaScript Object Notation) and its binary counterpart \textbf{BSON} (Binary JSON).
+
+\begin{lstlisting}[caption=A typical document representing a blog post, label=lst:blogdoc]
+{
+  "_id": "507f1f77bcf86cd799439011",
+  "title": "Why NoSQL Matters",
+  "author": {
+    "name": "Jane Doe",
+    "email": "jane@example.com"
+  },
+  "tags": ["databases", "nosql", "json"],
+  "comments": [
+    { "user": "alice", "text": "Great post!", "likes": 5 },
+    { "user": "bob", "text": "Thanks for sharing." }
+  ],
+  "published": true,
+  "views": 1245
+}
+\end{lstlisting}
+
+\subsection{Collections: The Loose Equivalent of Tables}
+Documents are grouped into \textbf{collections}. Unlike relational tables, a collection does not enforce a schema; you could have two documents in the same collection with completely different fields. In practice, most applications maintain an implicit schema (a data structure pattern) for sanity.
+
+\section{JSON vs BSON: Under the Hood}
+You mentioned knowing that document databases are ``basically JSONs and BSONs''. Let's break this down in detail.
+
+\subsection{JSON (JavaScript Object Notation)}
+\begin{itemize}
+    \item \textbf{Format:} Human-readable text format defined by RFC 8259.
+    \item \textbf{Types supported:} string, number, boolean, array, object, null.
+    \item \textbf{Limitations:} No native date type (stored as string/number), no binary data, no distinction between integer and float, no comments.
+    \item \textbf{Use:} Often used as the interchange format between the application and the database driver.
+\end{itemize}
+
+\subsection{BSON (Binary JSON)}
+BSON extends JSON with additional data types and is optimized for \textit{traversability} and \textit{speed}. The leading document database MongoDB uses BSON internally.
+\begin{itemize}
+    \item \textbf{Binary encoding:} Not human-readable, but machine-efficient. Allows fast scanning and skipping over fields because each element is length-prefixed.
+    \item \textbf{Additional types:}
+    \begin{itemize}[noitemsep]
+        \item \texttt{Date} (64-bit integer representing milliseconds since Unix epoch)
+        \item \texttt{ObjectId} (12-byte unique identifier, often used as \texttt{\_id})
+        \item \texttt{Binary data} (byte arrays)
+        \item \texttt{Decimal128} (high-precision decimal for financial calculations)
+        \item \texttt{Regular Expression}
+        \item \texttt{Timestamp}
+        \item \texttt{MinKey} / \texttt{MaxKey} (for comparison)
+    \end{itemize}
+    \item \textbf{Traversability:} BSON encodes length information at the beginning of each element and the entire document. This allows the database to skip over a field without parsing its content, dramatically improving scan performance.
+\end{itemize}
+
+\section{Document Database Features Compared to Relational}
+You're coming from the relational world; let's directly compare concepts.
+
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{4cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{Concept} & \textbf{Relational (SQL)} & \textbf{Document (NoSQL)} \\
+\hline
+Data unit & Row & Document \\
+Grouping & Table & Collection \\
+Schema & Predefined, strict & Implicit or dynamic \\
+Relationships & Foreign keys, JOINs & Embedded documents or references (manual JOINs) \\
+Primary key & \texttt{id} column & \texttt{\_id} field (auto-generated ObjectId) \\
+Query language & SQL (declarative) & JSON-like query API (e.g., MQL) \\
+Transactions & ACID across tables & ACID within a single document; multi-document ACID available in newer versions \\
+Normalization & Encouraged (3NF) & Denormalization often preferred for performance \\
+\hline
+\end{tabular}
+\caption{Terminology mapping}
+\label{tab:mapping}
+\end{table}
+
+\section{Why Use a Document Database?}
+The design decisions in document databases solve real-world problems. Here are the key advantages:
+
+\subsection{1. Flexible Schema / Polymorphism}
+In a relational system, storing products with wildly different attributes (e.g., books have ISBN and author, while t-shirts have size and color) often leads to the ``sparse table'' anti-pattern or Entity-Attribute-Value (EAV) complexity. A document database embraces the variety:
+\begin{lstlisting}[caption=Polymorphic collection: products, label=lst:polymorph]
+// Book
+{ "_id": 1, "type": "book", "title": "NoSQL Distilled", "isbn": "12345", "author": "Pramod Sadalage" }
+// T-shirt
+{ "_id": 2, "type": "shirt", "color": "blue", "size": "M", "material": "cotton" }
+\end{lstlisting}
+No schema migration needed; the application handles the differences.
+
+\subsection{2. Aggregate-Oriented Data Modeling}
+Applications rarely work with isolated rows; they consume aggregates (e.g., a blog post with all its comments and tags). In a relational database, retrieving this requires a JOIN across posts, comments, and tags tables. In a document database, the entire aggregate is stored as a single document (as shown in Listing~\ref{}). This results in \textbf{locality}: one disk seek reads everything you need.
+
+This alignment is formalized by Domain-Driven Design (DDD): aggregates are units of consistency. A document database naturally stores a DDD aggregate as one document.
+
+\subsection{3. Horizontal Scalability (Sharding)}
+Relational databases scale vertically (bigger server) until it becomes expensive or impossible. Document databases were born in the era of large-scale web applications and are designed for \textbf{horizontal scaling} via \textit{sharding}: distributing a collection across many machines based on a shard key. Because aggregates (documents) are self-contained, they can be placed on different nodes without the need for distributed JOINs that plague relational sharding.
+
+\subsection{4. Developer Productivity}
+The impedance mismatch between relational tables and in-memory objects is removed. You serialize objects directly to JSON and store them. Query results are JSON objects that map instantly to your language's data structures.
+
+\section{CRUD Operations and Query Language}
+Let's use MongoDB's query API (MQL) as a concrete example, but concepts generalize to Couchbase, Amazon DocumentDB, etc.
+
+\subsection{Insert}
+\begin{lstlisting}[language=SQL, caption=Insert a document (JavaScript shell syntax)]
+db.users.insertOne({
+  name: "Alice",
+  email: "alice@example.com",
+  age: 30,
+  hobbies: ["cycling", "hiking"]
+});
+\end{lstlisting}
+
+\subsection{Query (Find)}
+MQL uses a JSON-like filter specification. No SQL strings; it's a structured, composable command.
+\begin{lstlisting}[language=SQL, caption=Basic queries]
+// Find users aged 30
+db.users.find({ age: 30 })
+
+// Find users older than 25
+db.users.find({ age: { $gt: 25 } })
+
+// Find users whose hobbies include "cycling"
+db.users.find({ hobbies: "cycling" })
+// Equivalent to array contains
+
+// Logical AND (multiple conditions)
+db.users.find({ age: { $gt: 25 }, name: "Alice" })
+
+// Logical OR
+db.users.find({ $or: [ { age: { $lt: 20 } }, { name: "Bob" } ] })
+\end{lstlisting}
+
+\subsection{Update}
+Update operators allow modifying specific fields atomically without replacing the whole document.
+\begin{lstlisting}[language=SQL, caption=Update examples]
+// Set a field
+db.users.updateOne(
+  { name: "Alice" },
+  { $set: { age: 31 } }
+)
+
+// Increment a numeric field
+db.users.updateOne(
+  { name: "Alice" },
+  { $inc: { visitCount: 1 } }
+)
+
+// Add item to array
+db.users.updateOne(
+  { name: "Alice" },
+  { $push: { hobbies: "swimming" } }
+)
+\end{lstlisting}
+
+\subsection{Delete}
+\begin{lstlisting}[language=SQL]
+db.users.deleteMany({ age: { $lt: 18 } })
+\end{lstlisting}
+
+\section{Dealing with Relationships: Embedding vs Referencing}
+You might wonder: ``How do I model relational data like orders and customers?'' Document databases offer two strategies.
+
+\subsection{Embedding (Denormalization)}
+You put related data directly inside the parent document.
+\begin{lstlisting}[caption=Order with embedded line items, label=lst:embed]
+{
+  "_id": "order123",
+  "customer_name": "Alice",
+  "customer_email": "alice@example.com",
+  "items": [
+    { "product": "Widget", "qty": 2, "price": 10.99 },
+    { "product": "Gadget", "qty": 1, "price": 24.95 }
+  ],
+  "total": 46.93
+}
+\end{lstlisting}
+\textbf{Pros:} One read returns everything; atomic updates to the whole order are easy.\\
+\textbf{Cons:} Duplication of data (customer info repeated in every order). If Alice changes her email, you must update all orders. Data can grow indefinitely (unbounded arrays like all comments on a viral post) -- usually mitigated by bucketing patterns.
+
+\subsection{Referencing (Normalization)}
+Store related data separately and link via \texttt{\_id} (similar to foreign keys).
+\begin{lstlisting}[caption=References, label=lst:ref]
+// Orders collection
+{ "_id": "order123", "customer_id": "cust42", "items": [...] }
+
+// Customers collection
+{ "_id": "cust42", "name": "Alice", "email": "alice@example.com" }
+\end{lstlisting}
+\textbf{Pros:} No duplication, easy to update customer info in one place.\\
+\textbf{Cons:} Requires a second query or a \textbf{\$lookup} (MongoDB's left-outer join equivalent) to assemble the full view.
+
+\begin{lstlisting}[caption=\$lookup (join) example, label=lst:lookup]
+db.orders.aggregate([
+  { $lookup: {
+      from: "customers",
+      localField: "customer_id",
+      foreignField: "_id",
+      as: "customer"
+  }},
+  { $unwind: "$customer" }
+])
+\end{lstlisting}
+
+\subsection{When to Use Which?}
+A classic rule of thumb from the MongoDB documentation:
+\begin{itemize}
+    \item \textbf{Embed} when you have ``contains'' relationships (order contains items), data is mostly read together, and the embedded part does not grow without bound.
+    \item \textbf{Reference} when data is used independently (customers exist outside orders), updates must propagate instantly, or the sub-document could become huge (e.g., a product's review list).
+\end{itemize}
+
+\section{Indexing}
+Like relational databases, document databases use indexes to speed up queries, but they also introduce special index types for nested fields and arrays.
+
+\subsection{Default Index}
+Every collection has a unique index on the \texttt{\_id} field, automatically created.
+
+\subsection{Single Field Index}
+\begin{lstlisting}[language=SQL]
+db.users.createIndex({ age: 1 })   // ascending
+\end{lstlisting}
+
+\subsection{Compound Index}
+\begin{lstlisting}[language=SQL]
+db.users.createIndex({ age: 1, name: 1 })
+\end{lstlisting}
+Supports queries filtering by age, or age + name (prefix rule, same as B-tree indexes in SQL).
+
+\subsection{Multikey Index (Array Fields)}
+When you index a field that contains an array, MongoDB automatically creates a \textbf{multikey index} with an entry for each element.
+\begin{lstlisting}[language=SQL]
+db.users.createIndex({ hobbies: 1 })
+\end{lstlisting}
+This enables efficient queries like \texttt{\{ hobbies: "cycling" \}} -- the index points to the document for each value.
+
+\subsection{Text Index and Geospatial Index}
+Specialized indexes support full-text search and location-based queries.
+\begin{lstlisting}[language=SQL]
+db.articles.createIndex({ body: "text" })
+db.places.createIndex({ location: "2dsphere" })
+\end{lstlisting}
+
+\subsection{Wildcard Index}
+To index all unknown future fields in a polymorphic collection:
+\begin{lstlisting}[language=SQL]
+db.products.createIndex({ "$**": 1 })
+\end{lstlisting}
+
+\section{Aggregation Framework}
+This is where document databases become incredibly powerful, often replacing complex SQL \texttt{GROUP BY} and window functions. The aggregation pipeline is a series of stages that process documents like a Unix pipe.
+
+Common stages:
+\begin{itemize}[noitemsep]
+    \item \texttt{\$match}: filter documents (like WHERE).
+    \item \texttt{\$group}: aggregate by keys, compute sums, averages, etc.
+    \item \texttt{\$sort}: order results.
+    \item \texttt{\$project}: reshape documents (like SELECT).
+    \item \texttt{\$unwind}: expand an array into a stream of per-element documents (enables grouping on array items).
+    \item \texttt{\$lookup}: join with another collection.
+    \item \texttt{\$addFields}: add computed fields.
+    \item \texttt{\$bucket}, \texttt{\$facet}: advanced analytics.
+\end{itemize}
+
+\textbf{Example:} Total sales per product in an orders collection, where each order document has an \texttt{items} array.
+\begin{lstlisting}[caption=Aggregation pipeline, label=lst:agg]
+db.orders.aggregate([
+  // Step 1: Unwind items array so each item becomes a document
+  { $unwind: "$items" },
+  // Step 2: Group by product and sum quantity * price
+  { $group: {
+      _id: "$items.product",
+      totalRevenue: { $sum: { $multiply: ["$items.qty", "$items.price"] } }
+  }},
+  // Step 3: Sort by revenue descending
+  { $sort: { totalRevenue: -1 } }
+])
+\end{lstlisting}
+This pipeline pushes computation to the database server, avoiding massive data transfer.
+
+\section{Transactions and Consistency}
+A frequent criticism of early NoSQL systems was weak consistency. Modern document databases have addressed this.
+
+\subsection{Single-Document Atomicity}
+All operations on a single document (even updating multiple embedded fields) are atomic. This is guaranteed without any transaction declaration.
+
+\subsection{Multi-Document ACID Transactions}
+Starting with MongoDB 4.0 (replica sets) and 4.2 (sharded clusters), fully ACID transactions across multiple documents and collections are supported, with snapshot isolation.
+\begin{lstlisting}[caption=Multi-document transaction (Node.js pseudocode), label=lst:txn]
+const session = client.startSession();
+session.startTransaction();
+try {
+  db.accounts.updateOne(
+    { _id: "A" }, { $inc: { balance: -100 } }, { session }
+  );
+  db.accounts.updateOne(
+    { _id: "B" }, { $inc: { balance: 100 } }, { session }
+  );
+  session.commitTransaction();
+} catch (error) {
+  session.abortTransaction();
+}
+\end{lstlisting}
+This removes a major argument against using document databases for systems requiring strict consistency.
+
+\section{Schema Design Patterns}
+While schema-less, good design still follows patterns:
+\begin{enumerate}
+    \item \textbf{Embedding pattern:} One-to-one, one-to-many (few updates, read-together).
+    \item \textbf{Subset pattern:} Embed only the most frequently accessed part (e.g., recent comments), hold the rest in a separate collection.
+    \item \textbf{Bucket pattern:} For time-series data, group measurements into a single document per hour/day to reduce index size.
+    \item \textbf{Outlier pattern:} For social media influencers whose document arrays (e.g., followers) grow huge, store them separately.
+    \item \textbf{Inheritance / Polymorphism:} Single collection for all variants, using a type discriminator.
+\end{enumerate}
+
+\section{When NOT to Use a Document Database}
+Despite the hype, document databases are not a silver bullet. You should stick with relational when:
+\begin{itemize}
+    \item Your data involves many-to-many relationships that require complex JOINs (e.g., a fully normalized school database: students, courses, enrollments, professors). While \texttt{\$lookup} exists, deep relational queries are more natural and often faster in SQL.
+    \item You need enforced schema constraints across all data (e.g., regulatory compliance). Document databases can optionally validate documents via JSON Schema, but it's opt-in.
+    \item You rely on heavily structured reporting and ad-hoc SQL with window functions, CTEs, etc. (though aggregation pipelines are now very expressive).
+    \item Your team is deeply experienced with SQL and relational modeling, and the project doesn't require massive horizontal scale or flexible schemas.
+\end{itemize}
+
+\section{Popular Document Databases}
+\begin{itemize}
+    \item \textbf{MongoDB:} The most popular, with an expressive query language, aggregation framework, and transaction support. Uses BSON.
+    \item \textbf{Couchbase:} Evolved from CouchDB; SQL-like query language (N1QL), strong mobile synchronization.
+    \item \textbf{Amazon DocumentDB:} MongoDB-compatible, managed service on AWS, built on Aurora.
+    \item \textbf{Firestore (Google):} NoOps document database for mobile/web apps, real-time listeners, limited query capabilities.
+    \item \textbf{PostgreSQL as a Document Database?} PostgreSQL's \texttt{jsonb} data type and GIN indexes allow you to use it as a powerful document store while keeping relational integrity. Many find this a perfect middle ground.
+\end{itemize}
+
+\section{Hands-on Experiment: Transitioning from SQL}
+Try this thought experiment: Take your existing relational e-commerce schema (products, orders, order\_items, users) and redesign it for a document database. You'll likely end up with:
+\begin{itemize}
+    \item \texttt{users} collection: user profile, recent orders summary embedded.
+    \item \texttt{products} collection: product info, reviews embedded (possibly capped array).
+    \item \texttt{orders} collection: order header, line items embedded, user info snapshot embedded (to preserve historical data even if user later changes name).
+\end{itemize}
+Then, write queries in MQL for common operations and compare the complexity to your SQL queries. This exercise grounds the theory.
+
+\section{Conclusion}
+Document databases represent a shift from the relational ``one size fits all'' storage to a model matching application data structures. They excel at agile development, unstructured or rapidly evolving data, and horizontal scalability. They are not replacement for SQL; they are another tool in your belt. As a CS student, understanding both paradigms will empower you to choose the right database for each domain.
+
+\vspace{5mm}
+Happy studying, and remember: the best database is the one that fits your data, not the one with the loudest hype.
+
+\end{document}
