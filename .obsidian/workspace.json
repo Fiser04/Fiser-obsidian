@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "rtos"
             }
+          },
+          {
+            "id": "a809f0f685bbb693",
+            "type": "leaf",
+            "state": {
+              "type": "split-diff-view",
+              "state": {
+                "aFile": "2.2/JAVA 2/databaze.md",
+                "bFile": "2.2/JAVA 2/databaze.md",
+                "aRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: databaze  (Working Tree)"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -195,8 +209,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ca81789a2f425cd6",
+  "active": "a809f0f685bbb693",
   "lastOpenFiles": [
+    "Pasted image 20260428095753.png",
+    "2.2/Multi/DU/zvuq/Na odevzdani 1/Fiala-Radio.wav",
+    "2.2/Embeded/rtos.md",
+    "2.2/Multi/DU/zvuq/Na odevzdani 1/Fiala-Kniha.wav",
+    "2.2/Multi/DU/zvuq/Na odevzdani 1/Fiala-Rozhovor.wav",
+    "naMulti.md",
+    "2.2/JAVA 2/databaze.md",
     "2.2/Embeded/Projects/senzorVzdalenostiDruhe/test/README",
     "2.2/Embeded/Projects/senzorVzdalenostiDruhe/test",
     "2.2/Embeded/Projects/senzorVzdalenostiDruhe/lib/README",
@@ -204,12 +225,7 @@
     "2.2/Embeded/Projects/senzorVzdalenostiDruhe/include/README",
     "2.2/Embeded/Projects/senzorVzdalenostiDruhe/include",
     "2.2/Embeded/Projects/senzorVzdalenostiDruhe/src/main.cpp",
-    "2.2/Embeded/Projects/senzorVzdalenostiDruhe/src",
-    "2.2/Embeded/Projects/senzorVzdalenostiDruhe/platformio.ini",
-    "2.2/Embeded/Projects/senzorVzdalenostiDruhe",
-    "2.2/Embeded/Projects/senzorVzdalenosti/test/README",
     "2.2/JAVA 2/Prednasky/05 - Listener(Observer).md",
-    "2.2/Embeded/rtos.md",
     "2.1/Linux kurz/1 - Uvod.md",
     "2.2/Diplomen/Teze.md",
     "2.1/Architektura aplikaci/10 - clean architecture.md",
@@ -239,9 +255,6 @@
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/README.md",
     "2.2/Multi/Cviceni/document-page_1.png",
     "2.2/Multi/Cviceni/document-page_2.png",
-    "2.2/Multi/Cviceni/document-page_3.png",
-    "Bakalarka/Napad 1/Jelinek.md",
-    "Bakalarka/Napad 1/Danca.md",
-    "Bakalarka/Napad 1/Hruby.md"
+    "Bakalarka/Napad 1/Jelinek.md"
   ]
 }
