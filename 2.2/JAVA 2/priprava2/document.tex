@@ -1,0 +1,977 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{amssymb}
+
+\geometry{margin=2cm}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Objektové programování 2 -- UAI/520}
+\lhead{Příprava na test}
+\cfoot{\thepage}
+
+\definecolor{darkblue}{RGB}{0,51,102}
+\definecolor{lightblue}{RGB}{230,240,250}
+\definecolor{warningred}{RGB}{180,30,30}
+\definecolor{successgreen}{RGB}{30,120,30}
+\definecolor{highlightyellow}{RGB}{255,250,205}
+
+\tcbset{
+    defbox/.style={colback=lightblue,colframe=darkblue,fonttitle=\bfseries,boxrule=1pt},
+    warnbox/.style={colback=red!5,colframe=warningred,fonttitle=\bfseries,boxrule=1pt},
+    tipbox/.style={colback=highlightyellow,colframe=orange!80!black,fonttitle=\bfseries,boxrule=1pt}
+}
+
+\titleformat{\section}{\Large\bfseries\color{darkblue}}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\color{darkblue!80}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{darkblue!60}}{\thesubsubsection}{1em}{}
+
+\begin{document}
+
+\begin{center}
+{\Huge\bfseries\color{darkblue} Příprava na test}\\[0.5em]
+{\Large Objektové programování 2 -- UAI/520}\\[0.3em]
+{\normalsize Zpracováno z prezentací a vzorového testu Verity}
+\end{center}
+
+\tableofcontents
+\newpage
+
+%=============================================================================
+\section{Práce s chybami a výjimky}
+%=============================================================================
+
+\subsection{Základní terminologie}
+
+\begin{tcolorbox}[defbox,title=Defenzivní programování]
+Předvídání, že se věci mohou pokazit. Server by měl předpokládat, že klienti jsou \textbf{potenciálně nepřátelští}, ne že se chovají dobře.
+\end{tcolorbox}
+
+\textbf{Typické chybové situace:}
+\begin{itemize}[leftmargin=*]
+    \item Nesprávná implementace (nevyhovuje specifikaci)
+    \item Nepatřičná žádost o objekt (neplatný index)
+    \item Nekonzistentní nebo nevhodný stav objektu
+    \item Problémy dané prostředím: nesprávné URL, přerušení sítě, chybějící soubory, nedostatečná oprávnění
+\end{itemize}
+
+\subsection{Kategorie výjimek}
+
+\begin{center}
+\begin{tabular}{>{\raggedright}p{3.5cm} >{\raggedright}p{5cm} >{\raggedright\arraybackslash}p{5cm}}
+\toprule
+\textbf{Typ} & \textbf{Použití} & \textbf{Příklad} \\
+\midrule
+\textbf{Kontrolované} (checked) & Podtřída \texttt{Exception}. Předvídatelná selhání, zotavení možné. & \texttt{IOException}, \texttt{FileNotFoundException} \\
+\addlinespace
+\textbf{Nekontrolované} (unchecked) & Podtřída \texttt{RuntimeException}. Nepředvídatelná selhání, zotavení nepravděpodobné. & \texttt{IllegalArgumentException}, \texttt{NullPointerException} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{tcolorbox}[warnbox,title=Klíčové rozdíly]
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Kontrolované}: Kompilátor \textbf{vynucuje} zpracování (try-catch nebo throws). Používají se pro \textbf{externí} problémy (soubory, síť).
+    \item \textbf{Nekontrolované}: Kompilátor \textbf{nekontroluje}. Používají se pro \textbf{programátorské} chyby. Způsobí ukončení programu, pokud nejsou odchyceny.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Vyhazování výjimek}
+
+\begin{verbatim}
+public ContactDetails getDetails(String key) {
+    if(key == null) {
+        throw new IllegalArgumentException("null key in getDetails");
+    }
+    if(key.trim().length() == 0) {
+        throw new IllegalArgumentException("Empty key passed to getDetails");
+    }
+    return book.get(key);
+}
+\end{verbatim}
+
+\textbf{Důležité:}
+\begin{itemize}
+    \item Výjimka přeruší normální tok řízení -- metoda se předčasně ukončí, nevrací hodnotu
+    \item Klient může výjimku odchytit (catch) nebo nechat propagovat
+    \item Dokumentace: používej \texttt{@throws} v Javadoc
+\end{itemize}
+
+\subsection{Zpracování výjimek -- try-catch-finally}
+
+\begin{verbatim}
+try {
+    addressbook.saveToFile(filename);
+    successful = true;
+} catch(IOException e) {
+    System.out.println("Unable to save to " + filename);
+    successful = false;
+} finally {
+    // Provede se VŽDY -- i při return v try/catch
+    // Uzavření souborů, uvolnění zdrojů
+}
+\end{verbatim}
+
+\textbf{Vícenásobné odchycení:}
+\begin{verbatim}
+try { ... }
+catch(EOFException | FileNotFoundException e) { ... }  // Java 7+
+\end{verbatim}
+
+\subsection{Definice vlastních výjimek}
+
+\begin{verbatim}
+public class NoMatchingDetailsException extends Exception {
+    private String key;
+    public NoMatchingDetailsException(String key) { this.key = key; }
+    public String getKey() { return key; }
+    public String toString() {
+        return "No details matching '" + key + "' were found.";
+    }
+}
+\end{verbatim}
+
+\begin{tcolorbox}[tipbox,title=Pravidlo pro výběr nadtypu]
+\begin{itemize}
+    \item Rozšiř \texttt{RuntimeException} $\rightarrow$ nekontrolovaná
+    \item Rozšiř \texttt{Exception} $\rightarrow$ kontrolovaná
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Aserce (Assertions)}
+
+\begin{tcolorbox}[warnbox,title=Assertions vs. Výjimky]
+\textbf{NEPLATÍ}: Aserce nejsou alternativou k výjimkám!
+\begin{itemize}
+    \item Aserce: \textbf{interní kontroly} konzistence, používají se ve vývoji, odstraňují se z produkce
+    \item Výjimky: \textbf{externí} problémy, zůstávají v produkčním kódu
+\end{itemize}
+\end{tcolorbox}
+
+\begin{verbatim}
+assert !keyInUse(key);  // kontrola po removeDetails
+assert consistentSize() : "Nekonzistentní velikost adresáře";
+\end{verbatim}
+
+\textbf{Pozor}: \texttt{assert} se vypíná v produkci (\texttt{-ea} flag). \textbf{Nezahrnuj} do assert normální funkcionalitu!
+
+\subsection{Zotavení z nestandardních stavů}
+
+\begin{verbatim}
+boolean successful = false;
+int attempts = 0;
+do {
+    try {
+        contacts.saveToFile(filename);
+        successful = true;
+    } catch(IOException e) {
+        attempts++;
+        if(attempts < MAX_ATTEMPTS) {
+            filename = alternativniJmenoSouboru;
+        }
+    }
+} while(!successful && attempts < MAX_ATTEMPTS);
+\end{verbatim}
+
+\textbf{Strategie vyhýbání se selháním:}
+\begin{itemize}
+    \item Používej dotazovací metody serveru (např. \texttt{keyInUse()}) před voláním rizikové operace
+    \item Nekontrolované výjimky pro skutečně neočekávané stavy
+\end{itemize}
+
+%=============================================================================
+\section{Genericita (Generics)}
+%=============================================================================
+
+\subsection{Základní koncepty}
+
+\begin{tcolorbox}[defbox,title=Terminologie genericity]
+\begin{tabular}{ll}
+\textbf{Typový parametr} & Zástupný znak (např. \texttt{T}, \texttt{E}, \texttt{K}, \texttt{V}) \\
+\textbf{Typový argument} & Konkrétní typ dosazený za parametr \\
+\textbf{Instance generického typu} & Generický typ po dosazení argumentu \\
+\textbf{Raw typ} & Použití bez typového argumentu (\texttt{List} místo \texttt{List<String>}) \\
+\end{tabular}
+\end{tcolorbox}
+
+\textbf{Jmenné konvence:}
+\begin{center}
+\begin{tabular}{cl}
+\toprule
+\textbf{Značka} & \textbf{Význam} \\
+\midrule
+E & Element (kolekce) \\
+K & Key (klíč) \\
+V & Value (hodnota) \\
+T & Type (obecný typ) \\
+N & Number \\
+S, U, V & Další typové parametry \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Přínosy genericity}
+
+\begin{enumerate}
+    \item \textbf{Vyšší vypovídací schopnost} -- kód je čitelnější
+    \item \textbf{Eliminace přetypování} -- žádné \texttt{(Integer) list.get(0)}
+    \item \textbf{Silnější typová kontrola při překladu} -- chyby se odhalí dříve
+    \item \textbf{Možnost užití generických algoritmů} -- odstranění opakujícího se kódu
+\end{enumerate}
+
+\begin{tcolorbox}[warnbox,title=Nebezpečí raw typů]
+\texttt{Box rawBox = new Box();} -- kompilátor neví o typu, varování při volání generických metod. \textbf{Může vést k chybám při běhu} (ClassCastException).
+\end{tcolorbox}
+
+\subsection{Meze typových parametrů}
+
+\begin{verbatim}
+// Horní omezení (extends)
+public class NaturalNumber<T extends Integer> { ... }
+
+// Vícenásobná omezení -- třída musí být první!
+class D<T extends A & B & C> { ... }
+
+// Wildcards
+?                // libovolný typ (není Object!)
+? extends Number // podtyp Number (čtení)
+? super Integer  // nadtyp Integer (zápis)
+\end{verbatim}
+
+\begin{tcolorbox}[tipbox,title=PECS pravidlo]
+\textbf{Producer Extends, Consumer Super}:
+\begin{itemize}
+    \item Čteš z kolekce? $\rightarrow$ \texttt{? extends T}
+    \item Zapisuješ do kolekce? $\rightarrow$ \texttt{? super T}
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Generické metody}
+
+\begin{verbatim}
+// Typový parametr před návratovým typem
+public static <K, V> boolean compare(Pair<K, V> p1, Pair<K, V> p2) {
+    return p1.getKey().equals(p2.getKey()) &&
+           p1.getValue().equals(p2.getValue());
+}
+
+// Omezení na Comparable
+public static <T extends Comparable<T>> int countGreaterThan(T[] arr, T elem) {
+    int count = 0;
+    for (T e : arr)
+        if (e.compareTo(elem) > 0)
+            ++count;
+    return count;
+}
+\end{verbatim}
+
+\subsection{Vymazání typu (Type Erasure)}
+
+\begin{tcolorbox}[defbox,title=Co je type erasure?]
+Překladač přepíše všechny typové parametry jejich mezemi nebo \texttt{Object} (pokud meze nejsou). V bajtkódu \textbf{nejsou} generické typy!
+\end{tcolorbox}
+
+\begin{verbatim}
+// Zdrojový kód:
+public class Node<T> {
+    private T data;
+    public T getData() { return data; }
+}
+
+// Po erasure:
+public class Node {
+    private Object data;  // nebo Comparable s extends
+    public Object getData() { return data; }
+}
+\end{verbatim}
+
+\textbf{Důsledky:}
+\begin{itemize}
+    \item Nelze vytvářet instance typových parametrů: \texttt{new E()} -- CHYBA
+    \item Nelze deklarovat statické proměnné typového parametru
+    \item Nelze vytvářet pole parametrických typů: \texttt{new List<Integer>[2]} -- CHYBA
+    \item Nelze přetížit metody, které mají stejnou signaturu po erasure
+\end{itemize}
+
+\subsection{Wildcard capture}
+
+\begin{verbatim}
+// PROBLÉM: překladač neumí odvodit typ ?
+void foo(List<?> i) {
+    i.set(0, i.get(0));  // CHYBA: get vrací Object, set očekává ?
+}
+
+// ŘEŠENÍ: pomocná metoda
+void foo(List<?> i) {
+    fooHelper(i);
+}
+private <T> void fooHelper(List<T> l) {
+    l.set(0, l.get(0));  // OK: T je odvozeno
+}
+\end{verbatim}
+
+%=============================================================================
+\section{Tvorba grafického rozhraní (Swing)}
+%=============================================================================
+
+\subsection{Architektura GUI}
+
+\begin{tcolorbox}[defbox,title=Tři pilíře GUI]
+\begin{enumerate}
+    \item \textbf{Komponenty} -- stavební bloky (tlačítka, menu, posuvníky)
+    \item \textbf{Rozvržení} -- manažeři rozvrhování (Layout Managers)
+    \item \textbf{Události} -- reakce na uživatelský vstup
+\end{enumerate}
+\end{tcolorbox}
+
+\textbf{Hierarchie balíčků:}
+\begin{itemize}
+    \item \texttt{java.awt} -- základní komponenty (AWT)
+    \item \texttt{javax.swing} -- rozšířené komponenty (Swing) -- \textbf{používej tyto!}
+\end{itemize}
+
+\subsection{Struktura aplikačního okna}
+
+\begin{center}
+\begin{tabular}{cl}
+\toprule
+\textbf{Komponenta} & \textbf{Účel} \\
+\midrule
+\texttt{JFrame} & Hlavní aplikační okno \\
+\texttt{JMenuBar} & Pruh menu pod titulkem \\
+\texttt{JMenu} & Menu (např. File) \\
+\texttt{JMenuItem} & Položka menu (např. Open) \\
+\texttt{JPanel} & Kontejner pro seskupení komponent \\
+\texttt{JLabel} & Textový/popiskový prvek \\
+\texttt{JButton} & Tlačítko \\
+\texttt{JTextField} & Vstupní textové pole \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Manažeři rozvrhování (Layout Managers)}
+
+\begin{center}
+\begin{tabular}{>{\raggedright}p{2.5cm} >{\raggedright\arraybackslash}p{10cm}}
+\toprule
+\textbf{Layout} & \textbf{Chování} \\
+\midrule
+\texttt{FlowLayout} & Komponenty vedle sebe, zalamování jako text \\
+\texttt{BorderLayout} & 5 oblastí: NORTH, SOUTH, EAST, WEST, CENTER \\
+\texttt{GridLayout} & Mřížka s pevným počtem řádků a sloupců \\
+\texttt{BoxLayout} & Vertikální nebo horizontální řada \\
+\texttt{GridBagLayout} & Nejsložitější, pružné umístění \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{tcolorbox}[tipbox,title=Vnořené kontejnery]
+Pro sofistikované rozvržení použij \textbf{vnořené panely} (JPanel) s různými layouty. Často vhodnější než GridBagLayout!
+\end{tcolorbox}
+
+\subsection{Zpracování událostí}
+
+\textbf{Přístupy:}
+
+\begin{enumerate}
+    \item \textbf{Centralizovaný} -- jeden objekt implementuje \texttt{ActionListener}, rozhoduje podle \texttt{getActionCommand()}
+    \begin{itemize}
+        \item Nevýhoda: špatně škáluje, závislost na textu komponenty
+    \end{itemize}
+    
+    \item \textbf{Anonymní vnitřní třídy} -- každá komponenta má vlastní listener
+    \begin{verbatim}
+    openItem.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) { openFile(); }
+    });
+    \end{verbatim}
+    
+    \item \textbf{Lambda výrazy} (Java 8+) -- nejčistší zápis
+    \begin{verbatim}
+    openItem.addActionListener(e -> openFile());
+    \end{verbatim}
+\end{enumerate}
+
+\subsection{Vnořené třídy (Nested Classes)}
+
+\begin{center}
+\begin{tabular}{>{\raggedright}p{3cm} >{\raggedright}p{5cm} >{\raggedright\arraybackslash}p{5cm}}
+\toprule
+\textbf{Typ} & \textbf{Instance} & \textbf{Přístup k vnější třídě} \\
+\midrule
+Statická vnořená & Nezávislá na instanci vnější & Pouze statické členy \\
+Vnitřní (inner) & Vázána na instanci vnější & Všechny členy, i private \\
+Lokální vnitřní & V bloku metody & Všechny členy \\
+Anonymní vnitřní & Bez hlavičky, jedna instance & Dědí z nadtypu/implements interface \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{tcolorbox}[defbox,title=Anonymní vnitřní třída]
+Deklarace bez jména, typ určen nadtypem. Používá se pro \textbf{jednorázovou} instanci listeneru.
+\begin{verbatim}
+// Syntaxe: new Supertyp() { ... implementace ... }
+new ActionListener() {
+    public void actionPerformed(ActionEvent e) { ... }
+}
+\end{verbatim}
+\end{tcolorbox}
+
+\subsection{Dialogy}
+
+\begin{itemize}
+    \item \textbf{Modální} -- blokují ostatní interakce (vyžadují odpověď)
+    \item \textbf{Nemodální} -- umožňují další interakci (pozor na nekonzistence)
+    \item \texttt{JOptionPane} -- standardní dialogy: Message, Confirm, Input
+\end{itemize}
+
+%=============================================================================
+\section{JavaFX}
+%=============================================================================
+
+\subsection{Historie a dostupnost}
+
+\begin{center}
+\begin{tabular}{cl}
+\toprule
+\textbf{Rok} & \textbf{Verze} \\
+\midrule
+1996 & AWT (JDK 1.0) \\
+1998 & Swing (J2SE 1.2) \\
+2007 & JavaFX 1.0 (JavaFX Script) \\
+2011 & JavaFX 2.0 (ukončení Script, čistá Java) \\
+2014 & JavaFX 8 (součást Java 8) \\
+2018+ & Java 9+: samostatné SDK (OpenJFX, Gluon) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Architektura JavaFX}
+
+\begin{tcolorbox}[defbox,title=Hierarchie vrstev (odspoda nahoru)]
+\begin{enumerate}
+    \item \textbf{JVM} -- Java Virtual Machine
+    \item \textbf{JDK API} -- základní knihovny
+    \item \textbf{Prism} -- grafický engine (2D/3D, hardware acceleration)
+    \item \textbf{Glass Windowing Toolkit} -- platformově závislá vrstva
+    \item \textbf{Quantum Toolkit} -- spojuje Prism a Glass
+    \item \textbf{JavaFX Public APIs + Scene Graph} -- vrstva pro vývojáře
+\end{enumerate}
+\end{tcolorbox}
+
+\subsection{Klíčové rysy JavaFX}
+
+\begin{itemize}
+    \item FXML a Scene Builder -- deklarativní popis GUI
+    \item CSS stylování -- vzhled oddělen od logiky
+    \item WebView -- vkládání webových stránek (WebKit)
+    \item Interoperabilita se Swingem (\texttt{SwingNode})
+    \item 3D grafika, Canvas API, Printing API, Rich Text
+    \item Multitouch, Hi-DPI, hardwarová akcelerace (Prism)
+\end{itemize}
+
+\subsection{Graf scény (Scene Graph)}
+
+\begin{tcolorbox}[defbox,title=Struktura GUI JavaFX]
+\begin{center}
+\texttt{Stage} $\supset$ \texttt{Scene} $\supset$ \texttt{Root Pane} $\supset$ \texttt{Nodes}
+\end{center}
+\begin{itemize}
+    \item \textbf{Stage} -- ``jeviště'', vnější obálka (okno aplikace)
+    \item \textbf{Scene} -- ``scéna'', obsah okna
+    \item \textbf{Root Pane/Container} -- \texttt{StackPane}, \texttt{GridPane}, \texttt{BorderPane}, \texttt{FlowPane}...
+    \item \textbf{Nodes} -- tlačítka, texty, obrazce, 3D objekty
+\end{itemize}
+\end{tcolorbox}
+
+\textbf{Hierarchie elementů (od nejvyšší):}
+\begin{center}
+\texttt{Stage} $>$ \texttt{Scene} $>$ \texttt{Pane/Container} $>$ \texttt{Controls/Nodes}
+\end{center}
+
+\begin{tcolorbox}[warnbox,title=Otázka ze vzorového testu!]
+Který objekt je \textbf{nejvyše postavený} v hierarchii? $\rightarrow$ \textbf{Stage} (nikoli Scene, Pane ani GridLayout)
+\end{tcolorbox}
+
+\subsection{FXML a Controller}
+
+\begin{tcolorbox}[defbox,title=Struktura FXML aplikace]
+\begin{tabular}{ll}
+\texttt{FXMLDocument.fxml} & Deklarativní popis GUI (generuje Scene Builder) \\
+\texttt{FXMLDocumentController.java} & Logika interakce, anotace \texttt{@FXML} \\
+\texttt{HelloWorldFXML.java} & Spouštěcí třída (\texttt{Application.launch()}) \\
+\end{tabular}
+\end{tcolorbox}
+
+\begin{tcolorbox}[warnbox,title=Účel anotace @FXML]
+\texttt{@FXML} slouží k \textbf{propojení identifikace komponent} mezi kontrolerem a definicí vzhledu GUI. Umožňuje injectovat komponenty z FXML do controlleru podle \texttt{fx:id}.
+
+\textbf{Nejedná se o:} generování dokumentace, označení jazyka FXML.
+\end{tcolorbox}
+
+\begin{verbatim}
+public class FXMLDocumentController implements Initializable {
+    @FXML
+    private Label label;  // injectnuto z FXML podle fx:id="label"
+    
+    @FXML
+    private void handleButtonAction(ActionEvent event) {
+        label.setText("Hello World!");
+    }
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // Inicializace po načtení FXML
+    }
+}
+\end{verbatim}
+
+\subsection{Layouty v JavaFX}
+
+\begin{center}
+\begin{tabular}{>{\raggedright}p{3cm} >{\raggedright\arraybackslash}p{9cm}}
+\toprule
+\textbf{Layout} & \textbf{Použití} \\
+\midrule
+\texttt{BorderPane} & 5 oblastí: top, bottom, left, right, center \\
+\texttt{HBox/VBox} & Horizontální/vertikální řada \\
+\texttt{StackPane} & Vrstvení komponent na sobě \\
+\texttt{GridPane} & Mřížka s definicí řádků/sloupců \\
+\texttt{FlowPane} & Zalamování jako FlowLayout \\
+\texttt{TilePane} & Uniformní dlaždice \\
+\texttt{AnchorPane} & Kotvení k okrajům \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Životní cyklus JavaFX aplikace}
+
+\begin{enumerate}
+    \item \texttt{launch(args)} -- statická metoda \texttt{Application}
+    \item Vytvoření instance aplikace
+    \item \texttt{init()} -- inicializace (mimo UI vlákno!)
+    \item \texttt{start(Stage primaryStage)} -- hlavní metoda, vytvoření scény
+    \item Běh aplikace -- zpracování událostí
+    \item \texttt{stop()} -- ukončení (volá se při zavření)
+\end{enumerate}
+
+\begin{tcolorbox}[warnbox,title=Vlákna v JavaFX]
+\begin{itemize}
+    \item \texttt{init()} -- \textbf{spouštěcí vlákno} (ne UI!)
+    \item \texttt{start()} a veškerá manipulace se scénou -- \textbf{JavaFX Application Thread (JAT)}
+    \item Náročné operace -- \textbf{pracovní vlákna na pozadí} (\texttt{Task}, \texttt{Service})
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Pracovní vlákna v JavaFX}
+
+\begin{center}
+\begin{tabular}{>{\raggedright}p{3cm} >{\raggedright\arraybackslash}p{9cm}}
+\toprule
+\textbf{Třída} & \textbf{Účel} \\
+\midrule
+\texttt{Task<T>} & Jednorázová úloha na pozadí, implementace \texttt{FutureTask} \\
+\texttt{Service<T>} & Opakované spouštění Tasků, sledování stavu \\
+\texttt{WorkerStateEvent} & Události při změně stavu (SUCCEEDED, FAILED...) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{verbatim}
+Task<Integer> task = new Task<Integer>() {
+    @Override
+    protected Integer call() throws Exception {
+        for (int i = 0; i < 100000; i++) {
+            if (isCancelled()) break;
+            updateProgress(i, 100000);  // bezpečná aktualizace UI
+        }
+        return i;
+    }
+};
+
+ProgressBar bar = new ProgressBar();
+bar.progressProperty().bind(task.progressProperty());
+new Thread(task).start();
+\end{verbatim}
+
+%=============================================================================
+\section{Vlákna v Javě (Concurrency)}
+%=============================================================================
+
+\subsection{Procesy vs. vlákna}
+
+\begin{center}
+\begin{tabular}{>{\raggedright}p{3cm} >{\raggedright}p{5cm} >{\raggedright\arraybackslash}p{5cm}}
+\toprule
+\textbf{Aspekt} & \textbf{Proces} & \textbf{Vlákno} \\
+\midrule
+Paměť & Vlastní paměťový prostor & Sdílí paměť procesu \\
+Zdroje & Samostatná množina & Sdílí zdroje procesu \\
+Komunikace & Sokety, potrubí & Přímý přístup k paměti \\
+Náročnost & Vysoká & Nízká (lightweight) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Vytvoření a spuštění vlákna}
+
+\textbf{Dva způsoby:}
+
+\begin{enumerate}
+    \item \textbf{Runnable} -- preferovaný, obecnější
+    \begin{verbatim}
+    public class HelloRunnable implements Runnable {
+        public void run() { System.out.println("Hello from thread!"); }
+        public static void main(String[] args) {
+            new Thread(new HelloRunnable()).start();
+        }
+    }
+    \end{verbatim}
+    
+    \item \textbf{Podtřída Thread} -- přímo dědit, překrýt \texttt{run()}
+    \begin{verbatim}
+    public class HelloThread extends Thread {
+        public void run() { ... }
+        // new HelloThread().start();
+    }
+    \end{verbatim}
+\end{enumerate}
+
+\begin{tcolorbox}[warnbox,title=Důležité!]
+Vlákno se spouští metodou \texttt{start()}, nikoli \texttt{run()}! \texttt{run()} by jen provedlo kód v aktuálním vlákně.
+\end{tcolorbox}
+
+\subsection{Stavy vlákna}
+
+\begin{center}
+\begin{tabular}{cl}
+\toprule
+\textbf{Stav} & \textbf{Význam} \\
+\midrule
+\texttt{NEW} & Vytvořeno, ještě neběží \\
+\texttt{RUNNABLE} & Připraveno ke běhu (může běžet, nemusí) \\
+\texttt{BLOCKED} & Čeká na zámek (monitor) \\
+\texttt{WAITING} & Čeká na notifikaci (\texttt{wait()}, \texttt{join()} bez timeoutu) \\
+\texttt{TIMED\_WAITING} & Čeká s časovým limitem (\texttt{sleep()}, \texttt{join(ms)}) \\
+\texttt{TERMINATED} & Ukončeno (normálně nebo výjimkou) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{tcolorbox}[warnbox,title=Otázka ze vzorového testu!]
+Správná sekvence stavů: \textbf{NEW, Runnable, Blocked, Waiting, Timed waiting, Terminated}
+
+\textbf{Pozor na}: Running není oficiální stav (je součástí Runnable), Stopped/Finished/Canceled nejsou standardní!
+\end{tcolorbox}
+
+\subsection{Přerušení vlákna (Interrupt)}
+
+\begin{tcolorbox}[defbox,title=Mechanismus interrupt]
+\textbf{Přerušení je žádost}, ne příkaz. Vlákno musí spolupracovat.
+\begin{itemize}
+    \item \texttt{Thread.interrupt()} -- nastaví příznak přerušení
+    \item \texttt{Thread.interrupted()} -- zkontroluje a \textbf{vymaže} příznak
+    \item \texttt{isInterrupted()} -- zkontroluje, \textbf{nevymaže}
+\end{itemize}
+\end{tcolorbox}
+
+\begin{verbatim}
+// Správná podpora přerušení:
+public void run() {
+    while (!Thread.interrupted()) {
+        // práce...
+        try {
+            Thread.sleep(1000);  // vyhodí InterruptedException při interrupt
+        } catch (InterruptedException e) {
+            return;  // nebo break, nebo obnovení příznaku
+        }
+    }
+}
+\end{verbatim}
+
+\subsection{Synchronizace}
+
+\subsubsection{Problémy souběhu}
+
+\begin{tcolorbox}[defbox,title=Thread Interference]
+Když více vláken přistupuje ke sdíleným datům a provádí operace, které nejsou \textbf{atomické}. I jednoduchá operace jako \texttt{c++} se přeloží na: načti c, zvyš, ulož.
+\end{tcolorbox}
+
+\begin{tcolorbox}[defbox,title=Memory Consistency Errors]
+Různá vlákna mají různý pohled na sdílenou paměť. Řešením je relace \textbf{happens-before} -- zaručená časová vazba mezi operacemi.
+\end{tcolorbox}
+
+\subsubsection{Nástroje synchronizace}
+
+\begin{center}
+\begin{tabular}{>{\raggedright}p{3.5cm} >{\raggedright\arraybackslash}p{9.5cm}}
+\toprule
+\textbf{Nástroj} & \textbf{Popis} \\
+\midrule
+\texttt{synchronized} metoda & Zámek na instanci (nebo třídě pro static). Jeden zámek na objekt -- více synchronizovaných metod se vzájemně blokují. \\
+\addlinespace
+\texttt{synchronized} blok & Explicitní specifikace objektu zámku. Umožňuje jemnější granularitu (různé zámky pro různá data). \\
+\addlinespace
+\texttt{ReentrantLock} & Explicitní zámek z \texttt{java.util.concurrent.locks}. Podporuje \texttt{tryLock()} (neblokující), podmínky (Condition). \\
+\addlinespace
+Atomické proměnné & \texttt{AtomicInteger}, \texttt{AtomicLong}, \texttt{AtomicReference} -- lock-free operace. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{verbatim}
+// Synchronizované metody -- jeden zámek na instanci
+public synchronized void increment() { c++; }
+public synchronized void decrement() { c--; }
+
+// Synchronizované bloky -- různé zámky pro nezávislá data
+private Object lock1 = new Object();
+private Object lock2 = new Object();
+public void inc1() { synchronized(lock1) { c1++; } }
+public void inc2() { synchronized(lock2) { c2++; } }
+\end{verbatim}
+
+\begin{tcolorbox}[tipbox,title=Reentrant synchronizace]
+Vlákno může získat zámek, který \textbf{už vlastní} (např. synchronizovaná metoda volá jinou synchronizovanou metodu stejného objektu). Počítá se rekurzivně.
+\end{tcolorbox}
+
+\subsubsection{Guarded Blocks (wait/notify)}
+
+\begin{verbatim}
+public synchronized void guardedJoy() {
+    while(!joy) {
+        try {
+            wait();  // uvolní zámek, čeká na notify
+        } catch (InterruptedException e) {}
+    }
+    // pokračování...
+}
+
+public synchronized notifyJoy() {
+    joy = true;
+    notifyAll();  // probudí VŠECHNA čekající vlákna
+}
+\end{verbatim}
+
+\begin{tcolorbox}[warnbox,title=Pravidla pro wait/notify]
+\begin{itemize}
+    \item Vždy volej \texttt{wait()} uvnitř \texttt{while} cyklu, ne \texttt{if} (spurious wakeup!)
+    \item Vždy používej \texttt{synchronized} blok/metodu při volání \texttt{wait/notify}
+    \item Preferuj \texttt{notifyAll()} před \texttt{notify()} (spravedlnost)
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Problémy souběhu -- Deadlock, Starvation, Livelock}
+
+\begin{center}
+\begin{tabular}{>{\raggedright}p{2.5cm} >{\raggedright\arraybackslash}p{11cm}}
+\toprule
+\textbf{Problém} & \textbf{Popis} \\
+\midrule
+\textbf{Deadlock} & Dvě či více vláken navždy blokována, vzájemně čekají na zámky druhých. Příklad: vlákno A drží zámek 1, čeká na 2; vlákno B drží 2, čeká na 1. \\
+\addlinespace
+\textbf{Starvation} & Vlákno nemůže získat přístup ke zdrojům, protože jiná vlákna je neustále získávají. \\
+\addlinespace
+\textbf{Livelock} & Vlákna nejsou blokována, ale vzájemně reagují na akce druhých bez pokroku. Příklad: dva lidé se vyhýbají v chodbě, stále se posunují do stejné strany. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{java.util.concurrent}
+
+\subsubsection{Executor framework}
+
+\begin{tcolorbox}[defbox,title=ExecutorService]
+Odděluje \textbf{vytváření a management vláken} od aplikační logiky.
+\begin{itemize}
+    \item \texttt{Executor} -- základní rozhraní, metoda \texttt{execute(Runnable)}
+    \item \texttt{ExecutorService} -- rozšiřuje o \texttt{submit()}, \texttt{shutdown()}, \texttt{awaitTermination()}
+    \item \texttt{ScheduledExecutorService} -- plánované a opakované úlohy
+\end{itemize}
+\end{tcolorbox}
+
+\begin{verbatim}
+// Thread pool s fixním počtem vláken
+ExecutorService executor = Executors.newFixedThreadPool(4);
+
+// Odeslání úlohy
+Future<Long> result = executor.submit(new Callable<Long>() {
+    public Long call() { return computeValue(); }
+});
+
+// Získání výsledku (blokující)
+Long value = result.get();
+executor.shutdown();
+\end{verbatim}
+
+\begin{tcolorbox}[warnbox,title=Otázka ze vzorového testu!]
+\textbf{ExecutorService}:
+\begin{itemize}
+    \item Určuje, \textbf{jakým způsobem a v jakém vlákně} budou úlohy provedeny
+    \item Poskytuje metody produkující \texttt{Future} pro asynchronní návratové hodnoty
+    \item Zajišťuje provedení předložených úloh
+\end{itemize}
+\textbf{Není pravda}, že neurčuje způsob provedení -- to je jeho hlavní účel!
+\end{tcolorbox}
+
+\subsubsection{Fork/Join framework}
+
+\begin{itemize}
+    \item Implementace \texttt{ExecutorService} pro \textbf{rekurzivní dělení} úloh
+    \item \textbf{Work stealing} -- volné vlákno ``ukradne'' práci z fronty jiného
+    \item Základ: \texttt{ForkJoinPool}, \texttt{RecursiveTask<T>} (vrací hodnotu), \texttt{RecursiveAction}
+    \item Metoda \texttt{compute()}: pokud je úloha malá, proveď přímo; jinak rozděl a zavolej \texttt{invokeAll()}
+\end{itemize}
+
+\subsubsection{Konkurentní kolekce}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\textbf{Třída/Interface} & \textbf{Účel} \\
+\midrule
+\texttt{BlockingQueue} & Fronta s blokujícím čtením/zápisem \\
+\texttt{ArrayBlockingQueue} & Omezená kapacita \\
+\texttt{ConcurrentHashMap} & Thread-safe HashMap \\
+\texttt{ConcurrentSkipListMap} & Thread-safe TreeMap \\
+\texttt{SynchronousQueue} & Předává prvky přímo (žádná kapacita) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Concurrency ve Swing}
+
+\begin{tcolorbox}[defbox,title=Tři druhy vláken ve Swing]
+\begin{enumerate}
+    \item \textbf{Initial threads} -- počáteční vlákna (např. \texttt{main})
+    \item \textbf{Event Dispatch Thread (EDT)} -- zpracovává události, manipuluje s GUI komponentami
+    \item \textbf{Worker threads} -- časově náročné úlohy na pozadí
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[warnbox,title=Pravidlo EDT]
+Swingové komponenty nejsou thread-safe! Veškerá manipulace s GUI musí probíhat v \textbf{EDT}. Používej:
+\begin{verbatim}
+SwingUtilities.invokeLater(() -> { /* GUI kód */ });
+SwingUtilities.invokeAndWait(() -> { /* GUI kód */ }); // blokující
+\end{verbatim}
+\end{tcolorbox}
+
+\subsubsection{SwingWorker}
+
+\begin{verbatim}
+SwingWorker<ImageIcon[], Void> worker = new SwingWorker<>() {
+    @Override
+    protected ImageIcon[] doInBackground() throws Exception {
+        // provádí se v pracovním vlákně
+        return loadImages();
+    }
+    
+    @Override
+    protected void done() {
+        // provádí se v EDT po skončení
+        try {
+            ImageIcon[] result = get();
+            // aktualizace GUI...
+        } catch (Exception e) { ... }
+    }
+};
+worker.execute();
+\end{verbatim}
+
+\begin{tcolorbox}[tipbox,title=Generické parametry SwingWorker]
+\texttt{SwingWorker<T, V>}:
+\begin{itemize}
+    \item \texttt{T} -- návratový typ \texttt{doInBackground()} a \texttt{get()}
+    \item \texttt{V} -- typ mezivýsledků pro \texttt{publish()}/\texttt{process()}
+\end{itemize}
+\end{tcolorbox}
+
+%=============================================================================
+\section{Shrnutí klíčových otázek ze vzorového testu}
+%=============================================================================
+
+\subsection{Odpovědi na viditelné otázky}
+
+\begin{enumerate}[label=\textbf{Otázka \arabic*:}]
+    \item \textbf{Který typ výjimek pro neočekávané stavy?} $\rightarrow$ \textbf{Nekontrolované výjimky} (RuntimeException)
+    
+    \item \textbf{K čemu slouží @FXML?} $\rightarrow$ \textbf{Propojení identifikace komponent} mezi kontrolerem a GUI
+    
+    \item \textbf{Nejvyšší v hierarchii JavaFX?} $\rightarrow$ \textbf{Stage}
+    
+    \item \textbf{Lze vyhodit výjimku v konstruktoru?} $\rightarrow$ \textbf{Ano} (bez omezení, není třeba uvádět v deklaraci pro unchecked; pro checked ano)
+    
+    \item \textbf{Co je defenzivní programování?} $\rightarrow$ \textbf{Předvídání chyb a mimořádných stavů}
+    
+    \item \textbf{Prostředky synchronizace:} $\rightarrow$ \textbf{Synchronizované metody, synchronizované bloky (zámky jsou implementační detail, konstruktory se nesynchronizují)}
+    
+    \item \textbf{Charakteristika ExecutorService:} $\rightarrow$ Určuje \textbf{způsob a vlákno} provedení, produkuje \texttt{Future}, zajišťuje provedení
+    
+    \item \textbf{Přístup vnitřní třídy k private členům?} $\rightarrow$ \textbf{Ano} -- vnitřní třídy mají přístup ke všem členům vnější, i private
+    
+    \item \textbf{Co je anonymní vnitřní třída?} $\rightarrow$ \textbf{Vnitřní třída, v jejíž deklaraci chybí hlavička} (jméno)
+    
+    \item \textbf{Co provádí Event Dispatch Thread?} $\rightarrow$ \textbf{Zpracovává systémovou frontu událostí týkajících se prvků GUI}
+    
+    \item \textbf{Vnitřní třída a dědičnost:} $\rightarrow$ \textbf{Vnitřní třída může být podtřídou vnější třídy} (není to pravidlo, ale je to možné)
+    
+    \item \textbf{Stavy vlákna:} $\rightarrow$ \textbf{New, Runnable, Blocked, Waiting, Timed waiting, Terminated}
+    
+    \item \textbf{Výhody genericity:} $\rightarrow$ Čitelnější kód, \textbf{kontroly při kompilaci} (ne přetypování!)
+    
+    \item \textbf{Omezení typových parametrů:} $\rightarrow$ \textbf{Omezuje množinu použitelných typových argumentů}
+\end{enumerate}
+
+%=============================================================================
+\section{Rychlá reference -- často kladené otázky}
+%=============================================================================
+
+\begin{tcolorbox}[defbox,title=Rozdíly Swing vs. JavaFX]
+\begin{tabular}{>{\raggedright}p{3.5cm} >{\raggedright}p{5cm} >{\raggedright\arraybackslash}p{5cm}}
+\toprule
+\textbf{Aspekt} & \textbf{Swing} & \textbf{JavaFX} \\
+\midrule
+Vlákno GUI & EDT & JavaFX Application Thread \\
+Deklarativní GUI & Ne & FXML \\
+CSS stylování & Omezené & Plná podpora \\
+Scene Builder & Ne & Ano \\
+3D grafika & Ne & Ano \\
+WebView & Ne & Ano (WebKit) \\
+Pracovní vlákna & SwingWorker & Task, Service \\
+\bottomrule
+\end{tabular}
+\end{tcolorbox}
+
+\begin{tcolorbox}[tipbox,title=Kontrolní seznam před testem]
+\begin{enumerate}
+    \item[$\square$] Rozdíl checked vs. unchecked exceptions
+    \item[$\square$] Syntaxe try-catch-finally, vícenásobné catch
+    \item[$\square$] throws klauzule, definice vlastních výjimek
+    \item[$\square$] Účel assert (neplést s výjimkami!)
+    \item[$\square$] Generické typy, wildcards, PECS pravidlo
+    \item[$\square$] Type erasure -- co se děje při překladu
+    \item[$\square$] Hierarchie JavaFX: Stage $>$ Scene $>$ Pane $>$ Node
+    \item[$\square$] Účel @FXML anotace
+    \item[$\square$] Vnořené třídy: statické vs. vnitřní, anonymní
+    \item[$\square$] Stavy vlákna, životní cyklus
+    \item[$\square$] Synchronizace: synchronized, ReentrantLock, atomické operace
+    \item[$\square$] wait/notifyAll, Guarded Blocks
+    \item[$\square$] Deadlock vs. Starvation vs. Livelock
+    \item[$\square$] ExecutorService, ThreadPool, Future
+    \item[$\square$] SwingWorker / Task + Service v JavaFX
+    \item[$\square$] EDT vs. pracovní vlákna (proč oddělit GUI a výpočty)
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}
