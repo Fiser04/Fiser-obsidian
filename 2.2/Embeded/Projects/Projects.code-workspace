@@ -58,6 +58,10 @@
     {
       "name": "semestralni-prace-vodovaha-od-zeme",
       "path": "semestralni-prace-vodovaha-od-zeme"
+    },
+    {
+      "name": "zaverecka",
+      "path": "../../../../../Projects/embeded/zaverecka"
     }
   ],
   "settings": {},

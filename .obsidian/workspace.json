@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "51ba4508cf3513b6",
+        "id": "1d4f40521039da43",
         "type": "tabs",
         "children": [
           {
-            "id": "852f810135852fec",
+            "id": "ac1f86bf91777dd9",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "2.2/JAVA 2/priprava2/document.aux",
-                "bFile": "2.2/JAVA 2/priprava2/document.aux",
-                "aRef": ""
+                "file": "2.1/Architektura aplikaci/8 - N vrstva.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: document.aux  (Working Tree)"
+              "icon": "lucide-file",
+              "title": "8 - N vrstva"
             }
           }
         ]
@@ -180,8 +180,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "852f810135852fec",
+  "active": "ac1f86bf91777dd9",
   "lastOpenFiles": [
+    "2.1/Architektura aplikaci/9 - distribuce.md",
+    "2.1/Architektura aplikaci/Zakonceni.md",
+    "2.1/Architektura aplikaci/10 - clean architecture.md",
+    "2.1/Architektura aplikaci/Zkouska.md",
+    "2.1/Architektura aplikaci/5 - Design patterns.md",
+    "2.1/Architektura aplikaci/6 - dependency injection.md",
+    "2.1/Architektura aplikaci/7 - Lokalizace.md",
+    "2.1/Architektura aplikaci/8 - N vrstva.md",
+    "2.1/Architektura aplikaci/4 - MVC a MVP architektura.md",
+    "2.1/Architektura aplikaci/3 - Varianty architektur.md",
+    "2.1/Architektura aplikaci/2 - Typy sluzeb v databazove technologii.md",
+    "2.1/Architektura aplikaci/1 - Uvod.md",
     "2.2/Multi/vst.md",
     "2.2/Embeded/Projects/semestralni-prace-vodovaha-od-zeme/lib/BMI160-Arduino-master/test/scripts/buildtest.sh",
     "2.2/Embeded/Projects/semestralni-prace-vodovaha-od-zeme/lib/BMI160-Arduino-master/test/log/build-20170610-12:00.47.log.txt",
@@ -206,25 +218,14 @@
     "2.2/JAVA 2/Prednasky/databaze.md",
     "2.1/Linux kurz/1 - Uvod.md",
     "2.2/Diplomen/Teze.md",
-    "2.1/Architektura aplikaci/10 - clean architecture.md",
     "Meine things/eduroam.md",
     "1.2/Databaza/otazky ke zkousce.md",
     "1.2/Databaza/managment studio.md",
     "2.2/C-Sharp/Dokumentova databaze.md",
-    "2.2/JAVA 2/Prednasky/04 - Vytvareni gui.md",
     "2.2/JAVA 2/obr/Pasted image 20260414100005.png",
-    "1.2/OS/os_teorie_prehled.md",
-    "2.2/JAVA 2/Prednasky/0x1 - Sitove programovani.md",
-    "2.2/JAVA 2/Prednasky/0x2 -.md",
-    "Bakalarka/Napad 2/Popis.md",
     "Bakalarka/Napad 2/Pasted image 20260413131348.png",
     "Bakalarka/Napad 2/Pasted image 20260413125054.png",
     "2.2/Webovky/obr/Pasted image 20260413094741.png",
-    "2.2/Webovky/07 - metoda zivotniho cyklu.md",
-    "Bakalarka/Napad 1/Napad 1.md",
-    "2.2/Robotika/03 - priklad v 2d.md",
-    "2.2/Robotika/04 - inverzni kinematika.md",
-    "conflict-files-obsidian-git.md",
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/files/wiring3.png",
     "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/files/wiring2.png"
   ]
