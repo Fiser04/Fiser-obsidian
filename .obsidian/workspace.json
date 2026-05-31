@@ -1,24 +1,24 @@
 {
   "main": {
-    "id": "9c7a1dc04d069565",
+    "id": "f7eaf60c100a3eb7",
     "type": "split",
     "children": [
       {
-        "id": "1d4f40521039da43",
+        "id": "e4b32a96fce16257",
         "type": "tabs",
         "children": [
           {
-            "id": "ac1f86bf91777dd9",
+            "id": "ea136e6778a08918",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2.1/Architektura aplikaci/8 - N vrstva.md",
-                "mode": "source",
+                "file": "zkouškové_otazky.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "8 - N vrstva"
+              "title": "zkouškové_otazky"
             }
           }
         ]
@@ -27,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "7484f3981d0ee72f",
+    "id": "f585e92f9ef42586",
     "type": "split",
     "children": [
       {
-        "id": "1d330bb742800917",
+        "id": "ea078587b62b61d0",
         "type": "tabs",
         "children": [
           {
-            "id": "c31a67d5713775bd",
+            "id": "f850051f5472ac71",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +48,7 @@
             }
           },
           {
-            "id": "ea34c5c08d77bb2c",
+            "id": "a475ee451d6f7c25",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +65,7 @@
             }
           },
           {
-            "id": "6ac71c0b2a790294",
+            "id": "1a62551418e33c60",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -78,23 +78,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 354.5
+    "width": 300
   },
   "right": {
-    "id": "1189d731d6205739",
+    "id": "bf266203e9a1f4c5",
     "type": "split",
     "children": [
       {
-        "id": "bd458ed943bb8030",
+        "id": "01a68ad3e58dd2d1",
         "type": "tabs",
         "children": [
           {
-            "id": "361fb885b300eafa",
+            "id": "b539a983540b5b24",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fiser-obsidian/1.2/Bezbecnost/Samostatné práce/Bezpecnostni politika.md",
+                "file": "zkouškové_otazky.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,25 +104,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Bezpecnostni politika"
+              "title": "Backlinks for zkouškové_otazky"
             }
           },
           {
-            "id": "a4eddaa7a12ef233",
+            "id": "a8ac477c3ce41e99",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fiser-obsidian/1.2/Bezbecnost/Samostatné práce/Bezpecnostni politika.md",
+                "file": "zkouškové_otazky.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Bezpecnostni politika"
+              "title": "Outgoing links from zkouškové_otazky"
             }
           },
           {
-            "id": "2b3bb8e73e198a52",
+            "id": "2662f09760bfef9b",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,96 +137,56 @@
             }
           },
           {
-            "id": "4c62099fc7667cc6",
+            "id": "b2ab6fddfe848cba",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "2847a99be4617621",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fiser-obsidian/1.2/Bezbecnost/Samostatné práce/Bezpecnostni politika.md",
+                "file": "zkouškové_otazky.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Bezpecnostni politika"
-            }
-          },
-          {
-            "id": "a78f7a2cacadba53",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "title": "Outline of zkouškové_otazky"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-git:Open Git source control": false,
-      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
     }
   },
-  "active": "ac1f86bf91777dd9",
+  "active": "ea136e6778a08918",
   "lastOpenFiles": [
-    "2.1/Architektura aplikaci/9 - distribuce.md",
-    "2.1/Architektura aplikaci/Zakonceni.md",
-    "2.1/Architektura aplikaci/10 - clean architecture.md",
-    "2.1/Architektura aplikaci/Zkouska.md",
-    "2.1/Architektura aplikaci/5 - Design patterns.md",
-    "2.1/Architektura aplikaci/6 - dependency injection.md",
-    "2.1/Architektura aplikaci/7 - Lokalizace.md",
-    "2.1/Architektura aplikaci/8 - N vrstva.md",
-    "2.1/Architektura aplikaci/4 - MVC a MVP architektura.md",
-    "2.1/Architektura aplikaci/3 - Varianty architektur.md",
-    "2.1/Architektura aplikaci/2 - Typy sluzeb v databazove technologii.md",
-    "2.1/Architektura aplikaci/1 - Uvod.md",
-    "2.2/Multi/vst.md",
-    "2.2/Embeded/Projects/semestralni-prace-vodovaha-od-zeme/lib/BMI160-Arduino-master/test/scripts/buildtest.sh",
-    "2.2/Embeded/Projects/semestralni-prace-vodovaha-od-zeme/lib/BMI160-Arduino-master/test/log/build-20170610-12:00.47.log.txt",
-    "2.2/Embeded/Projects/semestralni-prace-vodovaha-od-zeme/lib/BMI160-Arduino-master/test/log/build-20170501-16:33.27.log.txt",
-    "2.2/Embeded/Projects/semestralni-prace-vodovaha-od-zeme/lib/BMI160-Arduino-master/test/log/build-20170501-14:19.22.log.txt",
-    "2.2/Embeded/Projects/semestralni-prace-vodovaha-od-zeme/lib/BMI160-Arduino-master/examples/Interrupt/Interrupt.ino",
-    "2.2/Embeded/Projects/semestralni-prace-vodovaha-od-zeme/lib/BMI160-Arduino-master/examples/Gyro/Gyro.ino",
-    "2.2/Embeded/Projects/semestralni-prace-vodovaha-od-zeme/lib/BMI160-Arduino-master/test/scripts",
-    "2.2/Embeded/Projects/semestralni-prace-vodovaha-od-zeme/lib/BMI160-Arduino-master/test/log",
-    "2.2/Embeded/Projects/semestralni-prace-vodovaha-od-zeme/lib/BMI160-Arduino-master/internal/ss_spi_101.cpp",
-    "2.2/Embeded/Projects/semestralni-prace-vodovaha-od-zeme/lib/BMI160-Arduino-master/files/wiring2.png",
-    "2.2/Embeded/Projects/semestralni-prace-vodovaha-od-zeme/lib/BMI160-Arduino-master/internal/ss_spi.h",
-    "2.2/Embeded/Projects/semestralni-prace-vodovaha-od-zeme/lib/BMI160-Arduino-master/files/wiring3.png",
-    "2.2/Embeded/Projects/semestralni-prace-vodovaha-od-zeme/lib/BMI160-Arduino-master/files/circuit.png",
-    "2.2/Embeded/Projects/semestralni-prace-vodovaha-od-zeme/lib/BMI160-Arduino-master/README.md",
-    "2.2/JAVA 2/Priprava na test 1.md",
-    "2.2/JAVA 2/obr/Pasted image 20260428095753.png",
-    "2.2/JAVA 2/Prednasky/05 - Listener(Observer).md",
-    "2.2/Embeded/rtos.md",
-    "2.2/Multi/Prednaska/01 - Uvod.md",
-    "naMulti.md",
-    "2.2/JAVA 2/Prednasky/databaze.md",
-    "2.1/Linux kurz/1 - Uvod.md",
-    "2.2/Diplomen/Teze.md",
-    "Meine things/eduroam.md",
-    "1.2/Databaza/otazky ke zkousce.md",
-    "1.2/Databaza/managment studio.md",
-    "2.2/C-Sharp/Dokumentova databaze.md",
-    "2.2/JAVA 2/obr/Pasted image 20260414100005.png",
-    "Bakalarka/Napad 2/Pasted image 20260413131348.png",
-    "Bakalarka/Napad 2/Pasted image 20260413125054.png",
-    "2.2/Webovky/obr/Pasted image 20260413094741.png",
-    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/files/wiring3.png",
-    "2.2/Embeded/Projects/bmi160-poprve/lib/BMI160-Arduino-master/files/wiring2.png"
+    "1.2/Databaza/Prednasky/2 - 5.3.2025.md",
+    "1.2/Databaza/Prednasky/1 - 26.2.2025.md",
+    "zkouškové_otazky.md"
   ]
 }
