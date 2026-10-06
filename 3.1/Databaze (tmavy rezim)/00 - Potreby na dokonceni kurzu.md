@@ -1,0 +1,4 @@
+- bude test na koncu (v prosinci) - 50% min.
+	- bude s ai a bude to kurwa tezky
+	- nebo bude bez ai a lehkej
+- pak proste prok zkouska

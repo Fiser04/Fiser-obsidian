@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Faktury>
+    <Faktura id="1">
+        <Dodavatel>
+            <Nazev>NotebookShop s.r.o.</Nazev>
+            <Adresa>Technická 10, 602 00 Brno</Adresa>
+            <Telefon>+420515123456</Telefon>
+            <ICO>87654321</ICO>
+            <DIC>CZ87654321</DIC>
+        </Dodavatel>
+        <Odběratel>
+            <Nazev>Jan Novák</Nazev>
+            <Adresa>Sluneční 12, Praha 3</Adresa>
+            <Telefon>+420601234567</Telefon>
+        </Odběratel>
+        <Polozky>
+            <Polozka>
+                <Nazev>Notebook Apple MacBook Air 13 M3</Nazev>
+                <Mnozstvi>1</Mnozstvi>
+                <CenaJednotkova>32990</CenaJednotkova>
+                <CenaJednotkovaDPH>39917.9</CenaJednotkovaDPH>
+                <CenaCelkem>32990</CenaCelkem>
+                <CenaCelkemDPH>39917.9</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook Lenovo ThinkPad E16</Nazev>
+                <Mnozstvi>3</Mnozstvi>
+                <CenaJednotkova>18490</CenaJednotkova>
+                <CenaJednotkovaDPH>22372.9</CenaJednotkovaDPH>
+                <CenaCelkem>55470</CenaCelkem>
+                <CenaCelkemDPH>67118.7</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook HP ProBook 450</Nazev>
+                <Mnozstvi>1</Mnozstvi>
+                <CenaJednotkova>21990</CenaJednotkova>
+                <CenaJednotkovaDPH>26607.9</CenaJednotkovaDPH>
+                <CenaCelkem>21990</CenaCelkem>
+                <CenaCelkemDPH>26607.9</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>RAM 16GB DDR5</Nazev>
+                <Mnozstvi>3</Mnozstvi>
+                <CenaJednotkova>1890</CenaJednotkova>
+                <CenaJednotkovaDPH>2286.9</CenaJednotkovaDPH>
+                <CenaCelkem>5670</CenaCelkem>
+                <CenaCelkemDPH>6860.7</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Klávesnice mechanická</Nazev>
+                <Mnozstvi>3</Mnozstvi>
+                <CenaJednotkova>1990</CenaJednotkova>
+                <CenaJednotkovaDPH>2407.9</CenaJednotkovaDPH>
+                <CenaCelkem>5970</CenaCelkem>
+                <CenaCelkemDPH>7223.7</CenaCelkemDPH>
+            </Polozka>
+        </Polozky>
+        <Souhrn>
+            <CenaCelkem>122090</CenaCelkem>
+            <CenaCelkemDPH>147728.9</CenaCelkemDPH>
+        </Souhrn>
+    </Faktura>
+    <Faktura id="2">
+        <Dodavatel>
+            <Nazev>NotebookShop s.r.o.</Nazev>
+            <Adresa>Technická 10, 602 00 Brno</Adresa>
+            <Telefon>+420515123456</Telefon>
+            <ICO>87654321</ICO>
+            <DIC>CZ87654321</DIC>
+        </Dodavatel>
+        <Odběratel>
+            <Nazev>Petra Svobodová</Nazev>
+            <Adresa>Lipová 45, Brno</Adresa>
+            <Telefon>+420602345678</Telefon>
+        </Odběratel>
+        <Polozky>
+            <Polozka>
+                <Nazev>RAM 16GB DDR5</Nazev>
+                <Mnozstvi>1</Mnozstvi>
+                <CenaJednotkova>1890</CenaJednotkova>
+                <CenaJednotkovaDPH>2286.9</CenaJednotkovaDPH>
+                <CenaCelkem>1890</CenaCelkem>
+                <CenaCelkemDPH>2286.9</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook Dell Inspiron 14</Nazev>
+                <Mnozstvi>1</Mnozstvi>
+                <CenaJednotkova>17490</CenaJednotkova>
+                <CenaJednotkovaDPH>21162.9</CenaJednotkovaDPH>
+                <CenaCelkem>17490</CenaCelkem>
+                <CenaCelkemDPH>21162.9</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Monitor 27" IPS</Nazev>
+                <Mnozstvi>1</Mnozstvi>
+                <CenaJednotkova>6990</CenaJednotkova>
+                <CenaJednotkovaDPH>8457.9</CenaJednotkovaDPH>
+                <CenaCelkem>6990</CenaCelkem>
+                <CenaCelkemDPH>8457.9</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook Lenovo ThinkPad E16</Nazev>
+                <Mnozstvi>3</Mnozstvi>
+                <CenaJednotkova>18490</CenaJednotkova>
+                <CenaJednotkovaDPH>22372.9</CenaJednotkovaDPH>
+                <CenaCelkem>55470</CenaCelkem>
+                <CenaCelkemDPH>67118.7</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Klávesnice mechanická</Nazev>
+                <Mnozstvi>3</Mnozstvi>
+                <CenaJednotkova>1990</CenaJednotkova>
+                <CenaJednotkovaDPH>2407.9</CenaJednotkovaDPH>
+                <CenaCelkem>5970</CenaCelkem>
+                <CenaCelkemDPH>7223.7</CenaCelkemDPH>
+            </Polozka>
+        </Polozky>
+        <Souhrn>
+            <CenaCelkem>87810</CenaCelkem>
+            <CenaCelkemDPH>106250.1</CenaCelkemDPH>
+        </Souhrn>
+    </Faktura>
+    <Faktura id="3">
+        <Dodavatel>
+            <Nazev>NotebookShop s.r.o.</Nazev>
+            <Adresa>Technická 10, 602 00 Brno</Adresa>
+            <Telefon>+420515123456</Telefon>
+            <ICO>87654321</ICO>
+            <DIC>CZ87654321</DIC>
+        </Dodavatel>
+        <Odběratel>
+            <Nazev>Martin Dvořák</Nazev>
+            <Adresa>Třída Míru 8, Ostrava</Adresa>
+            <Telefon>+420603456789</Telefon>
+        </Odběratel>
+        <Polozky>
+            <Polozka>
+                <Nazev>Notebook Lenovo ThinkPad E16</Nazev>
+                <Mnozstvi>3</Mnozstvi>
+                <CenaJednotkova>18490</CenaJednotkova>
+                <CenaJednotkovaDPH>22372.9</CenaJednotkovaDPH>
+                <CenaCelkem>55470</CenaCelkem>
+                <CenaCelkemDPH>67118.7</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook MSI Modern 15</Nazev>
+                <Mnozstvi>2</Mnozstvi>
+                <CenaJednotkova>14490</CenaJednotkova>
+                <CenaJednotkovaDPH>17532.9</CenaJednotkovaDPH>
+                <CenaCelkem>28980</CenaCelkem>
+                <CenaCelkemDPH>35065.8</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Monitor 27" IPS</Nazev>
+                <Mnozstvi>1</Mnozstvi>
+                <CenaJednotkova>6990</CenaJednotkova>
+                <CenaJednotkovaDPH>8457.9</CenaJednotkovaDPH>
+                <CenaCelkem>6990</CenaCelkem>
+                <CenaCelkemDPH>8457.9</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook Apple MacBook Air 13 M3</Nazev>
+                <Mnozstvi>1</Mnozstvi>
+                <CenaJednotkova>32990</CenaJednotkova>
+                <CenaJednotkovaDPH>39917.9</CenaJednotkovaDPH>
+                <CenaCelkem>32990</CenaCelkem>
+                <CenaCelkemDPH>39917.9</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook Lenovo IdeaPad Slim 3</Nazev>
+                <Mnozstvi>3</Mnozstvi>
+                <CenaJednotkova>11490</CenaJednotkova>
+                <CenaJednotkovaDPH>13902.9</CenaJednotkovaDPH>
+                <CenaCelkem>34470</CenaCelkem>
+                <CenaCelkemDPH>41708.7</CenaCelkemDPH>
+            </Polozka>
+        </Polozky>
+        <Souhrn>
+            <CenaCelkem>158900</CenaCelkem>
+            <CenaCelkemDPH>192269</CenaCelkemDPH>
+        </Souhrn>
+    </Faktura>
+    <Faktura id="4">
+        <Dodavatel>
+            <Nazev>NotebookShop s.r.o.</Nazev>
+            <Adresa>Technická 10, 602 00 Brno</Adresa>
+            <Telefon>+420515123456</Telefon>
+            <ICO>87654321</ICO>
+            <DIC>CZ87654321</DIC>
+        </Dodavatel>
+        <Odběratel>
+            <Nazev>Lenka Černá</Nazev>
+            <Adresa>Nádražní 22, Plzeň</Adresa>
+            <Telefon>+420604567890</Telefon>
+        </Odběratel>
+        <Polozky>
+            <Polozka>
+                <Nazev>Monitor 27" IPS</Nazev>
+                <Mnozstvi>2</Mnozstvi>
+                <CenaJednotkova>6990</CenaJednotkova>
+                <CenaJednotkovaDPH>8457.9</CenaJednotkovaDPH>
+                <CenaCelkem>13980</CenaCelkem>
+                <CenaCelkemDPH>16915.8</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Myš Logitech MX Master 3S</Nazev>
+                <Mnozstvi>1</Mnozstvi>
+                <CenaJednotkova>2490</CenaJednotkova>
+                <CenaJednotkovaDPH>3012.9</CenaJednotkovaDPH>
+                <CenaCelkem>2490</CenaCelkem>
+                <CenaCelkemDPH>3012.9</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook HP ProBook 450</Nazev>
+                <Mnozstvi>1</Mnozstvi>
+                <CenaJednotkova>21990</CenaJednotkova>
+                <CenaJednotkovaDPH>26607.9</CenaJednotkovaDPH>
+                <CenaCelkem>21990</CenaCelkem>
+                <CenaCelkemDPH>26607.9</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook Dell Inspiron 14</Nazev>
+                <Mnozstvi>2</Mnozstvi>
+                <CenaJednotkova>17490</CenaJednotkova>
+                <CenaJednotkovaDPH>21162.9</CenaJednotkovaDPH>
+                <CenaCelkem>34980</CenaCelkem>
+                <CenaCelkemDPH>42325.8</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook Apple MacBook Air 13 M3</Nazev>
+                <Mnozstvi>1</Mnozstvi>
+                <CenaJednotkova>32990</CenaJednotkova>
+                <CenaJednotkovaDPH>39917.9</CenaJednotkovaDPH>
+                <CenaCelkem>32990</CenaCelkem>
+                <CenaCelkemDPH>39917.9</CenaCelkemDPH>
+            </Polozka>
+        </Polozky>
+        <Souhrn>
+            <CenaCelkem>106430</CenaCelkem>
+            <CenaCelkemDPH>128780.3</CenaCelkemDPH>
+        </Souhrn>
+    </Faktura>
+    <Faktura id="5">
+        <Dodavatel>
+            <Nazev>NotebookShop s.r.o.</Nazev>
+            <Adresa>Technická 10, 602 00 Brno</Adresa>
+            <Telefon>+420515123456</Telefon>
+            <ICO>87654321</ICO>
+            <DIC>CZ87654321</DIC>
+        </Dodavatel>
+        <Odběratel>
+            <Nazev>Tomáš Procházka</Nazev>
+            <Adresa>Hlavní 101, Olomouc</Adresa>
+            <Telefon>+420605678901</Telefon>
+        </Odběratel>
+        <Polozky>
+            <Polozka>
+                <Nazev>Batoh na notebook 15.6"</Nazev>
+                <Mnozstvi>3</Mnozstvi>
+                <CenaJednotkova>990</CenaJednotkova>
+                <CenaJednotkovaDPH>1197.9</CenaJednotkovaDPH>
+                <CenaCelkem>2970</CenaCelkem>
+                <CenaCelkemDPH>3593.7</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>RAM 16GB DDR5</Nazev>
+                <Mnozstvi>2</Mnozstvi>
+                <CenaJednotkova>1890</CenaJednotkova>
+                <CenaJednotkovaDPH>2286.9</CenaJednotkovaDPH>
+                <CenaCelkem>3780</CenaCelkem>
+                <CenaCelkemDPH>4573.8</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook HP ProBook 450</Nazev>
+                <Mnozstvi>3</Mnozstvi>
+                <CenaJednotkova>21990</CenaJednotkova>
+                <CenaJednotkovaDPH>26607.9</CenaJednotkovaDPH>
+                <CenaCelkem>65970</CenaCelkem>
+                <CenaCelkemDPH>79823.7</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Docking station USB-C</Nazev>
+                <Mnozstvi>1</Mnozstvi>
+                <CenaJednotkova>3490</CenaJednotkova>
+                <CenaJednotkovaDPH>4222.9</CenaJednotkovaDPH>
+                <CenaCelkem>3490</CenaCelkem>
+                <CenaCelkemDPH>4222.9</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook Lenovo ThinkPad E16</Nazev>
+                <Mnozstvi>2</Mnozstvi>
+                <CenaJednotkova>18490</CenaJednotkova>
+                <CenaJednotkovaDPH>22372.9</CenaJednotkovaDPH>
+                <CenaCelkem>36980</CenaCelkem>
+                <CenaCelkemDPH>44745.8</CenaCelkemDPH>
+            </Polozka>
+        </Polozky>
+        <Souhrn>
+            <CenaCelkem>113190</CenaCelkem>
+            <CenaCelkemDPH>136959.9</CenaCelkemDPH>
+        </Souhrn>
+    </Faktura>
+    <Faktura id="6">
+        <Dodavatel>
+            <Nazev>NotebookShop s.r.o.</Nazev>
+            <Adresa>Technická 10, 602 00 Brno</Adresa>
+            <Telefon>+420515123456</Telefon>
+            <ICO>87654321</ICO>
+            <DIC>CZ87654321</DIC>
+        </Dodavatel>
+        <Odběratel>
+            <Nazev>Lucie Kučerová</Nazev>
+            <Adresa>Školní 7, České Budějovice</Adresa>
+            <Telefon>+420606789012</Telefon>
+        </Odběratel>
+        <Polozky>
+            <Polozka>
+                <Nazev>Notebook Dell Inspiron 14</Nazev>
+                <Mnozstvi>3</Mnozstvi>
+                <CenaJednotkova>17490</CenaJednotkova>
+                <CenaJednotkovaDPH>21162.9</CenaJednotkovaDPH>
+                <CenaCelkem>52470</CenaCelkem>
+                <CenaCelkemDPH>63488.7</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook Dell Latitude 5440</Nazev>
+                <Mnozstvi>1</Mnozstvi>
+                <CenaJednotkova>28990</CenaJednotkova>
+                <CenaJednotkovaDPH>35077.9</CenaJednotkovaDPH>
+                <CenaCelkem>28990</CenaCelkem>
+                <CenaCelkemDPH>35077.9</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Batoh na notebook 15.6"</Nazev>
+                <Mnozstvi>1</Mnozstvi>
+                <CenaJednotkova>990</CenaJednotkova>
+                <CenaJednotkovaDPH>1197.9</CenaJednotkovaDPH>
+                <CenaCelkem>990</CenaCelkem>
+                <CenaCelkemDPH>1197.9</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>SSD 1TB NVMe</Nazev>
+                <Mnozstvi>3</Mnozstvi>
+                <CenaJednotkova>2790</CenaJednotkova>
+                <CenaJednotkovaDPH>3375.9</CenaJednotkovaDPH>
+                <CenaCelkem>8370</CenaCelkem>
+                <CenaCelkemDPH>10127.7</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook Apple MacBook Air 13 M3</Nazev>
+                <Mnozstvi>1</Mnozstvi>
+                <CenaJednotkova>32990</CenaJednotkova>
+                <CenaJednotkovaDPH>39917.9</CenaJednotkovaDPH>
+                <CenaCelkem>32990</CenaCelkem>
+                <CenaCelkemDPH>39917.9</CenaCelkemDPH>
+            </Polozka>
+        </Polozky>
+        <Souhrn>
+            <CenaCelkem>123810</CenaCelkem>
+            <CenaCelkemDPH>149810.1</CenaCelkemDPH>
+        </Souhrn>
+    </Faktura>
+    <Faktura id="7">
+        <Dodavatel>
+            <Nazev>NotebookShop s.r.o.</Nazev>
+            <Adresa>Technická 10, 602 00 Brno</Adresa>
+            <Telefon>+420515123456</Telefon>
+            <ICO>87654321</ICO>
+            <DIC>CZ87654321</DIC>
+        </Dodavatel>
+        <Odběratel>
+            <Nazev>Honza Veselý</Nazev>
+            <Adresa>Rybník 3, Hradec Králové</Adresa>
+            <Telefon>+420607890123</Telefon>
+        </Odběratel>
+        <Polozky>
+            <Polozka>
+                <Nazev>Notebook Dell Latitude 5440</Nazev>
+                <Mnozstvi>2</Mnozstvi>
+                <CenaJednotkova>28990</CenaJednotkova>
+                <CenaJednotkovaDPH>35077.9</CenaJednotkovaDPH>
+                <CenaCelkem>57980</CenaCelkem>
+                <CenaCelkemDPH>70155.8</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook Dell Inspiron 14</Nazev>
+                <Mnozstvi>2</Mnozstvi>
+                <CenaJednotkova>17490</CenaJednotkova>
+                <CenaJednotkovaDPH>21162.9</CenaJednotkovaDPH>
+                <CenaCelkem>34980</CenaCelkem>
+                <CenaCelkemDPH>42325.8</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook Lenovo IdeaPad Slim 3</Nazev>
+                <Mnozstvi>2</Mnozstvi>
+                <CenaJednotkova>11490</CenaJednotkova>
+                <CenaJednotkovaDPH>13902.9</CenaJednotkovaDPH>
+                <CenaCelkem>22980</CenaCelkem>
+                <CenaCelkemDPH>27805.8</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Monitor 27" IPS</Nazev>
+                <Mnozstvi>3</Mnozstvi>
+                <CenaJednotkova>6990</CenaJednotkova>
+                <CenaJednotkovaDPH>8457.9</CenaJednotkovaDPH>
+                <CenaCelkem>20970</CenaCelkem>
+                <CenaCelkemDPH>25373.7</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook HP Pavilion 15</Nazev>
+                <Mnozstvi>2</Mnozstvi>
+                <CenaJednotkova>15990</CenaJednotkova>
+                <CenaJednotkovaDPH>19347.9</CenaJednotkovaDPH>
+                <CenaCelkem>31980</CenaCelkem>
+                <CenaCelkemDPH>38695.8</CenaCelkemDPH>
+            </Polozka>
+        </Polozky>
+        <Souhrn>
+            <CenaCelkem>168890</CenaCelkem>
+            <CenaCelkemDPH>204356.9</CenaCelkemDPH>
+        </Souhrn>
+    </Faktura>
+    <Faktura id="8">
+        <Dodavatel>
+            <Nazev>NotebookShop s.r.o.</Nazev>
+            <Adresa>Technická 10, 602 00 Brno</Adresa>
+            <Telefon>+420515123456</Telefon>
+            <ICO>87654321</ICO>
+            <DIC>CZ87654321</DIC>
+        </Dodavatel>
+        <Odběratel>
+            <Nazev>Eva Novotná</Nazev>
+            <Adresa>Sadová 19, Liberec</Adresa>
+            <Telefon>+420608901234</Telefon>
+        </Odběratel>
+        <Polozky>
+            <Polozka>
+                <Nazev>Notebook Acer Swift Go 14</Nazev>
+                <Mnozstvi>2</Mnozstvi>
+                <CenaJednotkova>16990</CenaJednotkova>
+                <CenaJednotkovaDPH>20557.9</CenaJednotkovaDPH>
+                <CenaCelkem>33980</CenaCelkem>
+                <CenaCelkemDPH>41115.8</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Batoh na notebook 15.6"</Nazev>
+                <Mnozstvi>3</Mnozstvi>
+                <CenaJednotkova>990</CenaJednotkova>
+                <CenaJednotkovaDPH>1197.9</CenaJednotkovaDPH>
+                <CenaCelkem>2970</CenaCelkem>
+                <CenaCelkemDPH>3593.7</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>SSD 1TB NVMe</Nazev>
+                <Mnozstvi>3</Mnozstvi>
+                <CenaJednotkova>2790</CenaJednotkova>
+                <CenaJednotkovaDPH>3375.9</CenaJednotkovaDPH>
+                <CenaCelkem>8370</CenaCelkem>
+                <CenaCelkemDPH>10127.7</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook Apple MacBook Air 13 M3</Nazev>
+                <Mnozstvi>3</Mnozstvi>
+                <CenaJednotkova>32990</CenaJednotkova>
+                <CenaJednotkovaDPH>39917.9</CenaJednotkovaDPH>
+                <CenaCelkem>98970</CenaCelkem>
+                <CenaCelkemDPH>119753.7</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Myš Logitech MX Master 3S</Nazev>
+                <Mnozstvi>1</Mnozstvi>
+                <CenaJednotkova>2490</CenaJednotkova>
+                <CenaJednotkovaDPH>3012.9</CenaJednotkovaDPH>
+                <CenaCelkem>2490</CenaCelkem>
+                <CenaCelkemDPH>3012.9</CenaCelkemDPH>
+            </Polozka>
+        </Polozky>
+        <Souhrn>
+            <CenaCelkem>146780</CenaCelkem>
+            <CenaCelkemDPH>177603.8</CenaCelkemDPH>
+        </Souhrn>
+    </Faktura>
+    <Faktura id="9">
+        <Dodavatel>
+            <Nazev>NotebookShop s.r.o.</Nazev>
+            <Adresa>Technická 10, 602 00 Brno</Adresa>
+            <Telefon>+420515123456</Telefon>
+            <ICO>87654321</ICO>
+            <DIC>CZ87654321</DIC>
+        </Dodavatel>
+        <Odběratel>
+            <Nazev>Petr Malý</Nazev>
+            <Adresa>Lesní 66, Pardubice</Adresa>
+            <Telefon>+420609012345</Telefon>
+        </Odběratel>
+        <Polozky>
+            <Polozka>
+                <Nazev>Notebook Acer Swift Go 14</Nazev>
+                <Mnozstvi>2</Mnozstvi>
+                <CenaJednotkova>16990</CenaJednotkova>
+                <CenaJednotkovaDPH>20557.9</CenaJednotkovaDPH>
+                <CenaCelkem>33980</CenaCelkem>
+                <CenaCelkemDPH>41115.8</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook Lenovo IdeaPad Slim 3</Nazev>
+                <Mnozstvi>3</Mnozstvi>
+                <CenaJednotkova>11490</CenaJednotkova>
+                <CenaJednotkovaDPH>13902.9</CenaJednotkovaDPH>
+                <CenaCelkem>34470</CenaCelkem>
+                <CenaCelkemDPH>41708.7</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>RAM 16GB DDR5</Nazev>
+                <Mnozstvi>3</Mnozstvi>
+                <CenaJednotkova>1890</CenaJednotkova>
+                <CenaJednotkovaDPH>2286.9</CenaJednotkovaDPH>
+                <CenaCelkem>5670</CenaCelkem>
+                <CenaCelkemDPH>6860.7</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>SSD 1TB NVMe</Nazev>
+                <Mnozstvi>3</Mnozstvi>
+                <CenaJednotkova>2790</CenaJednotkova>
+                <CenaJednotkovaDPH>3375.9</CenaJednotkovaDPH>
+                <CenaCelkem>8370</CenaCelkem>
+                <CenaCelkemDPH>10127.7</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook MSI Modern 15</Nazev>
+                <Mnozstvi>1</Mnozstvi>
+                <CenaJednotkova>14490</CenaJednotkova>
+                <CenaJednotkovaDPH>17532.9</CenaJednotkovaDPH>
+                <CenaCelkem>14490</CenaCelkem>
+                <CenaCelkemDPH>17532.9</CenaCelkemDPH>
+            </Polozka>
+        </Polozky>
+        <Souhrn>
+            <CenaCelkem>96980</CenaCelkem>
+            <CenaCelkemDPH>117345.8</CenaCelkemDPH>
+        </Souhrn>
+    </Faktura>
+    <Faktura id="10">
+        <Dodavatel>
+            <Nazev>NotebookShop s.r.o.</Nazev>
+            <Adresa>Technická 10, 602 00 Brno</Adresa>
+            <Telefon>+420515123456</Telefon>
+            <ICO>87654321</ICO>
+            <DIC>CZ87654321</DIC>
+        </Dodavatel>
+        <Odběratel>
+            <Nazev>Kateřina Hájková</Nazev>
+            <Adresa>Zámecká 2, Ústí nad Labem</Adresa>
+            <Telefon>+420610123456</Telefon>
+        </Odběratel>
+        <Polozky>
+            <Polozka>
+                <Nazev>Myš Logitech MX Master 3S</Nazev>
+                <Mnozstvi>2</Mnozstvi>
+                <CenaJednotkova>2490</CenaJednotkova>
+                <CenaJednotkovaDPH>3012.9</CenaJednotkovaDPH>
+                <CenaCelkem>4980</CenaCelkem>
+                <CenaCelkemDPH>6025.8</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook HP Pavilion 15</Nazev>
+                <Mnozstvi>2</Mnozstvi>
+                <CenaJednotkova>15990</CenaJednotkova>
+                <CenaJednotkovaDPH>19347.9</CenaJednotkovaDPH>
+                <CenaCelkem>31980</CenaCelkem>
+                <CenaCelkemDPH>38695.8</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook Lenovo IdeaPad Slim 3</Nazev>
+                <Mnozstvi>2</Mnozstvi>
+                <CenaJednotkova>11490</CenaJednotkova>
+                <CenaJednotkovaDPH>13902.9</CenaJednotkovaDPH>
+                <CenaCelkem>22980</CenaCelkem>
+                <CenaCelkemDPH>27805.8</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Monitor 27" IPS</Nazev>
+                <Mnozstvi>1</Mnozstvi>
+                <CenaJednotkova>6990</CenaJednotkova>
+                <CenaJednotkovaDPH>8457.9</CenaJednotkovaDPH>
+                <CenaCelkem>6990</CenaCelkem>
+                <CenaCelkemDPH>8457.9</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Notebook Lenovo ThinkPad E16</Nazev>
+                <Mnozstvi>1</Mnozstvi>
+                <CenaJednotkova>18490</CenaJednotkova>
+                <CenaJednotkovaDPH>22372.9</CenaJednotkovaDPH>
+                <CenaCelkem>18490</CenaCelkem>
+                <CenaCelkemDPH>22372.9</CenaCelkemDPH>
+            </Polozka>
+        </Polozky>
+        <Souhrn>
+            <CenaCelkem>85420</CenaCelkem>
+            <CenaCelkemDPH>103358.2</CenaCelkemDPH>
+        </Souhrn>
+    </Faktura>
+</Faktury>

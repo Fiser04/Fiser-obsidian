@@ -1,0 +1,1 @@
+vytvorit 10 faktur, kde kazda faktura bude mit 5 polozek zbozi, dodavatel, odberatel, ico a pod, kontakt, zbozi bude mit nazev, kusy, cena bez a s dph, apod co je proste na fakture

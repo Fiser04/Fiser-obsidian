@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Faktury>
+    <Faktura id="1">
+        <Dodavatel>
+            <Nazev>Firma</Nazev>
+            <Adresa>Ulice 1, Mesto</Adresa>
+            <Telefon>+420123456789</Telefon>
+            <ICO>12345678</ICO>
+            <DIC>CZ12345678</DIC>
+        </Dodavatel>
+        <Odběratel>
+            <Nazev>Zakaznik</Nazev>
+            <Adresa>Ulice 2, Mesto</Adresa>
+            <Telefon>+420987654321</Telefon>
+        </Odběratel>
+        <Polozky>
+            <Polozka>
+                <Nazev>Produkt 1</Nazev>
+                <Mnozstvi>10</Mnozstvi>
+                <CenaJednotkova>100</CenaJednotkova>
+                <CenaJednotkovaDPH>121</CenaJednotkovaDPH>
+                <CenaCelkem>1000</CenaCelkem>
+                <CenaCelkemDPH>1210</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Produkt 2</Nazev>
+                <Mnozstvi>5</Mnozstvi>
+                <CenaJednotkova>200</CenaJednotkova>
+                <CenaJednotkovaDPH>242</CenaJednotkovaDPH>
+                <CenaCelkem>1000</CenaCelkem>
+                <CenaCelkemDPH>1210</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Produkt 3</Nazev>
+                <Mnozstvi>2</Mnozstvi>
+                <CenaJednotkova>500</CenaJednotkova>
+                <CenaJednotkovaDPH>605</CenaJednotkovaDPH>
+                <CenaCelkem>1000</CenaCelkem>
+                <CenaCelkemDPH>1210</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Produkt 4</Nazev>
+                <Mnozstvi>1</Mnozstvi>
+                <CenaJednotkova>1000</CenaJednotkova>
+                <CenaJednotkovaDPH>1210</CenaJednotkovaDPH>
+                <CenaCelkem>1000</CenaCelkem>
+                <CenaCelkemDPH>1210</CenaCelkemDPH>
+            </Polozka>
+            <Polozka>
+                <Nazev>Produkt 5</Nazev>
+                <Mnozstvi>3</Mnozstvi>
+                <CenaJednotkova>333.33</CenaJednotkova>
+                <CenaJednotkovaDPH>403.33</CenaJednotkovaDPH>
+                <CenaCelkem>1000</CenaCelkem>
+                <CenaCelkemDPH>1210</CenaCelkemDPH>
+            </Polozka>
+        </Polozky>
+        <Souhrn>
+            <CenaCelkem>1000</CenaCelkem>
+            <CenaCelkemDPH>1210</CenaCelkemDPH>
+        </Souhrn>
+    </Faktura>
+</Faktury>
