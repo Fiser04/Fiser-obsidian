@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zamestnanci xmlns="zamestnanci.xsd"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="zamestnanci.xsd zamestnanci.xsd">
+    <zamestnanec id="1">
+        <jmeno>Jan</jmeno>
+        <prijmeni>Novák</prijmeni>
+        <plat mena="CZK">45000.00</plat>
+        <narozeni>1990-05-14</narozeni>
+        <psc>110 00</psc>
+        <oddeleni>IT</oddeleni>
+        <kontakt>
+            <email>jan.novak@example.cz</email>
+            <telefon>+420 777 123 450</telefon>
+        </kontakt>
+    </zamestnanec>
+    <zamestnanec id="2">
+        <jmeno>Ondra</jmeno>
+        <prijmeni>Triska</prijmeni>
+        <plat mena="CZK">40000.00</plat>
+        <narozeni>1983-01-15</narozeni>
+        <psc>110 00</psc>
+        <oddeleni>OBCHOD</oddeleni>
+        <kontakt>
+            <telefon>+420 777 123 111</telefon>
+        </kontakt>
+    </zamestnanec>
+</zamestnanci>
