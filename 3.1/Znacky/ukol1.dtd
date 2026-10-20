@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT Faktury (Faktura*)>
+<!ELEMENT Faktura (Dodavatel, Odběratel, Polozky, Souhrn)>
+<!ATTLIST Faktura id CDATA #IMPLIED>
+
+<!ELEMENT Dodavatel (Nazev, Adresa, Telefon, ICO, DIC)>
+<!ELEMENT Odběratel (Nazev, Adresa, Telefon)>
+<!ELEMENT Polozky (Polozka*)>
+<!ELEMENT Polozka (Nazev, Mnozstvi, CenaJednotkova, CenaJednotkovaDPH, CenaCelkem, CenaCelkemDPH)>
+<!ELEMENT Souhrn (Castka, CenaCelkemDPH)>
+<!ELEMENT Castka (#PCDATA)>
+
+<!ELEMENT Nazev (#PCDATA)>
+<!ELEMENT Adresa (#PCDATA)>
+<!ELEMENT Telefon (#PCDATA)>
+<!ELEMENT ICO (#PCDATA)>
+<!ELEMENT DIC (#PCDATA)>
+<!ELEMENT Mnozstvi (#PCDATA)>
+<!ELEMENT CenaJednotkova (#PCDATA)>
+<!ELEMENT CenaJednotkovaDPH (#PCDATA)>
+<!ELEMENT CenaCelkem (#PCDATA)>
+<!ELEMENT CenaCelkemDPH (#PCDATA)>
+<!ATTLIST Castka Mena (CZK|EURO) #REQUIRED>

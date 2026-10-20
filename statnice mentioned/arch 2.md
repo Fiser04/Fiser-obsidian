@@ -1,0 +1,11 @@
+- ![[Pasted image 20261016100710.png]]
+	- kdyz umis i samotny instrukce tak si nad tim honej
+- FPGA
+	- softwarove zmenit hardware
+	- nevyhody
+		- hodne spatne vrstveni
+		- aby to k necemu bylo tak by to bylo velky, velky je drahy
+		- kurwa vadi kdyz je defekt pri vyrobe
+		- cim vic toho co dela tim mensi frekvence (nulova optimalizace)
+	- vyuziti
+		- tam kde je nejakej malej ARM ktery se stara o vse, kdyz potrebuje nejaky data zpracovat tak FPGA se prenastavy na akcelerator

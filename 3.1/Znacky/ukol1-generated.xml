@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Faktury SYSTEM "ukol1.dtd">
 <Faktury>
     <Faktura id="1">
         <Dodavatel>
@@ -56,7 +57,7 @@
             </Polozka>
         </Polozky>
         <Souhrn>
-            <CenaCelkem>122090</CenaCelkem>
+            <Castka Mena="CZK">122090</Castka>
             <CenaCelkemDPH>147728.9</CenaCelkemDPH>
         </Souhrn>
     </Faktura>
@@ -116,7 +117,7 @@
             </Polozka>
         </Polozky>
         <Souhrn>
-            <CenaCelkem>87810</CenaCelkem>
+            <Castka Mena="CZK">87810</Castka>
             <CenaCelkemDPH>106250.1</CenaCelkemDPH>
         </Souhrn>
     </Faktura>
@@ -176,7 +177,7 @@
             </Polozka>
         </Polozky>
         <Souhrn>
-            <CenaCelkem>158900</CenaCelkem>
+            <Castka Mena="CZK">158900</Castka>
             <CenaCelkemDPH>192269</CenaCelkemDPH>
         </Souhrn>
     </Faktura>
@@ -236,7 +237,7 @@
             </Polozka>
         </Polozky>
         <Souhrn>
-            <CenaCelkem>106430</CenaCelkem>
+            <Castka Mena="CZK">106430</Castka>
             <CenaCelkemDPH>128780.3</CenaCelkemDPH>
         </Souhrn>
     </Faktura>
@@ -296,7 +297,7 @@
             </Polozka>
         </Polozky>
         <Souhrn>
-            <CenaCelkem>113190</CenaCelkem>
+            <Castka Mena="CZK">113190</Castka>
             <CenaCelkemDPH>136959.9</CenaCelkemDPH>
         </Souhrn>
     </Faktura>
@@ -356,7 +357,7 @@
             </Polozka>
         </Polozky>
         <Souhrn>
-            <CenaCelkem>123810</CenaCelkem>
+            <Castka Mena="CZK">123810</Castka>
             <CenaCelkemDPH>149810.1</CenaCelkemDPH>
         </Souhrn>
     </Faktura>
@@ -416,7 +417,7 @@
             </Polozka>
         </Polozky>
         <Souhrn>
-            <CenaCelkem>168890</CenaCelkem>
+            <Castka Mena="CZK">168890</Castka>
             <CenaCelkemDPH>204356.9</CenaCelkemDPH>
         </Souhrn>
     </Faktura>
@@ -476,7 +477,7 @@
             </Polozka>
         </Polozky>
         <Souhrn>
-            <CenaCelkem>146780</CenaCelkem>
+            <Castka Mena="CZK">146780</Castka>
             <CenaCelkemDPH>177603.8</CenaCelkemDPH>
         </Souhrn>
     </Faktura>
@@ -536,7 +537,7 @@
             </Polozka>
         </Polozky>
         <Souhrn>
-            <CenaCelkem>96980</CenaCelkem>
+            <Castka Mena="CZK">96980</Castka>
             <CenaCelkemDPH>117345.8</CenaCelkemDPH>
         </Souhrn>
     </Faktura>
@@ -596,7 +597,7 @@
             </Polozka>
         </Polozky>
         <Souhrn>
-            <CenaCelkem>85420</CenaCelkem>
+            <Castka Mena="CZK">85420</Castka>
             <CenaCelkemDPH>103358.2</CenaCelkemDPH>
         </Souhrn>
     </Faktura>
