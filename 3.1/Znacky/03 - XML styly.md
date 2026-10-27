@@ -1,0 +1,3 @@
+- xml + xsl = xslt -> html
+	- zaklad
+- pokud chci neco jineho tak musim definovat formatovaci objekty (FO) a pak pres transformator T muzu delat treba .pdf nebo .docx

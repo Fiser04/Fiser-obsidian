@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<katalog>
+    <info>
+        <Firma>Notebook Reseller s.r.o.</Firma>
+        <mena>CZK</mena>
+    </info>
+    <polozka id="1">
+        <nazev>Dell XPS 13</nazev>
+        <kategorie>Ultrabook</kategorie>
+        <cena>24990</cena>
+        <popis>
+            <dulezite>Lehky a vykonny ultrabook, vhodny pro cesty.</dulezite>
+        </popis>
+        <mnozstvi>10</mnozstvi>
+    </polozka>
+    <polozka id="2">
+        <nazev>Lenovo ThinkPad T14</nazev>
+        <kategorie>Business</kategorie>
+        <cena>32990</cena>
+        <popis>
+            <dulezite>Spolehlivy pracovni notebook s vydrzi baterie az 15 hodin.</dulezite>
+        </popis>
+        <mnozstvi>5</mnozstvi>
+    </polozka>
+    <polozka id="3">
+        <nazev>HP Pavilion 15</nazev>
+        <kategorie>Domacnost</kategorie>
+        <cena>18490</cena>
+        <popis>
+            <dulezite>Vsestranny notebook na kazdodenni pouziti.</dulezite>
+        </popis>
+        <mnozstvi>25</mnozstvi>
+    </polozka>
+</katalog>

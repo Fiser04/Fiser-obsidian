@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<app-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="config.xsd">
+
+    <server host="localhost" port="8080" debug="true"/>
+
+    <database drivers="postgresql">
+        <url>jdbc:postgresql://localhost:5432/mydb</url>
+        <username>admin</username>
+        <password>secret123</password>
+        <pool-size>10</pool-size>
+    </database>
+
+    <features>
+        <feature name="logging" enabled="true"/>
+        <feature name="cache" enabled="false"/>
+    </features>
+
+    <logging level="INFO" file="/var/log/app.log"/>
+
+</app-config>
