@@ -1,3 +1,5 @@
+- ![[Pasted image 20261105140922.png]]
+
 - proc ne relacni
 	- kdyz je hodne dat
 	- schema je staticke takze nepodporuje moc zmeny
@@ -45,3 +47,56 @@
 				- podle logiky dat
 					- treba podle lokace, podle casu rozhoduju na jakej shard
 					- problem je load *na eu hraje vic lidi csgo nez v africe*
+
+- BaSE
+	- ![[Pasted image 20261105141346.png]]
+	- ba
+		- nosql - kdyz nepujde jedna ze 3, tak to proste posle
+		- relacni - neposle nic
+	- soft state
+		- konzistence dat se prenasi vys
+	- eventual consistency
+		- kdyz bude nejaka bez pripojeni, tak po nejaky dobe se zase pripoji s jinymi 
+
+- typy
+	- Key-value
+	- Column oriented
+	- Document oriented
+	- graficky
+
+- Key-value
+	- Redis
+	- proste mapa/dictionary
+	- muzu mit jako value cokoliv (json, video, text, vazne cokoliv)
+	- server nema zadnej kontext o datech
+		- nejsem schopnej prohledavat hodnoty (ted uz ne, Redis to umi)
+		- nemuzu hledat neco v jsonu kdyz je ten json value
+	- pouziti je r34, hodne fotek pro hodne uzivatelu
+
+- column oriented
+	- Cassandra by amazon
+	- pro internetove obchody
+		- *mam hromadu projektu, hromada projektu ma ruzne atributy (jako alza, atributy mopu vs televize)*
+	- proste otocena relacni (x, y -> y, x)
+	- muzu mit ruznej pocet atributu pro kazdou vec
+		- velice flexibilni (dynamicke)
+
+- document oriented
+	- MongoDb, raven
+	- hlavni formaty
+		- json
+		- bson
+		- xml
+		- Json vs Bson
+			- json je plain text, bson je binarka
+	- hodne jakoby *key-value na steroidech*
+	- *nemusi* mit schema
+		- ale kdyz chcu hledat tak MUSIM mit schema
+
+- graph database
+	- mas nodes kde jsou klasicky key-value a pak je hodnota v edges
+	- pouziva se tam kde je graf
+		- socialni media (reaguje na, ...)
+		- mapy
+	- neni tam schema protoze ta samotna databaze je schema
+	- ![[Pasted image 20261105150647.png]]
