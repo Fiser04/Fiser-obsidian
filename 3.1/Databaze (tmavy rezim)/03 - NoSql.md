@@ -67,6 +67,7 @@
 - Key-value
 	- Redis
 	- proste mapa/dictionary
+	- pouziva se pro cache, zustava jen v pameti
 	- muzu mit jako value cokoliv (json, video, text, vazne cokoliv)
 	- server nema zadnej kontext o datech
 		- nejsem schopnej prohledavat hodnoty (ted uz ne, Redis to umi)
