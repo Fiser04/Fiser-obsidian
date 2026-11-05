@@ -1,0 +1,77 @@
+- kybernalita
+	- virtualbox
+		- kali linux nejnovejsi
+		- metasploitable2 (https://sourceforge.net/projects/metasploitable/files/Metasploitable2/)
+- bezpecnost
+	- virtualbox
+		- windows 11 pro (iso z webu)
+		- aktualni ubuntu
+- architektura pocitacu
+	- deeds (https://www.digitalelectronicsdeeds.com/downloads.html)
+	- notepad++
+	- vscode
+	- git
+	- python 3.13
+	- github copilot cli
+	- antigravity cli
+	- codex cli
+	- claude code cli
+- os1 a os2
+	- virtualbox
+		- ubuntu server
+		- ubuntu desktop
+	- powershell
+	- vscode
+- robotika
+	- https://education.lego.com/en-us/downloads/mindstorms-ev3/software/
+		- na webu neni linux port, takze bud najit alternativu nebo wine a doufat
+- 3d tisk
+	- prusaslicer
+	- meshmixer
+		- wine
+- oop1
+	- java jdk 21 lts
+	- netbeans ide
+	- vscode
+	- psdiagram
+		- jedinecnej software defakto, je to .jar kterej se stahne z webu
+- oop2
+	- java jdk 21 lts
+	- javafx scene builder + javafx
+	- netbeans ide
+	- vscode
+- multimedia
+	- lmstudio
+	- ollama
+	- cuda drivery kdyz nvidie
+	- python 3.12
+	- vscode
+	- gimp
+	- inkscape
+	- xnview
+	- audacity
+	- ASIO4All driver
+	- VSTHost
+	- VLC
+	- Cakewake Sonar
+	- Reaper
+	- Videopad (kdyztak kdenlive)
+	- OBS
+	- Sonic pi (appimage)
+- site 1 a 2
+	- wireshark
+	- packet tracer
+	- nmap (zenmap)
+	- tera term
+		- wine
+	- virtualbox
+- databaze
+	- mssql server
+	- dbeaver
+- architektura aplikace
+	- vscode
+- moderovani softwaru
+	- Archimate tool
+- python
+	- uv
+	- git

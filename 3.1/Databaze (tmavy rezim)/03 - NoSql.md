@@ -1,0 +1,47 @@
+- proc ne relacni
+	- kdyz je hodne dat
+	- schema je staticke takze nepodporuje moc zmeny
+	- striktne separovane logicka a fyzicka vrstva
+
+- jak upgradnout relacni
+	- vertikal
+		- lepsi server koupim
+		- ![[Pasted image 20261029152708.png]]
+		- ale existuje bod, kde pridani ramek nepomuze
+	- horizontal
+		- manualni zmena databaze z aplikace
+			- vice serveru s ruznymy databazemy i daty
+			- *hraju wotko, je malo hracu na eu, tak se pripojim na us, ale mam defakto jinej ucet*
+		- database mirroring
+			- master-slave replication
+				- mam jeden hlavni server a pak z nej kopiruju na ostatni
+				- *jeden server kterej je hlavne na write operace (update) zbytek si kopiruje od nej data a ty maji na starost read operace*
+				- ![[Pasted image 20261029154013.png]]
+			- basic cluster
+				- jedno uloziste na ktere je napojenych hodne serveru
+				- ![[Pasted image 20261029154235.png]]
+		- table partitioning
+			- vertical partitioning
+				- kdyz mam vice typu klientu kteri potrebuji data ze stejneho "sourcu", ale kazdy jen neco, ne celou tabulku
+				- nepouziva se to moc
+				- ![[Pasted image 20261029154835.png]]
+			- horizontal partitioning
+				- dobre pro paralizaci
+				- geopoliticka data (eu server, us server, ...)
+				- ![[Pasted image 20261029155153.png]]
+				- ![[Pasted image 20261029155721.png]]
+		- sharding
+			- rozporcovani databaze do vice serveru, ale mam jednoho "Manazera" ktery rozhoduje co kam
+			- ![[Pasted image 20261029160107.png]]
+			- distribuce
+				- nahodna
+					- vybere se nahodny id shardu na ktery to pujde
+					- rychly, jednoduchy, mam tak nejak vsude podobnej load
+					- ale nemam tucha moc kde co je
+				- matematicka funkce
+					- da se jednoduse predikovat kde data jsou
+					- load zalezi na funkci
+					- jednoducha funkce spise znamena ze se musim dotazovat vice shardu abych dostal nejakou normalni odpoved
+				- podle logiky dat
+					- treba podle lokace, podle casu rozhoduju na jakej shard
+					- problem je load *na eu hraje vic lidi csgo nez v africe*

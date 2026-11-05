@@ -1,0 +1,10 @@
+katalog{
+    display: table;
+}
+polozka{
+    display: table-row;
+}
+nazev, cena, kategorie, mnozstvi, popis{
+    display: table-cell;
+    padding: 5px;
+}
